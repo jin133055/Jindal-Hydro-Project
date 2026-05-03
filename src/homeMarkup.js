@@ -97,7 +97,7 @@
       <li><a href="/contact">Contact</a></li>
     </ul>
     <a class="nav-phone" href="tel:+919868247362">+91 9868247362</a>
-    <button class="nav-cta" data-scroll-target=".inquiry-section">Get a Quote</button>
+    <a class="nav-cta" href="/contact">Get a Quote</a>
     <button class="nav-mobile-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -260,8 +260,7 @@
           <div class="solution-content">
             <div class="solution-num">01 â€” SOLUTION</div>
             <div class="solution-title">Metal Recycling</div>
-            <div class="solution-desc">End-to-end systems for ferrous and non-ferrous metal processing â€” from collection to mill-ready bales.</div>
-            <a href="#" class="solution-link">Explore Solution <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+            <div class="solution-desc">End-to-end systems for ferrous and non-ferrous metal processing - from collection to mill-ready bales.</div>
           </div>
         </div>
         <div class="solution-block reveal reveal-delay-2">
@@ -271,7 +270,6 @@
             <div class="solution-num">02 â€” SOLUTION</div>
             <div class="solution-title">Waste Management</div>
             <div class="solution-desc">Municipal and industrial waste processing systems designed for maximum throughput and regulatory compliance.</div>
-            <a href="#" class="solution-link">Explore Solution <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
           </div>
         </div>
         <div class="solution-block reveal reveal-delay-3">
@@ -281,7 +279,6 @@
             <div class="solution-num">03 â€” SOLUTION</div>
             <div class="solution-title">Scrap Processing</div>
             <div class="solution-desc">Integrated shredding, sorting, and densification for scrap dealers, foundries, and steel mills.</div>
-            <a href="#" class="solution-link">Explore Solution <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
           </div>
         </div>
       </div>

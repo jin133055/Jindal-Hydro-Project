@@ -318,6 +318,42 @@ const services = [
   ['Training', 'Machine operation, safety practices and routine maintenance training.'],
 ];
 
+const solutionSections = [
+  {
+    number: '01',
+    title: 'Metal Recycling',
+    image: '/images/homepage.png',
+    intro: 'End-to-end systems for ferrous and non-ferrous metal processing, from loose scrap intake to compact, transport-ready output.',
+    details: [
+      'Hydraulic balers, shears, shredders and conveyors configured around scrap type and throughput goals.',
+      'Systems can support steel, aluminium, copper, mixed industrial scrap and foundry returns.',
+      'Layouts focus on efficient feeding, dense output, reduced handling effort and easier maintenance access.',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Waste Management',
+    image: '/images/homepage.png',
+    intro: 'Municipal and industrial waste processing solutions designed to improve volume reduction, sorting support and operational flow.',
+    details: [
+      'Machinery options for compaction, shredding, baling and material movement across waste handling facilities.',
+      'Built for mixed waste, packaging waste, cardboard, plastics and recyclable material streams.',
+      'Practical system planning helps reduce storage space, improve logistics and support cleaner processing lines.',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Scrap Processing',
+    image: '/images/homepage.png',
+    intro: 'Integrated shredding, sorting and densification systems for scrap dealers, steel plants, foundries and heavy industrial sites.',
+    details: [
+      'Custom machine combinations for cutting, feeding, loading, baling and output preparation.',
+      'Hydraulic power packs and controls are matched to duty cycle, material hardness and production schedule.',
+      'Solutions are engineered for uptime, operator safety, serviceability and long-term productivity.',
+    ],
+  },
+];
+
 const pageCopy = {
   products: {
     label: 'Products',
@@ -476,6 +512,139 @@ function PlaceholderPage({ page }) {
           <div className="hero-btns">
             <Link className="btn-primary" to="/contact">Request Quote</Link>
             <Link className="btn-secondary" to="/">Back Home</Link>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function SolutionsPage() {
+  return (
+    <>
+      <Header />
+      <main className="solutions-page">
+        <section className="solutions-page-hero reveal">
+          <div className="section-label">Industry Solutions</div>
+          <h1>Engineered Solutions for Recycling, Waste and Scrap Operations</h1>
+          <p>Explore focused machinery systems designed around material type, handling flow, production capacity and long-term industrial reliability.</p>
+        </section>
+
+        <section className="solutions-stack">
+          {solutionSections.map((solution, index) => (
+            <article className={`solution-detail-card reveal ${index % 2 === 1 ? 'is-reversed' : ''}`} key={solution.title}>
+              <div className="solution-detail-image">
+                <img src={solution.image} alt={`${solution.title} solution`} />
+              </div>
+              <div className="solution-detail-content">
+                <div className="solution-detail-number">{solution.number} / Solution</div>
+                <h2>{solution.title}</h2>
+                <p>{solution.intro}</p>
+                <ul className="solution-detail-list">
+                  {solution.details.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <Link className="btn-primary" to="/contact">Discuss Requirement</Link>
+              </div>
+            </article>
+          ))}
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function ContactPage() {
+  return (
+    <>
+      <Header />
+      <main className="contact-page">
+        <section className="contact-hero reveal">
+          <div className="section-label">Contact Us</div>
+          <h1>Tell Us What You Need to Build, Press or Recycle</h1>
+          <p>Share your machine requirement, material type, capacity and site details. Our team will help you move from inquiry to the right hydraulic solution.</p>
+        </section>
+
+        <section className="contact-section">
+          <div className="contact-info-panel reveal">
+            <div className="section-label">Get a Quote</div>
+            <h2>Speak With Jindal Hydro Projects Inc.</h2>
+            <p>Send a project brief and our engineering team will review your requirement for hydraulic machinery, recycling systems, power packs, presses or custom equipment.</p>
+            <div className="contact-methods">
+              <a href="tel:+919868247362">
+                <span>Phone</span>
+                <strong>+91 9868247362</strong>
+              </a>
+              <a href="mailto:info@jindalhydroprojects.com">
+                <span>Email</span>
+                <strong>info@jindalhydroprojects.com</strong>
+              </a>
+              <div>
+                <span>Response Time</span>
+                <strong>Within 24 hours</strong>
+              </div>
+            </div>
+          </div>
+
+          <div className="contact-form-panel reveal reveal-delay-1">
+            <form name="contact-inquiry">
+              <div className="form-grid">
+                <div className="form-group">
+                  <label htmlFor="contact_name">Full Name</label>
+                  <input id="contact_name" name="name" type="text" placeholder="Your name" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="contact_company">Company</label>
+                  <input id="contact_company" name="company" type="text" placeholder="Company name" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="contact_email">Email</label>
+                  <input id="contact_email" name="email" type="email" placeholder="you@company.com" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="contact_phone">Phone</label>
+                  <input id="contact_phone" name="phone" type="tel" placeholder="+91 ..." />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="contact_solution">Requirement</label>
+                  <select id="contact_solution" name="requirement">
+                    <option value="">Select requirement</option>
+                    <option>Hydraulic Press</option>
+                    <option>Baling Machine</option>
+                    <option>Recycling System</option>
+                    <option>Hydraulic Power Pack</option>
+                    <option>Custom Machinery</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="contact_capacity">Capacity</label>
+                  <input id="contact_capacity" name="capacity" type="text" placeholder="e.g. 10 T/hr" />
+                </div>
+                <div className="form-group full">
+                  <label htmlFor="contact_message">Project Details</label>
+                  <textarea id="contact_message" name="message" rows="5" placeholder="Tell us about material, capacity, site conditions or machine requirements..."></textarea>
+                </div>
+              </div>
+              <button className="form-submit" type="submit">Submit Inquiry</button>
+            </form>
+          </div>
+        </section>
+
+        <section className="contact-highlights reveal">
+          <div>
+            <strong>01</strong>
+            <span>Requirement review by technical team</span>
+          </div>
+          <div>
+            <strong>02</strong>
+            <span>Machine or system recommendation</span>
+          </div>
+          <div>
+            <strong>03</strong>
+            <span>Quotation with configuration details</span>
           </div>
         </section>
       </main>
@@ -889,6 +1058,14 @@ export default function App({ page }) {
 
   if (page === 'products') {
     return <ProductsPage />;
+  }
+
+  if (page === 'solutions') {
+    return <SolutionsPage />;
+  }
+
+  if (page === 'contact') {
+    return <ContactPage />;
   }
 
   if (page === 'about') {
