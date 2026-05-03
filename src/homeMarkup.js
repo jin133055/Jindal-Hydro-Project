@@ -407,7 +407,7 @@
             <div class="case-result">+30%<span class="res-lbl">Efficiency Gain</span></div>
           </div>
           <div class="case-body">
-            <div class="case-sector">Steel Manufacturing Â· India</div>
+            <div class="case-sector">Steel Manufacturing - India</div>
             <div class="case-title">Baling Press Retrofit for 300T/day Scrap Yard</div>
             <div class="case-meta">Increased throughput by 30% and reduced energy cost per bale by 22%.</div>
           </div>
@@ -418,7 +418,7 @@
             <div class="case-result">2Ã— <span class="res-lbl">Volume Processed</span></div>
           </div>
           <div class="case-body">
-            <div class="case-sector">Municipal Waste Â· UAE</div>
+            <div class="case-sector">Municipal Waste - UAE</div>
             <div class="case-title">Full Shredding Line for Urban Recycling Facility</div>
             <div class="case-meta">Doubled processing volume without expanding the facility footprint.</div>
           </div>
@@ -429,7 +429,7 @@
             <div class="case-result">18Mo<span class="res-lbl">ROI Payback</span></div>
           </div>
           <div class="case-body">
-            <div class="case-sector">Automotive Scrap Â· Germany</div>
+            <div class="case-sector">Automotive Scrap - Germany</div>
             <div class="case-title">Turnkey Auto Shredder Deployment</div>
             <div class="case-meta">Full ROI achieved within 18 months from commissioning date.</div>
           </div>
@@ -522,7 +522,7 @@
       <div class="footer-top">
         <div>
           <div class="footer-brand-name">Jindal Hydro Projects Inc<span>.</span></div>
-          <div class="footer-tagline">Advanced hydraulic and recycling solutions engineered for global industrial applications since 1998.</div>
+          <div class="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 2013.</div>
           <div class="footer-social">
             <div class="social-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>

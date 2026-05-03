@@ -251,44 +251,71 @@ const faqs = [
 ];
 
 const aboutOfferings = [
-  'Hydraulic Cylinders',
-  'Hydraulic Power Packs',
-  'Baling & Press Machines',
-  'Recycling Machinery',
-  'Custom Hydraulic Systems',
-  'Material Handling Equipment',
-];
-
-const aboutStats = [
-  ['25+', 'Years of engineering experience'],
-  ['500+', 'Machines delivered'],
-  ['40+', 'Countries served'],
-  ['12+', 'Industrial sectors supported'],
+  ['Hydraulic Presses', 'Precision pressing, forming and production-duty hydraulic press systems.', '/images/homepage.png'],
+  ['Baling Machines', 'Horizontal, vertical and custom balers for metal, paper and recyclable materials.', '/images/homepage.png'],
+  ['Shredders', 'Heavy-duty shredding solutions for scrap, industrial waste and recycling streams.', '/images/homepage.png'],
+  ['Power Packs', 'Hydraulic power units designed around pressure, flow, cooling and controls.', '/images/homepage.png'],
+  ['Hydraulic Cylinders', 'Industrial cylinders for presses, balers, material handling and automation.', '/images/homepage.png'],
+  ['Solar Systems', 'Integrated solar and industrial energy support solutions for facilities.', '/images/homepage.png'],
 ];
 
 const businessDetails = [
-  ['Nature of Business', 'Manufacturer, exporter and hydraulic engineering partner'],
-  ['Company Type', 'Industrial machinery and recycling equipment specialist'],
-  ['Established', '1998'],
-  ['Key Markets', 'India, Middle East, Africa, Europe and global export clients'],
+  ['Year of Establishment', '2013'],
+  ['Nature of Business', 'Manufacturer, exporter and supplier'],
+  ['Employee Count', '50+ professionals'],
+  ['Production Capacity', 'Application and model dependent'],
+  ['Quality System', 'ISO 9001:2015 and TQM practices'],
+  ['Annual Turnover', 'Available on request'],
+  ['Core Markets', 'India and export customers'],
+  ['Specialization', 'Hydraulic, recycling and turnkey industrial systems'],
 ];
 
 const aboutStrengths = [
-  'Custom-built machinery for site-specific duty cycles',
-  'Experienced hydraulic design and fabrication team',
-  'Reliable performance in continuous industrial operation',
-  'Commissioning, training and after-sales support',
+  ['CU', 'Customization', 'Machines engineered around material, capacity, site layout and duty cycle.'],
+  ['RD', 'Strong R&D', 'Practical design improvement, testing and application-led development.'],
+  ['CP', 'Competitive Pricing', 'Cost-conscious engineering without compromising industrial reliability.'],
+  ['FD', 'Fast Delivery', 'Focused production planning, fabrication control and responsive coordination.'],
 ];
 
 const servedIndustries = [
-  'Metal Recycling',
-  'Manufacturing',
-  'Automotive Scrap',
-  'Waste Management',
-  'Foundries & Steel Plants',
-  'Paper & Cardboard Recycling',
-  'Fabrication Units',
-  'Industrial Processing',
+  ['factory', 'Manufacturing'],
+  ['recycle', 'Recycling'],
+  ['automotive', 'Automotive'],
+  ['rail', 'Railways'],
+  ['shield', 'Defense'],
+  ['steel', 'Steel Plants'],
+  ['waste', 'Waste Management'],
+  ['energy', 'Energy & Solar'],
+];
+
+const infrastructurePoints = [
+  'Metal forming, fabrication and heavy machine assembly',
+  'Cutting technologies for plates, frames and industrial structures',
+  'Tooling, fixtures and hydraulic integration capability',
+  'Turnkey systems for recycling, pressing and material handling lines',
+];
+
+const qualityPoints = [
+  ['IN', 'Innovation-focused design for better uptime and maintainability'],
+  ['TS', 'Testing of hydraulic assemblies, controls and machine operation'],
+  ['ISO', 'ISO 9001:2015 quality alignment with TQM-led practices'],
+  ['QA', 'Inspection checkpoints from fabrication through commissioning'],
+];
+
+const teamRoles = [
+  ['Engineers', 'Hydraulic design, system sizing and performance validation', '/images/homepage.png'],
+  ['Designers', 'Machine layouts, tooling, fabrication drawings and ergonomics', '/images/homepage.png'],
+  ['Researchers', 'Process improvement, materials, automation and new applications', '/images/homepage.png'],
+  ['Technical Experts', 'Installation, troubleshooting, training and service support', '/images/homepage.png'],
+];
+
+const trustedClients = ['Tata Motors', 'Hindalco', 'Birla Group', 'Jindal Steel', 'Mahindra', 'L&T'];
+
+const services = [
+  ['Spare Parts Supply', 'Critical spares and hydraulic components for machine uptime.'],
+  ['Maintenance Support', 'Preventive checks, repair guidance and service coordination.'],
+  ['Installation', 'Site installation, commissioning and operator handover support.'],
+  ['Training', 'Machine operation, safety practices and routine maintenance training.'],
 ];
 
 const pageCopy = {
@@ -309,7 +336,7 @@ const pageCopy = {
   },
   about: {
     label: 'About',
-    title: 'Engineering Recycling Equipment Since 1998',
+    title: 'Engineering Hydraulic Solutions Since 2013',
     text: 'Use this page for company history, manufacturing capability, certifications, team, and global installation footprint.',
   },
   'case-studies': {
@@ -395,7 +422,7 @@ function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-brand-name">Jindal Hydro Projects Inc<span>.</span></div>
-            <div className="footer-tagline">Advanced hydraulic and recycling solutions engineered for global industrial applications since 1998.</div>
+            <div className="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 2013.</div>
           </div>
           <div className="footer-col">
             <h5>Products</h5>
@@ -457,6 +484,22 @@ function PlaceholderPage({ page }) {
   );
 }
 
+function IndustryIcon({ type }) {
+  const common = { width: '28', height: '28', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '1.8', strokeLinecap: 'round', strokeLinejoin: 'round' };
+  const icons = {
+    factory: <><path d="M3 21V9l6 3V9l6 3V5h6v16H3z" /><path d="M7 17h2M12 17h2M17 17h2" /></>,
+    recycle: <><path d="M7 7l2-4 2 4" /><path d="M9 3l4 7H5" /><path d="M17 17l-2 4-2-4" /><path d="M15 21l-4-7h8" /><path d="M16 7h5l-2.5 4" /></>,
+    automotive: <><path d="M5 16l1.5-5h11L19 16" /><path d="M4 16h16v4H4z" /><path d="M7 20v1M17 20v1" /><circle cx="7" cy="18" r="1" /><circle cx="17" cy="18" r="1" /></>,
+    rail: <><rect x="6" y="3" width="12" height="14" rx="2" /><path d="M9 17l-2 4M15 17l2 4M9 7h6M9 11h6" /><circle cx="9" cy="14" r="1" /><circle cx="15" cy="14" r="1" /></>,
+    shield: <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" /></>,
+    steel: <><path d="M4 19h16" /><path d="M6 19V8l6-4 6 4v11" /><path d="M9 19v-6h6v6" /><path d="M9 9h6" /></>,
+    waste: <><path d="M4 7h16" /><path d="M9 7V4h6v3" /><path d="M7 7l1 14h8l1-14" /><path d="M10 11v6M14 11v6" /></>,
+    energy: <><path d="M13 2L5 14h6l-1 8 8-12h-6l1-8z" /><path d="M3 21h18" /></>,
+  };
+
+  return <svg {...common}>{icons[type] || icons.factory}</svg>;
+}
+
 function AboutPage() {
   return (
     <>
@@ -468,58 +511,27 @@ function AboutPage() {
           <div className="about-hero-content">
             <div className="section-label">Company Profile</div>
             <h1>About Jindal Hydro Projects Inc.</h1>
-            <p>Engineering excellence in hydraulics, recycling machinery and industrial equipment for demanding production environments.</p>
-            <Link className="btn-primary" to="/contact">Get a Quote</Link>
+            <p>Engineering Advanced Hydraulic & Recycling Solutions Since 2013.</p>
+            <Link className="btn-primary" to="/products">Explore Products</Link>
           </div>
         </section>
 
         <section className="about-section about-overview">
           <div className="about-copy reveal">
             <div className="section-label">Overview</div>
-            <h2>Built for Heavy-Duty Industrial Performance</h2>
-            <p>Jindal Hydro Projects Inc. designs and manufactures hydraulic machinery for recyclers, manufacturers, scrap processors, fabrication units and industrial plants that need dependable output with practical serviceability.</p>
-            <p>Our work covers hydraulic cylinders, power packs, presses, balers and custom recycling systems engineered around pressure, capacity, material flow and site requirements.</p>
+            <h2>Built for Advanced Hydraulic Engineering</h2>
+            <p>Jindal Hydro Projects Inc. is a manufacturer, exporter and supplier of hydraulic, recycling and industrial machinery built for dependable production environments.</p>
+            <p>Since 2013, the company has focused on practical engineering, durable fabrication, responsive support and machinery configured around customer capacity, material and site needs.</p>
           </div>
           <div className="about-image reveal reveal-delay-1">
             <img src="/images/homepage.png" alt="Hydraulic recycling machine in operation" />
           </div>
         </section>
 
-        <section className="about-section about-split-dark">
-          <div className="about-copy reveal">
-            <div className="section-label">Who We Are</div>
-            <h2>Industrial Hydraulic Specialists</h2>
-            <p>We combine fabrication strength, hydraulic engineering and application knowledge to deliver machines that suit real operating conditions, not just catalogue specifications.</p>
-          </div>
-          <div className="about-copy reveal reveal-delay-1">
-            <div className="section-label">What We Do</div>
-            <div className="about-offering-grid">
-              {aboutOfferings.map((item) => (
-                <div className="about-mini-card" key={item}>{item}</div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="about-section">
-          <div className="about-section-head reveal">
-            <div className="section-label">At a Glance</div>
-            <h2>Company Highlights</h2>
-          </div>
-          <div className="about-stat-grid">
-            {aboutStats.map(([value, label]) => (
-              <div className="about-stat-card reveal" key={label}>
-                <strong>{value}</strong>
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <section className="about-section about-detail-band">
           <div className="about-section-head reveal">
-            <div className="section-label">Business Details</div>
-            <h2>Structured Company Information</h2>
+            <div className="section-label">Company Details</div>
+            <h2>Key Information</h2>
           </div>
           <div className="business-detail-grid">
             {businessDetails.map(([label, value]) => (
@@ -531,62 +543,143 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="about-section about-manufacturing">
+        <section className="about-section">
           <div className="about-section-head reveal">
-            <div className="section-label">Infrastructure</div>
-            <h2>Manufacturing & Engineering Capability</h2>
+            <div className="section-label">What We Do</div>
+            <h2>Core Product Capabilities</h2>
           </div>
-          <div className="about-media-grid">
-            {['Fabricated machine frames', 'Hydraulic assemblies', 'Testing and commissioning'].map((item, index) => (
-              <div className="about-media-card reveal" key={item}>
-                <img src="/images/homepage.png" alt={item} />
-                <h3>{item}</h3>
-                <p>{index === 0 ? 'Robust steel structures designed for continuous load cycles.' : index === 1 ? 'Power packs, cylinders and control systems matched to machine duty.' : 'Machines checked for operation, fitment and production readiness.'}</p>
+          <div className="about-product-carousel" aria-label="Core product capabilities">
+            {aboutOfferings.map(([title, text, image]) => (
+              <div className="about-product-card reveal" key={title}>
+                <img src={image} alt={title} />
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="about-section about-split-dark">
+        <section className="about-section about-gallery-layout">
           <div className="about-copy reveal">
-            <div className="section-label">Quality</div>
-            <h2>Quality & Commitment</h2>
+            <div className="section-label">Infrastructure</div>
+            <h2>Infrastructure & Manufacturing</h2>
+            <p>Manufacturing capability is organized around robust fabrication, hydraulic integration, tooling control and turnkey machine delivery.</p>
             <ul className="about-check-list">
-              <li>Durable components selected for industrial duty</li>
-              <li>Hydraulic testing before dispatch</li>
-              <li>Practical maintenance access and service support</li>
-              <li>Customer-focused engineering and documentation</li>
+              {infrastructurePoints.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </div>
-          <div className="about-copy reveal reveal-delay-1">
-            <div className="section-label">Why Choose Us</div>
-            <div className="about-strength-grid">
-              {aboutStrengths.map((item) => (
-                <div className="about-strength-card" key={item}>{item}</div>
-              ))}
-            </div>
+          <div className="about-gallery reveal reveal-delay-1">
+            <img src="/images/homepage.png" alt="Hydraulic machine manufacturing" />
+            <img src="/images/homepage.png" alt="Machine fabrication and assembly" />
+            <img src="/images/homepage.png" alt="Industrial recycling equipment" />
+          </div>
+        </section>
+
+        <section className="about-section about-split-dark">
+          <div className="about-copy reveal">
+            <div className="section-label">R&D and Quality</div>
+            <h2>Innovation, Testing and Continuous Improvement</h2>
+            <p>Engineering work is supported by design review, hydraulic validation, quality checkpoints and process discipline aligned with ISO 9001:2015 and TQM practices.</p>
+          </div>
+          <div className="about-strength-grid reveal reveal-delay-1">
+            {qualityPoints.map(([icon, title]) => (
+              <div className="about-strength-card" key={title}>
+                <span className="about-icon">{icon}</span>
+                <p>{title}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-section about-detail-band">
+          <div className="about-section-head reveal">
+            <div className="section-label">Industries We Serve</div>
+            <h2>Designed for Demanding Industrial Sectors</h2>
+          </div>
+          <div className="industry-grid about-icon-grid">
+            {servedIndustries.map(([icon, title]) => (
+              <div className="industry-chip reveal" key={title}>
+                <span className="industry-icon"><IndustryIcon type={icon} /></span>
+                <strong>{title}</strong>
+              </div>
+            ))}
           </div>
         </section>
 
         <section className="about-section">
           <div className="about-section-head reveal">
-            <div className="section-label">Applications</div>
-            <h2>Industries We Serve</h2>
+            <div className="section-label">Our Team</div>
+            <h2>People Behind the Machines</h2>
           </div>
-          <div className="industry-grid">
-            {servedIndustries.map((item) => (
-              <div className="industry-chip reveal" key={item}>{item}</div>
+          <div className="about-card-grid about-team-grid">
+            {teamRoles.map(([title, text, image]) => (
+              <div className="about-team-card reveal" key={title}>
+                <img src={image} alt={title} />
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
             ))}
           </div>
+        </section>
+
+        <section className="about-section about-detail-band">
+          <div className="about-section-head reveal">
+            <div className="section-label">Trusted By</div>
+            <h2>Clients & Industrial Brands</h2>
+          </div>
+          <div className="client-logo-grid">
+            {trustedClients.map((client) => (
+              <div className="client-logo-card reveal" key={client}>{client}</div>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-section">
+          <div className="about-section-head reveal">
+            <div className="section-label">Why Choose Us</div>
+            <h2>Strengths That Matter on the Shop Floor</h2>
+          </div>
+          <div className="about-card-grid about-four-grid">
+            {aboutStrengths.map(([icon, title, text]) => (
+              <div className="about-feature-card reveal" key={title}>
+                <span className="about-icon">{icon}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-section about-services-band">
+          <div className="about-section-head reveal">
+            <div className="section-label">Services</div>
+            <h2>Support Beyond Manufacturing</h2>
+          </div>
+          <div className="about-card-grid about-four-grid">
+            {services.map(([title, text]) => (
+              <div className="about-service-card reveal" key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-section about-vision reveal">
+          <div className="section-label">Future Vision</div>
+          <h2>Expanding Smarter Industrial Solutions</h2>
+          <p>Jindal Hydro Projects Inc. is focused on expanding advanced hydraulic systems, recycling machinery, solar-integrated solutions and export-ready turnkey projects while strengthening research, quality and customer support.</p>
         </section>
 
         <section className="about-cta reveal">
           <div>
             <div className="section-label">Partner With Us</div>
             <h2>Partner with Jindal Hydro Projects Inc.</h2>
-            <p>Tell us your material, capacity and site requirements. Our team will help shape the right hydraulic or recycling machinery configuration.</p>
+            <p>Share your machine requirement, target output and site conditions. Our team will help configure a practical industrial solution.</p>
           </div>
-          <Link className="btn-primary" to="/contact">Contact Us</Link>
+          <Link className="btn-primary" to="/contact">Get a Quote</Link>
         </section>
       </main>
       <Footer />
