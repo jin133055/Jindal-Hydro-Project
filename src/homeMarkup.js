@@ -4,8 +4,8 @@
   <!-- NAV -->
   <nav id="main-nav">
     <div class="nav-logo">
-      <img src="/images/logo_transparent.png" alt="Jindal Hydro Projects logo">
-      <span class="logo-text">Jindal Hydro Projects</span>
+      <img src="/images/logo_transparent.png" alt="Jindal Hydro Projects Inc. logo">
+      <span class="logo-text">Jindal Hydro Projects Inc<span>.</span></span>
     </div>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -16,68 +16,81 @@
             <div class="product-category-column">
               <div class="product-menu-kicker">Explore Machinery</div>
               <div class="product-category is-active">
-                <button class="product-category-toggle" type="button">Hydraulic Cylinders<span>01</span></button>
+                <button class="product-category-toggle" type="button">Hydraulic Baling Press Machine<span>8</span></button>
+                <div class="product-subpanel">
+                  <div class="product-panel-heading">Hydraulic Baling Press Machine</div>
+                  <a class="product-link" href="/product-detail?product=continuous-baler"><strong>Continuous Hydraulic Baler Machine</strong></a>
+                  <a class="product-link" href="/product-detail?product=triple-action-corrugated-baler"><strong>Triple Action Hydraulic Corrugated Cardboard Baler Machine</strong></a>
+                  <a class="product-link" href="/product-detail?product=mini-jumbo-baling-press"><strong>Mini Jumbo Hydraulic Baling Press</strong></a>
+                  <a class="product-link" href="/product-detail?product=heavy-duty-jumbo-baling-press"><strong>Heavy Duty Jumbo Hydraulic Baling Press</strong></a>
+                  <a class="product-link" href="/product-detail?product=double-action-manual-baling-press"><strong>Double Action Hydraulic Baling Press Machine (Manual)</strong></a>
+                  <a class="view-all-link" href="/products?category=hydraulic-baling-press">+ View all</a>
+                </div>
+              </div>
+              <div class="product-category">
+                <button class="product-category-toggle" type="button">Hydraulic Presses<span>6</span></button>
+                <div class="product-subpanel">
+                  <div class="product-panel-heading">Hydraulic Presses</div>
+                  <a class="product-link" href="/product-detail?product=hydraulic-press-brake"><strong>Hydraulic Press Brake</strong></a>
+                  <a class="product-link" href="/product-detail?product=h-frame-hydraulic-press"><strong>H Frame Hydraulic Press</strong></a>
+                  <a class="product-link" href="/product-detail?product=c-frame-hydraulic-press"><strong>C Frame Hydraulic Press</strong></a>
+                  <a class="product-link" href="/product-detail?product=deep-drawing-press"><strong>Deep Drawing Hydraulic Press</strong></a>
+                  <a class="product-link" href="/product-detail?product=rubber-moulding-press"><strong>Rubber Moulding Hydraulic Press</strong></a>
+                  <a class="view-all-link" href="/products?category=hydraulic-presses">+ View all</a>
+                </div>
+              </div>
+              <div class="product-category">
+                <button class="product-category-toggle" type="button">Hydraulic Cylinders<span>6</span></button>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Hydraulic Cylinders</div>
-                  <a class="product-link" href="/product-detail?product=double-acting-cylinder"><strong>Double Acting Hydraulic Cylinder</strong><small>Up to 250 bar operating pressure</small></a>
-                  <a class="product-link" href="/product-detail?product=front-flange-cylinder"><strong>Front Flange Cylinder</strong><small>Rigid mounting for press applications</small></a>
-                  <a class="product-link" href="/product-detail?product=industrial-pneumatic-cylinder"><strong>Industrial Pneumatic Cylinder</strong><small>Fast automation-ready motion control</small></a>
-                  <a class="product-link" href="/product-detail?product=telescopic-cylinder"><strong>Telescopic Hydraulic Cylinder</strong><small>Long stroke in compact installations</small></a>
-                  <a class="view-all-link" href="/products?category=hydraulic-cylinders">View All Cylinders</a>
+                  <a class="product-link" href="/product-detail?product=double-acting-cylinder"><strong>Double Acting Hydraulic Cylinder</strong></a>
+                  <a class="product-link" href="/product-detail?product=front-flange-cylinder"><strong>Front Flange Cylinder</strong></a>
+                  <a class="product-link" href="/product-detail?product=industrial-pneumatic-cylinder"><strong>Industrial Pneumatic Cylinder</strong></a>
+                  <a class="product-link" href="/product-detail?product=telescopic-cylinder"><strong>Telescopic Hydraulic Cylinder</strong></a>
+                  <a class="product-link" href="/product-detail?product=tie-rod-cylinder"><strong>Tie Rod Hydraulic Cylinder</strong></a>
+                  <a class="view-all-link" href="/products?category=hydraulic-cylinders">+ View all</a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Power Packs<span>02</span></button>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Power Packs</div>
-                  <a class="product-link" href="/product-detail?product=hydraulic-power-pack"><strong>Hydraulic Power Pack</strong><small>Central HPU for heavy machinery</small></a>
-                  <a class="product-link" href="/product-detail?product=compact-power-pack"><strong>Compact Power Pack</strong><small>Space-saving hydraulic power unit</small></a>
-                  <a class="product-link" href="/product-detail?product=custom-power-unit"><strong>Custom Power Unit</strong><small>Built for site-specific duty cycles</small></a>
-                  <a class="view-all-link" href="/products?category=power-packs">View All Power Packs</a>
-                </div>
-              </div>
-              <div class="product-category">
-                <button class="product-category-toggle" type="button">Presses<span>03</span></button>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Presses</div>
-                  <a class="product-link" href="/product-detail?product=vertical-baling-press"><strong>Vertical Baling Press</strong><small>Compact press for low footprint sites</small></a>
-                  <a class="product-link" href="/product-detail?product=scrap-baling-press"><strong>Hydraulic Scrap Baling Press</strong><small>High density scrap compaction</small></a>
-                  <a class="product-link" href="/product-detail?product=press-brake"><strong>Hydraulic Press Brake</strong><small>Precision bending and forming</small></a>
-                  <a class="view-all-link" href="/products?category=presses">View All Presses</a>
-                </div>
-              </div>
-              <div class="product-category">
-                <button class="product-category-toggle" type="button">Recycling Machines<span>04</span></button>
+                <button class="product-category-toggle" type="button">Recycling Machines<span>6</span></button>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Recycling Machines</div>
-                  <a class="product-link" href="/product-detail?product=industrial-shredder"><strong>Industrial Shredder</strong><small>Twin-shaft shredding for scrap streams</small></a>
-                  <a class="product-link" href="/product-detail?product=alligator-shear"><strong>Alligator Shear</strong><small>Fast cutting for scrap yards</small></a>
-                  <a class="product-link" href="/product-detail?product=guillotine-shear"><strong>Guillotine Shear</strong><small>Heavy plate and metal section cutting</small></a>
-                  <a class="view-all-link" href="/products?category=recycling-machines">View All Recycling Machines</a>
+                  <a class="product-link" href="/product-detail?product=industrial-shredder"><strong>Industrial Shredder</strong></a>
+                  <a class="product-link" href="/product-detail?product=alligator-shear"><strong>Alligator Shear</strong></a>
+                  <a class="product-link" href="/product-detail?product=guillotine-shear"><strong>Guillotine Shear</strong></a>
+                  <a class="product-link" href="/product-detail?product=metal-chip-briquetting-machine"><strong>Metal Chip Briquetting Machine</strong></a>
+                  <a class="product-link" href="/product-detail?product=drum-crusher"><strong>Drum Crusher</strong></a>
+                  <a class="view-all-link" href="/products?category=recycling-machines">+ View all</a>
+                </div>
+              </div>
+              <div class="product-category">
+                <button class="product-category-toggle" type="button">Power Packs &amp; Systems<span>5</span></button>
+                <div class="product-subpanel">
+                  <div class="product-panel-heading">Power Packs &amp; Systems</div>
+                  <a class="product-link" href="/product-detail?product=hydraulic-power-pack"><strong>Hydraulic Power Pack</strong></a>
+                  <a class="product-link" href="/product-detail?product=compact-power-pack"><strong>Compact Power Pack</strong></a>
+                  <a class="product-link" href="/product-detail?product=custom-power-unit"><strong>Custom Power Unit</strong></a>
+                  <a class="product-link" href="/product-detail?product=hydraulic-manifold-block"><strong>Hydraulic Manifold Block</strong></a>
+                  <a class="product-link" href="/product-detail?product=oil-filtration-system"><strong>Oil Filtration System</strong></a>
+                  <a class="view-all-link" href="/products?category=power-packs">+ View all</a>
+                </div>
+              </div>
+              <div class="product-category">
+                <button class="product-category-toggle" type="button">Material Handling<span>4</span></button>
+                <div class="product-subpanel">
+                  <div class="product-panel-heading">Material Handling</div>
+                  <a class="product-link" href="/product-detail?product=rotating-tower-crane"><strong>Rotating Tower Crane</strong></a>
+                  <a class="product-link" href="/product-detail?product=hydraulic-grabber"><strong>Hydraulic Grabber</strong></a>
+                  <a class="product-link" href="/product-detail?product=charging-conveyor"><strong>Charging Conveyor</strong></a>
+                  <a class="product-link" href="/product-detail?product=scrap-loader"><strong>Scrap Loader</strong></a>
+                  <a class="view-all-link" href="/products?category=material-handling">+ View all</a>
                 </div>
               </div>
             </div>
-            <div class="product-menu-feature">
-              <span>Product Detail Preview</span>
-              <strong>Choose a machine to view specs, image, and working video.</strong>
-              <p>Pressure, power, stroke, material, and commissioning notes are organized into a clean product page.</p>
-            </div>
           </div>
         </div>
       </li>
-      <li class="has-dropdown">
-        <a href="#">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
-        <div class="nav-dropdown nav-dropdown--list">
-          <div class="dropdown-inner">
-            <div class="dropdown-col">
-              <a href="#" class="dropdown-item"><span class="di-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path d="M9 12l2 2 4-4"></path></svg></span><span><strong>Metal Recycling</strong><small>End-to-end scrap processing</small></span></a>
-              <a href="#" class="dropdown-item"><span class="di-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg></span><span><strong>Waste Management</strong><small>Municipal &amp; industrial waste</small></span></a>
-              <a href="#" class="dropdown-item"><span class="di-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4l3 3"></path></svg></span><span><strong>Scrap Processing</strong><small>Automotive &amp; industrial scrap</small></span></a>
-              <a href="#" class="dropdown-item"><span class="di-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="1"></rect><path d="M16 7V5a2 2 0 00-4 0v2"></path></svg></span><span><strong>Custom Engineering</strong><small>Bespoke hydraulic systems</small></span></a>
-            </div>
-          </div>
-        </div>
-      </li>
+      <li><a href="/solutions">Solutions</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/case-studies">Case Studies</a></li>
       <li><a href="/blog">Blog</a></li>
@@ -329,7 +342,7 @@
   <!-- WHY CHOOSE US -->
   <section class="section why-section">
     <div class="section-inner">
-      <div class="section-label">Why Jindal Hydro Projects</div>
+      <div class="section-label">Why Jindal Hydro Projects Inc.</div>
       <h2 class="section-h2 light-text">Built Different.<br>Proven Globally.</h2>
       <div class="why-grid">
         <div class="why-card reveal">
@@ -508,7 +521,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <div class="footer-brand-name">Jindal Hydro Projects<span></span></div>
+          <div class="footer-brand-name">Jindal Hydro Projects Inc<span>.</span></div>
           <div class="footer-tagline">Advanced hydraulic and recycling solutions engineered for global industrial applications since 1998.</div>
           <div class="footer-social">
             <div class="social-btn">
@@ -545,7 +558,7 @@
         <div class="footer-col">
           <h5>Company</h5>
           <ul>
-            <li><a href="#">About Jindal Hydro Projects</a></li>
+            <li><a href="/about">About Jindal Hydro Projects Inc.</a></li>
             <li><a href="#">Case Studies</a></li>
             <li><a href="#">Certifications</a></li>
             <li><a href="#">Global Network</a></li>
@@ -554,7 +567,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-copy">Â© 2025 Jindal Hydro Projects Industries. All rights reserved.</div>
+        <div class="footer-copy">© 2026 Jindal Hydro Projects Inc. All rights reserved.</div>
         <div class="footer-cert">
           <div class="cert-badge">ISO 9001:2015</div>
           <div class="cert-badge">CE Certified</div>
