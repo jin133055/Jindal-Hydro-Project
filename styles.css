@@ -1,11 +1,12 @@
 :root {
-  --black: #0F0F0F;
+  --black:  #0C0C0C;
   --dark: #1A1A1A;
   --steel: #2B2B2B;
   --light: #F5F5F5;
-  --yellow: #FFC107;
+  --yellow: #FFCC0C;
   --yellow-dark: #E6AC00;
-  --green: #22C55E;
+  --green: #7EB038;
+  --dark-green: #2D561A;
   --white: #FFFFFF;
   --text-muted: #9CA3AF;
   --text-mid: #6B7280;
@@ -39,7 +40,7 @@ nav {
 .nav-logo:hover,
 .nav-logo:focus,
 .nav-logo:visited {
-  color: var(--white);
+  color: var(--green);
   text-decoration: none;
 }
 .nav-logo img {
@@ -1600,7 +1601,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   transition: opacity 0.22s, transform 0.22s, visibility 0.22s;
   z-index: 200; min-width: 220px;
 }
-.has-dropdown:hover .nav-dropdown {
+.has-dropdown:not(.products-nav):hover .nav-dropdown {
   opacity: 1; pointer-events: all; visibility: visible; transform: translateX(-50%) translateY(0);
 }
 .nav-dropdown--mega { left: 0; transform: translateX(-20%) translateY(-8px); min-width: 860px; }
@@ -1631,21 +1632,24 @@ footer { background: #080808; padding: 60px 5% 32px; }
 .dropdown-footer-link a:hover { text-decoration: underline; }
 
 /* PRODUCTS MEGA MENU */
-.products-nav { position: static !important; }
+.products-nav { position: relative !important; display: inline-flex; }
 .product-mega {
-  left: 5%;
-  right: 5%;
-  top: 72px;
-  transform: translateY(-10px);
+  display: none;
+  left: 0;
+  right: auto;
+  top: 100%;
+  transform: translateY(-8px);
   min-width: 0;
-  width: auto;
+  width: min(720px, calc(100vw - 32px));
   background: rgba(10,10,10,0.98);
   border: 1px solid rgba(255,193,7,0.22);
   box-shadow: 0 28px 80px rgba(0,0,0,0.72), inset 0 1px 0 rgba(255,255,255,0.04);
 }
-.has-dropdown:hover .product-mega,
-.products-nav.open .product-mega,
-.products-nav.is-hovered .product-mega {
+.products-nav > a:hover + .product-mega,
+.product-mega:hover,
+.products-nav:focus-within .product-mega,
+.products-nav.open .product-mega {
+  display: block;
   opacity: 1;
   pointer-events: all;
   visibility: visible;
@@ -1862,22 +1866,17 @@ footer { background: #080808; padding: 60px 5% 32px; }
 
 /* COMPACT DARK PRODUCT EXPLORER */
 .product-mega {
-  left: 22%;
+  left: 0;
   right: auto;
-  width: min(720px, 90vw);
-  top: 66px;
-  padding-top: 12px;
+  width: min(720px, calc(100vw - 32px));
+  top: 100%;
+  padding-top: 0;
   background: transparent;
   border: 0;
   box-shadow: none;
 }
 .product-mega::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -18px;
-  height: 26px;
+  content: none;
 }
 .product-mega-shell {
   background: #161616;
@@ -1919,7 +1918,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   color: var(--yellow);
 }
 .product-subpanel {
-  width: calc(min(720px, 90vw) - 260px);
+  width: calc(min(720px, calc(100vw - 32px)) - 260px);
   min-height: 300px;
   padding: 22px;
   background: #202020;

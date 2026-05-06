@@ -44,24 +44,6 @@ export function useSiteInteractions(page) {
       return [button, handler];
     });
 
-    const productNav = document.querySelector('.products-nav');
-    const productMega = document.querySelector('.product-mega');
-    let productCloseTimer = 0;
-    const openProductsMenu = () => {
-      window.clearTimeout(productCloseTimer);
-      productNav?.classList.add('is-hovered');
-    };
-    const scheduleProductsClose = () => {
-      window.clearTimeout(productCloseTimer);
-      productCloseTimer = window.setTimeout(() => {
-        productNav?.classList.remove('is-hovered');
-      }, 260);
-    };
-    productNav?.addEventListener('mouseenter', openProductsMenu);
-    productNav?.addEventListener('mouseleave', scheduleProductsClose);
-    productMega?.addEventListener('mouseenter', openProductsMenu);
-    productMega?.addEventListener('mouseleave', scheduleProductsClose);
-
     const scrollButtons = Array.from(document.querySelectorAll('[data-scroll-target]'));
     const scrollHandlers = scrollButtons.map((button) => {
       const handler = () => {
@@ -79,11 +61,6 @@ export function useSiteInteractions(page) {
       navToggle?.removeEventListener('click', handleNavToggle);
       dropdownHandlers.forEach(([link, handler]) => link.removeEventListener('click', handler));
       productCategoryHandlers.forEach(([button, handler]) => button.removeEventListener('click', handler));
-      window.clearTimeout(productCloseTimer);
-      productNav?.removeEventListener('mouseenter', openProductsMenu);
-      productNav?.removeEventListener('mouseleave', scheduleProductsClose);
-      productMega?.removeEventListener('mouseenter', openProductsMenu);
-      productMega?.removeEventListener('mouseleave', scheduleProductsClose);
       scrollHandlers.forEach(([button, handler]) => button.removeEventListener('click', handler));
       cleanupBaler?.();
     };
