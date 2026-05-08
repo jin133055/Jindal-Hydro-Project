@@ -407,15 +407,14 @@ function ProductsMegaMenu() {
             <div className="product-menu-kicker">Explore Machinery</div>
             {productCategories.map((category, index) => (
               <div className={`product-category ${index === 0 ? 'is-active' : ''}`} key={category.name}>
-                <button className="product-category-toggle" type="button">{category.name}<span>{category.products.length}</span></button>
+                <Link className="product-category-toggle" to={category.viewAll}>{category.name}<span>{category.products.length}</span></Link>
                 <div className="product-subpanel">
                   <div className="product-panel-heading">{category.name}</div>
-                  {category.products.slice(0, 5).map((product) => (
+                  {category.products.map((product) => (
                     <Link className="product-link" to={`/product-detail?product=${product.slug}`} key={product.slug}>
                       <strong>{product.name}</strong>
                     </Link>
                   ))}
-                  <Link className="view-all-link" to={category.viewAll}>+ View all</Link>
                 </div>
               </div>
             ))}
@@ -762,7 +761,7 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="about-section about-detail-band">
+        <section className="about-section about-detail-band about-industries-band">
           <div className="about-section-head reveal">
             <div className="section-label">Industries We Serve</div>
             <h2>Designed for Demanding Industrial Sectors</h2>
@@ -805,7 +804,7 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="about-section">
+        <section className="about-section about-why-section">
           <div className="about-section-head reveal">
             <div className="section-label">Why Choose Us</div>
             <h2>Strengths That Matter on the Shop Floor</h2>
@@ -873,6 +872,9 @@ function ProductDetailPage() {
               <details className="product-sidebar-group" open={category.name === product.category} key={category.name}>
                 <summary>{category.name} <span>({category.products.length})</span></summary>
                 <div className="product-sidebar-links">
+                  <Link className="sidebar-product-link" to={category.viewAll}>
+                    All {category.name}
+                  </Link>
                   {category.products.map((item) => (
                     <Link
                       className={`sidebar-product-link ${item.slug === currentSlug ? 'active' : ''}`}
@@ -882,7 +884,6 @@ function ProductDetailPage() {
                       {item.name}
                     </Link>
                   ))}
-                  <Link className="sidebar-view-all" to={category.viewAll}>+ View all</Link>
                 </div>
               </details>
             ))}
@@ -1011,6 +1012,19 @@ function ProductDetailPage() {
 }
 
 function ProductsPage() {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const activeCategoryParam = params.get('category');
+  const activeCategory = productCategories.find((category) => category.viewAll.includes(`category=${activeCategoryParam}`));
+  const listedCategories = activeCategory ? [activeCategory] : productCategories;
+  const listedProducts = listedCategories.flatMap((category) => (
+    category.products.map((item) => ({
+      ...item,
+      category: category.name,
+      detail: getProductDetail(item.slug),
+    }))
+  ));
+
   return (
     <>
       <Header />
@@ -1019,9 +1033,15 @@ function ProductsPage() {
           <aside className="product-sidebar">
             <h2>Products We Offer</h2>
             {productCategories.map((category) => (
-              <details className="product-sidebar-group" open key={category.name}>
+              <details className="product-sidebar-group" open={!activeCategory || activeCategory.name === category.name} key={category.name}>
                 <summary>{category.name} <span>({category.products.length})</span></summary>
                 <div className="product-sidebar-links">
+                  <Link
+                    className={`sidebar-product-link ${activeCategory?.name === category.name ? 'active' : ''}`}
+                    to={category.viewAll}
+                  >
+                    All {category.name}
+                  </Link>
                   {category.products.map((item) => (
                     <Link className="sidebar-product-link" to={`/product-detail?product=${item.slug}`} key={item.slug}>
                       {item.name}
@@ -1034,8 +1054,24 @@ function ProductsPage() {
           <section className="product-display">
             <div className="product-listing-header">
               <div className="section-label">Products</div>
-              <h1>Explore Industrial Hydraulic Machinery</h1>
-              <p>Select a product from the left catalogue to view specifications, application details, and video.</p>
+              <h1>{activeCategory?.name || 'Our Machinery'}</h1>
+              <p>{activeCategory ? `Browse all products in ${activeCategory.name}.` : 'Browse all product categories or select a product from the left catalogue to view specifications, application details, and video.'}</p>
+            </div>
+
+            <div className="product-listing-grid">
+              {listedProducts.map((product) => (
+                <article className="product-listing-card reveal" key={product.slug}>
+                  <div className="product-listing-image">
+                    <img src="/images/homepage.png" alt={product.name} />
+                  </div>
+                  <div className="product-listing-body">
+                    <div className="product-listing-category">{product.category}</div>
+                    <h2>{product.name}</h2>
+                    <p>{product.detail.description}</p>
+                  </div>
+                  <Link className="product-listing-action" to={`/product-detail?product=${product.slug}`}>Learn More</Link>
+                </article>
+              ))}
             </div>
           </section>
         </div>

@@ -16,7 +16,7 @@
             <div class="product-category-column">
               <div class="product-menu-kicker">Explore Machinery</div>
               <div class="product-category is-active">
-                <button class="product-category-toggle" type="button">Hydraulic Baling Press Machine<span>8</span></button>
+                <a class="product-category-toggle" href="/products?category=hydraulic-baling-press">Hydraulic Baling Press Machine<span>8</span></a>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Hydraulic Baling Press Machine</div>
                   <a class="product-link" href="/product-detail?product=continuous-baler"><strong>Continuous Hydraulic Baler Machine</strong></a>
@@ -24,11 +24,13 @@
                   <a class="product-link" href="/product-detail?product=mini-jumbo-baling-press"><strong>Mini Jumbo Hydraulic Baling Press</strong></a>
                   <a class="product-link" href="/product-detail?product=heavy-duty-jumbo-baling-press"><strong>Heavy Duty Jumbo Hydraulic Baling Press</strong></a>
                   <a class="product-link" href="/product-detail?product=double-action-manual-baling-press"><strong>Double Action Hydraulic Baling Press Machine (Manual)</strong></a>
-                  <a class="view-all-link" href="/products?category=hydraulic-baling-press">+ View all</a>
+                  <a class="product-link" href="/product-detail?product=jumbo-baling-press-without-hopper"><strong>Jumbo Hydraulic Baling Press Without Hopper</strong></a>
+                  <a class="product-link" href="/product-detail?product=vertical-baling-press"><strong>Vertical Hydraulic Baling Press</strong></a>
+                  <a class="product-link" href="/product-detail?product=horizontal-baling-press"><strong>Horizontal Hydraulic Baling Press</strong></a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Hydraulic Presses<span>6</span></button>
+                <a class="product-category-toggle" href="/products?category=hydraulic-presses">Hydraulic Presses<span>6</span></a>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Hydraulic Presses</div>
                   <a class="product-link" href="/product-detail?product=hydraulic-press-brake"><strong>Hydraulic Press Brake</strong></a>
@@ -36,11 +38,11 @@
                   <a class="product-link" href="/product-detail?product=c-frame-hydraulic-press"><strong>C Frame Hydraulic Press</strong></a>
                   <a class="product-link" href="/product-detail?product=deep-drawing-press"><strong>Deep Drawing Hydraulic Press</strong></a>
                   <a class="product-link" href="/product-detail?product=rubber-moulding-press"><strong>Rubber Moulding Hydraulic Press</strong></a>
-                  <a class="view-all-link" href="/products?category=hydraulic-presses">+ View all</a>
+                  <a class="product-link" href="/product-detail?product=powder-compacting-press"><strong>Powder Compacting Hydraulic Press</strong></a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Hydraulic Cylinders<span>6</span></button>
+                <a class="product-category-toggle" href="/products?category=hydraulic-cylinders">Hydraulic Cylinders<span>6</span></a>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Hydraulic Cylinders</div>
                   <a class="product-link" href="/product-detail?product=double-acting-cylinder"><strong>Double Acting Hydraulic Cylinder</strong></a>
@@ -48,11 +50,11 @@
                   <a class="product-link" href="/product-detail?product=industrial-pneumatic-cylinder"><strong>Industrial Pneumatic Cylinder</strong></a>
                   <a class="product-link" href="/product-detail?product=telescopic-cylinder"><strong>Telescopic Hydraulic Cylinder</strong></a>
                   <a class="product-link" href="/product-detail?product=tie-rod-cylinder"><strong>Tie Rod Hydraulic Cylinder</strong></a>
-                  <a class="view-all-link" href="/products?category=hydraulic-cylinders">+ View all</a>
+                  <a class="product-link" href="/product-detail?product=welded-cylinder"><strong>Welded Body Hydraulic Cylinder</strong></a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Recycling Machines<span>6</span></button>
+                <a class="product-category-toggle" href="/products?category=recycling-machines">Recycling Machines<span>6</span></a>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Recycling Machines</div>
                   <a class="product-link" href="/product-detail?product=industrial-shredder"><strong>Industrial Shredder</strong></a>
@@ -60,11 +62,11 @@
                   <a class="product-link" href="/product-detail?product=guillotine-shear"><strong>Guillotine Shear</strong></a>
                   <a class="product-link" href="/product-detail?product=metal-chip-briquetting-machine"><strong>Metal Chip Briquetting Machine</strong></a>
                   <a class="product-link" href="/product-detail?product=drum-crusher"><strong>Drum Crusher</strong></a>
-                  <a class="view-all-link" href="/products?category=recycling-machines">+ View all</a>
+                  <a class="product-link" href="/product-detail?product=scrap-grabber"><strong>Scrap Grabber</strong></a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Power Packs &amp; Systems<span>5</span></button>
+                <a class="product-category-toggle" href="/products?category=power-packs">Power Packs &amp; Systems<span>5</span></a>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Power Packs &amp; Systems</div>
                   <a class="product-link" href="/product-detail?product=hydraulic-power-pack"><strong>Hydraulic Power Pack</strong></a>
@@ -72,18 +74,16 @@
                   <a class="product-link" href="/product-detail?product=custom-power-unit"><strong>Custom Power Unit</strong></a>
                   <a class="product-link" href="/product-detail?product=hydraulic-manifold-block"><strong>Hydraulic Manifold Block</strong></a>
                   <a class="product-link" href="/product-detail?product=oil-filtration-system"><strong>Oil Filtration System</strong></a>
-                  <a class="view-all-link" href="/products?category=power-packs">+ View all</a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Material Handling<span>4</span></button>
+                <a class="product-category-toggle" href="/products?category=material-handling">Material Handling<span>4</span></a>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Material Handling</div>
                   <a class="product-link" href="/product-detail?product=rotating-tower-crane"><strong>Rotating Tower Crane</strong></a>
                   <a class="product-link" href="/product-detail?product=hydraulic-grabber"><strong>Hydraulic Grabber</strong></a>
                   <a class="product-link" href="/product-detail?product=charging-conveyor"><strong>Charging Conveyor</strong></a>
                   <a class="product-link" href="/product-detail?product=scrap-loader"><strong>Scrap Loader</strong></a>
-                  <a class="view-all-link" href="/products?category=material-handling">+ View all</a>
                 </div>
               </div>
             </div>
@@ -111,8 +111,8 @@
       <h1>Engineering the<br><em>Future</em> of<br>Recycling</h1>
       <p class="hero-sub">High-performance hydraulic machinery and recycling systems built for the demands of global industrial operations.</p>
       <div class="hero-btns">
-        <button class="btn-primary">Explore Products</button>
-        <button class="btn-secondary">View Case Studies</button>
+        <a class="btn-primary" href="/products">Explore Products</a>
+        <a class="btn-secondary" href="/case-studies">View Case Studies</a>
       </div>
     </div>
     <div class="hero-right">
@@ -205,7 +205,7 @@
           <div class="section-label">Our Machinery</div>
           <h2 class="section-h2 light-text">High-Performance<br>Industrial Equipment</h2>
         </div>
-        <button class="btn-secondary">View All Products</button>
+        <a class="btn-secondary" href="/products">View All Products</a>
       </div>
       <div class="products-grid">
         <div class="product-card reveal">
