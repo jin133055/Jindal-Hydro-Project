@@ -294,7 +294,7 @@
         <div class="process-line"></div>
         <div class="process-step reveal">
           <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14M5 12h14M5 16h8"></path><circle cx="18" cy="16" r="3"></circle></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V7h11v9"></path><path d="M14 11h3l4 4v1h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle><path d="M5 11h5"></path></svg>
           </div>
           <div class="step-num">01</div>
           <div class="step-name">Collection</div>
@@ -302,7 +302,7 @@
         </div>
         <div class="process-step reveal reveal-delay-1">
           <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"></path><path d="M7 12h10"></path><path d="M10 19h4"></path><path d="M5 5l6 7v7"></path><path d="M19 5l-6 7v7"></path></svg>
           </div>
           <div class="step-num">02</div>
           <div class="step-name">Sorting</div>
@@ -310,7 +310,7 @@
         </div>
         <div class="process-step reveal reveal-delay-2">
           <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="4"></circle><circle cx="16" cy="12" r="4"></circle><path d="M8 8v8M4 12h8M16 8v8M12 12h8"></path></svg>
           </div>
           <div class="step-num">03</div>
           <div class="step-name">Shredding</div>
@@ -318,7 +318,7 @@
         </div>
         <div class="process-step reveal reveal-delay-3">
           <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"></rect><path d="M9 9h6v6H9z"></path></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"></path><path d="M8 4v6"></path><path d="M16 4v6"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path><path d="M9 10h6"></path></svg>
           </div>
           <div class="step-num">04</div>
           <div class="step-name">Compacting</div>
@@ -326,7 +326,7 @@
         </div>
         <div class="process-step reveal reveal-delay-4">
           <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8l8-4 8 4-8 4-8-4z"></path><path d="M4 8v8l8 4 8-4V8"></path><path d="M9 15l2 2 5-6"></path></svg>
           </div>
           <div class="step-num">05</div>
           <div class="step-name">Output</div>

@@ -296,10 +296,10 @@ const infrastructurePoints = [
 ];
 
 const qualityPoints = [
-  ['IN', 'Innovation-focused design for better uptime and maintainability'],
-  ['TS', 'Testing of hydraulic assemblies, controls and machine operation'],
-  ['ISO', 'ISO 9001:2015 quality alignment with TQM-led practices'],
-  ['QA', 'Inspection checkpoints from fabrication through commissioning'],
+  ['innovation', 'Innovation-focused design for better uptime and maintainability'],
+  ['testing', 'Testing of hydraulic assemblies, controls and machine operation'],
+  ['iso', 'ISO 9001:2015 quality alignment with TQM-led practices'],
+  ['inspection', 'Inspection checkpoints from fabrication through commissioning'],
 ];
 
 const teamRoles = [
@@ -668,6 +668,18 @@ function IndustryIcon({ type }) {
   return <svg {...common}>{icons[type] || icons.factory}</svg>;
 }
 
+function QualityIcon({ type }) {
+  const common = { width: '26', height: '26', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '1.8', strokeLinecap: 'round', strokeLinejoin: 'round' };
+  const icons = {
+    innovation: <><path d="M9 18h6" /><path d="M10 22h4" /><path d="M8.5 14.5A6 6 0 1 1 15.5 14.5c-.8.6-1.2 1.4-1.4 2.5H9.9c-.2-1.1-.6-1.9-1.4-2.5z" /><path d="M12 2v2M4.9 4.9l1.4 1.4M19.1 4.9l-1.4 1.4" /></>,
+    testing: <><path d="M14 2v6l4.5 7.5A4 4 0 0 1 15.1 22H8.9a4 4 0 0 1-3.4-6.5L10 8V2" /><path d="M8 2h8" /><path d="M8.2 16h7.6" /><path d="M10 12h4" /></>,
+    iso: <><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6l7-4z" /><path d="M8.5 12l2.2 2.2 4.8-5" /></>,
+    inspection: <><path d="M9 3h6l1 2h3v16H5V5h3l1-2z" /><path d="M9 12l2 2 4-4" /><path d="M8 18h8" /></>,
+  };
+
+  return <svg {...common}>{icons[type] || icons.innovation}</svg>;
+}
+
 function AboutPage() {
   return (
     <>
@@ -754,7 +766,7 @@ function AboutPage() {
           <div className="about-strength-grid reveal reveal-delay-1">
             {qualityPoints.map(([icon, title]) => (
               <div className="about-strength-card" key={title}>
-                <span className="about-icon">{icon}</span>
+                <span className="about-icon"><QualityIcon type={icon} /></span>
                 <p>{title}</p>
               </div>
             ))}

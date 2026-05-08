@@ -1136,6 +1136,10 @@ nav {
   font-size: 0.78rem;
   letter-spacing: 0.04em;
 }
+.about-icon svg {
+  width: 24px;
+  height: 24px;
+}
 .about-feature-card .about-icon,
 .about-split-dark .about-icon {
   background: var(--dark-green);
