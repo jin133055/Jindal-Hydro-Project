@@ -1122,7 +1122,13 @@ function ProductsPage() {
 }
 
 export default function App({ page }) {
+  const location = useLocation();
+
   useSiteInteractions(page);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [location.pathname, location.search]);
 
   if (page === 'home') {
     return <div dangerouslySetInnerHTML={{ __html: homeMarkup }} />;
