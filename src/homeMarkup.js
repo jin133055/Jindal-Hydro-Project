@@ -3,12 +3,11 @@
 
   <!-- NAV -->
   <nav id="main-nav">
-    <div class="nav-logo">
+    <a class="nav-logo" href="/">
       <img src="/images/logo_transparent.png" alt="Jindal Hydro Projects Inc. logo">
       <span class="logo-text">Jindal Hydro Projects Inc<span>.</span></span>
-    </div>
+    </a>
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
       <li class="has-dropdown products-nav">
         <a href="/products">Products <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
         <div class="nav-dropdown product-mega">
@@ -16,7 +15,7 @@
             <div class="product-category-column">
               <div class="product-menu-kicker">Explore Machinery</div>
               <div class="product-category is-active">
-                <a class="product-category-toggle" href="/products?category=hydraulic-baling-press">Hydraulic Baling Press Machine<span>8</span></a>
+                <button class="product-category-toggle" type="button">Hydraulic Baling Press Machine<span>8</span></button>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Hydraulic Baling Press Machine</div>
                   <a class="product-link" href="/product-detail?product=continuous-baler"><strong>Continuous Hydraulic Baler Machine</strong></a>
@@ -30,7 +29,7 @@
                 </div>
               </div>
               <div class="product-category">
-                <a class="product-category-toggle" href="/products?category=hydraulic-presses">Hydraulic Presses<span>6</span></a>
+                <button class="product-category-toggle" type="button">Hydraulic Presses<span>6</span></button>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Hydraulic Presses</div>
                   <a class="product-link" href="/product-detail?product=hydraulic-press-brake"><strong>Hydraulic Press Brake</strong></a>
@@ -42,7 +41,7 @@
                 </div>
               </div>
               <div class="product-category">
-                <a class="product-category-toggle" href="/products?category=hydraulic-cylinders">Hydraulic Cylinders<span>6</span></a>
+                <button class="product-category-toggle" type="button">Hydraulic Cylinders<span>6</span></button>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Hydraulic Cylinders</div>
                   <a class="product-link" href="/product-detail?product=double-acting-cylinder"><strong>Double Acting Hydraulic Cylinder</strong></a>
@@ -54,7 +53,7 @@
                 </div>
               </div>
               <div class="product-category">
-                <a class="product-category-toggle" href="/products?category=recycling-machines">Recycling Machines<span>6</span></a>
+                <button class="product-category-toggle" type="button">Recycling Machines<span>6</span></button>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Recycling Machines</div>
                   <a class="product-link" href="/product-detail?product=industrial-shredder"><strong>Industrial Shredder</strong></a>
@@ -66,7 +65,7 @@
                 </div>
               </div>
               <div class="product-category">
-                <a class="product-category-toggle" href="/products?category=power-packs">Power Packs &amp; Systems<span>5</span></a>
+                <button class="product-category-toggle" type="button">Power Packs &amp; Systems<span>5</span></button>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Power Packs &amp; Systems</div>
                   <a class="product-link" href="/product-detail?product=hydraulic-power-pack"><strong>Hydraulic Power Pack</strong></a>
@@ -77,7 +76,7 @@
                 </div>
               </div>
               <div class="product-category">
-                <a class="product-category-toggle" href="/products?category=material-handling">Material Handling<span>4</span></a>
+                <button class="product-category-toggle" type="button">Material Handling<span>4</span></button>
                 <div class="product-subpanel">
                   <div class="product-panel-heading">Material Handling</div>
                   <a class="product-link" href="/product-detail?product=rotating-tower-crane"><strong>Rotating Tower Crane</strong></a>
@@ -96,7 +95,6 @@
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
-    <a class="nav-phone" href="tel:+919868247362">+91 9868247362</a>
     <a class="nav-cta" href="/contact">Get a Quote</a>
     <button class="nav-mobile-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -310,7 +308,7 @@
         </div>
         <div class="process-step reveal reveal-delay-2">
           <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="4"></circle><circle cx="16" cy="12" r="4"></circle><path d="M8 8v8M4 12h8M16 8v8M12 12h8"></path></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"></rect><circle cx="9" cy="12" r="3"></circle><circle cx="15" cy="12" r="3"></circle><path d="M9 9v6M6 12h6M15 9v6M12 12h6"></path><path d="M6 3h12"></path><path d="M7 21h10"></path></svg>
           </div>
           <div class="step-num">03</div>
           <div class="step-name">Shredding</div>
@@ -318,7 +316,7 @@
         </div>
         <div class="process-step reveal reveal-delay-3">
           <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"></path><path d="M8 4v6"></path><path d="M16 4v6"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path><path d="M9 10h6"></path></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 7h8"></path><path d="M12 7v5"></path><path d="M7 15h10v3H7z"></path><path d="M9 12h6"></path><path d="M6 21h12"></path></svg>
           </div>
           <div class="step-num">04</div>
           <div class="step-name">Compacting</div>
@@ -326,7 +324,7 @@
         </div>
         <div class="process-step reveal reveal-delay-4">
           <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8l8-4 8 4-8 4-8-4z"></path><path d="M4 8v8l8 4 8-4V8"></path><path d="M9 15l2 2 5-6"></path></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="10" height="7" rx="1"></rect><path d="M14 11h4l2 2v3h-6"></path><path d="M6 16v2h12v-2"></path><circle cx="7" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle><path d="M7 6h5"></path><path d="M8 4h3"></path></svg>
           </div>
           <div class="step-num">05</div>
           <div class="step-name">Output</div>

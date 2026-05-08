@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { homeMarkup } from './homeMarkup.js';
 import { useSiteInteractions } from './useSiteInteractions.js';
@@ -271,10 +272,10 @@ const businessDetails = [
 ];
 
 const aboutStrengths = [
-  ['CU', 'Customization', 'Machines engineered around material, capacity, site layout and duty cycle.'],
-  ['RD', 'Strong R&D', 'Practical design improvement, testing and application-led development.'],
-  ['CP', 'Competitive Pricing', 'Cost-conscious engineering without compromising industrial reliability.'],
-  ['FD', 'Fast Delivery', 'Focused production planning, fabrication control and responsive coordination.'],
+  ['customization', 'Customization', 'Machines engineered around material, capacity, site layout and duty cycle.'],
+  ['research', 'Strong R&D', 'Practical design improvement, testing and application-led development.'],
+  ['pricing', 'Competitive Pricing', 'Cost-conscious engineering without compromising industrial reliability.'],
+  ['delivery', 'Fast Delivery', 'Focused production planning, fabrication control and responsive coordination.'],
 ];
 
 const servedIndustries = [
@@ -407,7 +408,7 @@ function ProductsMegaMenu() {
             <div className="product-menu-kicker">Explore Machinery</div>
             {productCategories.map((category, index) => (
               <div className={`product-category ${index === 0 ? 'is-active' : ''}`} key={category.name}>
-                <Link className="product-category-toggle" to={category.viewAll}>{category.name}<span>{category.products.length}</span></Link>
+                <button className="product-category-toggle" type="button">{category.name}<span>{category.products.length}</span></button>
                 <div className="product-subpanel">
                   <div className="product-panel-heading">{category.name}</div>
                   {category.products.map((product) => (
@@ -433,7 +434,6 @@ function Header() {
         <span className="logo-text">Jindal Hydro Projects Inc<span>.</span></span>
       </Link>
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
         <ProductsMegaMenu />
         <li><Link to="/solutions">Solutions</Link></li>
         <li><Link to="/about">About</Link></li>
@@ -441,7 +441,6 @@ function Header() {
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>
-      <a className="nav-phone" href="tel:+919868247362">+91 9868247362</a>
       <Link className="nav-cta" to="/contact">Get a Quote</Link>
       <button className="nav-mobile-toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -680,6 +679,18 @@ function QualityIcon({ type }) {
   return <svg {...common}>{icons[type] || icons.innovation}</svg>;
 }
 
+function StrengthIcon({ type }) {
+  const common = { width: '26', height: '26', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '1.8', strokeLinecap: 'round', strokeLinejoin: 'round' };
+  const icons = {
+    customization: <><path d="M4 7h9" /><path d="M4 17h16" /><circle cx="17" cy="7" r="3" /><circle cx="8" cy="17" r="3" /></>,
+    research: <><circle cx="10.5" cy="10.5" r="5.5" /><path d="M15 15l5 5" /><path d="M8 10h5M10.5 7.5v5" /></>,
+    pricing: <><path d="M20 12V6a2 2 0 0 0-2-2h-6L4 12l8 8 8-8z" /><circle cx="15.5" cy="8.5" r="1" /><path d="M9 13l2 2 4-5" /></>,
+    delivery: <><path d="M3 16V7h11v9" /><path d="M14 11h3l4 4v1h-7" /><circle cx="7" cy="18" r="2" /><circle cx="17" cy="18" r="2" /><path d="M6 10h5" /></>,
+  };
+
+  return <svg {...common}>{icons[type] || icons.customization}</svg>;
+}
+
 function AboutPage() {
   return (
     <>
@@ -824,7 +835,7 @@ function AboutPage() {
           <div className="about-card-grid about-four-grid">
             {aboutStrengths.map(([icon, title, text]) => (
               <div className="about-feature-card reveal" key={title}>
-                <span className="about-icon">{icon}</span>
+                <span className="about-icon"><StrengthIcon type={icon} /></span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </div>
@@ -872,6 +883,11 @@ function ProductDetailPage() {
   const params = new URLSearchParams(location.search);
   const currentSlug = params.get('product') || productCategories[0].products[0].slug;
   const product = getProductDetail(currentSlug);
+  const [openCategory, setOpenCategory] = useState(product.category);
+
+  useEffect(() => {
+    setOpenCategory(product.category);
+  }, [product.category]);
 
   return (
     <>
@@ -881,8 +897,11 @@ function ProductDetailPage() {
           <aside className="product-sidebar">
             <h2>Products We Offer</h2>
             {productCategories.map((category) => (
-              <details className="product-sidebar-group" open={category.name === product.category} key={category.name}>
-                <summary>{category.name} <span>({category.products.length})</span></summary>
+              <details className="product-sidebar-group" open={openCategory === category.name} key={category.name}>
+                <summary onClick={(event) => {
+                  event.preventDefault();
+                  setOpenCategory((current) => current === category.name ? null : category.name);
+                }}>{category.name} <span>({category.products.length})</span></summary>
                 <div className="product-sidebar-links">
                   <Link className="sidebar-product-link" to={category.viewAll}>
                     All {category.name}
@@ -1028,6 +1047,8 @@ function ProductsPage() {
   const params = new URLSearchParams(location.search);
   const activeCategoryParam = params.get('category');
   const activeCategory = productCategories.find((category) => category.viewAll.includes(`category=${activeCategoryParam}`));
+  const defaultOpenCategory = activeCategory?.name || productCategories[0].name;
+  const [openCategory, setOpenCategory] = useState(defaultOpenCategory);
   const listedCategories = activeCategory ? [activeCategory] : productCategories;
   const listedProducts = listedCategories.flatMap((category) => (
     category.products.map((item) => ({
@@ -1037,6 +1058,10 @@ function ProductsPage() {
     }))
   ));
 
+  useEffect(() => {
+    setOpenCategory(defaultOpenCategory);
+  }, [defaultOpenCategory]);
+
   return (
     <>
       <Header />
@@ -1045,8 +1070,11 @@ function ProductsPage() {
           <aside className="product-sidebar">
             <h2>Products We Offer</h2>
             {productCategories.map((category) => (
-              <details className="product-sidebar-group" open={!activeCategory || activeCategory.name === category.name} key={category.name}>
-                <summary>{category.name} <span>({category.products.length})</span></summary>
+              <details className="product-sidebar-group" open={openCategory === category.name} key={category.name}>
+                <summary onClick={(event) => {
+                  event.preventDefault();
+                  setOpenCategory((current) => current === category.name ? null : category.name);
+                }}>{category.name} <span>({category.products.length})</span></summary>
                 <div className="product-sidebar-links">
                   <Link
                     className={`sidebar-product-link ${activeCategory?.name === category.name ? 'active' : ''}`}

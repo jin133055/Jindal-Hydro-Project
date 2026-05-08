@@ -31,17 +31,29 @@ export function useSiteInteractions(page) {
     });
 
     const productCategoryButtons = Array.from(document.querySelectorAll('.product-category-toggle'));
+    const setActiveProductCategory = (button) => {
+      const category = button.closest('.product-category');
+      const siblings = Array.from(category?.parentElement?.querySelectorAll('.product-category') || []);
+      siblings.forEach((item) => {
+        if (item !== category) item.classList.remove('is-active');
+      });
+      category?.classList.add('is-active');
+    };
     const productCategoryHandlers = productCategoryButtons.map((button) => {
-      const handler = () => {
-        const category = button.closest('.product-category');
-        const siblings = Array.from(category?.parentElement?.querySelectorAll('.product-category') || []);
-        siblings.forEach((item) => {
-          if (item !== category) item.classList.remove('is-active');
-        });
-        category?.classList.toggle('is-active');
+      const clickHandler = (event) => {
+        event.preventDefault();
+        setActiveProductCategory(button);
       };
-      button.addEventListener('click', handler);
-      return [button, handler];
+      const mouseHandler = () => {
+        if (window.innerWidth > 900) setActiveProductCategory(button);
+      };
+      const focusHandler = () => {
+        setActiveProductCategory(button);
+      };
+      button.addEventListener('click', clickHandler);
+      button.addEventListener('mouseenter', mouseHandler);
+      button.addEventListener('focus', focusHandler);
+      return [button, clickHandler, mouseHandler, focusHandler];
     });
 
     const scrollButtons = Array.from(document.querySelectorAll('[data-scroll-target]'));
@@ -60,7 +72,11 @@ export function useSiteInteractions(page) {
       observer.disconnect();
       navToggle?.removeEventListener('click', handleNavToggle);
       dropdownHandlers.forEach(([link, handler]) => link.removeEventListener('click', handler));
-      productCategoryHandlers.forEach(([button, handler]) => button.removeEventListener('click', handler));
+      productCategoryHandlers.forEach(([button, clickHandler, mouseHandler, focusHandler]) => {
+        button.removeEventListener('click', clickHandler);
+        button.removeEventListener('mouseenter', mouseHandler);
+        button.removeEventListener('focus', focusHandler);
+      });
       scrollHandlers.forEach(([button, handler]) => button.removeEventListener('click', handler));
       cleanupBaler?.();
     };
