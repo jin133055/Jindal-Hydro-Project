@@ -304,10 +304,10 @@ const qualityPoints = [
 ];
 
 const teamRoles = [
-  ['Engineers', 'Hydraulic design, system sizing and performance validation', '/images/homepage.png'],
-  ['Designers', 'Machine layouts, tooling, fabrication drawings and ergonomics', '/images/homepage.png'],
-  ['Researchers', 'Process improvement, materials, automation and new applications', '/images/homepage.png'],
-  ['Technical Experts', 'Installation, troubleshooting, training and service support', '/images/homepage.png'],
+  ['Designers', 'Machine layouts, tooling, fabrication drawings and ergonomics', '/images/designers.jpg'],
+  ['Engineers', 'Hydraulic design, system sizing and performance validation', '/images/engineers.jpg'],
+  ['Researchers', 'Process improvement, materials, automation and new applications', '/images/research.jpg'],
+  ['Technical Experts', 'Installation, troubleshooting, training and service support', '/images/technical.jpg'],
 ];
 
 const trustedClients = ['Tata Motors', 'Hindalco', 'Birla Group', 'Jindal Steel', 'Mahindra', 'L&T'];
@@ -323,7 +323,7 @@ const solutionSections = [
   {
     number: '01',
     title: 'Metal Recycling',
-    image: '/images/homepage.png',
+    image: '/images/metal%20recycling.png',
     intro: 'End-to-end systems for ferrous and non-ferrous metal processing, from loose scrap intake to compact, transport-ready output.',
     details: [
       'Hydraulic balers, shears, shredders and conveyors configured around scrap type and throughput goals.',
@@ -334,7 +334,7 @@ const solutionSections = [
   {
     number: '02',
     title: 'Waste Management',
-    image: '/images/homepage.png',
+    image: '/images/waste%20management.png',
     intro: 'Municipal and industrial waste processing solutions designed to improve volume reduction, sorting support and operational flow.',
     details: [
       'Machinery options for compaction, shredding, baling and material movement across waste handling facilities.',
@@ -345,7 +345,7 @@ const solutionSections = [
   {
     number: '03',
     title: 'Scrap Processing',
-    image: '/images/homepage.png',
+    image: '/images/scrap.png',
     intro: 'Integrated shredding, sorting and densification systems for scrap dealers, steel plants, foundries and heavy industrial sites.',
     details: [
       'Custom machine combinations for cutting, feeding, loading, baling and output preparation.',
@@ -762,9 +762,9 @@ function AboutPage() {
             </ul>
           </div>
           <div className="about-gallery reveal reveal-delay-1">
-            <img src="/images/homepage.png" alt="Hydraulic machine manufacturing" />
-            <img src="/images/homepage.png" alt="Machine fabrication and assembly" />
-            <img src="/images/homepage.png" alt="Industrial recycling equipment" />
+            <img src="/images/infrastructure%201.png" alt="Hydraulic machine manufacturing infrastructure" />
+            <img src="/images/infrastructure%202.png" alt="Machine fabrication and assembly infrastructure" />
+            <img src="/images/infrastructure%203.png" alt="Industrial recycling equipment infrastructure" />
           </div>
         </section>
 

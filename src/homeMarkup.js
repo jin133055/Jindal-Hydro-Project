@@ -249,7 +249,7 @@
       <h2 class="section-h2 light-text">Engineered for<br>Every Challenge</h2>
       <div class="solutions-grid">
         <div class="solution-block reveal">
-          <img src="https://leadpages.com/PLACEHOLDER_SOL1" alt="Metal Recycling">
+          <img src="/images/metal%20recycling.png" alt="Metal Recycling">
           <div class="solution-overlay"></div>
           <div class="solution-content">
             <div class="solution-num">01 â€” SOLUTION</div>
@@ -258,7 +258,7 @@
           </div>
         </div>
         <div class="solution-block reveal reveal-delay-2">
-          <img src="https://leadpages.com/PLACEHOLDER_SOL2" alt="Waste Management">
+          <img src="/images/waste%20management.png" alt="Waste Management">
           <div class="solution-overlay"></div>
           <div class="solution-content">
             <div class="solution-num">02 â€” SOLUTION</div>
@@ -267,7 +267,7 @@
           </div>
         </div>
         <div class="solution-block reveal reveal-delay-3">
-          <img src="https://leadpages.com/PLACEHOLDER_SOL3" alt="Scrap Processing">
+          <img src="/images/scrap.png" alt="Scrap Processing">
           <div class="solution-overlay"></div>
           <div class="solution-content">
             <div class="solution-num">03 â€” SOLUTION</div>
