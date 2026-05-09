@@ -178,10 +178,6 @@
   <!-- TRUST BAR -->
   <div class="trust-bar">
     <div class="trust-item">
-      <div class="trust-num">2000</div>
-      <div class="trust-lbl">Year of Establishment</div>
-    </div>
-    <div class="trust-item">
       <div class="trust-num">2500+</div>
       <div class="trust-lbl">Approx. Machines Deployed Since Establishment</div>
     </div>

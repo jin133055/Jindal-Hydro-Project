@@ -408,7 +408,7 @@ nav {
 /* TRUST BAR */
 .trust-bar {
   background: var(--yellow); padding: 28px 5%;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr);
   align-items: center; gap: 2rem;
 }
 .trust-item { text-align: center; }
