@@ -261,7 +261,7 @@ const aboutOfferings = [
 ];
 
 const businessDetails = [
-  ['Year of Establishment', '2013'],
+  ['Year of Establishment', '2000'],
   ['Nature of Business', 'Manufacturer, exporter and supplier'],
   ['Employee Count', '50+ professionals'],
   ['Production Capacity', 'Application and model dependent'],
@@ -373,7 +373,7 @@ const pageCopy = {
   },
   about: {
     label: 'About',
-    title: 'Engineering Hydraulic Solutions Since 2013',
+    title: 'Engineering Hydraulic Solutions Since 2000',
     text: 'Use this page for company history, manufacturing capability, certifications, team, and global installation footprint.',
   },
   'case-studies': {
@@ -434,9 +434,9 @@ function Header() {
         <span className="logo-text">Jindal Hydro Projects Inc<span>.</span></span>
       </Link>
       <ul className="nav-links">
+        <li><Link to="/about">About</Link></li>
         <ProductsMegaMenu />
         <li><Link to="/solutions">Solutions</Link></li>
-        <li><Link to="/about">About</Link></li>
         <li><Link to="/case-studies">Case Studies</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/contact">Contact</Link></li>
@@ -456,7 +456,7 @@ function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-brand-name">Jindal Hydro Projects Inc<span>.</span></div>
-            <div className="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 2013.</div>
+            <div className="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 2000.</div>
           </div>
           <div className="footer-col">
             <h5>Products</h5>
@@ -702,7 +702,7 @@ function AboutPage() {
           <div className="about-hero-content">
             <div className="section-label">Company Profile</div>
             <h1>About Jindal Hydro Projects Inc.</h1>
-            <p>Engineering Advanced Hydraulic & Recycling Solutions Since 2013.</p>
+            <p>Engineering Advanced Hydraulic & Recycling Solutions Since 2000.</p>
             <Link className="btn-primary" to="/products">Explore Products</Link>
           </div>
         </section>
@@ -712,7 +712,7 @@ function AboutPage() {
             <div className="section-label">Overview</div>
             <h2>Built for Advanced Hydraulic Engineering</h2>
             <p>Jindal Hydro Projects Inc. is a manufacturer, exporter and supplier of hydraulic, recycling and industrial machinery built for dependable production environments.</p>
-            <p>Since 2013, the company has focused on practical engineering, durable fabrication, responsive support and machinery configured around customer capacity, material and site needs.</p>
+            <p>Since 2000, the company has focused on practical engineering, durable fabrication, responsive support and machinery configured around customer capacity, material and site needs.</p>
           </div>
           <div className="about-image reveal reveal-delay-1">
             <img src="/images/homepage.png" alt="Hydraulic recycling machine in operation" />

@@ -8,6 +8,7 @@
       <span class="logo-text">Jindal Hydro Projects Inc<span>.</span></span>
     </a>
     <ul class="nav-links">
+      <li><a href="/about">About</a></li>
       <li class="has-dropdown products-nav">
         <a href="/products">Products <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
         <div class="nav-dropdown product-mega">
@@ -90,7 +91,6 @@
         </div>
       </li>
       <li><a href="/solutions">Solutions</a></li>
-      <li><a href="/about">About</a></li>
       <li><a href="/case-studies">Case Studies</a></li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
@@ -178,20 +178,20 @@
   <!-- TRUST BAR -->
   <div class="trust-bar">
     <div class="trust-item">
-      <div class="trust-num">25+</div>
-      <div class="trust-lbl">Years of Engineering Excellence</div>
+      <div class="trust-num">2000</div>
+      <div class="trust-lbl">Year of Establishment</div>
     </div>
     <div class="trust-item">
-      <div class="trust-num">500+</div>
-      <div class="trust-lbl">Machines Deployed Globally</div>
+      <div class="trust-num">2500+</div>
+      <div class="trust-lbl">Approx. Machines Deployed Since Establishment</div>
     </div>
     <div class="trust-item">
       <div class="trust-num">40+</div>
       <div class="trust-lbl">Countries Served</div>
     </div>
     <div class="trust-item">
-      <div class="trust-num">98%</div>
-      <div class="trust-lbl">Client Retention Rate</div>
+      <div class="trust-num">25+</div>
+      <div class="trust-lbl">Years of Engineering Excellence</div>
     </div>
   </div>
 
@@ -517,7 +517,7 @@
       <div class="footer-top">
         <div>
           <div class="footer-brand-name">Jindal Hydro Projects Inc<span>.</span></div>
-          <div class="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 2013.</div>
+          <div class="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 2000.</div>
           <div class="footer-social">
             <div class="social-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
