@@ -115,7 +115,7 @@
     <div class="hero-grid-overlay"></div>
     <div class="hero-accent-line"></div>
     <div class="hero-left">
-      <h1>Hydraulic Recycling<br><em>Machinery</em><br>Manufacturer Since 2000</h1>
+      <h1>Engineering the<br><em>Future</em> of<br>Recycling</h1>
       <p class="hero-sub">Jindal Hydro Projects manufactures and exports hydraulic balers, metal shredders, alligator shears, waste balers, and complete recycling plant solutions across India, the Middle East, Africa, and Southeast Asia.</p>
       <div class="hero-btns">
         <a class="btn-primary" href="/products">Explore Products</a>
