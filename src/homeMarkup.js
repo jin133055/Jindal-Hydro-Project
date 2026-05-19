@@ -16,74 +16,83 @@
             <div class="product-category-column">
               <div class="product-menu-kicker">Explore Machinery</div>
               <div class="product-category is-active">
-                <button class="product-category-toggle" type="button">Hydraulic Baling Press Machine<span>8</span></button>
+                <a class="product-category-toggle" href="/products/metal-recycling/">Metal Recycling<span>29</span></a>
                 <div class="product-subpanel">
-                  <div class="product-panel-heading">Hydraulic Baling Press Machine</div>
-                  <a class="product-link" href="/product-detail?product=continuous-baler"><strong>Continuous Hydraulic Baler Machine</strong></a>
-                  <a class="product-link" href="/product-detail?product=triple-action-corrugated-baler"><strong>Triple Action Hydraulic Corrugated Cardboard Baler Machine</strong></a>
-                  <a class="product-link" href="/product-detail?product=mini-jumbo-baling-press"><strong>Mini Jumbo Hydraulic Baling Press</strong></a>
-                  <a class="product-link" href="/product-detail?product=heavy-duty-jumbo-baling-press"><strong>Heavy Duty Jumbo Hydraulic Baling Press</strong></a>
-                  <a class="product-link" href="/product-detail?product=double-action-manual-baling-press"><strong>Double Action Hydraulic Baling Press Machine (Manual)</strong></a>
-                  <a class="product-link" href="/product-detail?product=jumbo-baling-press-without-hopper"><strong>Jumbo Hydraulic Baling Press Without Hopper</strong></a>
-                  <a class="product-link" href="/product-detail?product=vertical-baling-press"><strong>Vertical Hydraulic Baling Press</strong></a>
-                  <a class="product-link" href="/product-detail?product=horizontal-baling-press"><strong>Horizontal Hydraulic Baling Press</strong></a>
+                  <div class="product-panel-heading">Metal Recycling</div>
+                  <a class="product-link" href="/products/metal-recycling/balers/high-density-hydraulic-baler/"><small>Balers</small><strong>High Density Baler</strong></a>
+                  <a class="product-link" href="/products/metal-recycling/balers/quad-baler/"><small>Balers</small><strong>Quad Baler</strong></a>
+                  <a class="product-link" href="/products/metal-recycling/balers/triple-action-baler/"><small>Balers</small><strong>Triple Action Baler</strong></a>
+                  <a class="product-link" href="/products/metal-recycling/balers/continuous-baler/"><small>Balers</small><strong>Continuous Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=mini-triple-action-baler"><small>Balers</small><strong>Mini Triple Action Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=double-action-baler"><small>Balers</small><strong>Double Action Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=vertical-baler"><small>Balers</small><strong>Vertical Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=mobile-baler"><small>Balers</small><strong>Mobile Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=car-baler"><small>Balers</small><strong>Car Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=metal-recycling-continuous-baler"><small>Metal Recycling Balers</small><strong>Continuous Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=metal-recycling-high-density-baler"><small>Metal Recycling Balers</small><strong>High Density Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=jumbo-manual-baler"><small>Metal Recycling Balers</small><strong>Jumbo Manual Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=jumbo-plc-baler"><small>Metal Recycling Balers</small><strong>Jumbo PLC Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=manual-mini-baler"><small>Metal Recycling Balers</small><strong>Manual Mini Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=mini-plc-baler"><small>Metal Recycling Balers</small><strong>Mini PLC Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=super-jumbo-baler"><small>Metal Recycling Balers</small><strong>Super Jumbo Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=metal-recycling-double-action-baler"><small>Metal Recycling Balers</small><strong>Double Action Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=inclined-shear-shear-baler-box-shear"><small>Shears</small><strong>Inclined Shear / Shear Baler (Box Shear)</strong></a>
+                  <a class="product-link" href="/products/metal-recycling/shears/alligator-shear/"><small>Shears</small><strong>Alligator Shear (Crocodile Shear)</strong></a>
+                  <a class="product-link" href="/product-detail?product=single-shaft-shredder"><small>Shredders</small><strong>Single Shaft Shredder</strong></a>
+                  <a class="product-link" href="/products/metal-recycling/shredders/hammer-mill-shredder/"><small>Shredders</small><strong>Hammer Mill Shredder</strong></a>
+                  <a class="product-link" href="/product-detail?product=twin-shaft-shredder-rotary-shear-pre-shredder"><small>Shredders</small><strong>Twin Shaft Shredder (Rotary Shear / Pre Shredder)</strong></a>
+                  <a class="product-link" href="/product-detail?product=chip-briquetting-machine"><small>Briquetting Machines</small><strong>Chip Briquetting Machine</strong></a>
+                  <a class="product-link" href="/product-detail?product=vertical-briquetting-machine"><small>Briquetting Machines</small><strong>Vertical Briquetting Machine</strong></a>
+                  <a class="product-link" href="/product-detail?product=hydraulic-nibbler"><small>Nibblers</small><strong>Hydraulic Nibbler</strong></a>
+                  <a class="product-link" href="/product-detail?product=magnetic-separator-ubc-sorter"><small>Material Handling Equipment</small><strong>Magnetic Separator / UBC Sorter</strong></a>
+                  <a class="product-link" href="/product-detail?product=conveyors"><small>Material Handling Equipment</small><strong>Conveyors</strong></a>
+                  <a class="product-link" href="/product-detail?product=grabs-cranes"><small>Material Handling Equipment</small><strong>Grabs &amp; Cranes</strong></a>
+                  <a class="product-link" href="/product-detail?product=scrap-charging-trolley"><small>Material Handling Equipment</small><strong>Scrap Charging Trolley</strong></a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Hydraulic Presses<span>6</span></button>
+                <a class="product-category-toggle" href="/products/waste-recycling/">Waste Recycling<span>9</span></a>
                 <div class="product-subpanel">
-                  <div class="product-panel-heading">Hydraulic Presses</div>
-                  <a class="product-link" href="/product-detail?product=hydraulic-press-brake"><strong>Hydraulic Press Brake</strong></a>
-                  <a class="product-link" href="/product-detail?product=h-frame-hydraulic-press"><strong>H Frame Hydraulic Press</strong></a>
-                  <a class="product-link" href="/product-detail?product=c-frame-hydraulic-press"><strong>C Frame Hydraulic Press</strong></a>
-                  <a class="product-link" href="/product-detail?product=deep-drawing-press"><strong>Deep Drawing Hydraulic Press</strong></a>
-                  <a class="product-link" href="/product-detail?product=rubber-moulding-press"><strong>Rubber Moulding Hydraulic Press</strong></a>
-                  <a class="product-link" href="/product-detail?product=powder-compacting-press"><strong>Powder Compacting Hydraulic Press</strong></a>
+                  <div class="product-panel-heading">Waste Recycling</div>
+                  <a class="product-link" href="/products/waste-recycling/automatic-horizontal-baler/"><small>Waste Recycling</small><strong>Automatic Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=semi-automatic-baler"><small>Waste Recycling</small><strong>Semi Automatic Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=triple-action-baler-for-waste"><small>Waste Recycling</small><strong>Triple Action Baler For Waste</strong></a>
+                  <a class="product-link" href="/product-detail?product=waste-recycling-vertical-baler"><small>Waste Recycling</small><strong>Vertical Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=msw-sorting-line"><small>Waste Recycling</small><strong>MSW Sorting Line</strong></a>
+                  <a class="product-link" href="/product-detail?product=horizontal-baler"><small>Waste Recycling Balers</small><strong>Horizontal Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=jumbo-plc-baler-waste"><small>Waste Recycling Balers</small><strong>Jumbo PLC Baler (Waste)</strong></a>
+                  <a class="product-link" href="/product-detail?product=waste-triple-action-baler"><small>Waste Recycling Balers</small><strong>Triple Action Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=waste-recycling-balers-vertical-baler"><small>Waste Recycling Balers</small><strong>Vertical Baler</strong></a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Hydraulic Cylinders<span>6</span></button>
+                <a class="product-category-toggle" href="/products/agriculture-recycling/">Agriculture Waste Recycling<span>2</span></a>
                 <div class="product-subpanel">
-                  <div class="product-panel-heading">Hydraulic Cylinders</div>
-                  <a class="product-link" href="/product-detail?product=double-acting-cylinder"><strong>Double Acting Hydraulic Cylinder</strong></a>
-                  <a class="product-link" href="/product-detail?product=front-flange-cylinder"><strong>Front Flange Cylinder</strong></a>
-                  <a class="product-link" href="/product-detail?product=industrial-pneumatic-cylinder"><strong>Industrial Pneumatic Cylinder</strong></a>
-                  <a class="product-link" href="/product-detail?product=telescopic-cylinder"><strong>Telescopic Hydraulic Cylinder</strong></a>
-                  <a class="product-link" href="/product-detail?product=tie-rod-cylinder"><strong>Tie Rod Hydraulic Cylinder</strong></a>
-                  <a class="product-link" href="/product-detail?product=welded-cylinder"><strong>Welded Body Hydraulic Cylinder</strong></a>
+                  <div class="product-panel-heading">Agriculture Waste Recycling</div>
+                  <a class="product-link" href="/products/agriculture-recycling/fodder-block-making-machine/"><small>Agriculture Waste Recycling</small><strong>Fodder Block Making Machine</strong></a>
+                  <a class="product-link" href="/product-detail?product=straw-baler"><small>Agriculture Waste Recycling</small><strong>Straw Baler</strong></a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Recycling Machines<span>6</span></button>
+                <a class="product-category-toggle" href="/products/elv-recycling/">ELV Recycling<span>7</span></a>
                 <div class="product-subpanel">
-                  <div class="product-panel-heading">Recycling Machines</div>
-                  <a class="product-link" href="/product-detail?product=industrial-shredder"><strong>Industrial Shredder</strong></a>
-                  <a class="product-link" href="/product-detail?product=alligator-shear"><strong>Alligator Shear</strong></a>
-                  <a class="product-link" href="/product-detail?product=guillotine-shear"><strong>Guillotine Shear</strong></a>
-                  <a class="product-link" href="/product-detail?product=metal-chip-briquetting-machine"><strong>Metal Chip Briquetting Machine</strong></a>
-                  <a class="product-link" href="/product-detail?product=drum-crusher"><strong>Drum Crusher</strong></a>
-                  <a class="product-link" href="/product-detail?product=scrap-grabber"><strong>Scrap Grabber</strong></a>
+                  <div class="product-panel-heading">ELV Recycling</div>
+                  <a class="product-link" href="/product-detail?product=elv-car-baler"><small>ELV Recycling</small><strong>Car Baler</strong></a>
+                  <a class="product-link" href="/products/metal-recycling/shears/box-shear-inclined-shear/"><small>ELV Recycling</small><strong>Box Shear / Inclined Shear</strong></a>
+                  <a class="product-link" href="/product-detail?product=continuous-shear"><small>ELV Recycling</small><strong>Continuous Shear</strong></a>
+                  <a class="product-link" href="/product-detail?product=elv-alligator-shear"><small>ELV Recycling</small><strong>Alligator Shear</strong></a>
+                  <a class="product-link" href="/product-detail?product=elv-high-density-baler"><small>ELV Recycling</small><strong>High Density Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=elv-triple-action-baler"><small>ELV Recycling</small><strong>Triple Action Baler</strong></a>
+                  <a class="product-link" href="/product-detail?product=elv-shredders"><small>ELV Recycling</small><strong>Shredders</strong></a>
                 </div>
               </div>
               <div class="product-category">
-                <button class="product-category-toggle" type="button">Power Packs &amp; Systems<span>5</span></button>
+                <a class="product-category-toggle" href="/products/services/">Services<span>3</span></a>
                 <div class="product-subpanel">
-                  <div class="product-panel-heading">Power Packs &amp; Systems</div>
-                  <a class="product-link" href="/product-detail?product=hydraulic-power-pack"><strong>Hydraulic Power Pack</strong></a>
-                  <a class="product-link" href="/product-detail?product=compact-power-pack"><strong>Compact Power Pack</strong></a>
-                  <a class="product-link" href="/product-detail?product=custom-power-unit"><strong>Custom Power Unit</strong></a>
-                  <a class="product-link" href="/product-detail?product=hydraulic-manifold-block"><strong>Hydraulic Manifold Block</strong></a>
-                  <a class="product-link" href="/product-detail?product=oil-filtration-system"><strong>Oil Filtration System</strong></a>
-                </div>
-              </div>
-              <div class="product-category">
-                <button class="product-category-toggle" type="button">Material Handling<span>4</span></button>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Material Handling</div>
-                  <a class="product-link" href="/product-detail?product=rotating-tower-crane"><strong>Rotating Tower Crane</strong></a>
-                  <a class="product-link" href="/product-detail?product=hydraulic-grabber"><strong>Hydraulic Grabber</strong></a>
-                  <a class="product-link" href="/product-detail?product=charging-conveyor"><strong>Charging Conveyor</strong></a>
-                  <a class="product-link" href="/product-detail?product=scrap-loader"><strong>Scrap Loader</strong></a>
+                  <div class="product-panel-heading">Services</div>
+                  <a class="product-link" href="/product-detail?product=installation-training"><small>Services</small><strong>Installation &amp; Training</strong></a>
+                  <a class="product-link" href="/product-detail?product=spares-parts"><small>Services</small><strong>Spares &amp; Parts</strong></a>
+                  <a class="product-link" href="/products/elv-recycling/elv-plant-setup-consultancy/"><small>Services</small><strong>Consultancy</strong></a>
                 </div>
               </div>
             </div>
@@ -106,8 +115,8 @@
     <div class="hero-grid-overlay"></div>
     <div class="hero-accent-line"></div>
     <div class="hero-left">
-      <h1>Engineering the<br><em>Future</em> of<br>Recycling</h1>
-      <p class="hero-sub">High-performance hydraulic machinery and recycling systems built for the demands of global industrial operations.</p>
+      <h1>Hydraulic Recycling<br><em>Machinery</em><br>Manufacturer Since 2000</h1>
+      <p class="hero-sub">Jindal Hydro Projects manufactures and exports hydraulic balers, metal shredders, alligator shears, waste balers, and complete recycling plant solutions across India, the Middle East, Africa, and Southeast Asia.</p>
       <div class="hero-btns">
         <a class="btn-primary" href="/products">Explore Products</a>
         <a class="btn-secondary" href="/case-studies">View Case Studies</a>
@@ -252,7 +261,7 @@
           <img src="/images/metal%20recycling.png" alt="Metal Recycling">
           <div class="solution-overlay"></div>
           <div class="solution-content">
-            <div class="solution-num">01 â€” SOLUTION</div>
+            <div class="solution-num">01 SOLUTION</div>
             <div class="solution-title">Metal Recycling</div>
             <div class="solution-desc">End-to-end systems for ferrous and non-ferrous metal processing - from collection to mill-ready bales.</div>
           </div>
@@ -261,7 +270,7 @@
           <img src="/images/waste%20management.png" alt="Waste Management">
           <div class="solution-overlay"></div>
           <div class="solution-content">
-            <div class="solution-num">02 â€” SOLUTION</div>
+            <div class="solution-num">02 SOLUTION</div>
             <div class="solution-title">Waste Management</div>
             <div class="solution-desc">Municipal and industrial waste processing systems designed for maximum throughput and regulatory compliance.</div>
           </div>
@@ -270,7 +279,7 @@
           <img src="/images/scrap.png" alt="Scrap Processing">
           <div class="solution-overlay"></div>
           <div class="solution-content">
-            <div class="solution-num">03 â€” SOLUTION</div>
+            <div class="solution-num">03 SOLUTION</div>
             <div class="solution-title">Scrap Processing</div>
             <div class="solution-desc">Integrated shredding, sorting, and densification for scrap dealers, foundries, and steel mills.</div>
           </div>

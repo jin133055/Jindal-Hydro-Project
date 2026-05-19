@@ -41,6 +41,12 @@ export function useSiteInteractions(page) {
     };
     const productCategoryHandlers = productCategoryButtons.map((button) => {
       const clickHandler = (event) => {
+        if (button.tagName.toLowerCase() === 'a') {
+          navToggle?.classList.remove('open');
+          navLinks?.classList.remove('open');
+          button.closest('.has-dropdown')?.classList.remove('open');
+          return;
+        }
         event.preventDefault();
         setActiveProductCategory(button);
       };

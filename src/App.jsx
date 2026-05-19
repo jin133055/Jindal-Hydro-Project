@@ -1,155 +1,212 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { homeMarkup } from './homeMarkup.js';
 import { useSiteInteractions } from './useSiteInteractions.js';
 
 const productCategories = [
   {
-    name: 'Hydraulic Baling Press Machine',
+    name: 'Metal Recycling',
     number: '01',
-    viewAll: '/products?category=hydraulic-baling-press',
+    viewAll: '/products/metal-recycling/',
     products: [
-      { slug: 'continuous-baler', name: 'Continuous Hydraulic Baler Machine', note: 'Uninterrupted scrap baling line' },
-      { slug: 'triple-action-corrugated-baler', name: 'Triple Action Hydraulic Corrugated Cardboard Baler Machine', note: 'Triple compression baling system' },
-      { slug: 'mini-jumbo-baling-press', name: 'Mini Jumbo Hydraulic Baling Press', note: 'Compact high-density baler' },
-      { slug: 'heavy-duty-jumbo-baling-press', name: 'Heavy Duty Jumbo Hydraulic Baling Press', note: 'Heavy scrap compaction' },
-      { slug: 'double-action-manual-baling-press', name: 'Double Action Hydraulic Baling Press Machine (Manual)', note: 'Manual double-action press' },
-      { slug: 'jumbo-baling-press-without-hopper', name: 'Jumbo Hydraulic Baling Press Without Hopper', note: 'Open-feed baling press' },
-      { slug: 'vertical-baling-press', name: 'Vertical Hydraulic Baling Press', note: 'Low footprint vertical press' },
-      { slug: 'horizontal-baling-press', name: 'Horizontal Hydraulic Baling Press', note: 'Horizontal bale discharge' },
+      { slug: 'high-density-baler', name: 'High Density Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'quad-baler', name: 'Quad Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'triple-action-baler', name: 'Triple Action Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'continuous-baler', name: 'Continuous Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'mini-triple-action-baler', name: 'Mini Triple Action Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'double-action-baler', name: 'Double Action Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'vertical-baler', name: 'Vertical Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'mobile-baler', name: 'Mobile Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'car-baler', name: 'Car Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'metal-recycling-continuous-baler', name: 'Continuous Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
+      { slug: 'metal-recycling-high-density-baler', name: 'High Density Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
+      { slug: 'jumbo-manual-baler', name: 'Jumbo Manual Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
+      { slug: 'jumbo-plc-baler', name: 'Jumbo PLC Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
+      { slug: 'manual-mini-baler', name: 'Manual Mini Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
+      { slug: 'mini-plc-baler', name: 'Mini PLC Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
+      { slug: 'super-jumbo-baler', name: 'Super Jumbo Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
+      { slug: 'metal-recycling-double-action-baler', name: 'Double Action Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
+      { slug: 'inclined-shear-shear-baler-box-shear', name: 'Inclined Shear / Shear Baler (Box Shear)', subcategory: 'Shears', note: 'Shears' },
+      { slug: 'alligator-shear-crocodile-shear', name: 'Alligator Shear (Crocodile Shear)', subcategory: 'Shears', note: 'Shears' },
+      { slug: 'single-shaft-shredder', name: 'Single Shaft Shredder', subcategory: 'Shredders', note: 'Shredders' },
+      { slug: 'hammer-mill-shredder', name: 'Hammer Mill Shredder', subcategory: 'Shredders', note: 'Shredders' },
+      { slug: 'twin-shaft-shredder-rotary-shear-pre-shredder', name: 'Twin Shaft Shredder (Rotary Shear / Pre Shredder)', subcategory: 'Shredders', note: 'Shredders' },
+      { slug: 'chip-briquetting-machine', name: 'Chip Briquetting Machine', subcategory: 'Briquetting Machines', note: 'Briquetting Machines' },
+      { slug: 'vertical-briquetting-machine', name: 'Vertical Briquetting Machine', subcategory: 'Briquetting Machines', note: 'Briquetting Machines' },
+      { slug: 'hydraulic-nibbler', name: 'Hydraulic Nibbler', subcategory: 'Nibblers', note: 'Nibblers' },
+      { slug: 'magnetic-separator-ubc-sorter', name: 'Magnetic Separator / UBC Sorter', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
+      { slug: 'conveyors', name: 'Conveyors', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
+      { slug: 'grabs-cranes', name: 'Grabs & Cranes', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
+      { slug: 'scrap-charging-trolley', name: 'Scrap Charging Trolley', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
     ],
   },
   {
-    name: 'Hydraulic Presses',
+    name: 'Waste Recycling',
     number: '02',
-    viewAll: '/products?category=hydraulic-presses',
+    viewAll: '/products/waste-recycling/',
     products: [
-      { slug: 'hydraulic-press-brake', name: 'Hydraulic Press Brake', note: 'Precision bending and forming' },
-      { slug: 'h-frame-hydraulic-press', name: 'H Frame Hydraulic Press', note: 'Workshop and production pressing' },
-      { slug: 'c-frame-hydraulic-press', name: 'C Frame Hydraulic Press', note: 'Open-front press access' },
-      { slug: 'deep-drawing-press', name: 'Deep Drawing Hydraulic Press', note: 'Sheet metal forming press' },
-      { slug: 'rubber-moulding-press', name: 'Rubber Moulding Hydraulic Press', note: 'Controlled heat and pressure' },
-      { slug: 'powder-compacting-press', name: 'Powder Compacting Hydraulic Press', note: 'High precision compaction' },
+      { slug: 'automatic-baler', name: 'Automatic Baler', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
+      { slug: 'semi-automatic-baler', name: 'Semi Automatic Baler', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
+      { slug: 'triple-action-baler-for-waste', name: 'Triple Action Baler For Waste', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
+      { slug: 'waste-recycling-vertical-baler', name: 'Vertical Baler', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
+      { slug: 'msw-sorting-line', name: 'MSW Sorting Line', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
+      { slug: 'horizontal-baler', name: 'Horizontal Baler', subcategory: 'Waste Recycling Balers', note: 'Waste Recycling Balers' },
+      { slug: 'jumbo-plc-baler-waste', name: 'Jumbo PLC Baler (Waste)', subcategory: 'Waste Recycling Balers', note: 'Waste Recycling Balers' },
+      { slug: 'waste-triple-action-baler', name: 'Triple Action Baler', subcategory: 'Waste Recycling Balers', note: 'Waste Recycling Balers' },
+      { slug: 'waste-recycling-balers-vertical-baler', name: 'Vertical Baler', subcategory: 'Waste Recycling Balers', note: 'Waste Recycling Balers' },
     ],
   },
   {
-    name: 'Hydraulic Cylinders',
+    name: 'Agriculture Waste Recycling',
     number: '03',
-    viewAll: '/products?category=hydraulic-cylinders',
+    viewAll: '/products/agriculture-recycling/',
     products: [
-      { slug: 'double-acting-cylinder', name: 'Double Acting Hydraulic Cylinder', note: 'Up to 250 bar operating pressure' },
-      { slug: 'front-flange-cylinder', name: 'Front Flange Cylinder', note: 'Rigid mounting for press applications' },
-      { slug: 'industrial-pneumatic-cylinder', name: 'Industrial Pneumatic Cylinder', note: 'Fast automation-ready motion control' },
-      { slug: 'telescopic-cylinder', name: 'Telescopic Hydraulic Cylinder', note: 'Long stroke in compact installations' },
-      { slug: 'tie-rod-cylinder', name: 'Tie Rod Hydraulic Cylinder', note: 'Serviceable industrial cylinder' },
-      { slug: 'welded-cylinder', name: 'Welded Body Hydraulic Cylinder', note: 'Heavy-duty welded construction' },
+      { slug: 'fodder-block-making-machine', name: 'Fodder Block Making Machine', subcategory: 'Agriculture Waste Recycling', note: 'Agriculture Waste Recycling' },
+      { slug: 'straw-baler', name: 'Straw Baler', subcategory: 'Agriculture Waste Recycling', note: 'Agriculture Waste Recycling' },
     ],
   },
   {
-    name: 'Recycling Machines',
+    name: 'ELV Recycling',
     number: '04',
-    viewAll: '/products?category=recycling-machines',
+    viewAll: '/products/elv-recycling/',
     products: [
-      { slug: 'industrial-shredder', name: 'Industrial Shredder', note: 'Twin-shaft shredding for scrap streams' },
-      { slug: 'alligator-shear', name: 'Alligator Shear', note: 'Fast cutting for scrap yards' },
-      { slug: 'guillotine-shear', name: 'Guillotine Shear', note: 'Heavy plate and metal section cutting' },
-      { slug: 'metal-chip-briquetting-machine', name: 'Metal Chip Briquetting Machine', note: 'Chip recovery and densification' },
-      { slug: 'drum-crusher', name: 'Drum Crusher', note: 'Barrel and drum volume reduction' },
-      { slug: 'scrap-grabber', name: 'Scrap Grabber', note: 'Material handling attachment' },
+      { slug: 'elv-car-baler', name: 'Car Baler', subcategory: 'ELV Recycling', note: 'ELV Recycling' },
+      { slug: 'box-shear-inclined-shear', name: 'Box Shear / Inclined Shear', subcategory: 'ELV Recycling', note: 'ELV Recycling' },
+      { slug: 'continuous-shear', name: 'Continuous Shear', subcategory: 'ELV Recycling', note: 'ELV Recycling' },
+      { slug: 'elv-alligator-shear', name: 'Alligator Shear', subcategory: 'ELV Recycling', note: 'ELV Recycling' },
+      { slug: 'elv-high-density-baler', name: 'High Density Baler', subcategory: 'ELV Recycling', note: 'ELV Recycling' },
+      { slug: 'elv-triple-action-baler', name: 'Triple Action Baler', subcategory: 'ELV Recycling', note: 'ELV Recycling' },
+      { slug: 'elv-shredders', name: 'Shredders', subcategory: 'ELV Recycling', note: 'ELV Recycling' },
     ],
   },
   {
-    name: 'Power Packs & Systems',
+    name: 'Services',
     number: '05',
-    viewAll: '/products?category=power-packs',
+    viewAll: '/products/services/',
     products: [
-      { slug: 'hydraulic-power-pack', name: 'Hydraulic Power Pack', note: 'Central HPU for heavy machinery' },
-      { slug: 'compact-power-pack', name: 'Compact Power Pack', note: 'Space-saving hydraulic power unit' },
-      { slug: 'custom-power-unit', name: 'Custom Power Unit', note: 'Built for site-specific duty cycles' },
-      { slug: 'hydraulic-manifold-block', name: 'Hydraulic Manifold Block', note: 'Integrated flow control system' },
-      { slug: 'oil-filtration-system', name: 'Oil Filtration System', note: 'Cleaner oil, longer component life' },
-    ],
-  },
-  {
-    name: 'Material Handling',
-    number: '06',
-    viewAll: '/products?category=material-handling',
-    products: [
-      { slug: 'rotating-tower-crane', name: 'Rotating Tower Crane', note: 'Scrap yard loading and feeding' },
-      { slug: 'hydraulic-grabber', name: 'Hydraulic Grabber', note: 'Bulk scrap handling attachment' },
-      { slug: 'charging-conveyor', name: 'Charging Conveyor', note: 'Continuous feed automation' },
-      { slug: 'scrap-loader', name: 'Scrap Loader', note: 'Heavy-duty loading support' },
+      { slug: 'installation-training', name: 'Installation & Training', subcategory: 'Services', note: 'Services' },
+      { slug: 'spares-parts', name: 'Spares & Parts', subcategory: 'Services', note: 'Services' },
+      { slug: 'consultancy', name: 'Consultancy', subcategory: 'Services', note: 'Services' },
     ],
   },
 ];
 
-const productDetails = {
-  'double-acting-cylinder': {
-    name: 'Double Acting Hydraulic Cylinder',
-    description: 'Heavy-duty cylinder designed for precise push-pull motion in presses, balers, shears, and custom hydraulic systems.',
-    specs: { Pressure: 'Up to 250 bar', Power: 'Hydraulic HPU matched', Stroke: '100 mm - 3000 mm', Material: 'Honed steel tube, hard chrome rod' },
+const siteUrl = 'https://www.jindalhydroprojects.com';
+
+const categorySeo = {
+  'metal-recycling': {
+    name: 'Metal Recycling',
+    title: 'Metal Recycling Machinery - Balers, Shears & Shredders | JHP',
+    description: 'Hydraulic balers, alligator shears, hammer mill shredders & more for ferrous and non-ferrous metal scrap. Manufacturer since 2000. Get specifications & quote.',
+    h1: 'Metal Recycling Machinery - Hydraulic Balers, Shears & Shredders',
+    canonical: '/products/metal-recycling/',
+    intro: 'Jindal Hydro Projects offers a complete range of hydraulic machinery for metal scrap processing, from compact balers to industrial shredding systems. Machines handle ferrous and non-ferrous scrap including MS, stainless steel, aluminium, copper, tyre wire, TMT bars, and car bodies.',
   },
-  'front-flange-cylinder': {
-    name: 'Front Flange Cylinder',
-    description: 'Flange-mounted cylinder for rigid industrial installations where alignment and repeatable force delivery matter.',
-    specs: { Pressure: '160 - 250 bar', Power: 'Application-specific', Stroke: '150 mm - 2200 mm', Material: 'Alloy steel body' },
+  'waste-recycling': {
+    name: 'Waste Recycling',
+    title: 'Waste Recycling Balers - Paper, PET, Plastic & OCC | JHP',
+    description: 'Fully automatic & semi-automatic balers for paper, PET bottles, plastic, cardboard, foam & MSW. Reduce waste volume by up to 90%. Free quote from JHP.',
+    h1: 'Waste Recycling Balers - Paper, PET Bottles, Plastic & Cardboard',
+    canonical: '/products/waste-recycling/',
+    intro: 'JHP supplies fully automatic and semi-automatic PLC-controlled balers for recyclers, packaging factories, printing firms, and PET traders. Waste balers reduce material volume, lower transport cost, and minimise labour requirements.',
   },
-  'industrial-pneumatic-cylinder': {
-    name: 'Industrial Pneumatic Cylinder',
-    description: 'Fast, reliable pneumatic actuation for automation lines, fixtures, sorting equipment, and light industrial machinery.',
-    specs: { Pressure: '6 - 10 bar air', Power: 'Compressed air', Stroke: '25 mm - 1000 mm', Material: 'Aluminium barrel, steel rod' },
+  'agriculture-recycling': {
+    name: 'Agriculture Waste Recycling',
+    title: 'Agricultural Waste Balers - Fodder Blocks & Straw Baling | JHP',
+    description: 'Fodder block making machines and straw balers for farms, co-operatives, and biomass plants. PLC-controlled, 70-100 blocks/hour. Request a free quote.',
+    h1: 'Agricultural Waste Recycling Machinery - Fodder Block Machines & Straw Balers',
+    canonical: '/products/agriculture-recycling/',
+    intro: 'JHP manufactures equipment to compress agricultural waste into compact, high-value blocks for cattle fodder, biomass fuel, or export. Applications include farms, fodder processing facilities, co-operatives, biomass plants, and agro-industries.',
   },
-  'telescopic-cylinder': {
-    name: 'Telescopic Hydraulic Cylinder',
-    description: 'Multi-stage cylinder for applications requiring long travel from a compact retracted length.',
-    specs: { Pressure: '160 - 250 bar', Power: 'Hydraulic power pack', Stroke: '500 mm - 6000 mm', Material: 'Hardened steel stages' },
+  'elv-recycling': {
+    name: 'ELV Recycling',
+    title: 'ELV Recycling Plant Equipment & RVSF Setup | Jindal Hydro Projects',
+    description: 'Complete ELV recycling machinery for Registered Vehicle Scrapping Facilities (RVSFs). Car balers, shears, shredders & turnkey plant setup. India\'s 28M ELV opportunity.',
+    h1: 'ELV Recycling Plant Equipment - Complete RVSF Machinery Solutions',
+    canonical: '/products/elv-recycling/',
+    intro: 'JHP supplies the full ELV equipment suite and provides turnkey plant setup and consultancy for Registered Vehicle Scrapping Facilities. Equipment covers car baling, shearing, shredding, high density baling, and material handling.',
   },
-  'hydraulic-power-pack': {
-    name: 'Hydraulic Power Pack',
-    description: 'Compact or centralized hydraulic power unit configured for balers, shears, presses, and plant-wide machinery.',
-    specs: { Pressure: 'Up to 315 bar', Power: '15 - 500 HP', Stroke: 'Machine dependent', Material: 'MS reservoir, branded valves' },
-  },
-  'compact-power-pack': {
-    name: 'Compact Power Pack',
-    description: 'Space-efficient hydraulic power unit for smaller presses, fixtures, and standalone equipment.',
-    specs: { Pressure: 'Up to 210 bar', Power: '3 - 25 HP', Stroke: 'Machine dependent', Material: 'Compact MS reservoir' },
-  },
-  'custom-power-unit': {
-    name: 'Custom Power Unit',
-    description: 'Engineered hydraulic power unit designed around your pressure, flow, cooling, and control requirements.',
-    specs: { Pressure: 'Up to 315 bar', Power: 'Custom configured', Stroke: 'Machine dependent', Material: 'Industrial-grade hydraulic components' },
-  },
-  'vertical-baling-press': {
-    name: 'Vertical Baling Press',
-    description: 'Compact vertical press for controlled baling of recyclable materials where floor space is limited.',
-    specs: { Pressure: '160 - 250 bar', Power: '10 - 75 HP', Stroke: 'Custom ram stroke', Material: 'Fabricated steel frame' },
-  },
-  'scrap-baling-press': {
-    name: 'Hydraulic Scrap Baling Press',
-    description: 'High-compression baling press built to convert loose metal scrap into dense transport-ready bales.',
-    specs: { Pressure: '200 - 315 bar', Power: '30 - 250 HP', Stroke: 'Custom ram stroke', Material: 'Heavy fabricated steel' },
-  },
-  'press-brake': {
-    name: 'Hydraulic Press Brake',
-    description: 'Precision forming machine for bending plates and sheet metal with repeatable hydraulic force.',
-    specs: { Pressure: 'Up to 250 bar', Power: 'Application matched', Stroke: '100 mm - 500 mm', Material: 'Stress-relieved steel frame' },
-  },
-  'industrial-shredder': {
-    name: 'Industrial Shredder',
-    description: 'Twin-shaft shredding system for metal scrap, industrial waste, e-waste, and bulky recycling streams.',
-    specs: { Pressure: 'Hydraulic drive option', Power: '50 - 500 HP', Stroke: 'Rotary cutting', Material: 'Hardened alloy cutters' },
-  },
-  'alligator-shear': {
-    name: 'Alligator Shear',
-    description: 'Rugged jaw-style shear for fast cutting of bars, rods, sections, and mixed metal scrap.',
-    specs: { Pressure: '200 - 315 bar', Power: '15 - 100 HP', Stroke: 'Shear jaw travel', Material: 'Hardened blades, steel frame' },
-  },
-  'guillotine-shear': {
-    name: 'Guillotine Shear',
-    description: 'Heavy-duty straight-cut shearing machine for plate, structural scrap, and high-volume yards.',
-    specs: { Pressure: 'Up to 315 bar', Power: '50 - 300 HP', Stroke: 'Blade travel custom', Material: 'Fabricated body, alloy blades' },
+  services: {
+    name: 'Services',
+    title: 'Installation, Spares & Recycling Plant Consultancy | JHP',
+    description: 'Installation, operator training, spares, parts, and consultancy support for hydraulic recycling machinery and ELV recycling plant setup.',
+    h1: 'Services - Installation, Spares, Parts and Consultancy',
+    canonical: '/products/services/',
+    intro: 'Jindal Hydro Projects supports customers with installation, training, spares, parts, and consultancy for recycling machinery and plant setup requirements.',
   },
 };
+
+const productSeo = {
+  'high-density-baler': {
+    canonical: '/products/metal-recycling/balers/high-density-hydraulic-baler/',
+    title: 'High Density Hydraulic Baler Manufacturer India | JHP',
+    description: 'High density hydraulic baler - up to 450-ton compaction, bale sizes 8x8" to 35x35". HARDOX 500 chamber, PLC control. Manufacturer since 2000. Get specs & quote.',
+    h1: 'High Density Hydraulic Baler - Up to 450-Ton Compaction Force',
+  },
+  'triple-action-baler': {
+    canonical: '/products/metal-recycling/balers/triple-action-baler/',
+    title: 'Triple Action Hydraulic Baler Manufacturer India | JHP',
+    description: 'Triple action hydraulic baler - 3-direction compression, bale sizes 6x6" to 30x30", up to 10 T/hr. Mini to Jumbo Plus range. PLC control. Get specs & quote.',
+    h1: 'Triple Action Hydraulic Baler - Three-Direction Compression, 6x6" to 30x30" Bales',
+  },
+  'hammer-mill-shredder': {
+    canonical: '/products/metal-recycling/shredders/hammer-mill-shredder/',
+    title: 'Hammer Mill Shredder Manufacturer India | Jindal Hydro Projects',
+    description: 'Industrial hammer mill shredder - HARDOX 600 hammers, 1-9 T/hr, full PLC automation, flame-proof design. Processes intact cars, HMS, ELV scrap. Get quote.',
+    h1: 'Hammer Mill Shredder - Industrial Metal & Scrap Shredding, 1-9 Tons/Hour',
+  },
+  'alligator-shear-crocodile-shear': {
+    canonical: '/products/metal-recycling/shears/alligator-shear/',
+    title: 'Alligator Shear Machine Manufacturer India | JHP',
+    description: 'Hydraulic alligator shear - cuts TMT bar, round bar up to 120mm, angle, cable, tubes. 7-14 strokes/min. No civil foundation. Manufacturer since 2000. Get quote.',
+    h1: 'Alligator Shear (Crocodile Shear) - Cuts Round Bar Up to 120mm',
+  },
+  'automatic-baler': {
+    canonical: '/products/waste-recycling/automatic-horizontal-baler/',
+    title: 'Automatic Horizontal Baler - Paper, PET, Plastic | JHP',
+    description: 'Fully automatic horizontal baler for paper, PET bottles, OCC, plastic & foam. Up to 200 tons/shift, HARDOX 400 lined. Manufacturer since 2000. Get quote.',
+    h1: 'Automatic Horizontal Baler - Up to 200 Tons per Shift for Paper, PET & Plastic',
+  },
+  'box-shear-inclined-shear': {
+    canonical: '/products/metal-recycling/shears/box-shear-inclined-shear/',
+    title: 'Box Shear & Inclined Shear Baler Manufacturer India | JHP',
+    description: 'Heavy-duty box shear (shear baler) - HARDOX 600 blades, 3D compression, 6-20 T/hr. Handles railway scrap, ship demolition, car bodies. No civil foundation.',
+    h1: 'Box Shear / Inclined Shear (Shear Baler) - Heavy-Duty Metal Scrap Shearing',
+  },
+  'continuous-baler': {
+    canonical: '/products/metal-recycling/balers/continuous-baler/',
+    title: 'Continuous Hydraulic Baler - 100-120 Bales/Hour | JHP',
+    description: 'Continuous baler for automotive stamping lines and furnaces - no downtime, 4-80 T/hr, 100-120 bales/hr, HARDOX 500 chamber. PAN-India & export.',
+    h1: 'Continuous Hydraulic Baler - Uninterrupted Scrap Baling at 100-120 Bales/Hour',
+  },
+  'quad-baler': {
+    canonical: '/products/metal-recycling/balers/quad-baler/',
+    title: 'Quad Baler - 4-Cylinder Baling Press Manufacturer India | JHP',
+    description: 'Four-cylinder quad baler - 5-35 T/hr, superior all-round compaction for rails, tram tracks, oversized scrap, car bodies. Custom quotation available.',
+    h1: 'Quad Baler (Four-Cylinder Baling Press) - Superior All-Round Compaction',
+  },
+  'consultancy': {
+    canonical: '/products/elv-recycling/elv-plant-setup-consultancy/',
+    title: 'ELV Recycling Plant Setup & RVSF Equipment | Jindal Hydro Projects',
+    description: 'Turnkey ELV recycling plant design, equipment supply, and RVSF setup consultancy. India\'s 28M ELV opportunity. Established 2000. Contact JHP for a consultation.',
+    h1: 'ELV Recycling Plant Setup - Turnkey RVSF Equipment & Consultancy',
+  },
+  'fodder-block-making-machine': {
+    canonical: '/products/agriculture-recycling/fodder-block-making-machine/',
+    title: 'Fodder Block Making Machine Manufacturer India | JHP',
+    description: 'PLC-controlled fodder block making machine - 70-100 blocks/hour, 10-30 kg blocks, semi-auto poly bag packaging. For farms, co-operatives & biomass plants.',
+    h1: 'Fodder Block Making Machine - 70-100 Blocks/Hour, PLC Controlled',
+  },
+};
+
+const productPathAliases = {
+  'high-density-hydraulic-baler': 'high-density-baler',
+  'alligator-shear': 'alligator-shear-crocodile-shear',
+  'automatic-horizontal-baler': 'automatic-baler',
+  'elv-plant-setup-consultancy': 'consultancy',
+};
+
+const productDetails = {};
 
 const fallbackProduct = {
   name: 'Hydraulic Recycling Machine',
@@ -179,6 +236,7 @@ const getProductDetail = (slug) => {
   return {
     name: listedProduct.name,
     category: listedProduct.category,
+    subcategory: listedProduct.subcategory,
     description: `${listedProduct.name} is engineered for dependable industrial duty, consistent output, and simplified maintenance across recycling, fabrication, and hydraulic production environments.`,
     specs: {
       Pressure: 'Up to 315 bar',
@@ -188,6 +246,209 @@ const getProductDetail = (slug) => {
     },
   };
 };
+
+const getCategoryParam = (category) => {
+  if (!category?.viewAll) return '';
+  const queryCategory = category.viewAll.split('category=')[1];
+  if (queryCategory) return queryCategory.replace(/\/$/, '');
+  const parts = category.viewAll.split('/').filter(Boolean);
+  return parts[1] || '';
+};
+
+const getProductPath = (product) => productSeo[product.slug]?.canonical || `/product-detail?product=${product.slug}`;
+
+const categoryImages = {
+  'metal-recycling': '/images/metal%20recycling.png',
+  'waste-recycling': '/images/waste%20management.png',
+  'agriculture-recycling': '/images/homepage.png',
+  'elv-recycling': '/images/scrap.png',
+  services: '/images/infrastructure%201.png',
+};
+
+const getCategoryImage = (category) => categoryImages[getCategoryParam(category)] || '/images/homepage.png';
+
+const normalizePath = (path) => {
+  if (!path || path === '/') return '/';
+  return path.endsWith('/') ? path : `${path}/`;
+};
+
+const getProductSlugFromLocation = (location) => {
+  const params = new URLSearchParams(location.search);
+  if (params.get('product')) return params.get('product');
+  const parts = location.pathname.split('/').filter(Boolean);
+  const slug = parts.length >= 4 ? parts[parts.length - 1] : null;
+  return productPathAliases[slug] || slug;
+};
+
+const getCategorySlugFromLocation = (location) => {
+  const params = new URLSearchParams(location.search);
+  if (params.get('category')) return params.get('category');
+  const parts = location.pathname.split('/').filter(Boolean);
+  if (parts[0] === 'products' && parts[1]) return parts[1];
+  return null;
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Jindal Hydro Projects Inc.',
+  alternateName: 'JHP',
+  url: siteUrl,
+  logo: `${siteUrl}/images/logo_transparent.png`,
+  foundingDate: '2000',
+  description: 'Manufacturer and exporter of hydraulic balers, scrap metal shredders, alligator shears, waste balers, and recycling machinery. 2,500+ machines installed globally since 2000.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'B, 38A, MIA Road, Matsya Industrial Area, Naharpur',
+    addressLocality: 'Alwar',
+    addressRegion: 'Rajasthan',
+    postalCode: '301030',
+    addressCountry: 'IN',
+  },
+  contactPoint: [{
+    '@type': 'ContactPoint',
+    telephone: '+91-9868247362',
+    contactType: 'sales',
+    availableLanguage: ['English', 'Hindi'],
+    areaServed: 'Worldwide',
+  }],
+  sameAs: ['https://wa.me/919868247362'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Hydraulic Recycling Machinery',
+    itemListElement: ['Hydraulic Balers', 'Metal Shredders', 'Alligator Shears', 'Waste Balers', 'ELV Recycling Equipment'].map((name) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Product', name },
+    })),
+  },
+};
+
+const buildBreadcrumbSchema = (items) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: `${siteUrl}${normalizePath(item.path)}`,
+  })),
+});
+
+const getSeoConfig = (page, location) => {
+  const productSlug = getProductSlugFromLocation(location);
+  const product = productSlug ? getProductDetail(productSlug) : null;
+  const productMeta = productSlug ? productSeo[productSlug] : null;
+  const categorySlug = getCategorySlugFromLocation(location);
+  const categoryMeta = categorySlug ? categorySeo[categorySlug] : null;
+
+  if (page === 'home') {
+    return {
+      title: 'Hydraulic Baler & Recycling Machinery Manufacturer - Jindal Hydro Projects',
+      description: 'Manufacturer & exporter of hydraulic balers, shredders, alligator shears, and scrap recycling machinery since 2000. 2,500+ machines installed globally. Get a free quote.',
+      canonical: '/',
+      schemas: [organizationSchema],
+    };
+  }
+
+  if (page === 'product-detail' && product) {
+    const productCategory = productCategories.find((category) => category.name === product.category);
+    const canonical = productMeta?.canonical || `/products/${getCategoryParam(productCategory)}/${productSlug}/`;
+    return {
+      title: productMeta?.title || `${product.name} Manufacturer India | JHP`,
+      description: productMeta?.description || product.description,
+      canonical,
+      schemas: [
+        organizationSchema,
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: product.category, path: `/products/${getCategoryParam(productCategories.find((category) => category.name === product.category))}/` },
+          { name: product.subcategory || product.category, path: canonical.split('/').slice(0, -2).join('/') || canonical },
+          { name: product.name, path: canonical },
+        ]),
+        {
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: productMeta?.h1 || product.name,
+          description: productMeta?.description || product.description,
+          brand: { '@type': 'Brand', name: 'Jindal Hydro Projects' },
+          manufacturer: { '@type': 'Organization', name: 'Jindal Hydro Projects Inc.' },
+          url: `${siteUrl}${normalizePath(canonical)}`,
+          image: `${siteUrl}/images/homepage.png`,
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', areaServed: ['IN', 'AE', 'SA', 'ZA', 'KE', 'NG', 'MY', 'SG'] },
+        },
+      ],
+    };
+  }
+
+  if (page === 'products' && categoryMeta) {
+    return {
+      title: categoryMeta.title,
+      description: categoryMeta.description,
+      canonical: categoryMeta.canonical,
+      schemas: [
+        organizationSchema,
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: categoryMeta.name, path: categoryMeta.canonical },
+        ]),
+      ],
+    };
+  }
+
+  const content = pageCopy[page] || pageCopy['not-found'];
+  const canonical = page === 'products' ? '/products/' : `/${page}/`;
+  return {
+    title: `${content.title} | Jindal Hydro Projects`,
+    description: content.text,
+    canonical,
+    schemas: page === 'not-found' ? [] : [organizationSchema],
+  };
+};
+
+function SeoManager({ page }) {
+  const location = useLocation();
+
+  useEffect(() => {
+    const seo = getSeoConfig(page, location);
+    const canonicalUrl = `${siteUrl}${normalizePath(seo.canonical)}`;
+    document.title = seo.title;
+
+    const setMeta = (selector, attrs) => {
+      let element = document.head.querySelector(selector);
+      if (!element) {
+        element = document.createElement('meta');
+        document.head.appendChild(element);
+      }
+      Object.entries(attrs).forEach(([key, value]) => element.setAttribute(key, value));
+    };
+
+    setMeta('meta[name="description"]', { name: 'description', content: seo.description });
+    setMeta('meta[property="og:title"]', { property: 'og:title', content: seo.title });
+    setMeta('meta[property="og:description"]', { property: 'og:description', content: seo.description });
+    setMeta('meta[property="og:url"]', { property: 'og:url', content: canonicalUrl });
+    setMeta('meta[property="og:type"]', { property: 'og:type', content: page === 'product-detail' ? 'product' : 'website' });
+    setMeta('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' });
+
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', canonicalUrl);
+
+    document.head.querySelectorAll('script[data-seo-schema="true"]').forEach((script) => script.remove());
+    seo.schemas.forEach((schema) => {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.dataset.seoSchema = 'true';
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    });
+  }, [page, location]);
+
+  return null;
+}
 
 const featureGroups = [
   {
@@ -252,12 +513,11 @@ const faqs = [
 ];
 
 const aboutOfferings = [
-  ['Hydraulic Presses', 'Precision pressing, forming and production-duty hydraulic press systems.', '/images/homepage.png'],
-  ['Baling Machines', 'Horizontal, vertical and custom balers for metal, paper and recyclable materials.', '/images/homepage.png'],
-  ['Shredders', 'Heavy-duty shredding solutions for scrap, industrial waste and recycling streams.', '/images/homepage.png'],
-  ['Power Packs', 'Hydraulic power units designed around pressure, flow, cooling and controls.', '/images/homepage.png'],
-  ['Hydraulic Cylinders', 'Industrial cylinders for presses, balers, material handling and automation.', '/images/homepage.png'],
-  ['Solar Systems', 'Integrated solar and industrial energy support solutions for facilities.', '/images/homepage.png'],
+  ['Metal Recycling', 'Balers, shears, shredders, briquetting machines, nibblers and material handling equipment.', '/images/metal%20recycling.png'],
+  ['Waste Recycling', 'Automatic, semi automatic, triple action, vertical and horizontal baling solutions for waste streams.', '/images/waste%20management.png'],
+  ['Agriculture Waste Recycling', 'Fodder block making machines and straw balers for agricultural waste handling.', '/images/homepage.png'],
+  ['ELV Recycling', 'Car balers, shears, high density balers, triple action balers and shredders for ELV processing.', '/images/scrap.png'],
+  ['Services', 'Installation, training, spares, parts and consultancy support.', '/images/homepage.png'],
 ];
 
 const businessDetails = [
@@ -408,11 +668,12 @@ function ProductsMegaMenu() {
             <div className="product-menu-kicker">Explore Machinery</div>
             {productCategories.map((category, index) => (
               <div className={`product-category ${index === 0 ? 'is-active' : ''}`} key={category.name}>
-                <button className="product-category-toggle" type="button">{category.name}<span>{category.products.length}</span></button>
+                <Link className="product-category-toggle" to={category.viewAll}>{category.name}<span>{category.products.length}</span></Link>
                 <div className="product-subpanel">
                   <div className="product-panel-heading">{category.name}</div>
                   {category.products.map((product) => (
-                    <Link className="product-link" to={`/product-detail?product=${product.slug}`} key={product.slug}>
+                    <Link className="product-link" to={getProductPath(product)} key={product.slug}>
+                      <small>{product.subcategory}</small>
                       <strong>{product.name}</strong>
                     </Link>
                   ))}
@@ -880,9 +1141,10 @@ function AboutPage() {
 
 function ProductDetailPage() {
   const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const currentSlug = params.get('product') || productCategories[0].products[0].slug;
+  const navigate = useNavigate();
+  const currentSlug = getProductSlugFromLocation(location) || productCategories[0].products[0].slug;
   const product = getProductDetail(currentSlug);
+  const productMeta = productSeo[currentSlug];
   const [openCategory, setOpenCategory] = useState(product.category);
 
   useEffect(() => {
@@ -900,7 +1162,12 @@ function ProductDetailPage() {
               <details className="product-sidebar-group" open={openCategory === category.name} key={category.name}>
                 <summary onClick={(event) => {
                   event.preventDefault();
-                  setOpenCategory((current) => current === category.name ? null : category.name);
+                  if (openCategory === category.name) {
+                    setOpenCategory(null);
+                  } else {
+                    setOpenCategory(category.name);
+                    navigate(category.viewAll);
+                  }
                 }}>{category.name} <span>({category.products.length})</span></summary>
                 <div className="product-sidebar-links">
                   <Link className="sidebar-product-link" to={category.viewAll}>
@@ -909,9 +1176,10 @@ function ProductDetailPage() {
                   {category.products.map((item) => (
                     <Link
                       className={`sidebar-product-link ${item.slug === currentSlug ? 'active' : ''}`}
-                      to={`/product-detail?product=${item.slug}`}
+                      to={getProductPath(item)}
                       key={item.slug}
                     >
+                      <small>{item.subcategory}</small>
                       {item.name}
                     </Link>
                   ))}
@@ -927,7 +1195,7 @@ function ProductDetailPage() {
               </div>
               <div className="product-detail-content">
                 <div className="section-label">{product.category}</div>
-                <h1>{product.name}</h1>
+                <h1>{productMeta?.h1 || product.name}</h1>
                 <p>{product.description}</p>
                 <div className="hero-btns">
                   <Link className="btn-primary" to="/contact">Enquire Now</Link>
@@ -1044,9 +1312,10 @@ function ProductDetailPage() {
 
 function ProductsPage() {
   const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const activeCategoryParam = params.get('category');
-  const activeCategory = productCategories.find((category) => category.viewAll.includes(`category=${activeCategoryParam}`));
+  const navigate = useNavigate();
+  const activeCategoryParam = getCategorySlugFromLocation(location);
+  const activeCategorySeo = activeCategoryParam ? categorySeo[activeCategoryParam] : null;
+  const activeCategory = productCategories.find((category) => getCategoryParam(category) === activeCategoryParam);
   const defaultOpenCategory = activeCategory?.name || productCategories[0].name;
   const [openCategory, setOpenCategory] = useState(defaultOpenCategory);
   const listedCategories = activeCategory ? [activeCategory] : productCategories;
@@ -1073,7 +1342,12 @@ function ProductsPage() {
               <details className="product-sidebar-group" open={openCategory === category.name} key={category.name}>
                 <summary onClick={(event) => {
                   event.preventDefault();
-                  setOpenCategory((current) => current === category.name ? null : category.name);
+                  if (openCategory === category.name) {
+                    setOpenCategory(null);
+                  } else {
+                    setOpenCategory(category.name);
+                    navigate(category.viewAll);
+                  }
                 }}>{category.name} <span>({category.products.length})</span></summary>
                 <div className="product-sidebar-links">
                   <Link
@@ -1083,7 +1357,8 @@ function ProductsPage() {
                     All {category.name}
                   </Link>
                   {category.products.map((item) => (
-                    <Link className="sidebar-product-link" to={`/product-detail?product=${item.slug}`} key={item.slug}>
+                    <Link className="sidebar-product-link" to={getProductPath(item)} key={item.slug}>
+                      <small>{item.subcategory}</small>
                       {item.name}
                     </Link>
                   ))}
@@ -1094,24 +1369,40 @@ function ProductsPage() {
           <section className="product-display">
             <div className="product-listing-header">
               <div className="section-label">Products</div>
-              <h1>{activeCategory?.name || 'Our Machinery'}</h1>
-              <p>{activeCategory ? `Browse all products in ${activeCategory.name}.` : 'Browse all product categories or select a product from the left catalogue to view specifications, application details, and video.'}</p>
+              <h1>{activeCategorySeo?.h1 || activeCategory?.name || 'Our Machinery'}</h1>
+              <p>{activeCategorySeo?.intro || (activeCategory ? `Browse all products in ${activeCategory.name}.` : 'Browse metal recycling machinery, waste recycling equipment, agriculture waste machinery, ELV recycling plant solutions, and services from Jindal Hydro Projects.')}</p>
             </div>
 
             <div className="product-listing-grid">
-              {listedProducts.map((product) => (
-                <article className="product-listing-card reveal" key={product.slug}>
-                  <div className="product-listing-image">
-                    <img src="/images/homepage.png" alt={product.name} />
-                  </div>
-                  <div className="product-listing-body">
-                    <div className="product-listing-category">{product.category}</div>
-                    <h2>{product.name}</h2>
-                    <p>{product.detail.description}</p>
-                  </div>
-                  <Link className="product-listing-action" to={`/product-detail?product=${product.slug}`}>Learn More</Link>
-                </article>
-              ))}
+              {activeCategory ? (
+                listedProducts.map((product) => (
+                  <Link className="product-listing-card product-listing-card-link reveal" to={getProductPath(product)} key={product.slug}>
+                    <div className="product-listing-image">
+                      <img src="/images/homepage.png" alt={product.name} />
+                    </div>
+                    <div className="product-listing-body">
+                      <div className="product-listing-category">{product.category} / {product.subcategory}</div>
+                      <h2>{product.name}</h2>
+                      <p>{product.detail.description}</p>
+                    </div>
+                    <span className="product-listing-action">Learn More</span>
+                  </Link>
+                ))
+              ) : (
+                productCategories.map((category) => (
+                  <Link className="product-listing-card product-listing-card-link reveal" to={category.viewAll} key={category.name}>
+                    <div className="product-listing-image">
+                      <img src={getCategoryImage(category)} alt={`${category.name} category`} />
+                    </div>
+                    <div className="product-listing-body">
+                      <div className="product-listing-category">{category.products.length} Products</div>
+                      <h2>{category.name}</h2>
+                      <p>{categorySeo[getCategoryParam(category)]?.intro || `Browse all products in ${category.name}.`}</p>
+                    </div>
+                    <span className="product-listing-action">View Category</span>
+                  </Link>
+                ))
+              )}
             </div>
           </section>
         </div>
@@ -1124,35 +1415,40 @@ function ProductsPage() {
 export default function App({ page }) {
   const location = useLocation();
 
-  useSiteInteractions(page);
+  useSiteInteractions(`${page}:${location.pathname}:${location.search}`);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [location.pathname, location.search]);
 
   if (page === 'home') {
-    return <div dangerouslySetInnerHTML={{ __html: homeMarkup }} />;
+    return (
+      <>
+        <SeoManager page={page} />
+        <div dangerouslySetInnerHTML={{ __html: homeMarkup }} />
+      </>
+    );
   }
 
   if (page === 'product-detail') {
-    return <ProductDetailPage />;
+    return <><SeoManager page={page} /><ProductDetailPage /></>;
   }
 
   if (page === 'products') {
-    return <ProductsPage />;
+    return <><SeoManager page={page} /><ProductsPage /></>;
   }
 
   if (page === 'solutions') {
-    return <SolutionsPage />;
+    return <><SeoManager page={page} /><SolutionsPage /></>;
   }
 
   if (page === 'contact') {
-    return <ContactPage />;
+    return <><SeoManager page={page} /><ContactPage /></>;
   }
 
   if (page === 'about') {
-    return <AboutPage />;
+    return <><SeoManager page={page} /><AboutPage /></>;
   }
 
-  return <PlaceholderPage page={page} />;
+  return <><SeoManager page={page} /><PlaceholderPage page={page} /></>;
 }
