@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { homeMarkup } from './homeMarkup.js';
 import { useSiteInteractions } from './useSiteInteractions.js';
 
@@ -416,6 +416,19 @@ const getCategoryParam = (category) => {
   return parts[1] || '';
 };
 
+const slugifySegment = (value) => value.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+const getSubcategoryGroups = (products) => (
+  [...new Set(products.map((product) => product.subcategory).filter(Boolean))]
+);
+
+const groupProductsBySubcategory = (products) => getSubcategoryGroups(products).map((subcategory) => ({
+  name: subcategory,
+  products: products.filter((product) => product.subcategory === subcategory),
+}));
+
+const getSubcategoryPath = (category, subcategory) => `${category.viewAll}${slugifySegment(subcategory)}/`;
+
 const getProductPath = (product) => productSeo[product.slug]?.canonical || `/product-detail?product=${product.slug}`;
 
 const categoryImages = {
@@ -446,6 +459,12 @@ const getCategorySlugFromLocation = (location) => {
   if (params.get('category')) return params.get('category');
   const parts = location.pathname.split('/').filter(Boolean);
   if (parts[0] === 'products' && parts[1]) return parts[1];
+  return null;
+};
+
+const getSubcategorySlugFromLocation = (location) => {
+  const parts = location.pathname.split('/').filter(Boolean);
+  if (parts[0] === 'products' && parts[2] && parts.length === 3) return parts[2];
   return null;
 };
 
@@ -840,18 +859,30 @@ function ProductsMegaMenu() {
       <div className="nav-dropdown product-mega">
         <div className="product-mega-shell">
           <div className="product-category-column">
-            <div className="product-menu-kicker">Explore Machinery</div>
-            {productCategories.map((category, index) => (
-              <div className={`product-category ${index === 0 ? 'is-active' : ''}`} key={category.name}>
-                <Link className="product-category-toggle" to={category.viewAll}>{category.name}<span>{category.products.length}</span></Link>
+            {productCategories.map((category) => (
+              <div className="product-category" key={category.name}>
+                <Link className="product-category-toggle" to={category.viewAll}>{category.name}</Link>
                 <div className="product-subpanel">
-                  <div className="product-panel-heading">{category.name}</div>
-                  {category.products.map((product) => (
-                    <Link className="product-link" to={getProductPath(product)} key={product.slug}>
-                      <small>{product.subcategory}</small>
-                      <strong>{product.name}</strong>
-                    </Link>
-                  ))}
+                  {category.name === 'Metal Recycling' ? (
+                    groupProductsBySubcategory(category.products).map((group) => (
+                      <div className="product-flyout-group" key={group.name}>
+                        <Link className="product-subcategory-heading" to={getSubcategoryPath(category, group.name)}>
+                          {group.name}
+                        </Link>
+                        {group.products.map((product) => (
+                          <Link className="product-link product-link--nested" to={getProductPath(product)} key={product.slug}>
+                            <strong>{product.name}</strong>
+                          </Link>
+                        ))}
+                      </div>
+                    ))
+                  ) : (
+                    category.products.map((product) => (
+                      <Link className="product-link" to={getProductPath(product)} key={product.slug}>
+                        <strong>{product.name}</strong>
+                      </Link>
+                    ))
+                  )}
                 </div>
               </div>
             ))}
@@ -1316,53 +1347,15 @@ function AboutPage() {
 
 function ProductDetailPage() {
   const location = useLocation();
-  const navigate = useNavigate();
   const currentSlug = getProductSlugFromLocation(location) || productCategories[0].products[0].slug;
   const product = getProductDetail(currentSlug);
   const productMeta = productSeo[currentSlug];
-  const [openCategory, setOpenCategory] = useState(product.category);
-
-  useEffect(() => {
-    setOpenCategory(product.category);
-  }, [product.category]);
 
   return (
     <>
       <Header />
       <main className="product-detail-page">
         <div className="product-browser-layout">
-          <aside className="product-sidebar">
-            <h2>Products We Offer</h2>
-            {productCategories.map((category) => (
-              <details className="product-sidebar-group" open={openCategory === category.name} key={category.name}>
-                <summary onClick={(event) => {
-                  event.preventDefault();
-                  if (openCategory === category.name) {
-                    setOpenCategory(null);
-                  } else {
-                    setOpenCategory(category.name);
-                    navigate(category.viewAll);
-                  }
-                }}>{category.name} <span>({category.products.length})</span></summary>
-                <div className="product-sidebar-links">
-                  <Link className="sidebar-product-link" to={category.viewAll}>
-                    All {category.name}
-                  </Link>
-                  {category.products.map((item) => (
-                    <Link
-                      className={`sidebar-product-link ${item.slug === currentSlug ? 'active' : ''}`}
-                      to={getProductPath(item)}
-                      key={item.slug}
-                    >
-                      <small>{item.subcategory}</small>
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </details>
-            ))}
-          </aside>
-
           <section className="product-display">
             <div className="product-detail-hero">
               <div className="product-detail-media">
@@ -1487,12 +1480,10 @@ function ProductDetailPage() {
 
 function ProductsPage() {
   const location = useLocation();
-  const navigate = useNavigate();
   const activeCategoryParam = getCategorySlugFromLocation(location);
+  const activeSubcategoryParam = getSubcategorySlugFromLocation(location);
   const activeCategorySeo = activeCategoryParam ? categorySeo[activeCategoryParam] : null;
   const activeCategory = productCategories.find((category) => getCategoryParam(category) === activeCategoryParam);
-  const defaultOpenCategory = activeCategory?.name || productCategories[0].name;
-  const [openCategory, setOpenCategory] = useState(defaultOpenCategory);
   const listedCategories = activeCategory ? [activeCategory] : productCategories;
   const listedProducts = listedCategories.flatMap((category) => (
     category.products.map((item) => ({
@@ -1500,64 +1491,23 @@ function ProductsPage() {
       category: category.name,
       detail: getProductDetail(item.slug),
     }))
-  ));
-
-  useEffect(() => {
-    setOpenCategory(defaultOpenCategory);
-  }, [defaultOpenCategory]);
+  )).filter((product) => !activeSubcategoryParam || slugifySegment(product.subcategory) === activeSubcategoryParam);
+  const activeSubcategoryName = activeSubcategoryParam
+    ? listedProducts[0]?.subcategory || activeSubcategoryParam.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+    : null;
 
   return (
     <>
       <Header />
       <main className="product-detail-page">
         <div className="product-browser-layout">
-          <aside className="product-sidebar">
-            <h2>Products We Offer</h2>
-            {productCategories.map((category) => (
-              <details className="product-sidebar-group" open={openCategory === category.name} key={category.name}>
-                <summary onClick={(event) => {
-                  event.preventDefault();
-                  if (openCategory === category.name) {
-                    setOpenCategory(null);
-                  } else {
-                    setOpenCategory(category.name);
-                    navigate(category.viewAll);
-                  }
-                }}>{category.name} <span>({category.products.length})</span></summary>
-                <div className="product-sidebar-links">
-                  <Link
-                    className={`sidebar-product-link ${activeCategory?.name === category.name ? 'active' : ''}`}
-                    to={category.viewAll}
-                  >
-                    All {category.name}
-                  </Link>
-                  {category.products.map((item) => (
-                    <Link className="sidebar-product-link" to={getProductPath(item)} key={item.slug}>
-                      <small>{item.subcategory}</small>
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </details>
-            ))}
-          </aside>
           <section className="product-display">
             <div className="product-listing-header">
               <div className="section-label">Products</div>
-              <h1>{activeCategorySeo?.h1 || activeCategory?.name || 'Our Machinery'}</h1>
-              <p>{activeCategorySeo?.intro || (activeCategory ? `Browse all products in ${activeCategory.name}.` : 'Browse metal recycling machinery, waste recycling equipment, agriculture waste machinery, ELV recycling plant solutions, and services from Jindal Hydro Projects.')}</p>
+              <h1>{activeSubcategoryName || activeCategorySeo?.h1 || activeCategory?.name || 'Our Machinery'}</h1>
+              <p>{activeSubcategoryName ? `Browse ${activeSubcategoryName} products in ${activeCategory.name}.` : activeCategorySeo?.intro || (activeCategory ? `Browse all products in ${activeCategory.name}.` : 'Browse metal recycling machinery, waste recycling equipment, agriculture waste machinery, ELV recycling plant solutions, and services from Jindal Hydro Projects.')}</p>
             </div>
 
-            {activeCategorySeo?.sections && (
-              <div className="category-seo-grid">
-                {activeCategorySeo.sections.map(([title, text]) => (
-                  <section className="category-seo-card" key={title}>
-                    <h2>{title}</h2>
-                    <p>{text}</p>
-                  </section>
-                ))}
-              </div>
-            )}
 
             <div className="product-listing-grid">
               {activeCategory ? (
@@ -1567,7 +1517,6 @@ function ProductsPage() {
                       <img src="/images/homepage.png" alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
                     </div>
                     <div className="product-listing-body">
-                      <div className="product-listing-category">{product.category} / {product.subcategory}</div>
                       <h2>{product.name}</h2>
                       <p>{product.detail.description}</p>
                     </div>
@@ -1581,7 +1530,6 @@ function ProductsPage() {
                       <img src={getCategoryImage(category)} alt={`${category.name} machinery - Jindal Hydro Projects`} loading="lazy" />
                     </div>
                     <div className="product-listing-body">
-                      <div className="product-listing-category">{category.products.length} Products</div>
                       <h2>{category.name}</h2>
                       <p>{categorySeo[getCategoryParam(category)]?.intro || `Browse all products in ${category.name}.`}</p>
                     </div>
