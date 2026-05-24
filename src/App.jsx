@@ -862,7 +862,7 @@ function ProductsMegaMenu() {
             {productCategories.map((category) => (
               <div className="product-category" key={category.name}>
                 <Link className="product-category-toggle" to={category.viewAll}>{category.name}</Link>
-                <div className="product-subpanel">
+                <div className={`product-subpanel product-subpanel--${getCategoryParam(category)}`}>
                   {category.name === 'Metal Recycling' ? (
                     groupProductsBySubcategory(category.products).map((group) => (
                       <div className="product-flyout-group" key={group.name}>
@@ -1556,10 +1556,13 @@ export default function App({ page }) {
   }, [location.pathname, location.search]);
 
   if (page === 'home') {
+    const homeBodyMarkup = homeMarkup.replace(/^\s*<!-- NAV -->[\s\S]*?<\/nav>\s*/, '');
+
     return (
       <>
         <SeoManager page={page} />
-        <div dangerouslySetInnerHTML={{ __html: homeMarkup }} />
+        <Header />
+        <div dangerouslySetInnerHTML={{ __html: homeBodyMarkup }} />
       </>
     );
   }
