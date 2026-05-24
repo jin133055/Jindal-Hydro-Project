@@ -15,9 +15,10 @@ const productCategories = [
       { slug: 'continuous-baler', name: 'Continuous Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'mini-triple-action-baler', name: 'Mini Triple Action Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'double-action-baler', name: 'Double Action Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'single-action-baler', name: 'Single Action Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'vertical-baler', name: 'Vertical Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'mobile-baler', name: 'Mobile Baler', subcategory: 'Balers', note: 'Balers' },
-      { slug: 'car-baler', name: 'Car Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'car-baler', name: 'Car Baler (ELV)', subcategory: 'Balers', note: 'Balers' },
       { slug: 'metal-recycling-continuous-baler', name: 'Continuous Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
       { slug: 'metal-recycling-high-density-baler', name: 'High Density Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
       { slug: 'jumbo-manual-baler', name: 'Jumbo Manual Baler', subcategory: 'Metal Recycling Balers', note: 'Metal Recycling Balers' },
@@ -31,12 +32,13 @@ const productCategories = [
       { slug: 'single-shaft-shredder', name: 'Single Shaft Shredder', subcategory: 'Shredders', note: 'Shredders' },
       { slug: 'hammer-mill-shredder', name: 'Hammer Mill Shredder', subcategory: 'Shredders', note: 'Shredders' },
       { slug: 'twin-shaft-shredder-rotary-shear-pre-shredder', name: 'Twin Shaft Shredder (Rotary Shear / Pre Shredder)', subcategory: 'Shredders', note: 'Shredders' },
+      { slug: 'casting-cracker', name: 'Casting Cracker', subcategory: 'Shredders', note: 'Shredders' },
       { slug: 'chip-briquetting-machine', name: 'Chip Briquetting Machine', subcategory: 'Briquetting Machines', note: 'Briquetting Machines' },
       { slug: 'vertical-briquetting-machine', name: 'Vertical Briquetting Machine', subcategory: 'Briquetting Machines', note: 'Briquetting Machines' },
       { slug: 'hydraulic-nibbler', name: 'Hydraulic Nibbler', subcategory: 'Nibblers', note: 'Nibblers' },
       { slug: 'magnetic-separator-ubc-sorter', name: 'Magnetic Separator / UBC Sorter', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
-      { slug: 'conveyors', name: 'Conveyors', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
-      { slug: 'grabs-cranes', name: 'Grabs & Cranes', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
+      { slug: 'conveyors', name: 'Scrap Handling Conveyors', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
+      { slug: 'grabs-cranes', name: 'Hydraulic Grab & Crane', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
       { slug: 'scrap-charging-trolley', name: 'Scrap Charging Trolley', subcategory: 'Material Handling Equipment', note: 'Material Handling Equipment' },
     ],
   },
@@ -101,6 +103,11 @@ const categorySeo = {
     h1: 'Metal Recycling Machinery - Hydraulic Balers, Shears & Shredders',
     canonical: '/products/metal-recycling/',
     intro: 'Jindal Hydro Projects offers a complete range of hydraulic machinery for metal scrap processing, from compact balers to industrial shredding systems. Machines handle ferrous and non-ferrous scrap including MS, stainless steel, aluminium, copper, tyre wire, TMT bars, and car bodies.',
+    sections: [
+      ['Applications', 'Scrap yards, rolling mills, furnaces, automotive plants, and ELV recycling facilities.'],
+      ['Common Materials Processed', 'Ferrous and non-ferrous scrap including MS, stainless steel, aluminium, copper, tyre wire, car bodies, and TMT bars.'],
+      ['Need Help Choosing?', 'Request a free consultation and our team will recommend the right baler, shear, shredder, briquetting machine, or handling system.'],
+    ],
   },
   'waste-recycling': {
     name: 'Waste Recycling',
@@ -109,6 +116,11 @@ const categorySeo = {
     h1: 'Waste Recycling Balers - Paper, PET Bottles, Plastic & Cardboard',
     canonical: '/products/waste-recycling/',
     intro: 'JHP supplies fully automatic and semi-automatic PLC-controlled balers for recyclers, packaging factories, printing firms, and PET traders. Waste balers reduce material volume, lower transport cost, and minimise labour requirements.',
+    sections: [
+      ['Materials Processed', 'Paper, OCC, cardboard, PET bottles, HDPE, soft plastic, foam, rubber, and municipal solid waste.'],
+      ['Industries Served', 'Waste recycling facilities, paper mills, packaging factories, MSW contractors, and urban local bodies.'],
+      ['Key Benefits', 'Reduce waste volume by up to 90%, lower transport cost, and support continuous high-volume operation.'],
+    ],
   },
   'agriculture-recycling': {
     name: 'Agriculture Waste Recycling',
@@ -117,6 +129,10 @@ const categorySeo = {
     h1: 'Agricultural Waste Recycling Machinery - Fodder Block Machines & Straw Balers',
     canonical: '/products/agriculture-recycling/',
     intro: 'JHP manufactures equipment to compress agricultural waste into compact, high-value blocks for cattle fodder, biomass fuel, or export. Applications include farms, fodder processing facilities, co-operatives, biomass plants, and agro-industries.',
+    sections: [
+      ['Applications', 'Farms, fodder processing facilities, cattle co-operatives, biomass plants, and agro-industries.'],
+      ['Materials Processed', 'Dry straw, wheat straw, rice husk, corn stover, dry grass, and TMR blends.'],
+    ],
   },
   'elv-recycling': {
     name: 'ELV Recycling',
@@ -125,6 +141,11 @@ const categorySeo = {
     h1: 'ELV Recycling Plant Equipment - Complete RVSF Machinery Solutions',
     canonical: '/products/elv-recycling/',
     intro: 'JHP supplies the full ELV equipment suite and provides turnkey plant setup and consultancy for Registered Vehicle Scrapping Facilities. Equipment covers car baling, shearing, shredding, high density baling, and material handling.',
+    sections: [
+      ['Applicable Vehicles', 'Passenger cars, commercial vehicles, buses, trucks, two-wheelers, and auto bodies.'],
+      ['Equipment Required', 'Car balers, box shears, alligator shears, hammer mill shredders, twin shaft shredders, and high density balers.'],
+      ['Why Set Up an RVSF Now?', 'Vehicle scrapping policy, high scrap value recovery, and end-to-end JHP setup support.'],
+    ],
   },
   services: {
     name: 'Services',
@@ -197,6 +218,138 @@ const productSeo = {
     description: 'PLC-controlled fodder block making machine - 70-100 blocks/hour, 10-30 kg blocks, semi-auto poly bag packaging. For farms, co-operatives & biomass plants.',
     h1: 'Fodder Block Making Machine - 70-100 Blocks/Hour, PLC Controlled',
   },
+  'continuous-shear': {
+    canonical: '/products/metal-recycling/shears/continuous-shear/',
+    title: 'Continuous Shear Machine Manufacturer India | JHP',
+    description: 'Continuous shear for uninterrupted scrap cutting and heavy metal processing. Built for high-volume recycling operations. Contact JHP for specifications and quote.',
+    h1: 'Continuous Shear (Container Shear) - Uninterrupted Scrap Cutting',
+  },
+  'hydraulic-nibbler': {
+    canonical: '/products/metal-recycling/shears/hydraulic-nibbler/',
+    title: 'Hydraulic Nibbler Machine Manufacturer India | JHP',
+    description: 'Hydraulic nibbler for precision metal sheet cutting and scrap processing. Heavy-duty industrial build from Jindal Hydro Projects.',
+    h1: 'Hydraulic Nibbler - Precision Metal Sheet Cutting',
+  },
+  'single-shaft-shredder': {
+    canonical: '/products/metal-recycling/shredders/single-shaft-shredder/',
+    title: 'Single Shaft Shredder Manufacturer India | JHP',
+    description: 'Single shaft shredder for controlled size reduction of plastics, waste, and recycling streams. Request specifications and quote from JHP.',
+    h1: 'Single Shaft Shredder - Controlled Size Reduction for Plastics & Waste',
+  },
+  'twin-shaft-shredder-rotary-shear-pre-shredder': {
+    canonical: '/products/metal-recycling/shredders/twin-shaft-shredder/',
+    title: 'Twin Shaft Shredder Manufacturer India | JHP',
+    description: 'Twin shaft shredder for jam-free pre-shredding of bulky ELV parts, industrial scrap, and recycling material streams.',
+    h1: 'Twin Shaft Shredder (Rotary Shear) - Jam-Free Pre-Shredding',
+  },
+  'casting-cracker': {
+    canonical: '/products/metal-recycling/shredders/casting-cracker/',
+    title: 'Casting Cracker & Engine Crusher India | JHP',
+    description: 'Casting cracker and engine crusher for cast iron crushing and heavy scrap recycling applications. Contact JHP for details.',
+    h1: 'Casting Cracker (Engine Cracker) - 3-5 Tons/Hour Cast Iron Crushing',
+  },
+  'chip-briquetting-machine': {
+    canonical: '/products/metal-recycling/briquetting/chip-briquetting-machine/',
+    title: 'Chip Briquetting Machine Manufacturer India | JHP',
+    description: 'Chip briquetting machine for converting metal chips into high-density briquettes for recycling and recovery.',
+    h1: 'Chip Briquetting Machine - Convert Metal Chips to High-Density Briquettes',
+  },
+  'magnetic-separator-ubc-sorter': {
+    canonical: '/products/metal-recycling/material-handling/magnetic-separator-ubc-sorter/',
+    title: 'Magnetic Separator & UBC Sorter India | JHP',
+    description: 'Magnetic separator and UBC sorter for aluminium sorting and recycling lines. Built for reliable material separation.',
+    h1: 'Magnetic Separator & UBC Sorter - Three-Stage Aluminium Sorting System',
+  },
+  conveyors: {
+    canonical: '/products/metal-recycling/material-handling/scrap-handling-conveyors/',
+    title: 'Scrap Handling Conveyors - Custom Built India | JHP',
+    description: 'Custom-built scrap handling conveyor systems for metal recycling lines, balers, shears, and shredders.',
+    h1: 'Scrap Handling Conveyor Systems - Custom-Built for Metal Recycling Lines',
+  },
+  'grabs-cranes': {
+    canonical: '/products/metal-recycling/material-handling/hydraulic-grab-crane/',
+    title: 'Hydraulic Grab & Revolving Crane India | JHP',
+    description: 'Hydraulic grab and revolving tower crane systems for scrap handling, feeding, and material movement in recycling yards.',
+    h1: 'Hydraulic Grab & Revolving Tower Crane for Scrap Handling',
+  },
+  'scrap-charging-trolley': {
+    canonical: '/products/metal-recycling/material-handling/scrap-charging-trolley/',
+    title: 'Scrap Charging Trolley Manufacturer India | JHP',
+    description: 'Scrap charging trolley for rapid-tilt furnace loading and industrial metal handling applications.',
+    h1: 'Scrap Charging Trolley - Rapid-Tilt Furnace Loading',
+  },
+  'mini-triple-action-baler': {
+    canonical: '/products/metal-recycling/balers/mini-triple-action-baler/',
+    title: 'Mini Triple Action Baler India | Jindal Hydro',
+    description: 'Mini triple action baler for small scrap yards, producing compact 6x6 to 10x10 inch bales with efficient hydraulic compression.',
+    h1: 'Mini Triple Action Baler - 6x6" to 10x10" Bales for Small Scrap Yards',
+  },
+  'double-action-baler': {
+    canonical: '/products/metal-recycling/balers/double-action-baler/',
+    title: 'Double Action Baler Manufacturer India | JHP',
+    description: 'Double action baler with two-ram pressing and three door configurations for scrap compaction and recycling applications.',
+    h1: 'Double Action Baler (Two-Ram Press) - Three Door Configurations',
+  },
+  'single-action-baler': {
+    canonical: '/products/metal-recycling/balers/single-action-baler/',
+    title: 'Single Action Baler for In-House Scrap | JHP',
+    description: 'Single action baler for compact in-house scrap management in workshops, factories, and small recycling operations.',
+    h1: 'Single Action Baler - Compact In-House Scrap Management',
+  },
+  'vertical-baler': {
+    canonical: '/products/metal-recycling/balers/vertical-baler/',
+    title: 'Vertical Metal Baler - 30-500 Kg Bales | JHP',
+    description: 'Vertical hydraulic baler for metal scrap with compact layout and no foundation requirement on select models.',
+    h1: 'Vertical Hydraulic Baler for Metal Scrap - Compact, No Foundation Required',
+  },
+  'super-jumbo-baler': {
+    canonical: '/products/metal-recycling/balers/super-jumbo-baler/',
+    title: 'Super Jumbo Baler Manufacturer India | JHP',
+    description: 'Super jumbo baler with heavy compaction force for industrial scrap yards and high-volume metal recycling operations.',
+    h1: 'Super Jumbo Baler - 300-Ton Force for Heavy Industrial Scrap',
+  },
+  'mobile-baler': {
+    canonical: '/products/metal-recycling/balers/mobile-baler/',
+    title: 'Mobile Baler for Scrap Processing India | JHP',
+    description: 'Mobile baler for remote and multi-site scrap processing with triple-action hydraulic scrap baling capability.',
+    h1: 'Mobile Baler - Triple-Action Scrap Baling for Remote & Multi-Site Operations',
+  },
+  'car-baler': {
+    canonical: '/products/metal-recycling/balers/car-baler-elv-compactor/',
+    title: 'Car Baler & ELV Vehicle Compactor India | JHP',
+    description: 'Car baler and ELV vehicle compactor for registered vehicle scrapping facilities and auto body recycling.',
+    h1: 'Car Baler (ELV Vehicle Compactor) - For Registered Vehicle Scrapping Facilities',
+  },
+  'semi-automatic-baler': {
+    canonical: '/products/waste-recycling/semi-automatic-horizontal-baler/',
+    title: 'Semi-Auto Horizontal Baler India | JHP',
+    description: 'Semi-automatic horizontal baler for waste recycling, paper, plastic, PET, and packaging material streams.',
+    h1: 'Semi-Automatic Horizontal Baler - 16-24 Tons per Shift',
+  },
+  'triple-action-baler-for-waste': {
+    canonical: '/products/waste-recycling/triple-action-baler-waste/',
+    title: 'Triple Action Waste Baler - No Strapping Needed',
+    description: 'Triple action waste baler for high-density paper, plastic, and recyclable waste bales without strapping.',
+    h1: 'Triple Action Waste Baler - High-Density Bales Without Strapping',
+  },
+  'waste-recycling-vertical-baler': {
+    canonical: '/products/waste-recycling/vertical-baler-waste/',
+    title: 'Vertical Waste Baler - Paper, PET, Plastic | JHP',
+    description: 'Vertical waste baler for paper, PET bottles, plastic, cardboard, and compact recycling facilities.',
+    h1: 'Vertical Waste Baler - Compact Baling for Paper, PET & Plastic',
+  },
+  'msw-sorting-line': {
+    canonical: '/products/waste-recycling/msw-sorting-line/',
+    title: 'MSW Sorting Line Plant Manufacturer India | JHP',
+    description: 'MSW sorting line for complete municipal solid waste processing and recycling plant applications.',
+    h1: 'MSW Sorting Line - Complete Municipal Solid Waste Processing Plant',
+  },
+  'straw-baler': {
+    canonical: '/products/agriculture-recycling/straw-baler/',
+    title: 'Straw Baler for Agricultural Waste India | JHP',
+    description: 'Straw baler for agricultural waste baling, biomass handling, bedding, and farm material compaction.',
+    h1: 'Straw Baler - Agricultural Waste Baling for Biomass & Bedding',
+  },
 };
 
 const productPathAliases = {
@@ -204,6 +357,14 @@ const productPathAliases = {
   'alligator-shear': 'alligator-shear-crocodile-shear',
   'automatic-horizontal-baler': 'automatic-baler',
   'elv-plant-setup-consultancy': 'consultancy',
+  'box-shear-inclined-shear': 'box-shear-inclined-shear',
+  'twin-shaft-shredder': 'twin-shaft-shredder-rotary-shear-pre-shredder',
+  'scrap-handling-conveyors': 'conveyors',
+  'hydraulic-grab-crane': 'grabs-cranes',
+  'car-baler-elv-compactor': 'car-baler',
+  'semi-automatic-horizontal-baler': 'semi-automatic-baler',
+  'triple-action-baler-waste': 'triple-action-baler-for-waste',
+  'vertical-baler-waste': 'waste-recycling-vertical-baler',
 };
 
 const productDetails = {};
@@ -334,6 +495,19 @@ const buildBreadcrumbSchema = (items) => ({
   })),
 });
 
+const buildFaqSchema = (items) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+});
+
 const getSeoConfig = (page, location) => {
   const productSlug = getProductSlugFromLocation(location);
   const product = productSlug ? getProductDetail(productSlug) : null;
@@ -376,6 +550,7 @@ const getSeoConfig = (page, location) => {
           image: `${siteUrl}/images/homepage.png`,
           offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', areaServed: ['IN', 'AE', 'SA', 'ZA', 'KE', 'NG', 'MY', 'SG'] },
         },
+        buildFaqSchema(faqs),
       ],
     };
   }
@@ -1373,12 +1548,23 @@ function ProductsPage() {
               <p>{activeCategorySeo?.intro || (activeCategory ? `Browse all products in ${activeCategory.name}.` : 'Browse metal recycling machinery, waste recycling equipment, agriculture waste machinery, ELV recycling plant solutions, and services from Jindal Hydro Projects.')}</p>
             </div>
 
+            {activeCategorySeo?.sections && (
+              <div className="category-seo-grid">
+                {activeCategorySeo.sections.map(([title, text]) => (
+                  <section className="category-seo-card" key={title}>
+                    <h2>{title}</h2>
+                    <p>{text}</p>
+                  </section>
+                ))}
+              </div>
+            )}
+
             <div className="product-listing-grid">
               {activeCategory ? (
                 listedProducts.map((product) => (
                   <Link className="product-listing-card product-listing-card-link reveal" to={getProductPath(product)} key={product.slug}>
                     <div className="product-listing-image">
-                      <img src="/images/homepage.png" alt={product.name} />
+                      <img src="/images/homepage.png" alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
                     </div>
                     <div className="product-listing-body">
                       <div className="product-listing-category">{product.category} / {product.subcategory}</div>
@@ -1392,7 +1578,7 @@ function ProductsPage() {
                 productCategories.map((category) => (
                   <Link className="product-listing-card product-listing-card-link reveal" to={category.viewAll} key={category.name}>
                     <div className="product-listing-image">
-                      <img src={getCategoryImage(category)} alt={`${category.name} category`} />
+                      <img src={getCategoryImage(category)} alt={`${category.name} machinery - Jindal Hydro Projects`} loading="lazy" />
                     </div>
                     <div className="product-listing-body">
                       <div className="product-listing-category">{category.products.length} Products</div>
