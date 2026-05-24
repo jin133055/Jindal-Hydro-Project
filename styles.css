@@ -2483,7 +2483,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   margin: 0;
 }
 .product-listing-header p {
-  max-width: 720px;
+  max-width: none;
   margin-top: 8px;
   font-size: 0.9rem;
   line-height: 1.55;

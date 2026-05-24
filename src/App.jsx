@@ -446,6 +446,8 @@ const normalizePath = (path) => {
   return path.endsWith('/') ? path : `${path}/`;
 };
 
+const getSelfCanonicalPath = (location) => normalizePath(location.pathname);
+
 const getProductSlugFromLocation = (location) => {
   const params = new URLSearchParams(location.search);
   if (params.get('product')) return params.get('product');
@@ -474,7 +476,7 @@ const organizationSchema = {
   name: 'Jindal Hydro Projects Inc.',
   alternateName: 'JHP',
   url: siteUrl,
-  logo: `${siteUrl}/images/logo_transparent.png`,
+  logo: `${siteUrl}/images/jhp-logo.png`,
   foundingDate: '2000',
   description: 'Manufacturer and exporter of hydraulic balers, scrap metal shredders, alligator shears, waste balers, and recycling machinery. 2,500+ machines installed globally since 2000.',
   address: {
@@ -489,10 +491,20 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     telephone: '+91-9868247362',
     contactType: 'sales',
+    contactOption: 'TollFree',
     availableLanguage: ['English', 'Hindi'],
     areaServed: 'Worldwide',
   }],
   sameAs: ['https://wa.me/919868247362'],
+  numberOfEmployees: {
+    '@type': 'QuantitativeValue',
+    minValue: 25,
+    maxValue: 50,
+  },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Worldwide',
+  },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Hydraulic Recycling Machinery',
@@ -545,7 +557,9 @@ const getSeoConfig = (page, location) => {
 
   if (page === 'product-detail' && product) {
     const productCategory = productCategories.find((category) => category.name === product.category);
-    const canonical = productMeta?.canonical || `/products/${getCategoryParam(productCategory)}/${productSlug}/`;
+    const canonical = location.pathname.startsWith('/products/')
+      ? getSelfCanonicalPath(location)
+      : productMeta?.canonical || `/products/${getCategoryParam(productCategory)}/${productSlug}/`;
     return {
       title: productMeta?.title || `${product.name} Manufacturer India | JHP`,
       description: productMeta?.description || product.description,
@@ -575,27 +589,29 @@ const getSeoConfig = (page, location) => {
   }
 
   if (page === 'products' && categoryMeta) {
+    const canonical = getSelfCanonicalPath(location);
+
     return {
       title: categoryMeta.title,
       description: categoryMeta.description,
-      canonical: categoryMeta.canonical,
+      canonical,
       schemas: [
         organizationSchema,
         buildBreadcrumbSchema([
           { name: 'Home', path: '/' },
-          { name: categoryMeta.name, path: categoryMeta.canonical },
+          { name: categoryMeta.name, path: canonical },
         ]),
       ],
     };
   }
 
   const content = pageCopy[page] || pageCopy['not-found'];
-  const canonical = page === 'products' ? '/products/' : `/${page}/`;
+  const canonical = getSelfCanonicalPath(location);
   return {
     title: `${content.title} | Jindal Hydro Projects`,
     description: content.text,
     canonical,
-    schemas: page === 'not-found' ? [] : [organizationSchema],
+    schemas: [organizationSchema],
   };
 };
 
