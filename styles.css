@@ -2578,6 +2578,260 @@ footer { background: #080808; padding: 60px 5% 32px; }
   color: var(--black);
   background: rgba(255,204,12,0.18);
 }
+
+.machinery-catalog {
+  color: #111;
+}
+.machinery-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 28px;
+  align-items: center;
+  min-height: 360px;
+  padding: 34px 36px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(12,12,12,0.94), rgba(12,12,12,0.72)),
+    url('/images/infrastructure%202.png') center/cover;
+  border: 1px solid rgba(255,204,12,0.16);
+}
+.machinery-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,204,12,0.12), transparent 36%, rgba(126,176,56,0.12));
+  pointer-events: none;
+}
+.machinery-hero-copy,
+.machinery-hero-media {
+  position: relative;
+  z-index: 1;
+}
+.machinery-hero .section-label {
+  justify-content: flex-start;
+  color: var(--yellow);
+}
+.machinery-hero h1 {
+  max-width: 760px;
+  color: #fff;
+  font-family: var(--heading);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.02;
+  margin: 10px 0 16px;
+}
+.machinery-hero p {
+  max-width: 680px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+}
+.machinery-hero-media {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.machinery-hero-media img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 34px rgba(0,0,0,0.46));
+}
+.machinery-category-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: -24px auto 18px;
+  width: calc(100% - 48px);
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border: 1px solid rgba(12,12,12,0.08);
+  box-shadow: 0 14px 34px rgba(12,12,12,0.08);
+  border-radius: 15px;
+}
+.machinery-category-tabs a {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 16px 18px;
+  color: #222;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 900;
+  border-right: 1px solid rgba(12,12,12,0.08);
+  transition: color 0.2s, background 0.2s;
+}
+.machinery-category-tabs a:last-child {
+  border-right: 0;
+}
+.machinery-category-tabs a:hover {
+  color: var(--black);
+  background: rgba(255,204,12,0.18);
+}
+.machinery-category-tabs span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  color: var(--black);
+  background: var(--yellow);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+.machinery-category-carousel {
+  position: relative;
+}
+.machinery-category-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(400px, 450px);
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 2px 4px 12px;
+  scrollbar-width: none;
+}
+.machinery-category-grid::-webkit-scrollbar {
+  display: none;
+}
+.machinery-category-card {
+  min-height: 500px;
+  display: grid;
+  grid-template-rows: 300px auto auto;
+  gap: 18px;
+  align-items: start;
+  scroll-snap-align: start;
+  padding: 24px;
+  color: inherit;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(12,12,12,0.08);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(12,12,12,0.05);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.machinery-category-card:nth-child(1),
+.machinery-category-card:nth-child(2),
+.machinery-category-card:nth-child(n+3) {
+  grid-column: auto;
+}
+.machinery-category-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--green-rgb),0.4);
+  box-shadow: 0 20px 44px rgba(12,12,12,0.1);
+}
+.machinery-card-copy span {
+  display: inline-block;
+  color: var(--dark-green);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 14px;
+}
+.machinery-card-copy h2 {
+  color: #111;
+  font-family: var(--heading);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1.18;
+  margin-bottom: 0;
+}
+.machinery-card-copy p {
+  color: #4b5563;
+  line-height: 1.52;
+  font-size: 0.86rem;
+  margin-top: 10px;
+}
+.machinery-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  height: 300px;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.machinery-card-image img {
+  width: 100%;
+  height: 305px;
+  object-fit: contain;
+}
+.machinery-category-card strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--black);
+  background: var(--yellow);
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  transition: transform 0.2s, background 0.2s;
+  align-self: end;
+}
+.machinery-category-card:hover strong {
+  background: var(--green);
+  transform: translateX(2px);
+}
+.machinery-carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0 2px;
+}
+.machinery-carousel-controls button {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--black);
+  color: var(--yellow);
+  font-size: 1.1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.machinery-carousel-controls button:hover {
+  background: var(--yellow);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+.machinery-assurance-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 20px;
+  background: rgba(12,12,12,0.1);
+  border: 1px solid rgba(12,12,12,0.08);
+  border-radius: 15px;
+}
+.machinery-assurance-strip div {
+  background: #fff;
+  padding: 18px 20px;
+}
+.machinery-assurance-strip strong {
+  display: block;
+  color: #111;
+  font-family: var(--heading);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+.machinery-assurance-strip span {
+  color: #5a6575;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
 .product-info-section h2,
 .product-video-section h2 {
   font-family: var(--heading);
@@ -2789,6 +3043,41 @@ footer { background: #080808; padding: 60px 5% 32px; }
   }
   .product-display {
     width: 100%;
+  }
+  .machinery-hero {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+  }
+  .machinery-category-tabs {
+    width: 100%;
+    margin: 14px 0 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .machinery-category-tabs a {
+    border: 1px solid rgba(12,12,12,0.06);
+  }
+  .machinery-category-grid {
+    grid-auto-columns: minmax(78%, 1fr);
+  }
+  .machinery-category-card,
+  .machinery-category-card:nth-child(1),
+  .machinery-category-card:nth-child(2),
+  .machinery-category-card:nth-child(n+3) {
+    grid-column: auto;
+  }
+  .machinery-category-card {
+    grid-template-rows: auto 160px auto;
+    gap: 14px;
+  }
+  .machinery-card-image {
+    grid-row: 1;
+    height: 180px;
+  }
+  .machinery-category-card strong {
+    justify-self: start;
+  }
+  .machinery-assurance-strip {
+    grid-template-columns: 1fr;
   }
   .category-seo-grid {
     grid-template-columns: 1fr;

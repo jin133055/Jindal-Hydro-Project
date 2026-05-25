@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { homeMarkup } from './homeMarkup.js';
 import { useSiteInteractions } from './useSiteInteractions.js';
@@ -432,14 +432,24 @@ const getSubcategoryPath = (category, subcategory) => `${category.viewAll}${slug
 const getProductPath = (product) => productSeo[product.slug]?.canonical || `/product-detail?product=${product.slug}`;
 
 const categoryImages = {
-  'metal-recycling': '/images/metal%20recycling.png',
-  'waste-recycling': '/images/waste%20management.png',
-  'agriculture-recycling': '/images/homepage.png',
-  'elv-recycling': '/images/scrap.png',
-  services: '/images/infrastructure%201.png',
+  'metal-recycling': '/images/metal-recycling.png',
+  'waste-recycling': '/images/Waste%20Recycling.png',
+  'agriculture-recycling': '/images/Agriculture%20Waste%20Recycling.png',
+  'elv-recycling': '/images/ELV%20Recycling.png',
+  services: '/images/services.png',
 };
 
 const getCategoryImage = (category) => categoryImages[getCategoryParam(category)] || '/images/homepage.png';
+
+const categoryCardDescriptions = {
+  'metal-recycling': 'Advanced metal recycling solutions engineered for efficient scrap processing, high-volume shredding, and sustainable industrial recovery operations.',
+  'waste-recycling': 'Modern waste recycling systems designed for automated sorting, material recovery, and environmentally responsible waste management.',
+  'agriculture-recycling': 'Innovative agriculture waste recycling equipment built for biomass processing, organic waste reduction, and sustainable resource utilization.',
+  'elv-recycling': 'High-performance ELV recycling machinery for efficient vehicle dismantling, metal recovery, and eco-friendly automotive waste processing.',
+  services: 'Comprehensive industrial services including installation, maintenance, automation support, and engineering solutions for recycling systems.',
+};
+
+const getCategoryCardDescription = (category) => categoryCardDescriptions[getCategoryParam(category)] || `Browse all products in ${category.name}.`;
 
 const normalizePath = (path) => {
   if (!path || path === '/') return '/';
@@ -1496,6 +1506,7 @@ function ProductDetailPage() {
 
 function ProductsPage() {
   const location = useLocation();
+  const categoryCarouselRef = useRef(null);
   const activeCategoryParam = getCategorySlugFromLocation(location);
   const activeSubcategoryParam = getSubcategorySlugFromLocation(location);
   const activeCategorySeo = activeCategoryParam ? categorySeo[activeCategoryParam] : null;
@@ -1511,6 +1522,33 @@ function ProductsPage() {
   const activeSubcategoryName = activeSubcategoryParam
     ? listedProducts[0]?.subcategory || activeSubcategoryParam.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     : null;
+  const scrollCategoryCarousel = (direction) => {
+    const carousel = categoryCarouselRef.current;
+    if (!carousel) return;
+    const card = carousel.querySelector('.machinery-category-card');
+    const gap = parseFloat(window.getComputedStyle(carousel).columnGap || '0');
+    const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth * 0.9;
+    carousel.scrollBy({ left: direction * distance, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    if (activeCategory) return undefined;
+    const carousel = categoryCarouselRef.current;
+    if (!carousel) return undefined;
+
+    const interval = window.setInterval(() => {
+      const card = carousel.querySelector('.machinery-category-card');
+      const gap = parseFloat(window.getComputedStyle(carousel).columnGap || '0');
+      const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth * 0.9;
+      const atEnd = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 8;
+      carousel.scrollTo({
+        left: atEnd ? 0 : carousel.scrollLeft + distance,
+        behavior: 'smooth',
+      });
+    }, 2800);
+
+    return () => window.clearInterval(interval);
+  }, [activeCategory]);
 
   return (
     <>
@@ -1518,42 +1556,81 @@ function ProductsPage() {
       <main className="product-detail-page">
         <div className="product-browser-layout">
           <section className="product-display">
-            <div className="product-listing-header">
-              <div className="section-label">Products</div>
-              <h1>{activeSubcategoryName || activeCategorySeo?.h1 || activeCategory?.name || 'Our Machinery'}</h1>
-              <p>{activeSubcategoryName ? `Browse ${activeSubcategoryName} products in ${activeCategory.name}.` : activeCategorySeo?.intro || (activeCategory ? `Browse all products in ${activeCategory.name}.` : 'Browse metal recycling machinery, waste recycling equipment, agriculture waste machinery, ELV recycling plant solutions, and services from Jindal Hydro Projects.')}</p>
-            </div>
+            {activeCategory ? (
+              <>
+                <div className="product-listing-header">
+                  <div className="section-label">Products</div>
+                  <h1>{activeSubcategoryName || activeCategorySeo?.h1 || activeCategory?.name}</h1>
+                  <p>{activeSubcategoryName ? `Browse ${activeSubcategoryName} products in ${activeCategory.name}.` : activeCategorySeo?.intro || `Browse all products in ${activeCategory.name}.`}</p>
+                </div>
 
+                <div className="product-listing-grid">
+                  {listedProducts.map((product) => (
+                    <Link className="product-listing-card product-listing-card-link reveal" to={getProductPath(product)} key={product.slug}>
+                      <div className="product-listing-image">
+                        <img src="/images/homepage.png" alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
+                      </div>
+                      <div className="product-listing-body">
+                        <h2>{product.name}</h2>
+                        <p>{product.detail.description}</p>
+                      </div>
+                      <span className="product-listing-action">Learn More</span>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <div className="machinery-catalog">
+                <section className="machinery-hero">
+                  <div className="machinery-hero-copy">
+                    <div className="section-label">Our Products</div>
+                    <h1>Engineered for Heavy-Duty Recycling Performance</h1>
+                    <p>Explore hydraulic balers, shears, shredders, compactors, sorting lines, and recycling plant support engineered for high-throughput industrial operations.</p>
+                  </div>
+                  <div className="machinery-hero-media">
+                    <img src="/images/homepage.png" alt="Hydraulic recycling machinery by Jindal Hydro Projects" />
+                  </div>
+                </section>
 
-            <div className="product-listing-grid">
-              {activeCategory ? (
-                listedProducts.map((product) => (
-                  <Link className="product-listing-card product-listing-card-link reveal" to={getProductPath(product)} key={product.slug}>
-                    <div className="product-listing-image">
-                      <img src="/images/homepage.png" alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
-                    </div>
-                    <div className="product-listing-body">
-                      <h2>{product.name}</h2>
-                      <p>{product.detail.description}</p>
-                    </div>
-                    <span className="product-listing-action">Learn More</span>
-                  </Link>
-                ))
-              ) : (
-                productCategories.map((category) => (
-                  <Link className="product-listing-card product-listing-card-link reveal" to={category.viewAll} key={category.name}>
-                    <div className="product-listing-image">
-                      <img src={getCategoryImage(category)} alt={`${category.name} machinery - Jindal Hydro Projects`} loading="lazy" />
-                    </div>
-                    <div className="product-listing-body">
-                      <h2>{category.name}</h2>
-                      <p>{categorySeo[getCategoryParam(category)]?.intro || `Browse all products in ${category.name}.`}</p>
-                    </div>
-                    <span className="product-listing-action">View Category</span>
-                  </Link>
-                ))
-              )}
-            </div>
+                <nav className="machinery-category-tabs" aria-label="Machinery categories">
+                  {productCategories.map((category) => (
+                    <Link to={category.viewAll} key={category.name}>
+                      <span>{String(productCategories.indexOf(category) + 1).padStart(2, '0')}</span>
+                      {category.name}
+                    </Link>
+                  ))}
+                </nav>
+
+                <div className="machinery-category-carousel">
+                  <div className="machinery-category-grid" ref={categoryCarouselRef}>
+                    {productCategories.map((category) => (
+                      <Link className="machinery-category-card reveal" to={category.viewAll} key={category.name}>
+                        <div className="machinery-card-image">
+                          <img src={getCategoryImage(category)} alt={`${category.name} machinery - Jindal Hydro Projects`} loading="lazy" />
+                        </div>
+                        <div className="machinery-card-copy">
+                          <h2>{category.name}</h2>
+                          <p>{getCategoryCardDescription(category)}</p>
+                          <span>{category.products.length}+ Products</span>
+                        </div>
+                        <strong aria-label={`View ${category.name}`}>→</strong>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="machinery-carousel-controls" aria-label="Product category carousel controls">
+                    <button type="button" onClick={() => scrollCategoryCarousel(-1)} aria-label="Previous categories">←</button>
+                    <button type="button" onClick={() => scrollCategoryCarousel(1)} aria-label="Next categories">→</button>
+                  </div>
+                </div>
+
+                <div className="machinery-assurance-strip">
+                  <div><strong>Premium Quality</strong><span>Heavy-duty fabrication and tested hydraulics</span></div>
+                  <div><strong>High Performance</strong><span>Built for demanding industrial throughput</span></div>
+                  <div><strong>Custom Solutions</strong><span>Machine configuration matched to application</span></div>
+                  <div><strong>Global Support</strong><span>Installations across India and export markets</span></div>
+                </div>
+              </div>
+            )}
           </section>
         </div>
       </main>
