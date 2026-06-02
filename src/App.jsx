@@ -1522,13 +1522,34 @@ function ProductsPage() {
   const activeSubcategoryName = activeSubcategoryParam
     ? listedProducts[0]?.subcategory || activeSubcategoryParam.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     : null;
-  const scrollCategoryCarousel = (direction) => {
+  const carouselCategories = [...productCategories, ...productCategories];
+  const getCategoryCarouselMetrics = () => {
     const carousel = categoryCarouselRef.current;
-    if (!carousel) return;
+    if (!carousel) return null;
     const card = carousel.querySelector('.machinery-category-card');
     const gap = parseFloat(window.getComputedStyle(carousel).columnGap || '0');
     const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth * 0.9;
+    return { carousel, distance, loopWidth: distance * productCategories.length };
+  };
+  const normalizeCategoryCarousel = () => {
+    const metrics = getCategoryCarouselMetrics();
+    if (!metrics) return;
+    const { carousel, loopWidth } = metrics;
+    if (carousel.scrollLeft >= loopWidth) {
+      carousel.scrollTo({ left: carousel.scrollLeft - loopWidth, behavior: 'auto' });
+    } else if (carousel.scrollLeft < 0) {
+      carousel.scrollTo({ left: carousel.scrollLeft + loopWidth, behavior: 'auto' });
+    }
+  };
+  const scrollCategoryCarousel = (direction) => {
+    const metrics = getCategoryCarouselMetrics();
+    if (!metrics) return;
+    const { carousel, distance, loopWidth } = metrics;
+    if (direction < 0 && carousel.scrollLeft < distance * 0.5) {
+      carousel.scrollTo({ left: carousel.scrollLeft + loopWidth, behavior: 'auto' });
+    }
     carousel.scrollBy({ left: direction * distance, behavior: 'smooth' });
+    window.setTimeout(normalizeCategoryCarousel, 650);
   };
 
   useEffect(() => {
@@ -1537,14 +1558,10 @@ function ProductsPage() {
     if (!carousel) return undefined;
 
     const interval = window.setInterval(() => {
-      const card = carousel.querySelector('.machinery-category-card');
-      const gap = parseFloat(window.getComputedStyle(carousel).columnGap || '0');
-      const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth * 0.9;
-      const atEnd = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 8;
-      carousel.scrollTo({
-        left: atEnd ? 0 : carousel.scrollLeft + distance,
-        behavior: 'smooth',
-      });
+      const metrics = getCategoryCarouselMetrics();
+      if (!metrics) return;
+      metrics.carousel.scrollBy({ left: metrics.distance, behavior: 'smooth' });
+      window.setTimeout(normalizeCategoryCarousel, 650);
     }, 2800);
 
     return () => window.clearInterval(interval);
@@ -1603,15 +1620,14 @@ function ProductsPage() {
 
                 <div className="machinery-category-carousel">
                   <div className="machinery-category-grid" ref={categoryCarouselRef}>
-                    {productCategories.map((category) => (
-                      <Link className="machinery-category-card reveal" to={category.viewAll} key={category.name}>
+                    {carouselCategories.map((category, index) => (
+                      <Link className="machinery-category-card reveal" to={category.viewAll} key={`${category.name}-${index}`}>
                         <div className="machinery-card-image">
                           <img src={getCategoryImage(category)} alt={`${category.name} machinery - Jindal Hydro Projects`} loading="lazy" />
                         </div>
                         <div className="machinery-card-copy">
                           <h2>{category.name}</h2>
                           <p>{getCategoryCardDescription(category)}</p>
-                          <span>{category.products.length}+ Products</span>
                         </div>
                         <strong aria-label={`View ${category.name}`}>→</strong>
                       </Link>
