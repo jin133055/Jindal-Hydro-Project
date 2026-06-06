@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { homeMarkup } from './homeMarkup.js';
 import { useSiteInteractions } from './useSiteInteractions.js';
 
@@ -1506,7 +1506,9 @@ function ProductDetailPage() {
 
 function ProductsPage() {
   const location = useLocation();
+  const navigate = useNavigate();
   const categoryCarouselRef = useRef(null);
+  const [productSearch, setProductSearch] = useState('');
   const activeCategoryParam = getCategorySlugFromLocation(location);
   const activeSubcategoryParam = getSubcategorySlugFromLocation(location);
   const activeCategorySeo = activeCategoryParam ? categorySeo[activeCategoryParam] : null;
@@ -1519,9 +1521,14 @@ function ProductsPage() {
       detail: getProductDetail(item.slug),
     }))
   )).filter((product) => !activeSubcategoryParam || slugifySegment(product.subcategory) === activeSubcategoryParam);
+  const filteredProducts = listedProducts.filter((product) => (
+    product.name.toLowerCase().includes(productSearch.trim().toLowerCase())
+    || product.subcategory?.toLowerCase().includes(productSearch.trim().toLowerCase())
+  ));
   const activeSubcategoryName = activeSubcategoryParam
     ? listedProducts[0]?.subcategory || activeSubcategoryParam.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     : null;
+  const activeCategorySubcategories = activeCategory ? getSubcategoryGroups(activeCategory.products) : [];
   const carouselCategories = [...productCategories, ...productCategories];
   const getCategoryCarouselMetrics = () => {
     const carousel = categoryCarouselRef.current;
@@ -1567,6 +1574,10 @@ function ProductsPage() {
     return () => window.clearInterval(interval);
   }, [activeCategory]);
 
+  useEffect(() => {
+    setProductSearch('');
+  }, [activeCategoryParam, activeSubcategoryParam]);
+
   return (
     <>
       <Header />
@@ -1574,15 +1585,54 @@ function ProductsPage() {
         <div className="product-browser-layout">
           <section className="product-display">
             {activeCategory ? (
-              <>
-                <div className="product-listing-header">
-                  <div className="section-label">Products</div>
-                  <h1>{activeSubcategoryName || activeCategorySeo?.h1 || activeCategory?.name}</h1>
-                  <p>{activeSubcategoryName ? `Browse ${activeSubcategoryName} products in ${activeCategory.name}.` : activeCategorySeo?.intro || `Browse all products in ${activeCategory.name}.`}</p>
-                </div>
+              <div className="category-product-page">
+                <section className="category-product-hero" style={{ '--category-hero-image': `url("${getCategoryImage(activeCategory)}")` }}>
+                  <div className="category-product-hero-copy">
+                    <div className="section-label">Products</div>
+                    <h1>{activeSubcategoryName || activeCategorySeo?.h1 || activeCategory?.name}</h1>
+                    <p>{activeSubcategoryName ? `Browse ${activeSubcategoryName} products in ${activeCategory.name}.` : activeCategorySeo?.intro || `Browse all products in ${activeCategory.name}.`}</p>
+                  </div>
+                </section>
+
+                <form
+                  className="category-product-search"
+                  onSubmit={(event) => event.preventDefault()}
+                  aria-label="Search category products"
+                >
+                  <input
+                    type="search"
+                    value={productSearch}
+                    onChange={(event) => setProductSearch(event.target.value)}
+                    placeholder="What are you looking for?"
+                    aria-label="Search products"
+                  />
+                  <select
+                    value={activeCategoryParam}
+                    onChange={(event) => navigate(`/products/${event.target.value}/`)}
+                    aria-label="Select category"
+                  >
+                    {productCategories.map((category) => (
+                      <option value={getCategoryParam(category)} key={category.name}>{category.name}</option>
+                    ))}
+                  </select>
+                  <select
+                    value={activeSubcategoryParam || ''}
+                    onChange={(event) => {
+                      const value = event.target.value;
+                      navigate(value ? getSubcategoryPath(activeCategory, value) : activeCategory.viewAll);
+                    }}
+                    aria-label="Select subcategory"
+                  >
+                    <option value="">All Subcategories</option>
+                    {activeCategorySubcategories.map((subcategory) => (
+                      <option value={slugifySegment(subcategory)} key={subcategory}>{subcategory}</option>
+                    ))}
+                  </select>
+                  <button type="submit">Search</button>
+                </form>
 
                 <div className="product-listing-grid">
-                  {listedProducts.map((product) => (
+                  {filteredProducts.map((product) => (
                     <Link className="product-listing-card product-listing-card-link reveal" to={getProductPath(product)} key={product.slug}>
                       <div className="product-listing-image">
                         <img src="/images/homepage.png" alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
@@ -1594,8 +1644,11 @@ function ProductsPage() {
                       <span className="product-listing-action">Learn More</span>
                     </Link>
                   ))}
+                  {!filteredProducts.length && (
+                    <div className="product-listing-empty">No products found for this search.</div>
+                  )}
                 </div>
-              </>
+              </div>
             ) : (
               <div className="machinery-catalog">
                 <section className="machinery-hero">
