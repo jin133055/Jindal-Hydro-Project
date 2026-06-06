@@ -585,7 +585,7 @@ const getSeoConfig = (page, location) => {
         {
           '@context': 'https://schema.org',
           '@type': 'Product',
-          name: productMeta?.h1 || product.name,
+          name: product.name,
           description: productMeta?.description || product.description,
           brand: { '@type': 'Brand', name: 'Jindal Hydro Projects' },
           manufacturer: { '@type': 'Organization', name: 'Jindal Hydro Projects Inc.' },
@@ -1389,7 +1389,7 @@ function ProductDetailPage() {
               </div>
               <div className="product-detail-content">
                 <div className="section-label">{product.category}</div>
-                <h1>{productMeta?.h1 || product.name}</h1>
+                <h1>{product.name}</h1>
                 <p>{product.description}</p>
                 <div className="hero-btns">
                   <Link className="btn-primary" to="/contact">Enquire Now</Link>
