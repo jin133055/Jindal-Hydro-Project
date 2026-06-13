@@ -72,6 +72,23 @@ export function useSiteInteractions(page) {
       return [button, handler];
     });
 
+    const accordionItems = Array.from(document.querySelectorAll('details[data-accordion-group]'));
+    const accordionHandlers = accordionItems.map((item) => {
+      const handler = () => {
+        if (!item.open) return;
+        accordionItems.forEach((sibling) => {
+          if (
+            sibling !== item
+            && sibling.dataset.accordionGroup === item.dataset.accordionGroup
+          ) {
+            sibling.removeAttribute('open');
+          }
+        });
+      };
+      item.addEventListener('toggle', handler);
+      return [item, handler];
+    });
+
     const cleanupBaler = setupBalerModel();
 
     return () => {
@@ -84,6 +101,7 @@ export function useSiteInteractions(page) {
         button.removeEventListener('focus', focusHandler);
       });
       scrollHandlers.forEach(([button, handler]) => button.removeEventListener('click', handler));
+      accordionHandlers.forEach(([item, handler]) => item.removeEventListener('toggle', handler));
       cleanupBaler?.();
     };
   }, [page]);

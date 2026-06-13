@@ -211,42 +211,39 @@
         <a class="btn-secondary" href="/products">View All Products</a>
       </div>
       <div class="products-grid">
-        <div class="product-card reveal">
-          <div class="product-img"><img src="https://leadpages.com/PLACEHOLDER_PROD1" alt="Hydraulic Baling Press"></div>
+        <a class="product-card reveal" href="/products/metal-recycling/balers/high-density-hydraulic-baler/">
+          <div class="product-img"><img src="/images/metal-recycling.png" alt="High Density Baler"></div>
           <div class="product-body">
-            <div class="product-tag">Hydraulic Press</div>
-            <div class="product-name">Baling Press Series</div>
-            <div class="product-desc">Engineered for maximum compression force. Handles ferrous, non-ferrous, and plastic materials with precision.</div>
+            <div class="product-tag">Metal Recycling</div>
+            <div class="product-name">High Density Baler</div>
           </div>
           <div class="product-arrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
           </div>
           <div class="product-overlay"></div>
-        </div>
-        <div class="product-card reveal reveal-delay-1">
-          <div class="product-img"><img src="https://leadpages.com/PLACEHOLDER_PROD2" alt="Metal Shredder"></div>
+        </a>
+        <a class="product-card reveal reveal-delay-1" href="/products/waste-recycling/automatic-horizontal-baler/">
+          <div class="product-img"><img src="/images/Waste%20Recycling.png" alt="Automatic Baler"></div>
           <div class="product-body">
-            <div class="product-tag">Shredding Systems</div>
-            <div class="product-name">Industrial Shredder</div>
-            <div class="product-desc">Heavy-duty twin-shaft shredding for scrap metal, e-waste, and industrial residues at scale.</div>
+            <div class="product-tag">Waste Recycling</div>
+            <div class="product-name">Automatic Baler</div>
           </div>
           <div class="product-arrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
           </div>
           <div class="product-overlay"></div>
-        </div>
-        <div class="product-card reveal reveal-delay-2">
-          <div class="product-img"><img src="https://leadpages.com/PLACEHOLDER_PROD3" alt="Scrap Compactor"></div>
+        </a>
+        <a class="product-card reveal reveal-delay-2" href="/products/services/">
+          <div class="product-img"><img src="/images/services.png" alt="Installation and Training"></div>
           <div class="product-body">
-            <div class="product-tag">Compaction</div>
-            <div class="product-name">Scrap Compactor</div>
-            <div class="product-desc">Convert loose scrap into dense, transport-ready bales. Engineered for continuous high-volume output.</div>
+            <div class="product-tag">Services</div>
+            <div class="product-name">Installation &amp; Training</div>
           </div>
           <div class="product-arrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
           </div>
           <div class="product-overlay"></div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -261,7 +258,6 @@
           <img src="/images/metal%20recycling.png" alt="Metal Recycling">
           <div class="solution-overlay"></div>
           <div class="solution-content">
-            <div class="solution-num">01 SOLUTION</div>
             <div class="solution-title">Metal Recycling</div>
             <div class="solution-desc">End-to-end systems for ferrous and non-ferrous metal processing - from collection to mill-ready bales.</div>
           </div>
@@ -270,7 +266,6 @@
           <img src="/images/waste%20management.png" alt="Waste Management">
           <div class="solution-overlay"></div>
           <div class="solution-content">
-            <div class="solution-num">02 SOLUTION</div>
             <div class="solution-title">Waste Management</div>
             <div class="solution-desc">Municipal and industrial waste processing systems designed for maximum throughput and regulatory compliance.</div>
           </div>
@@ -279,7 +274,6 @@
           <img src="/images/scrap.png" alt="Scrap Processing">
           <div class="solution-overlay"></div>
           <div class="solution-content">
-            <div class="solution-num">03 SOLUTION</div>
             <div class="solution-title">Scrap Processing</div>
             <div class="solution-desc">Integrated shredding, sorting, and densification for scrap dealers, foundries, and steel mills.</div>
           </div>

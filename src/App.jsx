@@ -52,10 +52,10 @@ const productCategories = [
       { slug: 'triple-action-baler-for-waste', name: 'Triple Action Baler For Waste', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
       { slug: 'waste-recycling-vertical-baler', name: 'Vertical Baler', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
       { slug: 'msw-sorting-line', name: 'MSW Sorting Line', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
-      { slug: 'horizontal-baler', name: 'Horizontal Baler', subcategory: 'Waste Recycling Balers', note: 'Waste Recycling Balers' },
-      { slug: 'jumbo-plc-baler-waste', name: 'Jumbo PLC Baler (Waste)', subcategory: 'Waste Recycling Balers', note: 'Waste Recycling Balers' },
-      { slug: 'waste-triple-action-baler', name: 'Triple Action Baler', subcategory: 'Waste Recycling Balers', note: 'Waste Recycling Balers' },
-      { slug: 'waste-recycling-balers-vertical-baler', name: 'Vertical Baler', subcategory: 'Waste Recycling Balers', note: 'Waste Recycling Balers' },
+      { slug: 'horizontal-baler', name: 'Horizontal Baler', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
+      { slug: 'jumbo-plc-baler-waste', name: 'Jumbo PLC Baler (Waste)', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
+      { slug: 'waste-triple-action-baler', name: 'Triple Action Baler', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
+      { slug: 'waste-recycling-balers-vertical-baler', name: 'Vertical Baler', subcategory: 'Waste Recycling', note: 'Waste Recycling' },
     ],
   },
   {
@@ -1029,7 +1029,6 @@ function SolutionsPage() {
                 <img src={solution.image} alt={`${solution.title} solution`} />
               </div>
               <div className="solution-detail-content">
-                <div className="solution-detail-number">{solution.number} / Solution</div>
                 <h2>{solution.title}</h2>
                 <p>{solution.intro}</p>
                 <ul className="solution-detail-list">
@@ -1376,68 +1375,57 @@ function ProductDetailPage() {
   const currentSlug = getProductSlugFromLocation(location) || productCategories[0].products[0].slug;
   const product = getProductDetail(currentSlug);
   const productMeta = productSeo[currentSlug];
+  const galleryImages = [
+    ['Front View', '/images/homepage.png'],
+    ['Side View', '/images/metal-recycling.png'],
+    ['Installation View', '/images/infrastructure%202.png'],
+    ['Operating View', '/images/infrastructure%203.png'],
+    ['Hydraulic System Close-up', '/images/infrastructure%201.png'],
+  ];
+  const productVideos = [
+    ['Machine Walkthrough', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
+    ['Hydraulic System Overview', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
+    ['Site Operation Video', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
+  ];
+  const relatedMachines = [
+    ['Quad Baler', 'Four-side compression baler for dense, uniform metal scrap bales.', '/images/metal-recycling.png', '/products/metal-recycling/balers/quad-baler/'],
+    ['Shear Baler', 'Integrated shearing and baling solution for heavy scrap processing.', '/images/scrap.png', '/products/metal-recycling/shears/box-shear-inclined-shear/'],
+    ['Metal Shredder', 'Industrial shredding system for high-volume scrap size reduction.', '/images/waste%20management.png', '/products/metal-recycling/shredders/hammer-mill-shredder/'],
+    ['Hydraulic Shear', 'Robust cutting machine for ferrous and non-ferrous scrap yards.', '/images/ELV%20Recycling.png', '/products/metal-recycling/shears/alligator-shear/'],
+  ];
 
   return (
     <>
       <Header />
-      <main className="product-detail-page">
+      <main className="product-detail-page product-detail-page--classic">
         <div className="product-browser-layout">
           <section className="product-display">
             <div className="product-detail-hero">
-              <div className="product-detail-media">
-                <img src="/images/homepage.png" alt={product.name} />
+              <div className="product-detail-media reveal">
+                <img src="/images/homepage.png" alt={`${product.name} - Jindal Hydro Projects`} />
               </div>
-              <div className="product-detail-content">
+              <div className="product-detail-content reveal">
                 <div className="section-label">{product.category}</div>
                 <h1>{product.name}</h1>
                 <p>{product.description}</p>
                 <div className="hero-btns">
-                  <Link className="btn-primary" to="/contact">Enquire Now</Link>
-                  <a className="btn-secondary" href="#product-video">Watch Video</a>
+                  <Link className="btn-primary" to="/contact">Get Quote</Link>
+                  <a className="btn-secondary" href="/brochure.pdf">Download Brochure</a>
                 </div>
               </div>
             </div>
 
             <section className="product-info-section">
-              <h2>Description</h2>
-              <p>{product.description}</p>
-            </section>
-
-            <section className="product-info-section">
-              <h2>Key Specifications</h2>
-              <div className="spec-grid">
-                {Object.entries(product.specs).map(([label, value]) => (
-                  <div className="spec-item" key={label}>
-                    <span>{label}</span>
-                    <strong>{value}</strong>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section className="product-info-section">
               <h2>Features</h2>
               <div className="feature-accordion">
-                {featureGroups.map((group, index) => (
-                  <details className="product-accordion-item" open={index === 0} key={group.title}>
+                {featureGroups.map((group) => (
+                  <details className="product-accordion-item" data-accordion-group="product-features" key={group.title}>
                     <summary>{group.title}</summary>
                     <ul className="feature-list">
                       {group.items.map((item, itemIndex) => (
                         <li key={`${group.title}-${itemIndex}`}>{item}</li>
                       ))}
                     </ul>
-                  </details>
-                ))}
-              </div>
-            </section>
-
-            <section className="product-info-section">
-              <h2>Frequently Asked Questions</h2>
-              <div className="faq-accordion">
-                {faqs.map((faq, index) => (
-                  <details className="product-accordion-item" open={index === 0} key={faq.question}>
-                    <summary>{faq.question}</summary>
-                    <p>{faq.answer}</p>
                   </details>
                 ))}
               </div>
@@ -1466,38 +1454,97 @@ function ProductDetailPage() {
             </section>
 
             <section className="product-info-section">
-              <h2>{product.name} Photos</h2>
-              <div className="product-gallery">
-                <img src="/images/homepage.png" alt={`${product.name} front view`} />
-                <img src="/images/homepage.png" alt={`${product.name} side view`} />
-                <img src="/images/homepage.png" alt={`${product.name} hydraulic system`} />
+              <h2>Product Photo Gallery</h2>
+              <div className="premium-gallery product-detail-gallery">
+                {galleryImages.map(([label, image], index) => (
+                  <figure className={index === 0 ? 'gallery-large reveal' : 'reveal'} key={label}>
+                    <img src={image} alt={`${product.name} ${label}`} />
+                    <figcaption>{label}</figcaption>
+                  </figure>
+                ))}
               </div>
             </section>
 
             <section className="product-video-section" id="product-video">
-              <div className="section-label">Product Videos</div>
-              <h2>{product.name} Working Videos</h2>
-              <div className="video-grid">
-                <div className="video-frame">
-                  <iframe
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                    title={`${product.name} working video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <div className="video-frame">
-                  <iframe
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                    title={`${product.name} operation video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
+              <div className="section-label">Videos</div>
+              <h2>Product Video Gallery</h2>
+              <div className="premium-video-gallery">
+                {productVideos.map(([title, source]) => (
+                  <div className="premium-video-card reveal" key={title}>
+                    <iframe
+                      src={source}
+                      title={`${product.name} ${title}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                    <h3>{title}</h3>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="product-info-section">
+              <h2>Frequently Asked Questions</h2>
+              <div className="faq-accordion">
+                {faqs.map((faq) => (
+                  <details className="product-accordion-item" data-accordion-group="product-faqs" key={faq.question}>
+                    <summary>{faq.question}</summary>
+                    <p>{faq.answer}</p>
+                  </details>
+                ))}
               </div>
             </section>
           </section>
         </div>
+
+        <section className="premium-section">
+          <div className="premium-section-head reveal">
+            <div className="premium-eyebrow">Related Machines</div>
+            <h2>Explore More Recycling Equipment</h2>
+          </div>
+          <div className="related-machine-grid">
+            {relatedMachines.map(([title, text, image, path]) => (
+              <Link className="related-machine-card reveal" to={path} key={title}>
+                <img src={image} alt={title} />
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                  <span>View Product</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="premium-section installation-showcase">
+          <div className="installation-copy reveal">
+            <div className="premium-eyebrow">Installations</div>
+            <h2>Proven Across Recycling Sites</h2>
+            <p>JHP supports factory installations, processing plants, and scrap yards with manufacturing, commissioning, operator training, and long-term service support.</p>
+            <div className="installation-metrics">
+              <div><strong>100+</strong><span>Installations</span></div>
+              <div><strong>20+</strong><span>Countries</span></div>
+              <div><strong>30</strong><span>Years Experience</span></div>
+            </div>
+          </div>
+          <div className="installation-grid reveal">
+            <img src="/images/infrastructure%201.png" alt="Factory installation" />
+            <img src="/images/infrastructure%202.png" alt="Processing plant installation" />
+            <img src="/images/infrastructure%203.png" alt="Scrap yard installation" />
+          </div>
+        </section>
+
+        <section className="premium-product-cta reveal">
+          <div>
+            <div className="premium-eyebrow">Custom Engineering</div>
+            <h2>Need a Custom Recycling Solution?</h2>
+            <p>Speak with our engineering team.</p>
+          </div>
+          <div className="premium-hero-actions">
+            <Link className="btn-primary" to="/contact">Get Quote</Link>
+            <Link className="premium-outline-btn" to="/contact">Contact Sales</Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
@@ -1520,15 +1567,18 @@ function ProductsPage() {
       category: category.name,
       detail: getProductDetail(item.slug),
     }))
-  )).filter((product) => !activeSubcategoryParam || slugifySegment(product.subcategory) === activeSubcategoryParam);
+  )).filter((product) => !activeSubcategoryParam || slugifySegment(product.subcategory || product.category) === activeSubcategoryParam);
   const filteredProducts = listedProducts.filter((product) => (
     product.name.toLowerCase().includes(productSearch.trim().toLowerCase())
     || product.subcategory?.toLowerCase().includes(productSearch.trim().toLowerCase())
   ));
   const activeSubcategoryName = activeSubcategoryParam
-    ? listedProducts[0]?.subcategory || activeSubcategoryParam.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+    ? (listedProducts[0]?.subcategory || listedProducts[0]?.category || activeSubcategoryParam.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' '))
     : null;
-  const activeCategorySubcategories = activeCategory ? getSubcategoryGroups(activeCategory.products) : [];
+  const activeCategorySubcategories = activeCategory
+    ? [...new Set(activeCategory.products.map((product) => product.subcategory || activeCategory.name))]
+    : [];
+  const showSubcategorySearch = activeCategorySubcategories.length > 0;
   const carouselCategories = [...productCategories, ...productCategories];
   const getCategoryCarouselMetrics = () => {
     const carousel = categoryCarouselRef.current;
@@ -1595,7 +1645,7 @@ function ProductsPage() {
                 </section>
 
                 <form
-                  className="category-product-search"
+                  className={`category-product-search${showSubcategorySearch ? '' : ' category-product-search--compact'}`}
                   onSubmit={(event) => event.preventDefault()}
                   aria-label="Search category products"
                 >
@@ -1615,19 +1665,21 @@ function ProductsPage() {
                       <option value={getCategoryParam(category)} key={category.name}>{category.name}</option>
                     ))}
                   </select>
-                  <select
-                    value={activeSubcategoryParam || ''}
-                    onChange={(event) => {
-                      const value = event.target.value;
-                      navigate(value ? getSubcategoryPath(activeCategory, value) : activeCategory.viewAll);
-                    }}
-                    aria-label="Select subcategory"
-                  >
-                    <option value="">All Subcategories</option>
-                    {activeCategorySubcategories.map((subcategory) => (
-                      <option value={slugifySegment(subcategory)} key={subcategory}>{subcategory}</option>
-                    ))}
-                  </select>
+                  {showSubcategorySearch && (
+                    <select
+                      value={activeSubcategoryParam || ''}
+                      onChange={(event) => {
+                        const value = event.target.value;
+                        navigate(value ? getSubcategoryPath(activeCategory, value) : activeCategory.viewAll);
+                      }}
+                      aria-label="Select subcategory"
+                    >
+                      <option value="">All Subcategories</option>
+                      {activeCategorySubcategories.map((subcategory) => (
+                        <option value={slugifySegment(subcategory)} key={subcategory}>{subcategory}</option>
+                      ))}
+                    </select>
+                  )}
                   <button type="submit">Search</button>
                 </form>
 
