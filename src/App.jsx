@@ -1211,20 +1211,7 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="about-section about-detail-band">
-          <div className="about-section-head reveal">
-            <div className="section-label">Company Details</div>
-            <h2>Key Information</h2>
-          </div>
-          <div className="business-detail-grid">
-            {businessDetails.map(([label, value]) => (
-              <div className="business-detail-row reveal" key={label}>
-                <span>{label}</span>
-                <strong>{value}</strong>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Company details removed as requested */}
 
         <section className="about-section">
           <div className="about-section-head reveal">
