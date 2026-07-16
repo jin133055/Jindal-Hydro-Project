@@ -2781,9 +2781,9 @@ footer { background: #080808; padding: 60px 5% 32px; }
 }
 .machinery-category-tabs {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0;
-  margin: -24px auto 18px;
+  margin: -34px auto 18px;
   width: calc(100% - 48px);
   position: relative;
   z-index: 2;
@@ -2804,6 +2804,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   font-weight: 900;
   border-right: 1px solid rgba(12,12,12,0.08);
   transition: color 0.2s, background 0.2s;
+  white-space: normal;
 }
 .machinery-category-tabs a:last-child {
   border-right: 0;
