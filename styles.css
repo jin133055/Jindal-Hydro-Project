@@ -4001,4 +4001,291 @@ footer { background: #080808; padding: 60px 5% 32px; }
   }
 }
 
+/* RESPONSIVE POLISH */
+@media (min-width: 1440px) {
+  nav {
+    padding-left: max(5%, calc((100vw - 1440px) / 2 + 56px));
+    padding-right: max(5%, calc((100vw - 1440px) / 2 + 56px));
+  }
+  .section,
+  .about-section,
+  .solutions-stack,
+  .contact-section,
+  .premium-section {
+    padding-left: max(5%, calc((100vw - 1440px) / 2 + 56px));
+    padding-right: max(5%, calc((100vw - 1440px) / 2 + 56px));
+  }
+  .hero,
+  .machinery-catalog,
+  .product-detail-page,
+  .solutions-page-hero,
+  .about-hero,
+  .contact-hero {
+    padding-left: max(5%, calc((100vw - 1440px) / 2 + 56px));
+    padding-right: max(5%, calc((100vw - 1440px) / 2 + 56px));
+  }
+  .premium-product-hero {
+    padding-left: max(4vw, calc((100vw - 1500px) / 2 + 64px));
+    padding-right: max(4vw, calc((100vw - 1500px) / 2 + 64px));
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 901px) {
+  nav {
+    gap: 18px;
+    padding: 0 32px;
+  }
+  .nav-logo .logo-text {
+    font-size: 0.84rem;
+    letter-spacing: 0.04em;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .nav-links a {
+    font-size: 0.82rem;
+  }
+  .nav-cta {
+    padding: 10px 16px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  body.nav-menu-open {
+    overflow: hidden;
+  }
+  nav {
+    height: 68px;
+    padding: 0 18px;
+  }
+  .nav-logo {
+    min-width: 0;
+    gap: 0.6rem;
+  }
+  .nav-logo img {
+    height: 34px;
+    flex: 0 0 auto;
+  }
+  .nav-logo .logo-text {
+    max-width: min(58vw, 320px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+  .nav-mobile-toggle {
+    position: relative;
+    z-index: 220;
+    display: inline-flex;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+  }
+  .nav-mobile-toggle span {
+    width: 22px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--white);
+    transform-origin: center;
+  }
+  .nav-mobile-toggle.open {
+    border-color: rgba(255,204,12,0.48);
+    background: rgba(255,204,12,0.12);
+  }
+  .nav-mobile-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-mobile-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav-mobile-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .nav-links {
+    position: fixed;
+    top: 68px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 190;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: calc(100dvh - 68px);
+    padding: 18px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background:
+      linear-gradient(180deg, rgba(17,17,17,0.98), rgba(8,8,8,0.99)),
+      #111;
+    border-top: 1px solid rgba(255,204,12,0.24);
+    box-shadow: 0 28px 70px rgba(0,0,0,0.64);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
+  }
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-links > li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-links > li > a {
+    min-height: 54px;
+    justify-content: space-between;
+    padding: 0;
+    color: rgba(255,255,255,0.92);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+  .nav-links > li > a:hover {
+    color: var(--yellow);
+  }
+  .has-dropdown > a svg {
+    width: 12px;
+    height: 8px;
+  }
+  .has-dropdown.open > a svg {
+    transform: rotate(180deg);
+  }
+  .has-dropdown .nav-dropdown,
+  .products-nav .product-mega {
+    position: static;
+    display: none;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 16px;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: none;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .has-dropdown.open .nav-dropdown,
+  .products-nav.open .product-mega {
+    display: block;
+  }
+  .product-mega-shell {
+    width: 100%;
+    max-height: none;
+    min-height: 0;
+    overflow: visible;
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(255,204,12,0.18);
+    box-shadow: none;
+  }
+  .product-category-column {
+    padding: 8px;
+  }
+  .product-category {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .product-category:first-child {
+    border-top: 0;
+  }
+  .product-category-toggle {
+    min-height: 46px;
+    padding: 12px 10px;
+    color: var(--yellow);
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .product-category-toggle::after {
+    content: 'View';
+    color: rgba(255,255,255,0.48);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+  }
+  .product-subpanel {
+    position: static;
+    display: grid !important;
+    width: 100% !important;
+    max-height: none;
+    padding: 0 0 10px;
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .product-link {
+    min-height: 42px;
+    margin: 0;
+    padding: 10px 10px 10px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.82);
+  }
+  .product-link strong {
+    font-size: 0.88rem;
+  }
+  .product-flyout-group {
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .product-subcategory-heading {
+    padding: 11px 10px 7px 18px;
+    font-size: 0.7rem;
+  }
+  .product-subcategory-heading::after {
+    content: none;
+  }
+  .product-link--nested {
+    display: block;
+    padding-left: 30px;
+  }
+  .nav-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    padding: 0 14px;
+  }
+  .nav-logo .logo-text {
+    max-width: 48vw;
+    font-size: 0.76rem;
+  }
+  .nav-links {
+    padding: 14px;
+  }
+  .hero {
+    padding-top: 96px;
+  }
+  .hero-btns,
+  .premium-hero-actions {
+    width: 100%;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .premium-outline-btn {
+    width: 100%;
+  }
+  .machinery-category-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
 #htmlpub-link-input::placeholder { color: rgba(255,255,255,0.65); }

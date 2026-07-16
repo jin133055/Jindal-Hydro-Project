@@ -2193,7 +2193,7 @@ function Header() {
         <img src="/images/logo_transparent.png" alt="Jindal Hydro Projects Inc. logo" />
         <span className="logo-text">Jindal Hydro Projects Inc<span>.</span></span>
       </Link>
-      <ul className="nav-links">
+      <ul className="nav-links" id="primaryNavigation">
         <li><Link to="/about">About</Link></li>
         <ProductsMegaMenu />
         <li><Link to="/solutions">Solutions</Link></li>
@@ -2202,7 +2202,7 @@ function Header() {
         <li><Link to="/contact">Contact</Link></li>
       </ul>
       <Link className="nav-cta" to="/contact">Get a Quote</Link>
-      <button className="nav-mobile-toggle" id="navToggle" aria-label="Menu">
+      <button className="nav-mobile-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="primaryNavigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>

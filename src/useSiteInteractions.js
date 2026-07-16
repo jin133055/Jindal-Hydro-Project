@@ -12,9 +12,15 @@ export function useSiteInteractions(page) {
 
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.querySelector('.nav-links');
+    const setMenuOpen = (isOpen) => {
+      navToggle?.classList.toggle('open', isOpen);
+      navLinks?.classList.toggle('open', isOpen);
+      navToggle?.setAttribute('aria-expanded', String(isOpen));
+      navToggle?.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      document.body.classList.toggle('nav-menu-open', isOpen);
+    };
     const handleNavToggle = () => {
-      navToggle?.classList.toggle('open');
-      navLinks?.classList.toggle('open');
+      setMenuOpen(!navLinks?.classList.contains('open'));
     };
     navToggle?.addEventListener('click', handleNavToggle);
 
@@ -24,6 +30,18 @@ export function useSiteInteractions(page) {
         if (window.innerWidth <= 900) {
           event.preventDefault();
           link.closest('.has-dropdown')?.classList.toggle('open');
+        }
+      };
+      link.addEventListener('click', handler);
+      return [link, handler];
+    });
+
+    const navItemLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const navItemHandlers = navItemLinks.map((link) => {
+      const handler = () => {
+        if (window.innerWidth <= 900 && !link.closest('.has-dropdown > a')) {
+          setMenuOpen(false);
+          document.querySelectorAll('.has-dropdown.open').forEach((item) => item.classList.remove('open'));
         }
       };
       link.addEventListener('click', handler);
@@ -42,8 +60,7 @@ export function useSiteInteractions(page) {
     const productCategoryHandlers = productCategoryButtons.map((button) => {
       const clickHandler = (event) => {
         if (button.tagName.toLowerCase() === 'a') {
-          navToggle?.classList.remove('open');
-          navLinks?.classList.remove('open');
+          setMenuOpen(false);
           button.closest('.has-dropdown')?.classList.remove('open');
           return;
         }
@@ -95,6 +112,7 @@ export function useSiteInteractions(page) {
       observer.disconnect();
       navToggle?.removeEventListener('click', handleNavToggle);
       dropdownHandlers.forEach(([link, handler]) => link.removeEventListener('click', handler));
+      navItemHandlers.forEach(([link, handler]) => link.removeEventListener('click', handler));
       productCategoryHandlers.forEach(([button, clickHandler, mouseHandler, focusHandler]) => {
         button.removeEventListener('click', clickHandler);
         button.removeEventListener('mouseenter', mouseHandler);
