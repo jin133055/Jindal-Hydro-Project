@@ -2781,10 +2781,10 @@ footer { background: #080808; padding: 60px 5% 32px; }
 }
 .machinery-category-tabs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
   gap: 0;
   margin: -34px auto 18px;
-  width: calc(100% - 48px);
+  width: calc(100% - 32px);
   position: relative;
   z-index: 2;
   background: #fff;
