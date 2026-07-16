@@ -1873,7 +1873,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   align-items: center;
 }
 .product-detail-media {
-  background: var(--steel);
+  background: transparent;
   min-height: 520px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.08);
@@ -2355,6 +2355,20 @@ footer { background: #080808; padding: 60px 5% 32px; }
 }
 .product-detail-gallery {
   margin-top: 8px;
+  grid-template-columns: repeat(2, 1fr) !important;
+  grid-auto-rows: 360px !important;
+}
+.product-detail-gallery figure {
+  background: transparent !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  border-radius: 8px;
+}
+.product-detail-gallery img {
+  object-fit: contain !important;
+  opacity: 1 !important;
+}
+.product-detail-gallery .gallery-large {
+  grid-row: auto !important;
 }
 .product-detail-page--classic .premium-video-gallery {
   margin-top: 18px;
@@ -2453,17 +2467,18 @@ footer { background: #080808; padding: 60px 5% 32px; }
   max-width: none;
   background: #fff;
   grid-template-columns: minmax(320px, 45%) 1fr;
-  gap: 24px;
-  padding: 22px;
+  gap: 16px;
+  padding: 16px;
   border: 1px solid rgba(0,0,0,0.08);
 }
 .product-detail-media {
-  background: #f1f1f1;
-  border: 1px solid rgba(0,0,0,0.08);
-  min-height: 420px;
+  background: transparent;
+  border: none;
+  min-height: 380px;
 }
 .product-detail-media img {
-  min-height: 420px;
+  min-height: 380px;
+  object-fit: contain !important;
 }
 .product-detail-content h1,
 .product-video-section h2,
@@ -2643,7 +2658,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   box-shadow: 0 18px 38px rgba(12,12,12,0.08);
 }
 .product-listing-image {
-  background: #fff;
+  background: transparent;
   overflow: hidden;
   height: 230px;
   padding: 12px 14px 0;
@@ -3539,7 +3554,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   margin: 0;
   overflow: hidden;
   border-radius: var(--product-radius);
-  background: #121212;
+  background: transparent;
 }
 .premium-gallery .gallery-large {
   grid-row: span 2;
@@ -3547,8 +3562,8 @@ footer { background: #080808; padding: 60px 5% 32px; }
 .premium-gallery img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.9;
+  object-fit: contain;
+  opacity: 1;
   transition: transform 0.35s;
 }
 .premium-gallery figcaption {

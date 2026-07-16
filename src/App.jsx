@@ -74,10 +74,16 @@ const productImageMap = {
   'high-density-baler': [
     '/images/3D%20Models%20from%20AI/01_High_Density_Baler_Hero_Angle_v.1.png',
     '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.2.png',
+    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.3.png',
+    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.4.png',
+    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.5.png',
   ],
   'triple-action-baler': [
     '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_Hero_Angle_v.1.png',
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.1.png',
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.2.png',
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.3.png',
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.4.png',
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.5.png'
   ],
   'mini-triple-action-baler': [
     '/images/3D%20Models%20from%20AI/04_Mini_Triple_Action_Baler_Hero_Angle_v.1.png',
@@ -377,7 +383,49 @@ const productPathAliases = {
   'vertical-baler-waste': 'waste-recycling-vertical-baler',
 };
 
-const productDetails = {};
+const productDetails = {
+  'high-density-baler': {
+    name: 'High Density Baler',
+    description: 'High-density baler engineered for maximum compaction and throughput in demanding recycling operations. Features reliable hydraulic systems for consistent bale formation across various material types.',
+    specs: [
+      {
+        'Bale Size (in)': '18×18',
+        'Chamber (in)': '76×40×30',
+        'Bale Wt MS (kg)': '120-140',
+        'Cycle (sec)': '50-55',
+        'Motor (HP)': '60/80',
+      },
+      {
+        'Bale Size (in)': '20×20 / 22×22',
+        'Chamber (in)': '84×44×36',
+        'Bale Wt MS (kg)': '250-350',
+        'Cycle (sec)': '80-85',
+        'Motor (HP)': '80/100',
+      },
+      {
+        'Bale Size (in)': '24×24',
+        'Chamber (in)': '84×60×40',
+        'Bale Wt MS (kg)': '450-600',
+        'Cycle (sec)': '80-120',
+        'Motor (HP)': '80/100/120',
+      },
+      {
+        'Bale Size (in)': '28×28 / 35×35',
+        'Chamber (in)': '105×60×50',
+        'Bale Wt MS (kg)': '700-800',
+        'Cycle (sec)': '90-100',
+        'Motor (HP)': '80/100/120',
+      },
+      {
+        'Bale Size (in)': '40×40',
+        'Chamber (in)': '110×60×55',
+        'Bale Wt MS (kg)': '800-1000',
+        'Cycle (sec)': '90-100',
+        'Motor (HP)': '80/100/120',
+      },
+    ],
+  },
+};
 
 const fallbackProduct = {
   name: 'Hydraulic Recycling Machine',
@@ -398,6 +446,7 @@ const getProductDetail = (slug) => {
   const imageSet = getProductImageSet(slug);
   if (productDetails[slug]) {
     return {
+      ...listedProduct,
       ...productDetails[slug],
       category: listedProduct?.category || 'Industrial Machinery',
       image: productDetails[slug].image || imageSet[0],
@@ -462,6 +511,12 @@ const categoryImages = {
 
 const getCategoryImage = (category) => categoryImages[getCategoryParam(category)] || '/images/homepage.png';
 
+const getCategoryFirstProductImage = (category) => {
+  if (!category?.products || category.products.length === 0) return getCategoryImage(category);
+  const firstProduct = category.products[0];
+  return getProductImage(firstProduct.slug);
+};
+
 const categoryCardDescriptions = {
   'metal-recycling': 'Advanced metal recycling solutions engineered for efficient scrap processing, high-volume shredding, and sustainable industrial recovery operations.',
   'waste-recycling': 'Modern waste recycling systems designed for automated sorting, material recovery, and environmentally responsible waste management.',
@@ -489,7 +544,7 @@ const getProductSlugFromLocation = (location) => {
   const params = new URLSearchParams(location.search);
   if (params.get('product')) return params.get('product');
   const parts = location.pathname.split('/').filter(Boolean);
-  const slug = parts.length >= 4 ? parts[parts.length - 1] : null;
+  const slug = parts.length >= 3 ? parts[parts.length - 1] : null;
   return productPathAliases[slug] || slug;
 };
 
@@ -1390,10 +1445,13 @@ function ProductDetailPage() {
   const currentSlug = getProductSlugFromLocation(location) || productCategories[0].products[0].slug;
   const product = getProductDetail(currentSlug);
   const productMeta = productSeo[currentSlug];
-  const galleryImages = (product.galleryImages || [product.image]).map((image, index) => ({
-    label: index === 0 ? 'Main View' : `View ${index + 1}`,
-    image,
-  }));
+  const galleryImages = (product.galleryImages || [product.image]).map((image, index) => {
+    const views = ['Main View', 'Front Left View', 'Front Right View', 'Front View', 'Top View'];
+    return {
+      label: views[index] || `View ${index + 1}`,
+      image,
+    };
+  });
   const productVideos = [
     ['Machine Walkthrough', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
     ['Hydraulic System Overview', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
@@ -1449,27 +1507,45 @@ function ProductDetailPage() {
                 <table className="product-table">
                   <thead>
                     <tr>
-                      <th>Model</th>
-                      <th>Capacity</th>
-                      <th>Motor HP</th>
-                      <th>Cycle Time</th>
-                      <th>Machine Weight</th>
+                      {Array.isArray(product.specs) && product.specs[0] ? (
+                        Object.keys(product.specs[0]).map((key) => <th key={key}>{key}</th>)
+                      ) : (
+                        <>
+                          <th>Model</th>
+                          <th>Capacity</th>
+                          <th>Motor HP</th>
+                          <th>Cycle Time</th>
+                          <th>Machine Weight</th>
+                        </>
+                      )}
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>Standard</td><td>20-30 T/8hr</td><td>30-60</td><td>40-55 sec</td><td>8-14 T</td></tr>
-                    <tr><td>Heavy Duty</td><td>30-60 T/8hr</td><td>60-100</td><td>35-50 sec</td><td>14-20 T</td></tr>
-                    <tr><td>Custom</td><td>As required</td><td>Application matched</td><td>Custom</td><td>Project based</td></tr>
+                    {Array.isArray(product.specs) ? (
+                      product.specs.map((row, index) => (
+                        <tr key={index}>
+                          {Object.values(row).map((value, valueIndex) => (
+                            <td key={valueIndex}>{value}</td>
+                          ))}
+                        </tr>
+                      ))
+                    ) : (
+                      <>
+                        <tr><td>Standard</td><td>20-30 T/8hr</td><td>30-60</td><td>40-55 sec</td><td>8-14 T</td></tr>
+                        <tr><td>Heavy Duty</td><td>30-60 T/8hr</td><td>60-100</td><td>35-50 sec</td><td>14-20 T</td></tr>
+                        <tr><td>Custom</td><td>As required</td><td>Application matched</td><td>Custom</td><td>Project based</td></tr>
+                      </>
+                    )}
                   </tbody>
                 </table>
               </div>
             </section>
 
             <section className="product-info-section">
-              <h2>Product Photo Gallery</h2>
+              <h2>Product Catalogue</h2>
               <div className="premium-gallery product-detail-gallery">
-                {galleryImages.map(({ label, image }, index) => (
-                  <figure className={index === 0 ? 'gallery-large reveal' : 'reveal'} key={`${product.name}-${label}-${index}`}>
+                {galleryImages.slice(1).map(({ label, image }, index) => (
+                  <figure className="reveal" key={`${product.name}-${label}-${index}`}>
                     <img src={image} alt={`${product.name} ${label}`} />
                     <figcaption>{label}</figcaption>
                   </figure>
@@ -1570,6 +1646,16 @@ function ProductsPage() {
   const [productSearch, setProductSearch] = useState('');
   const activeCategoryParam = getCategorySlugFromLocation(location);
   const activeSubcategoryParam = getSubcategorySlugFromLocation(location);
+  
+  // Check if the third URL segment is a product slug (not a subcategory)
+  const potentialProductSlug = activeSubcategoryParam ? productPathAliases[activeSubcategoryParam] || activeSubcategoryParam : null;
+  const isProductDetailPage = potentialProductSlug && findProductBySlug(potentialProductSlug);
+  
+  // If it's a product detail page, render ProductDetailPage instead
+  if (isProductDetailPage) {
+    return <ProductDetailPage />;
+  }
+  
   const activeCategorySeo = activeCategoryParam ? categorySeo[activeCategoryParam] : null;
   const activeCategory = productCategories.find((category) => getCategoryParam(category) === activeCategoryParam);
   const listedCategories = activeCategory ? [activeCategory] : productCategories;
@@ -1631,7 +1717,7 @@ function ProductsPage() {
       if (!metrics) return;
       metrics.carousel.scrollBy({ left: metrics.distance, behavior: 'smooth' });
       window.setTimeout(normalizeCategoryCarousel, 650);
-    }, 2800);
+    }, 4000);
 
     return () => window.clearInterval(interval);
   }, [activeCategory]);
@@ -1740,7 +1826,7 @@ function ProductsPage() {
                     {carouselCategories.map((category, index) => (
                       <Link className="machinery-category-card reveal" to={category.viewAll} key={`${category.name}-${index}`}>
                         <div className="machinery-card-image">
-                          <img src={getCategoryImage(category)} alt={`${category.name} machinery - Jindal Hydro Projects`} loading="lazy" />
+                          <img src={getCategoryFirstProductImage(category)} alt={`${category.name} machinery - Jindal Hydro Projects`} loading="lazy" />
                         </div>
                         <div className="machinery-card-copy">
                           <h2>{category.name}</h2>
