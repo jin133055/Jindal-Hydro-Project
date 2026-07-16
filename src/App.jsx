@@ -12,9 +12,7 @@ const productCategories = [
       { slug: 'high-density-baler', name: 'High Density Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'triple-action-baler', name: 'Triple Action Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'mini-triple-action-baler', name: 'Mini Triple Action Baler', subcategory: 'Balers', note: 'Balers' },
-      { slug: 'double-action-baler-auto-door', name: 'Double Action Baler — Auto Door', subcategory: 'Balers', note: 'Balers' },
-      { slug: 'double-action-baler-manual-door', name: 'Double Action Baler — Manual Door', subcategory: 'Balers', note: 'Balers' },
-      { slug: 'double-action-baler-top-ejection', name: 'Double Action Baler — Top Ejection', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'double-action-baler', name: 'Double Action Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'vertical-baler', name: 'Vertical Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'super-jumbo-baler', name: 'Super Jumbo Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'car-baler', name: 'Car Baler (ELV Compactor)', subcategory: 'Balers', note: 'Balers' },
@@ -80,26 +78,20 @@ const productImageMap = {
   ],
   'triple-action-baler': [
     '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_Hero_Angle_v.1.png',
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.2.png',
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.3.png',
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.5.png',
     '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.4.png',
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.5.png'
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.3.png',
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.2.png',
   ],
   'mini-triple-action-baler': [
     '/images/3D%20Models%20from%20AI/04_Mini_Triple_Action_Baler_Hero_Angle_v.1.png',
     '/images/3D%20Models%20from%20AI/04_Continous_Baler_Hero_Angle_v.1.png',
   ],
-  'double-action-baler-auto-door': [
-    '/images/3D%20Models%20from%20AI/05a_Double_Action_Auto_Door_v1.png',
+  'double-action-baler': [
     '/images/3D%20Models%20from%20AI/05_Double_Action_Baler_Hero_Angle_v.1.png',
-  ],
-  'double-action-baler-manual-door': [
+    '/images/3D%20Models%20from%20AI/05a_Double_Action_Auto_Door_v1.png',
     '/images/3D%20Models%20from%20AI/05b_Double_Action_Manual_Door_v1.png',
-    '/images/3D%20Models%20from%20AI/05_Double_Action_Baler_Hero_Angle_v.2.png',
-  ],
-  'double-action-baler-top-ejection': [
     '/images/3D%20Models%20from%20AI/05c_Double_Action_Top_Ejection_v1.png',
-    '/images/3D%20Models%20from%20AI/05_Double_Action_Baler_Hero_Angle_v.2.png',
   ],
   'vertical-baler': ['/images/3D%20Models%20from%20AI/06_Vertical_Baler_Hero_Angle_v.2.png'],
   'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/20_Super_Jumbo_Baler_Hero_v1.png'],
@@ -264,23 +256,11 @@ const productSeo = {
     description: 'Compact mini triple-action baler for small recycling yards, workshops, and lower-throughput scrap handling operations.',
     h1: 'Mini Triple Action Baler - Compact Industrial Baling',
   },
-  'double-action-baler-auto-door': {
-    canonical: '/products/balers/double-action-baler-auto-door/',
-    title: 'Double Action Baler Auto Door | JHP',
-    description: 'Automatic-door double-action baler designed for efficient scrap compaction with fast cycle times and reliable operation.',
-    h1: 'Double Action Baler - Auto Door Model',
-  },
-  'double-action-baler-manual-door': {
-    canonical: '/products/balers/double-action-baler-manual-door/',
-    title: 'Double Action Baler Manual Door | JHP',
-    description: 'Manual-door double-action baler for dependable scrap and waste compaction in industrial recycling environments.',
-    h1: 'Double Action Baler - Manual Door Model',
-  },
-  'double-action-baler-top-ejection': {
-    canonical: '/products/balers/double-action-baler-top-ejection/',
-    title: 'Double Action Baler Top Ejection | JHP',
-    description: 'Top-ejection double-action baler engineered for easy bale release and efficient material handling on high-volume lines.',
-    h1: 'Double Action Baler - Top Ejection Design',
+  'double-action-baler': {
+    canonical: '/products/balers/double-action-baler/',
+    title: 'Double Action Baler | JHP',
+    description: 'Double-action baler available in auto door, manual door, and top ejection configurations for dependable scrap compaction.',
+    h1: 'Double Action Baler',
   },
   'vertical-baler': {
     canonical: '/products/balers/vertical-baler/',
@@ -379,6 +359,9 @@ const productPathAliases = {
   'hydraulic-grab-crane': 'grabs-cranes',
   'car-baler-elv-compactor': 'car-baler',
   'semi-automatic-horizontal-baler': 'semi-automatic-baler',
+  'double-action-baler-auto-door': 'double-action-baler',
+  'double-action-baler-manual-door': 'double-action-baler',
+  'double-action-baler-top-ejection': 'double-action-baler',
   'triple-action-baler-waste': 'triple-action-baler-for-waste',
   'vertical-baler-waste': 'waste-recycling-vertical-baler',
 };
@@ -425,6 +408,530 @@ const productDetails = {
       },
     ],
   },
+  'triple-action-baler': {
+    name: 'Triple Action Baler',
+    description: 'Triple-action baler with three-direction compression for dense, uniform scrap bales in recycling yards, metal processing facilities, and industrial compaction applications.',
+    galleryLabels: ['Main View', 'Front Right View', 'Rear Left View', 'Rear Right View', 'Front Left View'],
+    specs: [
+      {
+        Model: 'Mini',
+        'Bale (in)': '6x6',
+        'Chamber (in)': '18x18x45',
+        'Wt MS (kg)': '10-16',
+        'Wt AL (kg)': '4-6',
+        'Motor (HP)': '20',
+      },
+      {
+        Model: 'Mini',
+        'Bale (in)': '8x8',
+        'Chamber (in)': '20x20x45',
+        'Wt MS (kg)': '18-28',
+        'Wt AL (kg)': '6-9',
+        'Motor (HP)': '20',
+      },
+      {
+        Model: 'Mini',
+        'Bale (in)': '9x9',
+        'Chamber (in)': '20x20x45',
+        'Wt MS (kg)': '25-40',
+        'Wt AL (kg)': '8-13',
+        'Motor (HP)': '20',
+      },
+      {
+        Model: 'Mini',
+        'Bale (in)': '10x10',
+        'Chamber (in)': '20x20x50',
+        'Wt MS (kg)': '30-45',
+        'Wt AL (kg)': '10-15',
+        'Motor (HP)': '25',
+      },
+    ],
+  },
+  'mini-triple-action-baler': {
+    name: 'Mini Triple Action Baler',
+    description:
+      'Compact heavy-duty triple-action baler designed for scrap yards requiring dense, high-quality bales while minimizing floor space. Ideal for copper, aluminium and MS scrap.',
+    specs: [
+      {
+        Model: 'Mini 6×6',
+        'Bale (in)': '6×6',
+        'Chamber (in)': '18×18×45',
+        'Wt MS (kg)': '10-16',
+        'Wt AL (kg)': '4-6',
+        'Motor (HP)': '20',
+      },
+      {
+        Model: 'Mini 8×8',
+        'Bale (in)': '8×8',
+        'Chamber (in)': '20×20×45',
+        'Wt MS (kg)': '18-28',
+        'Wt AL (kg)': '6-9',
+        'Motor (HP)': '20',
+      },
+      {
+        Model: 'Mini 9×9',
+        'Bale (in)': '9×9',
+        'Chamber (in)': '20×20×45',
+        'Wt MS (kg)': '25-40',
+        'Wt AL (kg)': '8-13',
+        'Motor (HP)': '20',
+      },
+      {
+        Model: 'Mini 10×10',
+        'Bale (in)': '10×10',
+        'Chamber (in)': '20×20×50',
+        'Wt MS (kg)': '30-45',
+        'Wt AL (kg)': '10-15',
+        'Motor (HP)': '25',
+      },
+    ],
+  },
+  'double-action-baler': {
+    name: 'Double Action Baler',
+    description: 'Double-action baler available in auto door, manual door, and top ejection configurations for dependable scrap compaction in industrial recycling operations.',
+    galleryLabels: ['Main View', 'Auto Door', 'Manual Door', 'Top Ejection'],
+    specs: [
+      {
+        'Chamber (in)': '20x16x45',
+        'Bale (in)': '12-16xV',
+        'Wt MS (kg)': '20-50',
+        'Cycle (sec)': '75-85',
+        'Motor (HP)': '15',
+        Operation: 'Manual / Front / Top',
+      },
+      {
+        'Chamber (in)': '20x24x45',
+        'Bale (in)': '12x24xV',
+        'Wt MS (kg)': '40-60',
+        'Cycle (sec)': '50-60',
+        'Motor (HP)': '20',
+        Operation: 'Manual / Front / Top',
+      },
+      {
+        'Chamber (in)': '24x18x50',
+        'Bale (in)': '16x18xV',
+        'Wt MS (kg)': '50-60',
+        'Cycle (sec)': '50-60',
+        'Motor (HP)': '20',
+        Operation: 'Manual / Front / Top',
+      },
+    ],
+  },
+  'vertical-baler': {
+  name: 'Vertical Baler',
+  description:
+    'Space-saving vertical hydraulic baler designed for compacting light metal scrap and dry recyclable waste into high-density blocks. Ideal for facilities with limited floor space while delivering reliable, low-noise operation.',
+  specs: [
+    {
+      'Chamber (in)': '72×45×42',
+      'Bale (in)': '42×42×42',
+      'Bale Wt (kg)': '20-30',
+      'Motor (HP)': '25',
+      'Cycle (sec)': '70-80',
+      Operation: 'Electrical PLC',
+    },
+    {
+      'Chamber (in)': '60×33×27',
+      'Bale (in)': '33×27×27',
+      'Bale Wt (kg)': '30-40',
+      'Motor (HP)': '10',
+      'Cycle (sec)': '70-80',
+      Operation: 'Hydraulic Hand Lever',
+    },
+    {
+      'Chamber (in)': '52×27×33',
+      'Bale (in)': '27×23×23',
+      'Bale Wt (kg)': '50-70',
+      'Motor (HP)': '10',
+      'Cycle (sec)': '70-80',
+      Operation: 'Hydraulic Hand Lever',
+    },
+  ],
+},
+
+'super-jumbo-baler': {
+  name: 'Super Jumbo Baler',
+  description:
+    'Heavy-duty PLC-controlled baler built for high-volume industrial scrap processing. Designed to compact oversized scrap and heavy TMT bars with high production capacity and robust HARDOX construction.',
+  specs: [
+    {
+      'Bale (in)': '20×20',
+      'Chamber (in)': '84×44×38',
+      'Wt MS (kg)': '200-250',
+      'Cycle (sec)': '80-85',
+      'Production (T/8hr)': '24-30',
+      'Motor (HP)': '80/100',
+    },
+    {
+      'Bale (in)': '22×22',
+      'Chamber (in)': '84×44×38',
+      'Wt MS (kg)': '250-300',
+      'Cycle (sec)': '80-85',
+      'Production (T/8hr)': '30-35',
+      'Motor (HP)': '80/100',
+    },
+    {
+      'Bale (in)': '24×24',
+      'Chamber (in)': '84×60×40',
+      'Wt MS (kg)': '400-500',
+      'Cycle (sec)': '80-85',
+      'Production (T/8hr)': '45-50',
+      'Motor (HP)': '80/100/120',
+    },
+    {
+      'Bale (in)': '28×28',
+      'Chamber (in)': '105×50×50',
+      'Wt MS (kg)': '600-650',
+      'Cycle (sec)': '90-100',
+      'Production (T/8hr)': '60-70',
+      'Motor (HP)': '80/100/120',
+    },
+    {
+      'Bale (in)': '30×30',
+      'Chamber (in)': '105×60×50',
+      'Wt MS (kg)': '700-800',
+      'Cycle (sec)': '90-100',
+      'Production (T/8hr)': '62-72',
+      'Motor (HP)': '80/100/120',
+    },
+  ],
+},
+
+'car-baler': {
+  name: 'Car Baler (ELV Compactor)',
+  description:
+    'Specialized hydraulic car baler developed for End-of-Life Vehicle (ELV) and Registered Vehicle Scrapping Facilities (RVSF). Designed to compact complete vehicle bodies, doors, buses and truck components into dense bundles for efficient recycling.',
+  specs: [
+    {
+      Application: 'ELV / RVSF',
+      Capacity: 'Available on Request',
+      'Machine Configuration': 'Custom',
+      'Hydraulic System': 'Heavy Duty',
+      Consultation: 'Contact Sales Team',
+    },
+  ],
+},
+
+'automatic-baler': {
+  name: 'Automatic Horizontal Baler',
+  description:
+    'Fully automatic horizontal baler engineered for high-volume waste recycling operations. Processes paper, OCC, PET bottles, plastics and textiles with programmable bale lengths and minimal operator involvement.',
+  specs: [
+    {
+      'Bale Size (W×H)': '29×29',
+      'Bale Wt OCC (kg)': '300-400',
+      'Production (T/hr)': '1-3',
+    },
+    {
+      'Bale Size (W×H)': '35×29',
+      'Bale Wt OCC (kg)': '400-600',
+      'Production (T/hr)': '4-6',
+    },
+    {
+      'Bale Size (W×H)': '35×35',
+      'Bale Wt OCC (kg)': '650-750',
+      'Production (T/hr)': '7-12',
+    },
+    {
+      'Bale Size (W×H)': '44×42',
+      'Bale Wt OCC (kg)': '800-1200',
+      'Production (T/hr)': '12-22',
+    },
+    {
+      'Bale Size (W×H)': '44×57',
+      'Bale Wt OCC (kg)': '1000-1400',
+      'Production (T/hr)': '24-29',
+    },
+  ],
+},
+
+'semi-automatic-baler': {
+  name: 'Semi-Automatic Horizontal Baler',
+  description:
+    'Semi-automatic horizontal baler combining automatic compaction with manual strapping for medium-volume recycling facilities. Produces high-density bales suitable for paper, cardboard, plastics and PET processing.',
+  specs: [
+    {
+      Model: 'SAT 12',
+      'Bale Size (W×H)': '29×29',
+      'Wt OCC (kg)': '500-600',
+      'Wt PET (kg)': '250-500',
+      Production: '1-2 T/hr',
+    },
+    {
+      Model: 'SAT 23',
+      'Bale Size (W×H)': '35×29',
+      'Wt OCC (kg)': '600-750',
+      'Wt PET (kg)': '350-600',
+      Production: '2-3 T/hr',
+    },
+  ],
+},
+'alligator-shear-crocodile-shear': {
+  name: 'Alligator Shear',
+  description:
+    'Heavy-duty hydraulic and mechanical alligator shear designed for fast, efficient cutting of ferrous and non-ferrous scrap. Suitable for processing TMT bars, channels, angles, cables, tubes and structural steel with high cutting force and minimal maintenance.',
+  specs: [
+    {
+      'Shear Force (T)': '35-50',
+      'Jaw Opening (in)': '9',
+      'Cutting Capacity (mm)': '40-50 Round',
+      'Strokes/Min': '10-14',
+      'Motor (HP)': '15-40',
+      'Machine Wt (kg)': '2800-6500',
+    },
+    {
+      'Shear Force (T)': '65-100',
+      'Jaw Opening (in)': '9-12',
+      'Cutting Capacity (mm)': '65-80 Round',
+      'Strokes/Min': '7-14',
+      'Motor (HP)': '40',
+      'Machine Wt (kg)': '6500',
+    },
+    {
+      'Shear Force (T)': '85-200',
+      'Jaw Opening (in)': '12-16',
+      'Cutting Capacity (mm)': '85-120 Round / 75 Sq',
+      'Strokes/Min': '7-12',
+      'Motor (HP)': '40-60',
+      'Machine Wt (kg)': '8000',
+    },
+  ],
+},
+
+'hydraulic-nibbler': {
+  name: 'Nibblers (Hydraulic & Mechanical)',
+  description:
+    'Precision hydraulic and mechanical nibblers designed for clean, low-deformation cutting of metal sheets and sections. Equipped with V-shaped blades and PLC pedal control for efficient and accurate operation.',
+  specs: [
+    {
+      Parameter: 'Blade Shape',
+      Value: 'V-shaped',
+    },
+    {
+      Parameter: 'Strokes/Min',
+      Value: '14-16',
+    },
+    {
+      Parameter: 'Motor (HP)',
+      Value: '15',
+    },
+    {
+      Parameter: 'Blade Opening (in)',
+      Value: '4',
+    },
+    {
+      Parameter: 'Cutting Capacity',
+      Value: '50-80 mm Round',
+    },
+    {
+      Parameter: 'Working Pressure',
+      Value: '2400 PSI',
+    },
+    {
+      Parameter: 'Machine Weight',
+      Value: '2500 kg',
+    },
+  ],
+},
+
+'single-shaft-shredder': {
+  name: 'Single Shaft Shredder',
+  description:
+    'Versatile single shaft shredder engineered for size reduction of plastics, paper, fabric, tyres, packaging waste and selected metal scrap. Features high torque, low-speed operation with PLC-controlled feeding for consistent output.',
+  specs: [
+    {
+      Parameter: 'Cutting Chamber Width',
+      Value: '36"',
+    },
+    {
+      Parameter: 'Cutting Chamber Length',
+      Value: '42"',
+    },
+    {
+      Parameter: 'Rotor Width',
+      Value: '34"',
+    },
+    {
+      Parameter: 'Rotor Diameter',
+      Value: '350 mm',
+    },
+    {
+      Parameter: 'Motor',
+      Value: '50 HP',
+    },
+    {
+      Parameter: 'Hydraulic Power Pack',
+      Value: 'Provided',
+    },
+  ],
+},
+
+'twin-shaft-shredder-rotary-shear-pre-shredder': {
+  name: 'Twin Shaft Shredder',
+  description:
+    'Heavy-duty twin shaft rotary shear designed for shredding bulky materials at low speed and high torque. The interlocking shaft design minimizes jamming while delivering reliable pre-shredding performance for metal, tyres, plastics and industrial waste.',
+  specs: [
+    {
+      'Housing (mm)': '1200×810',
+      'Power (HP)': '40×2',
+      'Cutter Hardness (HRC)': '58-60',
+      Drive: 'Hydraulic',
+      'Typical Scrap': 'Aluminium Casting',
+    },
+    {
+      'Housing (mm)': '1020×1500',
+      'Power (HP)': '60×2',
+      'Cutter Hardness (HRC)': '58-60',
+      Drive: 'Hydraulic',
+      'Typical Scrap': 'Aluminium Casting',
+    },
+    {
+      'Housing (mm)': '1020×1500',
+      'Power (HP)': '50×2',
+      'Cutter Hardness (HRC)': '58-60',
+      Drive: 'Electric',
+      'Typical Scrap': 'Tyre Wire',
+    },
+    {
+      'Housing (mm)': '1200×1800',
+      'Power (HP)': '75×2',
+      'Cutter Hardness (HRC)': '58-60',
+      Drive: 'Electric',
+      'Typical Scrap': 'Tyre Wire',
+    },
+  ],
+},
+
+'casting-cracker': {
+  name: 'Casting Cracker',
+  description:
+    'Robust casting cracker designed for breaking engines, transmission gears, cast iron and other heavy metal castings. Delivers efficient size reduction with strong gripping jaws and optional conveyor integration for continuous processing.',
+  specs: [
+    {
+      Capacity: '3-5 Tons/Hour',
+      'Machine Type': 'Hydraulic Casting Cracker',
+      'Jaw Design': 'Heavy Duty Grip Jaw',
+      Conveyors: 'Optional Loading & Unloading',
+      Footprint: 'Compact',
+      Specifications: 'Available on Request',
+    },
+  ],
+},
+'vertical-briquetting-machine': {
+  name: 'Vertical Briquetting Machine',
+  description:
+    'High-pressure vertical briquetting machine designed to convert metal machining waste into dense, uniform briquettes for efficient remelting. Reduces material volume, improves handling and minimizes metal loss during smelting.',
+  specs: [
+    {
+      'Briquette Dia': '3" (90 mm)',
+      'Motor (HP)': '40-50',
+      'Wt Al (kg)': '0.3-0.6',
+      'Wt Fe (kg)': '0.5-1.2',
+      'Production (T/hr)': '0.54-1.2',
+    },
+    {
+      'Briquette Dia': '4" (125 mm)',
+      'Motor (HP)': '40-60',
+      'Wt Al (kg)': '1-1.5',
+      'Wt Fe (kg)': '3-4.5',
+      'Production (T/hr)': '0.9-1.68',
+    },
+    {
+      'Briquette Dia': '5" (150 mm)',
+      'Motor (HP)': '40-75',
+      'Wt Al (kg)': '2-4',
+      'Wt Fe (kg)': '5-8',
+      'Production (T/hr)': '1.26-2.4',
+    },
+  ],
+},
+
+'conveyors': {
+  name: 'Conveyors',
+  description:
+    'Custom-built conveyor systems for transporting and sorting scrap, recyclables and waste materials across processing lines. Available in multiple configurations and designed for seamless integration with shredders, balers and sorting equipment.',
+  specs: [
+    {
+      Type: 'Inclined Magnetic',
+      Material: 'Any / Metal',
+      'Belt Width': '900 mm',
+      Drive: '2.0 HP Geared',
+      Length: '3700 mm',
+    },
+    {
+      Type: 'Flat Bed Sorting',
+      Material: 'Any / Mixed',
+      'Belt Width': '900 mm',
+      Drive: '2.0 HP',
+      Length: '4000 mm',
+    },
+    {
+      Type: 'Transfer',
+      Material: 'Any / Sorted',
+      'Belt Width': '900 mm',
+      Drive: '2.0 HP Geared',
+      Length: '3700 mm',
+    },
+  ],
+},
+
+'msw-sorting-line': {
+  name: 'MSW Sorting Line',
+  description:
+    'Complete municipal solid waste (MSW) sorting solution designed for efficient separation of organic, recyclable and non-recyclable waste. Suitable for biomining projects and turnkey waste processing facilities with customized plant layouts.',
+  specs: [
+    {
+      'Plant Capacity': 'Custom',
+      Configuration: 'Customized',
+      Layout: 'As Per Customer Requirement',
+      Sorting: 'Mechanical + Optical',
+      Application: 'MSW & Biomining',
+    },
+  ],
+},
+
+'fodder-block-making-machine': {
+  name: 'Fodder Block Making Machine',
+  description:
+    'PLC-controlled fodder block making machine that compresses agricultural residue into dense, uniform feed blocks for efficient storage, transportation and livestock feeding. Supports both dry fodder and TMR blend production.',
+  specs: [
+    {
+      Parameter: 'Feeding Chamber',
+      'FBM Standard': '24×18×43"',
+      'FBM-HD Heavy Duty': '23×24×50"',
+    },
+    {
+      Parameter: 'Block Size',
+      'FBM Standard': '12×18×5"',
+      'FBM-HD Heavy Duty': '12×24×6"',
+    },
+    {
+      Parameter: 'Motor (HP)',
+      'FBM Standard': '25',
+      'FBM-HD Heavy Duty': '30',
+    },
+    {
+      Parameter: 'Production (Blocks/hr)',
+      'FBM Standard': '70-90',
+      'FBM-HD Heavy Duty': '90-100',
+    },
+    {
+      Parameter: 'Block Wt — Dry Fodder',
+      'FBM Standard': '10-12 kg',
+      'FBM-HD Heavy Duty': '14-17 kg',
+    },
+    {
+      Parameter: 'Block Wt — TMR 50:50',
+      'FBM Standard': '14-18 kg',
+      'FBM-HD Heavy Duty': '27-30 kg',
+    },
+    {
+      Parameter: 'Machine Weight',
+      'FBM Standard': '6.5 T',
+      'FBM-HD Heavy Duty': '8 T',
+    },
+  ],
+},
 };
 
 const fallbackProduct = {
@@ -1446,7 +1953,7 @@ function ProductDetailPage() {
   const product = getProductDetail(currentSlug);
   const productMeta = productSeo[currentSlug];
   const galleryImages = (product.galleryImages || [product.image]).map((image, index) => {
-    const views = ['Main View', 'Front Left View', 'Front Right View', 'Front View', 'Top View'];
+    const views = product.galleryLabels || ['Main View', 'Front Left View', 'Front Right View', 'Front View', 'Top View'];
     return {
       label: views[index] || `View ${index + 1}`,
       image,
@@ -1470,7 +1977,7 @@ function ProductDetailPage() {
       <main className="product-detail-page product-detail-page--classic">
         <div className="product-browser-layout">
           <section className="product-display">
-            <div className="product-detail-hero">
+            <div className={`product-detail-hero${product.slug === 'vertical-baler' ? ' product-detail-hero--vertical-baler' : ''}`}>
               <div className="product-detail-media reveal">
                 <img src={product.image || '/images/homepage.png'} alt={`${product.name} - Jindal Hydro Projects`} />
               </div>
@@ -1502,7 +2009,7 @@ function ProductDetailPage() {
             </section>
 
             <section className="product-info-section">
-              <h2>Technical Range</h2>
+              <h2>{product.slug === 'triple-action-baler' ? 'Technical Specifications' : 'Technical Range'}</h2>
               <div className="product-table-wrap">
                 <table className="product-table">
                   <thead>
@@ -1543,7 +2050,7 @@ function ProductDetailPage() {
 
             <section className="product-info-section">
               <h2>Product Catalogue</h2>
-              <div className="premium-gallery product-detail-gallery">
+              <div className={`premium-gallery product-detail-gallery${product.slug === 'double-action-baler' ? ' product-detail-gallery--three-up' : ''}`}>
                 {galleryImages.slice(1).map(({ label, image }, index) => (
                   <figure className="reveal" key={`${product.name}-${label}-${index}`}>
                     <img src={image} alt={`${product.name} ${label}`} />
