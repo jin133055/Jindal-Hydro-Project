@@ -931,7 +931,204 @@ const productDetails = {
       'FBM-HD Heavy Duty': '8 T',
     },
   ],
-},
+  },
+};
+
+const materialProcessed = {
+  'high-density-baler': [
+    'MS Scrap',
+    'Heavy Melting Scrap (HMS)',
+    'Light Melting Scrap (LMS)',
+    'Steel Scrap',
+    'Aluminium Scrap',
+    'Copper Scrap',
+    'Brass Scrap',
+    'Stainless Steel Scrap',
+    'Cast Iron Scrap',
+    'Automobile Scrap',
+    'Industrial Scrap',
+    'Sheet Metal Scrap',
+    'Turnings & Borings',
+  ],
+  'triple-action-baler': [
+    'MS Scrap',
+    'Aluminium Scrap',
+    'Copper Scrap',
+    'Brass Scrap',
+    'Stainless Steel Scrap',
+    'Automobile Scrap',
+    'Industrial Scrap',
+    'Tin Scrap',
+    'Dry Waste',
+    'Mixed Metal Scrap',
+  ],
+  'mini-triple-action-baler': [
+    'Copper Scrap',
+    'Aluminium Scrap',
+    'Brass Scrap',
+    'MS Scrap',
+    'Stainless Steel Scrap',
+    'Mixed Non-Ferrous Scrap',
+    'Light Metal Scrap',
+  ],
+  'double-action-baler': [
+    'MS Scrap',
+    'Sheet Metal Scrap',
+    'Light Steel Scrap',
+    'Aluminium Scrap',
+    'Copper Scrap',
+    'Brass Scrap',
+    'Industrial Scrap',
+  ],
+  'vertical-baler': [
+    'Aluminium Cans',
+    'Plastic Bottles',
+    'PET Bottles',
+    'Cardboard',
+    'Paper Waste',
+    'Cartons',
+    'Plastic Film',
+    'Dry Waste',
+    'Light Metal Scrap',
+  ],
+  'super-jumbo-baler': [
+    'Heavy Melting Scrap',
+    'Light Melting Scrap',
+    'MS Scrap',
+    'TMT Bars',
+    'Steel Scrap',
+    'Structural Scrap',
+    'Industrial Scrap',
+    'Automobile Scrap',
+    'Heavy Plate Scrap',
+  ],
+  'car-baler': [
+    'End-of-Life Vehicles (ELV)',
+    'Car Bodies',
+    'Truck Bodies',
+    'Bus Bodies',
+    'Vehicle Shells',
+    'Automobile Scrap',
+  ],
+  'automatic-baler': [
+    'OCC',
+    'Cardboard',
+    'Paper Waste',
+    'Newspaper',
+    'PET Bottles',
+    'Plastic Bottles',
+    'Plastic Film',
+    'Textile Waste',
+    'Cotton Waste',
+  ],
+  'semi-automatic-baler': [
+    'OCC',
+    'Cardboard',
+    'Paper Waste',
+    'PET Bottles',
+    'Plastic Bottles',
+    'Plastic Film',
+    'Textile Waste',
+  ],
+  'alligator-shear-crocodile-shear': [
+    'Round Bars',
+    'TMT Bars',
+    'Channels',
+    'Angles',
+    'Beams',
+    'Flat Bars',
+    'Steel Pipes',
+    'Steel Tubes',
+    'Cable Scrap',
+    'Structural Steel',
+    'MS Scrap',
+  ],
+  'hydraulic-nibbler': [
+    'Steel Plates',
+    'MS Plates',
+    'Aluminium Plates',
+    'Copper Plates',
+    'Brass Plates',
+    'Sheet Metal',
+  ],
+  'single-shaft-shredder': [
+    'Plastic',
+    'PET',
+    'Rubber',
+    'Tyres',
+    'Wood',
+    'Paper',
+    'Cardboard',
+    'Fabric',
+    'Textiles',
+    'Electronic Waste',
+    'Light Metal Scrap',
+  ],
+  'twin-shaft-shredder-rotary-shear-pre-shredder': [
+    'Aluminium Castings',
+    'Tyres',
+    'Tyre Wire',
+    'Plastic',
+    'Rubber',
+    'Steel Drums',
+    'MS Scrap',
+    'Municipal Waste',
+    'Industrial Waste',
+    'Electronic Waste',
+  ],
+  'casting-cracker': [
+    'Engine Blocks',
+    'Gear Boxes',
+    'Cast Iron',
+    'Aluminium Castings',
+    'Transmission Housings',
+    'Motor Casings',
+    'Heavy Cast Components',
+  ],
+  'vertical-briquetting-machine': [
+    'Aluminium Chips',
+    'Steel Chips',
+    'Cast Iron Chips',
+    'Brass Chips',
+    'Copper Chips',
+    'Metal Turnings',
+    'Metal Borings',
+    'Metal Swarf',
+  ],
+  conveyors: [
+    'Metal Scrap',
+    'Paper',
+    'Plastic',
+    'Municipal Waste',
+    'Industrial Waste',
+    'Aluminium',
+    'Steel',
+    'Mixed Recyclables',
+  ],
+  'msw-sorting-line': [
+    'Municipal Solid Waste',
+    'Organic Waste',
+    'Plastic',
+    'Paper',
+    'Cardboard',
+    'Glass',
+    'Metal',
+    'Textiles',
+    'Construction Debris',
+    'Mixed Recyclables',
+  ],
+  'fodder-block-making-machine': [
+    'Rice Straw',
+    'Wheat Straw',
+    'Sugarcane Trash',
+    'Corn Stover',
+    'Cotton Stalk',
+    'Dry Grass',
+    'Hay',
+    'Silage',
+    'TMR Feed',
+    'Agricultural Residue',
+  ],
 };
 
 const fallbackProduct = {
@@ -1952,6 +2149,12 @@ function ProductDetailPage() {
   const currentSlug = getProductSlugFromLocation(location) || productCategories[0].products[0].slug;
   const product = getProductDetail(currentSlug);
   const productMeta = productSeo[currentSlug];
+  const processedMaterials = materialProcessed[product.slug] || [];
+  const productFeatureGroups = featureGroups.map((group) => (
+    group.title === 'Material Processing Capabilities' && processedMaterials.length > 0
+      ? { ...group, items: processedMaterials }
+      : group
+  ));
   const galleryImages = (product.galleryImages || [product.image]).map((image, index) => {
     const views = product.galleryLabels || ['Main View', 'Front Left View', 'Front Right View', 'Front View', 'Top View'];
     return {
@@ -1995,7 +2198,7 @@ function ProductDetailPage() {
             <section className="product-info-section">
               <h2>Features</h2>
               <div className="feature-accordion">
-                {featureGroups.map((group) => (
+                {productFeatureGroups.map((group) => (
                   <details className="product-accordion-item" data-accordion-group="product-features" key={group.title}>
                     <summary>{group.title}</summary>
                     <ul className="feature-list">
@@ -2048,17 +2251,19 @@ function ProductDetailPage() {
               </div>
             </section>
 
-            <section className="product-info-section">
-              <h2>Product Catalogue</h2>
-              <div className={`premium-gallery product-detail-gallery${product.slug === 'double-action-baler' ? ' product-detail-gallery--three-up' : ''}`}>
-                {galleryImages.slice(1).map(({ label, image }, index) => (
-                  <figure className="reveal" key={`${product.name}-${label}-${index}`}>
-                    <img src={image} alt={`${product.name} ${label}`} />
-                    <figcaption>{label}</figcaption>
-                  </figure>
-                ))}
-              </div>
-            </section>
+            {product.slug === 'double-action-baler' && (
+              <section className="product-info-section">
+                <h2>Product Catalogue</h2>
+                <div className="premium-gallery product-detail-gallery product-detail-gallery--three-up">
+                  {galleryImages.slice(1).map(({ label, image }, index) => (
+                    <figure className="reveal" key={`${product.name}-${label}-${index}`}>
+                      <img src={image} alt={`${product.name} ${label}`} />
+                      <figcaption>{label}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </section>
+            )}
 
             <section className="product-video-section" id="product-video">
               <div className="section-label">Videos</div>
