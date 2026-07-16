@@ -1131,6 +1131,486 @@ const materialProcessed = {
   ],
 };
 
+const keyFeatures = {
+  'high-density-baler': [
+    'Cylinder force up to 650 tons',
+    'Bale sizes 18×18" to 40×40"',
+    'Double-displacement vane pump, low cycle times',
+    'HARDOX 500-BHN wear plates throughout',
+    'Shearing blades handle material up to 20mm',
+    'Top, turn-out & side ejection options',
+  ],
+  'triple-action-baler': [
+    'Three-direction compression for super-dense bales',
+    'Handles metal scrap and dry waste alike',
+    'Bale weights from 10 kg to 1 ton',
+    'Fully automatic PLC touch-screen control',
+    'Replaceable HARDOX liner plates',
+    'No tying required on select models',
+  ],
+  'mini-triple-action-baler': [
+    'Three-direction compression, dense bales',
+    'Bale sizes 6×6" to 10×10"; up to 10 tons/hr',
+    'Fully automatic PLC control',
+    'Compact footprint for smaller yards',
+    'Online oil chiller & auto lubrication',
+  ],
+  'double-action-baler': [
+    'Two-direction compaction, small footprint',
+    'Automatic PLC-controlled pressing door',
+    'Hinged manual top door with front hand-lever',
+    'Top bale ejection — easy removal in tight spaces',
+    'No civil foundation — easy to relocate',
+    'Shearing blades for material up to 5mm',
+    'In-house valves & pumps for low cycle times',
+  ],
+  'vertical-baler': [
+    'Vertical top-down compression, space-efficient',
+    'Handles light metal scrap and dry waste',
+    'No civil foundation required',
+    'PLC or hydraulic hand-lever options',
+    'Bale range 30–500 kg by model',
+    'Low-noise operation, easy to relocate'
+  ],
+  'super-jumbo-baler': [
+    'Bale sizes 20×20" up to 35×35"',
+    'Cylinder force up to 300 tons',
+    'Processes heavy TMT bars 5–10mm thick',
+    'Production 2–10 tons/hr; bale under 75 sec',
+    'Separate manifolds per cylinder',
+    'HARDOX 500-BHN compression chamber',
+  ],
+  'car-baler': [
+    'Purpose-built for ELV / RVSF applications',
+    'Compacts intact cars, bodies, doors, buses, trucks',
+    'Produces solid high-density bundles',
+    'Minimal maintenance, robust design',
+    'Trusted in ELV recycling plants',
+  ],
+  'automatic-baler': [
+    'Fully automated: feed → compaction → ejection',
+    'Up to 200 tons per shift',
+    'Programmable, auto-controlled bale length',
+    'HARDOX 400 lining plates',
+    'Online oil chiller — runs up to 20 hours',
+    'Drastically reduces cost per tonne',
+  ],
+  'semi-automatic-baler': [
+    'Automatic baling with manual strapping',
+    '16–24 tons per shift',
+    'High-density bales, ideal for plastic',
+    'User-friendly PLC module',
+    'HARDOX 400 lining & online oil chiller',
+    'Reduces manpower requirement',
+  ],
+  'alligator-shear-crocodile-shear': [
+    'Cuts TMT, angle, round bar, cable, plates, tubes',
+    'Cutting capacity up to 85–120mm round',
+    'Broad shearing jaw for wide scrap',
+    'Up to 13–14 strokes/min',
+    'Manual, full-auto & foot-pedal operation',
+    'No civil foundation required',
+  ],
+  'hydraulic-nibbler': [
+     'V-shaped blade for clean, precise cuts',
+    'Hydraulic & mechanical variants',
+    'Cuts material up to 62–80mm thick',
+    'PLC pedal control (hydraulic)',
+    'No civil foundation required',
+  ],
+  'single-shaft-shredder': [
+    'Low rotor speed, high torque — no jamming',
+    'Sieve-controlled homogeneous output',
+    'Powerful hydraulic feeder',
+    'Advanced PLC controls',
+    'Integrates with infeed/outfeed conveyors'
+  ],
+  'twin-shaft-shredder-rotary-shear-pre-shredder': [
+    'Dual interlocking shafts — jam-free',
+    'Low speed, high torque, energy efficient',
+    '50–60 HRC cutters for long life',
+    'Hydraulic or electric drive',
+    'Integrates with conveyors',
+  ],
+  'casting-cracker': [
+    'Strong jaw design for firm grip',
+    'Processes engines, gears, cast iron, tense scrap',
+    'Capacity 3–5 tons per hour',
+    'Optional loading/unloading conveyors',
+    'Compact, robust, minimal footprint',
+  ],
+  'vertical-briquetting-machine': [
+    'Compression force up to 5000 kg/cm²',
+    'Density increase up to 90%',
+    'Uniform briquettes for consistent melting',
+    'HMI PLC control panel',
+    'Online oil chiller for long-hour operation',
+    'Minimal losses during smelting',
+  ],
+  'conveyors': [
+    'Multipurpose — handles any material type',
+    'Sorts and transports scrap and waste of all kinds',
+    'Inclined magnetic, flat-bed sorting & transfer types',
+    'Infeed and outfeed for shredders & balers',
+    'Custom lengths, widths & inclinations'
+  ],
+  'msw-sorting-line': [
+    'Separates recyclables from non-recyclables',
+    'Separates organic from inorganic matter',
+    'Integrated conveyor & sorting — complete plant',
+    'Suitable for biomining of legacy waste',
+    'Mechanical + optical sorting for accuracy',
+  ],
+  'fodder-block-making-machine': [
+    'Dense uniform blocks from roughage & concentrate',
+    'PLC-controlled, consistent dimensions',
+    'Semi-automatic poly-bag packaging',
+    '70–100 blocks per hour',
+    'Supports dry fodder & TMR 50:50 blends',
+    'Blocks store long-term & transport efficiently',
+  ],
+};
+
+const suitableIndustries = {
+  'high-density-baler': [
+    'Metal Recyclers',
+    'TMT & Ingot Plants',
+    'Scrap Yards',
+    'Casting Plants',
+    'Automotive',
+  ],
+  'triple-action-baler': [
+    'Scrap Yards',
+    'Rolling Mills',
+    'Packaging',
+    'Recyclers',
+  ],
+  'mini-triple-action-baler': [
+    'Scrap Yards',
+    'In-house Scrap',
+    'Metal Recyclers',
+  ],
+  'double-action-baler': [
+    'Scrap Yards',
+    'Workshops',
+    'Recyclers',
+  ],
+  'vertical-baler': [
+    'Limited-Space Facilities',
+    'Recyclers',
+    'Retail & Warehouse',
+  ],
+  'super-jumbo-baler': [
+    'High-Volume Recyclers',
+    'Large Scrap Yards',
+    'Steel Plants',
+  ],
+  'car-baler': [
+    'RVSF facilities',
+    'ELV plants',
+    'Automotive',
+    'Scrap Yards',
+  ],
+  'automatic-baler': [
+    'Waste Recyclers',
+    'Paper Mills',
+    'Packaging',
+    'PET & Textile Recycling',
+  ],
+  'semi-automatic-baler': [
+    'Recyclers',
+    'Printing Firms',
+    'Packaging Factories',
+  ],
+  'alligator-shear-crocodile-shear': [
+    'Scrap Yards',
+    'Recyclers',
+    'ELV Plants',
+    'Fabrication',
+  ],
+  'hydraulic-nibbler': [
+    'Sheet Metal Processors',
+    'Recyclers',
+    'Fabrication',
+  ],
+  'single-shaft-shredder': [
+    'MSW Plants',
+    'MRFs',
+    'Scrap Processing',
+  ],
+  'twin-shaft-shredder-rotary-shear-pre-shredder': [
+    'Pre-Shredding Lines',
+    'Recyclers',
+    'ELV Plants',
+  ],
+  'casting-cracker': [
+    'ELV Plants',
+    'Foundries',
+    'Metal Recyclers',
+  ],
+  'vertical-briquetting-machine': [
+    'Machining Shops',
+    'Foundries',
+    'Metal Recyclers',
+  ],
+  conveyors: [
+    'Recycling Lines',
+    'MRFs',
+    'Scrap Yards',
+  ],
+  'msw-sorting-line': [
+    'Municipalities',
+    'Waste Contractors',
+    'Urban Local Bodies',
+  ],
+  'fodder-block-making-machine': [
+    'Farms',
+    'Cattle Co-operatives',
+    'Biomass Plants',
+    'Agro-Export',
+  ],
+};
+
+const seoEfficiencyFeatures = {
+  'high-density-baler': [
+    'High-density hydraulic baler for fast metal scrap compaction and lower transport cost',
+    'Heavy-duty hydraulic operation designed for scrap yards, steel plants and recycling facilities',
+    'Low cycle-time baling improves daily throughput for ferrous and non-ferrous scrap',
+    'Configurable bale size, chamber size and ejection options for site-specific recycling operations',
+    'Wear-resistant chamber construction supports continuous industrial scrap processing',
+  ],
+  'triple-action-baler': [
+    'Triple-action hydraulic compression creates dense, uniform bales for metal recycling',
+    'PLC-controlled baler operation reduces manual handling and improves production consistency',
+    'Three-direction compaction improves bale density for MS scrap, aluminium scrap and mixed dry waste',
+    'Efficient scrap baling workflow helps reduce storage space, loading time and logistics cost',
+    'Built for high-throughput recycling yards, rolling mills and industrial waste processors',
+  ],
+  'mini-triple-action-baler': [
+    'Compact triple-action baler for efficient scrap compaction in small and medium recycling yards',
+    'Dense bale output improves storage, stacking and transport of copper, aluminium and MS scrap',
+    'PLC-controlled operation supports consistent baling with reduced operator effort',
+    'Small footprint hydraulic baler designed for workshops, dealers and in-house scrap generation',
+    'Online cooling and lubrication options support longer daily recycling operations',
+  ],
+  'double-action-baler': [
+    'Double-action hydraulic baler for reliable metal scrap compaction with a compact footprint',
+    'Two-direction pressing improves bale density for light and medium industrial scrap',
+    'Front, top and manual ejection options help match the machine to available floor layout',
+    'Efficient hydraulic cycle reduces handling time in scrap yards and fabrication workshops',
+    'Relocatable installation supports flexible recycling operations without major civil foundation work',
+  ],
+  'vertical-baler': [
+    'Vertical hydraulic baler for space-saving compaction of dry waste, cardboard and light metal scrap',
+    'Top-down compression creates dense bales in facilities with limited floor space',
+    'Low-noise baler operation suits warehouses, retail backrooms and compact recycling sites',
+    'PLC or hand-lever controls allow simple operation for daily waste handling teams',
+    'Reduced storage volume helps improve housekeeping, material handling and transport efficiency',
+  ],
+  'super-jumbo-baler': [
+    'Super jumbo hydraulic baler for high-volume metal scrap processing and heavy-duty compaction',
+    'Large chamber and high cylinder force support dense bales from bulky industrial scrap',
+    'Fast production cycles improve throughput for large scrap yards and steel recycling plants',
+    'HARDOX-lined compression chamber extends service life in abrasive scrap applications',
+    'Designed for continuous industrial operation with oversized scrap, TMT bars and heavy feedstock',
+  ],
+  'car-baler': [
+    'Hydraulic car baler engineered for ELV recycling, RVSF plants and vehicle scrapping facilities',
+    'Compacts car bodies, doors, buses and truck components into dense transport-ready bundles',
+    'Heavy-duty operation improves scrap handling, loading efficiency and metal recovery workflow',
+    'Purpose-built ELV compactor supports organized vehicle dismantling and automotive recycling',
+    'Custom machine configuration available for turnkey RVSF and end-of-life vehicle processing lines',
+  ],
+  'automatic-baler': [
+    'Automatic horizontal baler for high-volume paper, cardboard, PET and plastic waste compaction',
+    'Continuous feed, compaction and bale ejection reduce operator involvement and labor cost',
+    'Programmable bale length and PLC control improve consistency across recycling line operations',
+    'High-throughput waste baling helps lower cost per tonne for MRFs and packaging recyclers',
+    'Oil cooling and heavy-duty liners support long-shift industrial recycling performance',
+  ],
+  'semi-automatic-baler': [
+    'Semi-automatic horizontal baler for medium-volume paper, OCC, plastic and PET recycling',
+    'Automatic compaction with manual strapping balances productivity, cost and operator control',
+    'High-density bales improve storage, truck loading and resale value of recyclable material',
+    'PLC-assisted baling operation simplifies daily use for recycling facilities and factories',
+    'Efficient waste compaction reduces manpower requirement and improves plant housekeeping',
+  ],
+  'alligator-shear-crocodile-shear': [
+    'Hydraulic alligator shear for fast cutting of TMT bars, channels, cables, tubes and metal scrap',
+    'High cutting force improves scrap preparation speed for recycling and fabrication operations',
+    'Foot-pedal, manual and automatic operation options support safer, more efficient cutting workflows',
+    'No-foundation installation allows flexible placement in scrap yards and dismantling facilities',
+    'Heavy-duty shear design reduces downtime while processing ferrous and non-ferrous scrap',
+  ],
+  'hydraulic-nibbler': [
+    'Hydraulic nibbler for clean, controlled cutting of metal sheets, plates and industrial scrap',
+    'Precision V-blade design reduces deformation during sheet metal recycling and fabrication work',
+    'Pedal-controlled operation improves cutting accuracy and operator productivity',
+    'Compact nibbler machine supports trimming, dismantling and scrap preparation applications',
+    'Hydraulic and mechanical variants available for different metal processing workloads',
+  ],
+  'single-shaft-shredder': [
+    'Single shaft shredder for controlled size reduction of plastic, paper, fabric, tyres and mixed waste',
+    'Low-speed, high-torque shredding improves energy efficiency and reduces jamming risk',
+    'Sieve-controlled output supports consistent material sizing for recycling and recovery lines',
+    'PLC-controlled feeder improves throughput and protects the shredder from overload',
+    'Integrates with conveyors and downstream equipment for complete waste processing systems',
+  ],
+  'twin-shaft-shredder-rotary-shear-pre-shredder': [
+    'Twin shaft shredder for pre-shredding bulky scrap, tyres, plastics and industrial waste',
+    'Low-speed, high-torque rotary shear operation reduces jamming and improves cutting efficiency',
+    'Interlocking cutter design supports reliable size reduction before baling, sorting or recovery',
+    'Hydraulic and electric drive options match plant capacity and material requirements',
+    'Designed for ELV plants, recycling lines and high-volume waste processing facilities',
+  ],
+  'casting-cracker': [
+    'Casting cracker for efficient breaking of engines, gearboxes, cast iron and heavy ferrous scrap',
+    'Strong hydraulic jaw grip improves crushing performance on dense metal castings',
+    'Continuous processing options with conveyors improve throughput in metal recovery operations',
+    'Compact heavy-duty design supports foundries, ELV plants and scrap processing yards',
+    'Size reduction helps prepare heavy cast scrap for melting, sorting and transport',
+  ],
+  'vertical-briquetting-machine': [
+    'Vertical briquetting machine converts metal chips, turnings and machining waste into dense briquettes',
+    'High-pressure compaction improves storage, handling and remelting efficiency for metal recyclers',
+    'Uniform briquette output helps reduce oxidation loss and improves furnace charging',
+    'PLC and HMI controls support consistent operation in machining shops and foundries',
+    'Oil cooling supports long-hour briquetting of aluminium, steel, brass and cast iron chips',
+  ],
+  conveyors: [
+    'Recycling conveyors improve material flow across balers, shredders, sorting lines and recovery systems',
+    'Custom belt width, length and inclination support site-specific scrap and waste handling operations',
+    'Infeed, outfeed, magnetic and sorting conveyors reduce manual handling and improve plant throughput',
+    'Designed for metal scrap, MSW, plastics, paper, packaging waste and mixed recyclable streams',
+    'Conveyor integration helps create smoother end-to-end recycling plant operation',
+  ],
+  'msw-sorting-line': [
+    'MSW sorting line for efficient separation of organic waste, recyclables and inert material',
+    'Integrated conveyors and sorting equipment improve municipal solid waste processing throughput',
+    'Mechanical and optical sorting options support better material recovery and cleaner output streams',
+    'Suitable for biomining, legacy waste recovery and turnkey municipal waste processing plants',
+    'Custom plant layouts help urban local bodies and waste contractors improve operational efficiency',
+  ],
+  'fodder-block-making-machine': [
+    'Fodder block making machine compacts agricultural residue into dense feed and biomass blocks',
+    'PLC-controlled operation delivers consistent block size for storage, handling and transport',
+    'Efficient compression supports rice straw, wheat straw, dry grass, husk and TMR feed blends',
+    'Semi-automatic packing workflow improves daily production for farms and cattle feed operations',
+    'Compact blocks reduce logistics cost and help convert crop residue into usable livestock feed',
+  ],
+};
+
+const seoSuitableIndustries = {
+  'high-density-baler': [
+    'Metal recycling plants and ferrous scrap yards',
+    'Steel mills, TMT bar units and ingot plants',
+    'Foundries, casting plants and industrial scrap processors',
+    'Automotive component manufacturers and ELV recycling facilities',
+  ],
+  'triple-action-baler': [
+    'Scrap recycling yards and metal recovery centers',
+    'Rolling mills, steel plants and foundry scrap handling units',
+    'Packaging waste recyclers and dry waste compaction facilities',
+    'Manufacturing plants with in-house metal scrap generation',
+  ],
+  'mini-triple-action-baler': [
+    'Small scrap yards and local metal recycling dealers',
+    'Fabrication shops and workshops with in-house scrap',
+    'Copper, aluminium and MS scrap processors',
+    'Compact recycling facilities with limited floor space',
+  ],
+  'double-action-baler': [
+    'Scrap yards and industrial metal recycling units',
+    'Fabrication workshops and manufacturing plants',
+    'Light metal scrap processors and recycling dealers',
+    'Warehouses and factories needing compact waste baling',
+  ],
+  'vertical-baler': [
+    'Retail stores, warehouses and logistics facilities',
+    'Cardboard, paper and dry waste recycling centers',
+    'Small factories with limited waste handling space',
+    'Light metal scrap and packaging waste processors',
+  ],
+  'super-jumbo-baler': [
+    'High-volume scrap yards and heavy metal recyclers',
+    'Steel plants, rolling mills and TMT processing units',
+    'Industrial demolition and bulky scrap processing facilities',
+    'Large recycling plants handling oversized ferrous scrap',
+  ],
+  'car-baler': [
+    'Registered Vehicle Scrapping Facilities (RVSF)',
+    'End-of-Life Vehicle (ELV) recycling plants',
+    'Automotive dismantling and metal recovery centers',
+    'Large scrap yards processing vehicle bodies and components',
+  ],
+  'automatic-baler': [
+    'MRFs and high-volume waste recycling plants',
+    'Paper mills, OCC recyclers and cardboard recovery facilities',
+    'PET bottle, plastic and textile recycling units',
+    'Packaging factories and distribution centers with bulk waste',
+  ],
+  'semi-automatic-baler': [
+    'Medium-volume recycling facilities and waste aggregators',
+    'Printing firms, packaging plants and corrugated box manufacturers',
+    'PET, plastic and cardboard recycling businesses',
+    'Factories needing cost-effective horizontal waste baling',
+  ],
+  'alligator-shear-crocodile-shear': [
+    'Scrap yards and metal cutting centers',
+    'ELV dismantling plants and automotive recycling units',
+    'Steel fabrication shops and structural steel processors',
+    'Cable, tube, bar and plate scrap recycling operations',
+  ],
+  'hydraulic-nibbler': [
+    'Sheet metal fabrication and trimming workshops',
+    'Metal recycling plants handling plates and sections',
+    'Automotive dismantling and industrial maintenance yards',
+    'Small and medium fabrication units needing precision cutting',
+  ],
+  'single-shaft-shredder': [
+    'Material recovery facilities and MSW processing plants',
+    'Plastic, tyre, textile and packaging waste recyclers',
+    'Industrial waste management companies',
+    'Recycling lines requiring controlled pre-processing',
+  ],
+  'twin-shaft-shredder-rotary-shear-pre-shredder': [
+    'ELV recycling plants and vehicle dismantling yards',
+    'Tyre, plastic and bulky waste recycling facilities',
+    'Metal recycling lines needing pre-shredding',
+    'Municipal and industrial waste processing plants',
+  ],
+  'casting-cracker': [
+    'Foundries and cast iron recycling facilities',
+    'ELV plants processing engines and gearboxes',
+    'Heavy ferrous scrap yards and metal recovery centers',
+    'Industrial scrap processors preparing material for melting',
+  ],
+  'vertical-briquetting-machine': [
+    'CNC machining shops and metalworking units',
+    'Foundries and remelting plants',
+    'Aluminium, steel, brass and cast iron chip recyclers',
+    'Automotive and engineering manufacturers with metal turnings',
+  ],
+  conveyors: [
+    'Scrap yards and metal recycling plants',
+    'MRFs, MSW sorting plants and waste contractors',
+    'Baler, shredder and briquetting machine feed lines',
+    'Packaging, plastic, paper and mixed recyclable processors',
+  ],
+  'msw-sorting-line': [
+    'Municipal corporations and urban local bodies',
+    'Waste management contractors and MRF operators',
+    'Biomining and legacy waste processing projects',
+    'Turnkey municipal solid waste recycling facilities',
+  ],
+  'fodder-block-making-machine': [
+    'Dairy farms and cattle feed producers',
+    'Farmer co-operatives and agricultural residue processors',
+    'Biomass plants and rural feedstock aggregation centers',
+    'Agro-export businesses handling compressed fodder blocks',
+  ],
+};
+
 const fallbackProduct = {
   name: 'Hydraulic Recycling Machine',
   description: 'Industrial-grade hydraulic machinery engineered for reliable operation in demanding recycling and metal processing environments.',
@@ -2149,10 +2629,16 @@ function ProductDetailPage() {
   const currentSlug = getProductSlugFromLocation(location) || productCategories[0].products[0].slug;
   const product = getProductDetail(currentSlug);
   const productMeta = productSeo[currentSlug];
+  const productKeyFeatures = seoEfficiencyFeatures[product.slug] || keyFeatures[product.slug] || [];
   const processedMaterials = materialProcessed[product.slug] || [];
+  const productIndustries = seoSuitableIndustries[product.slug] || suitableIndustries[product.slug] || [];
   const productFeatureGroups = featureGroups.map((group) => (
-    group.title === 'Material Processing Capabilities' && processedMaterials.length > 0
+    group.title === 'Efficiency / Operation' && productKeyFeatures.length > 0
+      ? { ...group, items: productKeyFeatures }
+      : group.title === 'Material Processing Capabilities' && processedMaterials.length > 0
       ? { ...group, items: processedMaterials }
+      : group.title === 'Suitable Industries' && productIndustries.length > 0
+      ? { ...group, items: productIndustries }
       : group
   ));
   const galleryImages = (product.galleryImages || [product.image]).map((image, index) => {
