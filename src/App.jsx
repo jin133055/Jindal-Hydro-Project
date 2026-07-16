@@ -70,6 +70,59 @@ const productCategories = [
 
 const siteUrl = 'https://www.jindalhydroprojects.com';
 
+const productImageMap = {
+  'high-density-baler': [
+    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_Hero_Angle_v.1.png',
+    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.2.png',
+  ],
+  'triple-action-baler': [
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_Hero_Angle_v.1.png',
+    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.1.png',
+  ],
+  'mini-triple-action-baler': [
+    '/images/3D%20Models%20from%20AI/04_Mini_Triple_Action_Baler_Hero_Angle_v.1.png',
+    '/images/3D%20Models%20from%20AI/04_Continous_Baler_Hero_Angle_v.1.png',
+  ],
+  'double-action-baler-auto-door': [
+    '/images/3D%20Models%20from%20AI/05a_Double_Action_Auto_Door_v1.png',
+    '/images/3D%20Models%20from%20AI/05_Double_Action_Baler_Hero_Angle_v.1.png',
+  ],
+  'double-action-baler-manual-door': [
+    '/images/3D%20Models%20from%20AI/05b_Double_Action_Manual_Door_v1.png',
+    '/images/3D%20Models%20from%20AI/05_Double_Action_Baler_Hero_Angle_v.2.png',
+  ],
+  'double-action-baler-top-ejection': [
+    '/images/3D%20Models%20from%20AI/05c_Double_Action_Top_Ejection_v1.png',
+    '/images/3D%20Models%20from%20AI/05_Double_Action_Baler_Hero_Angle_v.2.png',
+  ],
+  'vertical-baler': ['/images/3D%20Models%20from%20AI/06_Vertical_Baler_Hero_Angle_v.2.png'],
+  'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/20_Super_Jumbo_Baler_Hero_v1.png'],
+  'car-baler': ['/images/3D%20Models%20from%20AI/08_Car_Baler_Hero_Angle_v.1.png'],
+  'automatic-baler': ['/images/3D%20Models%20from%20AI/17_Automatic_Baler_Hero_Angle_v1.png'],
+  'semi-automatic-baler': ['/images/3D%20Models%20from%20AI/18_Semi_Automatic_Baler_Hero_Angle_v1.png'],
+  'alligator-shear-crocodile-shear': [
+    '/images/3D%20Models%20from%20AI/13_Alligator_Shear_Hero_Angle_v.1.png',
+    '/images/3D%20Models%20from%20AI/13_Alligator_Shear_Hero_Angle_v.2.png',
+  ],
+  'hydraulic-nibbler': [
+    '/images/3D%20Models%20from%20AI/14_Nibbler_Hero_Angle_v.1.png',
+    '/images/3D%20Models%20from%20AI/14_Nibbler_Hero_Angle_v.2.png',
+  ],
+  'single-shaft-shredder': ['/images/3D%20Models%20from%20AI/15_Single_Shaft_Shredder_Hero_Angle_v.2.png'],
+  'twin-shaft-shredder-rotary-shear-pre-shredder': ['/images/3D%20Models%20from%20AI/21_Twin_Shaft_Shredder_Hero_v1.png'],
+  'casting-cracker': ['/images/3D%20Models%20from%20AI/22_Casting_Cracker_Hero_v1.png'],
+  'vertical-briquetting-machine': [
+    '/images/3D%20Models%20from%20AI/09_Vertical_Briquetting_Machine_v3.png',
+    '/images/3D%20Models%20from%20AI/09_Vertical_Briquetting_Machine_v2.png',
+  ],
+  conveyors: ['/images/3D%20Models%20from%20AI/23_Conveyor_Hero_v1.png'],
+  'msw-sorting-line': ['/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.png'],
+  'fodder-block-making-machine': ['/images/3D%20Models%20from%20AI/24_Fodder_Block_Machine_Hero_v1.png'],
+};
+
+const getProductImageSet = (slug) => productImageMap[slug] || ['/images/homepage.png'];
+const getProductImage = (slug) => getProductImageSet(slug)[0];
+
 const categorySeo = {
   'metal-recycling': {
     name: 'Metal Recycling',
@@ -433,14 +486,17 @@ const findProductBySlug = (slug) => {
 
 const getProductDetail = (slug) => {
   const listedProduct = findProductBySlug(slug);
+  const imageSet = getProductImageSet(slug);
   if (productDetails[slug]) {
     return {
       ...productDetails[slug],
       category: listedProduct?.category || 'Industrial Machinery',
+      image: productDetails[slug].image || imageSet[0],
+      galleryImages: productDetails[slug].galleryImages || imageSet,
     };
   }
 
-  if (!listedProduct) return { ...fallbackProduct, category: 'Industrial Machinery' };
+  if (!listedProduct) return { ...fallbackProduct, category: 'Industrial Machinery', image: imageSet[0], galleryImages: imageSet };
 
   return {
     name: listedProduct.name,
@@ -453,6 +509,8 @@ const getProductDetail = (slug) => {
       Stroke: 'Custom engineered',
       Material: 'Heavy-duty fabricated steel',
     },
+    image: imageSet[0],
+    galleryImages: imageSet,
   };
 };
 
@@ -1423,13 +1481,10 @@ function ProductDetailPage() {
   const currentSlug = getProductSlugFromLocation(location) || productCategories[0].products[0].slug;
   const product = getProductDetail(currentSlug);
   const productMeta = productSeo[currentSlug];
-  const galleryImages = [
-    ['Front View', '/images/homepage.png'],
-    ['Side View', '/images/metal-recycling.png'],
-    ['Installation View', '/images/infrastructure%202.png'],
-    ['Operating View', '/images/infrastructure%203.png'],
-    ['Hydraulic System Close-up', '/images/infrastructure%201.png'],
-  ];
+  const galleryImages = (product.galleryImages || [product.image]).map((image, index) => ({
+    label: index === 0 ? 'Main View' : `View ${index + 1}`,
+    image,
+  }));
   const productVideos = [
     ['Machine Walkthrough', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
     ['Hydraulic System Overview', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
@@ -1450,7 +1505,7 @@ function ProductDetailPage() {
           <section className="product-display">
             <div className="product-detail-hero">
               <div className="product-detail-media reveal">
-                <img src="/images/homepage.png" alt={`${product.name} - Jindal Hydro Projects`} />
+                <img src={product.image || '/images/homepage.png'} alt={`${product.name} - Jindal Hydro Projects`} />
               </div>
               <div className="product-detail-content reveal">
                 <div className="section-label">{product.category}</div>
@@ -1504,8 +1559,8 @@ function ProductDetailPage() {
             <section className="product-info-section">
               <h2>Product Photo Gallery</h2>
               <div className="premium-gallery product-detail-gallery">
-                {galleryImages.map(([label, image], index) => (
-                  <figure className={index === 0 ? 'gallery-large reveal' : 'reveal'} key={label}>
+                {galleryImages.map(({ label, image }, index) => (
+                  <figure className={index === 0 ? 'gallery-large reveal' : 'reveal'} key={`${product.name}-${label}-${index}`}>
                     <img src={image} alt={`${product.name} ${label}`} />
                     <figcaption>{label}</figcaption>
                   </figure>
@@ -1735,7 +1790,7 @@ function ProductsPage() {
                   {filteredProducts.map((product) => (
                     <Link className="product-listing-card product-listing-card-link reveal" to={getProductPath(product)} key={product.slug}>
                       <div className="product-listing-image">
-                        <img src="/images/homepage.png" alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
+                        <img src={product.detail.image || '/images/homepage.png'} alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
                       </div>
                       <div className="product-listing-body">
                         <h2>{product.name}</h2>
