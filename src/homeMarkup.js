@@ -1,90 +1,7 @@
 ﻿export const homeMarkup = `
 
 
-  <!-- NAV -->
-  <nav id="main-nav">
-    <a class="nav-logo" href="/">
-      <img src="/images/logo_transparent.png" alt="Jindal Hydro Projects Inc. logo">
-      <span class="logo-text">Jindal Hydro Projects Inc<span>.</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/about">About</a></li>
-      <li class="has-dropdown products-nav">
-        <a href="/products">Products <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
-        <div class="nav-dropdown product-mega">
-          <div class="product-mega-shell">
-            <div class="product-category-column">
-              <div class="product-menu-kicker">Explore Machinery</div>
-              <div class="product-category is-active">
-                <a class="product-category-toggle" href="/products/balers/">Balers<span>11</span></a>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Balers</div>
-                  <a class="product-link" href="/product-detail?product=high-density-baler"><small>Balers</small><strong>High Density Baler</strong></a>
-                  <a class="product-link" href="/product-detail?product=triple-action-baler"><small>Balers</small><strong>Triple Action Baler</strong></a>
-                  <a class="product-link" href="/product-detail?product=mini-triple-action-baler"><small>Balers</small><strong>Mini Triple Action Baler</strong></a>
-                  <a class="product-link" href="/product-detail?product=double-action-baler-auto-door"><small>Balers</small><strong>Double Action Baler — Auto Door</strong></a>
-                  <a class="product-link" href="/product-detail?product=double-action-baler-manual-door"><small>Balers</small><strong>Double Action Baler — Manual Door</strong></a>
-                  <a class="product-link" href="/product-detail?product=double-action-baler-top-ejection"><small>Balers</small><strong>Double Action Baler — Top Ejection</strong></a>
-                  <a class="product-link" href="/product-detail?product=vertical-baler"><small>Balers</small><strong>Vertical Baler</strong></a>
-                  <a class="product-link" href="/product-detail?product=super-jumbo-baler"><small>Balers</small><strong>Super Jumbo Baler</strong></a>
-                  <a class="product-link" href="/product-detail?product=car-baler"><small>Balers</small><strong>Car Baler (ELV Compactor)</strong></a>
-                  <a class="product-link" href="/product-detail?product=automatic-baler"><small>Balers</small><strong>Automatic Horizontal Baler</strong></a>
-                  <a class="product-link" href="/product-detail?product=semi-automatic-baler"><small>Balers</small><strong>Semi-Automatic Horizontal Baler</strong></a>
-                </div>
-              </div>
-              <div class="product-category">
-                <a class="product-category-toggle" href="/products/shears-nibblers/">Shears &amp; Nibblers<span>2</span></a>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Shears &amp; Nibblers</div>
-                  <a class="product-link" href="/product-detail?product=alligator-shear-crocodile-shear"><small>Shears</small><strong>Alligator Shear</strong></a>
-                  <a class="product-link" href="/product-detail?product=hydraulic-nibbler"><small>Nibblers</small><strong>Nibblers (Hydraulic & Mechanical)</strong></a>
-                </div>
-              </div>
-              <div class="product-category">
-                <a class="product-category-toggle" href="/products/shredders-crackers/">Shredders &amp; Crackers<span>3</span></a>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Shredders &amp; Crackers</div>
-                  <a class="product-link" href="/product-detail?product=single-shaft-shredder"><small>Shredders</small><strong>Single Shaft Shredder</strong></a>
-                  <a class="product-link" href="/product-detail?product=twin-shaft-shredder-rotary-shear-pre-shredder"><small>Shredders</small><strong>Twin Shaft Shredder</strong></a>
-                  <a class="product-link" href="/product-detail?product=casting-cracker"><small>Shredders</small><strong>Casting Cracker</strong></a>
-                </div>
-              </div>
-              <div class="product-category">
-                <a class="product-category-toggle" href="/products/briquetting-machines/">Briquetting Machines<span>1</span></a>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Briquetting Machines</div>
-                  <a class="product-link" href="/product-detail?product=vertical-briquetting-machine"><small>Briquetting Machines</small><strong>Vertical Briquetting Machine</strong></a>
-                </div>
-              </div>
-              <div class="product-category">
-                <a class="product-category-toggle" href="/products/material-handling-sorting/">Material Handling &amp; Sorting<span>2</span></a>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Material Handling &amp; Sorting</div>
-                  <a class="product-link" href="/product-detail?product=conveyors"><small>Material Handling</small><strong>Conveyors</strong></a>
-                  <a class="product-link" href="/product-detail?product=msw-sorting-line"><small>Material Handling</small><strong>MSW Sorting Line</strong></a>
-                </div>
-              </div>
-              <div class="product-category">
-                <a class="product-category-toggle" href="/products/agriculture-waste-recycling/">Agriculture Waste Recycling<span>1</span></a>
-                <div class="product-subpanel">
-                  <div class="product-panel-heading">Agriculture Waste Recycling</div>
-                  <a class="product-link" href="/product-detail?product=fodder-block-making-machine"><small>Agriculture Waste Recycling</small><strong>Fodder Block Making Machine</strong></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li><a href="/solutions">Solutions</a></li>
-      <li><a href="/case-studies">Case Studies</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-    <a class="nav-cta" href="/contact">Get a Quote</a>
-    <button class="nav-mobile-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+
 
   <!-- HERO -->
   <section class="hero">
@@ -95,10 +12,10 @@
       <p class="hero-sub">Jindal Hydro Projects manufactures and exports hydraulic balers, metal shredders, alligator shears, waste balers, and complete recycling plant solutions across India, the Middle East, Africa, and Southeast Asia.</p>
       <div class="hero-btns">
         <a class="btn-primary" href="/products">Explore Products</a>
-        <a class="btn-secondary" href="/case-studies">View Case Studies</a>
+        <a class="btn-secondary" href="/contact">Request Quote</a>
       </div>
     </div>
-    <div class="hero-right">
+<div class="hero-right">
       <div class="hero-visual">
         <div class="hero-img-wrap">
           <div class="baler-stage" id="balerStage" aria-label="Interactive 3D hydraulic baler model" role="img" tabindex="0">
@@ -188,7 +105,7 @@
       </div>
       <div class="products-grid">
         <a class="product-card reveal" href="/products/metal-recycling/balers/high-density-hydraulic-baler/">
-          <div class="product-img"><img src="/images/metal-recycling.png" alt="High Density Baler"></div>
+          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/02_Quad_Baler_Hero_Angle_v.1.png" alt="High Density Baler"></div>
           <div class="product-body">
             <div class="product-tag">Metal Recycling</div>
             <div class="product-name">High Density Baler</div>
@@ -199,7 +116,7 @@
           <div class="product-overlay"></div>
         </a>
         <a class="product-card reveal reveal-delay-1" href="/products/waste-recycling/automatic-horizontal-baler/">
-          <div class="product-img"><img src="/images/Waste%20Recycling.png" alt="Automatic Baler"></div>
+          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/14_Nibbler_Hero_Angle_v.1.png" alt="Automatic Baler"></div>
           <div class="product-body">
             <div class="product-tag">Waste Recycling</div>
             <div class="product-name">Automatic Baler</div>
@@ -210,7 +127,7 @@
           <div class="product-overlay"></div>
         </a>
         <a class="product-card reveal reveal-delay-2" href="/products/services/">
-          <div class="product-img"><img src="/images/services.png" alt="Installation and Training"></div>
+          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.png" alt="Installation and Training"></div>
           <div class="product-body">
             <div class="product-tag">Services</div>
             <div class="product-name">Installation &amp; Training</div>
@@ -220,40 +137,6 @@
           </div>
           <div class="product-overlay"></div>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTIONS -->
-  <section class="section solutions-section">
-    <div class="section-inner">
-      <div class="section-label">Industry Solutions</div>
-      <h2 class="section-h2 light-text">Engineered for<br>Every Challenge</h2>
-      <div class="solutions-grid">
-        <div class="solution-block reveal">
-          <img src="/images/metal%20recycling.png" alt="Metal Recycling">
-          <div class="solution-overlay"></div>
-          <div class="solution-content">
-            <div class="solution-title">Metal Recycling</div>
-            <div class="solution-desc">End-to-end systems for ferrous and non-ferrous metal processing - from collection to mill-ready bales.</div>
-          </div>
-        </div>
-        <div class="solution-block reveal reveal-delay-2">
-          <img src="/images/waste%20management.png" alt="Waste Management">
-          <div class="solution-overlay"></div>
-          <div class="solution-content">
-            <div class="solution-title">Waste Management</div>
-            <div class="solution-desc">Municipal and industrial waste processing systems designed for maximum throughput and regulatory compliance.</div>
-          </div>
-        </div>
-        <div class="solution-block reveal reveal-delay-3">
-          <img src="/images/scrap.png" alt="Scrap Processing">
-          <div class="solution-overlay"></div>
-          <div class="solution-content">
-            <div class="solution-title">Scrap Processing</div>
-            <div class="solution-desc">Integrated shredding, sorting, and densification for scrap dealers, foundries, and steel mills.</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -319,7 +202,7 @@
           <div class="why-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           </div>
-          <div class="why-title">25+ Years of Precision Engineering</div>
+          <div class="why-title">50+ Years of Precision Engineering</div>
           <div class="why-desc">Decades of domain expertise translated into machines that perform in the harshest industrial environments.</div>
         </div>
         <div class="why-card reveal reveal-delay-1">
@@ -365,48 +248,8 @@
     </div>
   </section>
 
-  <!-- CASE STUDIES -->
-  <section class="section cases-section">
-    <div class="section-inner">
-      <div class="section-label">Case Studies</div>
-      <h2 class="section-h2 light-text">Results That<br>Speak for Themselves</h2>
-      <div class="cases-grid">
-        <div class="case-card reveal">
-          <div class="case-img">
-            <img src="https://leadpages.com/PLACEHOLDER_CASE1" alt="Steel Plant Efficiency">
-            <div class="case-result">+30%<span class="res-lbl">Efficiency Gain</span></div>
-          </div>
-          <div class="case-body">
-            <div class="case-sector">Steel Manufacturing - India</div>
-            <div class="case-title">Baling Press Retrofit for 300T/day Scrap Yard</div>
-            <div class="case-meta">Increased throughput by 30% and reduced energy cost per bale by 22%.</div>
-          </div>
-        </div>
-        <div class="case-card reveal reveal-delay-1">
-          <div class="case-img">
-            <img src="https://leadpages.com/PLACEHOLDER_CASE2" alt="Municipal Recycling">
-            <div class="case-result">2Ã— <span class="res-lbl">Volume Processed</span></div>
-          </div>
-          <div class="case-body">
-            <div class="case-sector">Municipal Waste - UAE</div>
-            <div class="case-title">Full Shredding Line for Urban Recycling Facility</div>
-            <div class="case-meta">Doubled processing volume without expanding the facility footprint.</div>
-          </div>
-        </div>
-        <div class="case-card reveal reveal-delay-2">
-          <div class="case-img">
-            <img src="https://leadpages.com/PLACEHOLDER_CASE3" alt="Automotive Scrap">
-            <div class="case-result">18Mo<span class="res-lbl">ROI Payback</span></div>
-          </div>
-          <div class="case-body">
-            <div class="case-sector">Automotive Scrap - Germany</div>
-            <div class="case-title">Turnkey Auto Shredder Deployment</div>
-            <div class="case-meta">Full ROI achieved within 18 months from commissioning date.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- GET A QUOTE -->
+
 
   <!-- INQUIRY / CTA -->
   <section class="inquiry-section">
@@ -486,64 +329,4 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div>
-          <div class="footer-brand-name">Jindal Hydro Projects Inc<span>.</span></div>
-          <div class="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 2000.</div>
-          <div class="footer-social">
-            <div class="social-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            </div>
-            <div class="social-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
-            </div>
-            <div class="social-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
-            </div>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h5>Products</h5>
-          <ul>
-            <li><a href="#">Baling Press</a></li>
-            <li><a href="#">Industrial Shredders</a></li>
-            <li><a href="#">Scrap Compactors</a></li>
-            <li><a href="#">Hydraulic Guillotines</a></li>
-            <li><a href="#">Briquetting Machines</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Solutions</h5>
-          <ul>
-            <li><a href="#">Metal Recycling</a></li>
-            <li><a href="#">Waste Management</a></li>
-            <li><a href="#">Scrap Processing</a></li>
-            <li><a href="#">E-Waste Handling</a></li>
-            <li><a href="#">Turnkey Projects</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="/about">About Jindal Hydro Projects Inc.</a></li>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">Certifications</a></li>
-            <li><a href="#">Global Network</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-copy">© 2026 Jindal Hydro Projects Inc. All rights reserved.</div>
-        <div class="footer-cert">
-          <div class="cert-badge">ISO 9001:2015</div>
-          <div class="cert-badge">CE Certified</div>
-          <div class="cert-badge">Made in India</div>
-        </div>
-      </div>
-    </div>
-  </footer>
 `;

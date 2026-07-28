@@ -1999,12 +1999,12 @@ const faqs = [
 ];
 
 const aboutOfferings = [
-  ['Balers', 'Hydraulic baling presses that compress ferrous and non-ferrous scrap into dense, transport-ready bales.', '/images/metal%20recycling.png'],
-  ['Shears & Nibblers', 'Alligator shears and nibblers for fast, precise cutting and scrap size reduction.', '/images/homepage.png'],
-  ['Shredders & Crackers', 'Single- and twin-shaft shredders plus casting crackers for heavy-duty metal reduction.', '/images/waste%20management.png'],
-  ['Briquetting Machines', 'High-pressure briquetting presses that convert machining waste into compact briquettes.', '/images/infrastructure%201.png'],
-  ['Material Handling & Sorting', 'Conveyor systems and MSW sorting lines that move, feed, and sort material efficiently.', '/images/scrap.png'],
-  ['Agriculture Waste Recycling', 'Equipment to compress and process agricultural waste into high-density biomass products.', '/images/homepage.png'],
+  ['Balers', 'Hydraulic baling presses that compress ferrous and non-ferrous scrap into dense, transport-ready bales.', '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.2.png'],
+  ['Shears & Nibblers', 'Alligator shears and nibblers for fast, precise cutting and scrap size reduction.', '/images/3D%20Models%20from%20AI/14_Nibbler_Hero_Angle_v.1.png'],
+  ['Shredders & Crackers', 'Single- and twin-shaft shredders plus casting crackers for heavy-duty metal reduction.', '/images/3D%20Models%20from%20AI/15_Single_Shaft_Shredder_Hero_Angle_v.2.png'],
+  ['Briquetting Machines', 'High-pressure briquetting presses that convert machining waste into compact briquettes.', '/images/3D%20Models%20from%20AI/09_Vertical_Briquetting_Machine_v.1.png'],
+  ['Material Handling & Sorting', 'Conveyor systems and MSW sorting lines that move, feed, and sort material efficiently.', '/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.png'],
+  ['Agriculture Waste Recycling', 'Equipment to compress and process agricultural waste into high-density biomass products.', '/images/3D%20Models%20from%20AI/24_Fodder_Block_Machine_Hero_v1.png'],
 ];
 
 const businessDetails = [
@@ -2197,8 +2197,7 @@ function Header() {
         <li><Link to="/about">About</Link></li>
         <ProductsMegaMenu />
         <li><Link to="/solutions">Solutions</Link></li>
-        <li><Link to="/case-studies">Case Studies</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
+<li><Link to="/blog">Blog</Link></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>
       <Link className="nav-cta" to="/contact">Get a Quote</Link>
@@ -2238,7 +2237,6 @@ function Footer() {
             <h5>Company</h5>
             <ul>
               <li><Link to="/about">About Jindal Hydro Projects Inc.</Link></li>
-              <li><Link to="/case-studies">Case Studies</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -2467,16 +2465,13 @@ function AboutPage() {
         </section>
 
         <section className="about-section about-overview">
-          <div className="about-copy reveal">
-            <div className="section-label">Overview</div>
-            <h2>Built for Advanced Hydraulic Engineering</h2>
-            <p>Jindal Hydro Projects Inc. is a manufacturer, exporter and supplier of hydraulic, recycling and industrial machinery built for dependable production environments.</p>
-            <p>Since 2000, the company has focused on practical engineering, durable fabrication, responsive support and machinery configured around customer capacity, material and site needs.</p>
-          </div>
-          <div className="about-image reveal reveal-delay-1">
-            <img src="/images/homepage.png" alt="Hydraulic recycling machine in operation" />
-          </div>
-        </section>
+  <div className="about-copy reveal">
+    <div className="section-label">Overview</div>
+    <h2>Built for Advanced Hydraulic Engineering</h2>
+    <p>Jindal Hydro Projects Inc. is a manufacturer, exporter and supplier of hydraulic, recycling and industrial machinery built for dependable production environments.</p>
+    <p>Since 2000, the company has focused on practical engineering, durable fabrication, responsive support and machinery configured around customer capacity, material and site needs.</p>
+  </div>
+</section>
 
         {/* Company details removed as requested */}
 
@@ -2493,24 +2488,6 @@ function AboutPage() {
                 <p>{text}</p>
               </div>
             ))}
-          </div>
-        </section>
-
-        <section className="about-section about-gallery-layout">
-          <div className="about-copy reveal">
-            <div className="section-label">Infrastructure</div>
-            <h2>Infrastructure & Manufacturing</h2>
-            <p>Manufacturing capability is organized around robust fabrication, hydraulic integration, tooling control and turnkey machine delivery.</p>
-            <ul className="about-check-list">
-              {infrastructurePoints.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="about-gallery reveal reveal-delay-1">
-            <img src="/images/infrastructure%201.png" alt="Hydraulic machine manufacturing infrastructure" />
-            <img src="/images/infrastructure%202.png" alt="Machine fabrication and assembly infrastructure" />
-            <img src="/images/infrastructure%203.png" alt="Industrial recycling equipment infrastructure" />
           </div>
         </section>
 
@@ -2545,21 +2522,6 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="about-section">
-          <div className="about-section-head reveal">
-            <div className="section-label">Our Team</div>
-            <h2>People Behind the Machines</h2>
-          </div>
-          <div className="about-card-grid about-team-grid">
-            {teamRoles.map(([title, text, image]) => (
-              <div className="about-team-card reveal" key={title}>
-                <img src={image} alt={title} />
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <section className="about-section about-detail-band">
           <div className="about-section-head reveal">
@@ -2587,27 +2549,6 @@ function AboutPage() {
               </div>
             ))}
           </div>
-        </section>
-
-        <section className="about-section about-services-band">
-          <div className="about-section-head reveal">
-            <div className="section-label">Services</div>
-            <h2>Support Beyond Manufacturing</h2>
-          </div>
-          <div className="about-card-grid about-four-grid">
-            {services.map(([title, text]) => (
-              <div className="about-service-card reveal" key={title}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="about-section about-vision reveal">
-          <div className="section-label">Future Vision</div>
-          <h2>Expanding Smarter Industrial Solutions</h2>
-          <p>Jindal Hydro Projects Inc. is focused on expanding advanced hydraulic systems, recycling machinery, solar-integrated solutions and export-ready turnkey projects while strengthening research, quality and customer support.</p>
         </section>
 
         <section className="about-cta reveal">
@@ -3058,12 +2999,30 @@ function ProductsPage() {
 
 export default function App({ page }) {
   const location = useLocation();
+  const navigate = useNavigate();
+  const homeRef = useRef(null);
 
   useSiteInteractions(`${page}:${location.pathname}:${location.search}`);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [location.pathname, location.search]);
+
+  // Intercept <a> clicks inside static home markup for smooth React Router navigation
+  const handleHomeNavigation = (e) => {
+    const anchor = e.target.closest('a');
+    if (anchor && anchor.href) {
+      try {
+        const url = new URL(anchor.href);
+        if (url.origin === window.location.origin) {
+          e.preventDefault();
+          navigate(url.pathname + url.search);
+        }
+      } catch {
+        // ignore invalid URLs
+      }
+    }
+  };
 
   if (page === 'home') {
     const homeBodyMarkup = homeMarkup.replace(/^\s*<!-- NAV -->[\s\S]*?<\/nav>\s*/, '');
@@ -3072,7 +3031,7 @@ export default function App({ page }) {
       <>
         <SeoManager page={page} />
         <Header />
-        <div dangerouslySetInnerHTML={{ __html: homeBodyMarkup }} />
+        <div ref={homeRef} onClick={handleHomeNavigation} dangerouslySetInnerHTML={{ __html: homeBodyMarkup }} />
       </>
     );
   }
