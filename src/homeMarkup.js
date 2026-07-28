@@ -140,59 +140,7 @@
       </div>
     </div>
   </section>
-
-  <!-- PROCESS -->
-  <section class="section process-section">
-    <div class="section-inner">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-h2 dark-text">From Raw Scrap to<br>Refined Output</h2>
-      <div class="process-track">
-        <div class="process-line"></div>
-        <div class="process-step reveal">
-          <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V7h11v9"></path><path d="M14 11h3l4 4v1h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle><path d="M5 11h5"></path></svg>
-          </div>
-          <div class="step-num">01</div>
-          <div class="step-name">Collection</div>
-          <div class="step-desc">Source material intake and volume assessment</div>
-        </div>
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"></path><path d="M7 12h10"></path><path d="M10 19h4"></path><path d="M5 5l6 7v7"></path><path d="M19 5l-6 7v7"></path></svg>
-          </div>
-          <div class="step-num">02</div>
-          <div class="step-name">Sorting</div>
-          <div class="step-desc">Automated material separation by type and grade</div>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"></rect><circle cx="9" cy="12" r="3"></circle><circle cx="15" cy="12" r="3"></circle><path d="M9 9v6M6 12h6M15 9v6M12 12h6"></path><path d="M6 3h12"></path><path d="M7 21h10"></path></svg>
-          </div>
-          <div class="step-num">03</div>
-          <div class="step-name">Shredding</div>
-          <div class="step-desc">Heavy-duty size reduction to target particle specs</div>
-        </div>
-        <div class="process-step reveal reveal-delay-3">
-          <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 7h8"></path><path d="M12 7v5"></path><path d="M7 15h10v3H7z"></path><path d="M9 12h6"></path><path d="M6 21h12"></path></svg>
-          </div>
-          <div class="step-num">04</div>
-          <div class="step-name">Compacting</div>
-          <div class="step-desc">High-force hydraulic compression into dense bales</div>
-        </div>
-        <div class="process-step reveal reveal-delay-4">
-          <div class="step-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="10" height="7" rx="1"></rect><path d="M14 11h4l2 2v3h-6"></path><path d="M6 16v2h12v-2"></path><circle cx="7" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle><path d="M7 6h5"></path><path d="M8 4h3"></path></svg>
-          </div>
-          <div class="step-num">05</div>
-          <div class="step-name">Output</div>
-          <div class="step-desc">Market-ready material delivered to mill specification</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
+    <!-- WHY CHOOSE US -->
   <section class="section why-section">
     <div class="section-inner">
       <div class="section-label">Why Jindal Hydro Projects Inc.</div>
@@ -243,6 +191,57 @@
           </div>
           <div class="why-title">Dedicated Engineering Support</div>
           <div class="why-desc">On-site commissioning, operator training, and 24/7 remote diagnostics from our team of application engineers.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process-section">
+    <div class="section-inner">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-h2 dark-text">From Raw Scrap to<br>Refined Output</h2>
+      <div class="process-track">
+        <div class="process-line"></div>
+        <div class="process-step reveal">
+          <div class="step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V7h11v9"></path><path d="M14 11h3l4 4v1h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle><path d="M5 11h5"></path></svg>
+          </div>
+          <div class="step-num">01</div>
+          <div class="step-name">Collection</div>
+          <div class="step-desc">Source material intake and volume assessment</div>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"></path><path d="M7 12h10"></path><path d="M10 19h4"></path><path d="M5 5l6 7v7"></path><path d="M19 5l-6 7v7"></path></svg>
+          </div>
+          <div class="step-num">02</div>
+          <div class="step-name">Sorting</div>
+          <div class="step-desc">Automated material separation by type and grade</div>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"></rect><circle cx="9" cy="12" r="3"></circle><circle cx="15" cy="12" r="3"></circle><path d="M9 9v6M6 12h6M15 9v6M12 12h6"></path><path d="M6 3h12"></path><path d="M7 21h10"></path></svg>
+          </div>
+          <div class="step-num">03</div>
+          <div class="step-name">Shredding</div>
+          <div class="step-desc">Heavy-duty size reduction to target particle specs</div>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 7h8"></path><path d="M12 7v5"></path><path d="M7 15h10v3H7z"></path><path d="M9 12h6"></path><path d="M6 21h12"></path></svg>
+          </div>
+          <div class="step-num">04</div>
+          <div class="step-name">Compacting</div>
+          <div class="step-desc">High-force hydraulic compression into dense bales</div>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="10" height="7" rx="1"></rect><path d="M14 11h4l2 2v3h-6"></path><path d="M6 16v2h12v-2"></path><circle cx="7" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle><path d="M7 6h5"></path><path d="M8 4h3"></path></svg>
+          </div>
+          <div class="step-num">05</div>
+          <div class="step-name">Output</div>
+          <div class="step-desc">Market-ready material delivered to mill specification</div>
         </div>
       </div>
     </div>
