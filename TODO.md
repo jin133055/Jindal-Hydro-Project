@@ -12,6 +12,7 @@
 | 6 | **Missing 3D baler model** in hero section | `src/homeMarkup.js` | ✅ Restored original CSS 3D baler model markup (replaced empty Three.js div) |
 | 7 | **Remove "Case Studies" from navigation** | `src/App.jsx` | ✅ Removed "Case Studies" link from nav `<li>` in `Header()` |
 | 8 | **Remove "Case Studies" from footer** | `src/App.jsx` | ✅ Removed "Case Studies" link from footer "Company" column |
+| 9 | **Dynamic "Explore More Products" section** | `src/App.jsx` | ✅ Replaced hardcoded `relatedMachines` with dynamic products from same category (excluding current), then other categories, up to 4; uses product page images; heading changed to "Explore More Products" |
 
 ## Dev Server Running
 - **URL**: http://localhost:5173/

@@ -2594,12 +2594,29 @@ function ProductDetailPage() {
     ['Hydraulic System Overview', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
     ['Site Operation Video', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
   ];
-  const relatedMachines = [
-    ['Quad Baler', 'Four-side compression baler for dense, uniform metal scrap bales.', '/images/metal-recycling.png', '/products/metal-recycling/balers/quad-baler/'],
-    ['Shear Baler', 'Integrated shearing and baling solution for heavy scrap processing.', '/images/scrap.png', '/products/metal-recycling/shears/box-shear-inclined-shear/'],
-    ['Metal Shredder', 'Industrial shredding system for high-volume scrap size reduction.', '/images/waste%20management.png', '/products/metal-recycling/shredders/hammer-mill-shredder/'],
-    ['Hydraulic Shear', 'Robust cutting machine for ferrous and non-ferrous scrap yards.', '/images/ELV%20Recycling.png', '/products/metal-recycling/shears/alligator-shear/'],
-  ];
+  const currentCategory = productCategories.find((category) => category.name === product.category) || null;
+  const relatedProducts = (() => {
+    const sameCategoryProducts = (currentCategory?.products || [])
+      .filter((item) => item.slug !== product.slug)
+      .map((item) => ({ ...item, category: currentCategory.name }));
+    const otherCategoryProducts = productCategories
+      .filter((category) => category.name !== product.category)
+      .flatMap((category) => (
+        category.products.map((item) => ({ ...item, category: category.name }))
+      ))
+      .filter((item) => item.slug !== product.slug);
+    const related = [...sameCategoryProducts, ...otherCategoryProducts];
+    return related.slice(0, 4).map((item) => {
+      const detail = getProductDetail(item.slug);
+      return {
+        ...item,
+        name: item.name,
+        description: detail.description,
+        image: getProductImage(item.slug),
+        path: getProductPath(item),
+      };
+    });
+  })();
 
   return (
     <>
@@ -2726,16 +2743,16 @@ function ProductDetailPage() {
 
         <section className="premium-section">
           <div className="premium-section-head reveal">
-            <div className="premium-eyebrow">Related Machines</div>
-            <h2>Explore More Recycling Equipment</h2>
+            <div className="premium-eyebrow">Related Products</div>
+            <h2>Explore More Products</h2>
           </div>
           <div className="related-machine-grid">
-            {relatedMachines.map(([title, text, image, path]) => (
-              <Link className="related-machine-card reveal" to={path} key={title}>
-                <img src={image} alt={title} />
+            {relatedProducts.map((relatedProduct) => (
+              <Link className="related-machine-card reveal" to={relatedProduct.path} key={relatedProduct.slug}>
+                <img src={relatedProduct.image} alt={relatedProduct.name} />
                 <div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
+                  <h3>{relatedProduct.name}</h3>
+                  <p>{relatedProduct.description}</p>
                   <span>View Product</span>
                 </div>
               </Link>
