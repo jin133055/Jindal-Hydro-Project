@@ -4310,17 +4310,31 @@ footer { background: #080808; padding: 60px 5% 32px; }
 
 @media (max-width: 560px) {
   nav {
-    padding: 0 14px;
+    padding: 0 12px;
+  }
+  .nav-logo {
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .nav-logo .logo-text {
-    max-width: 48vw;
-    font-size: 0.76rem;
+    max-width: 60vw;
+    font-size: 0.78rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .nav-links {
     padding: 14px;
   }
   .hero {
-    padding-top: 96px;
+    padding: 110px 14px 60px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+  .hero-sub {
+    font-size: 0.95rem;
+    max-width: 100%;
   }
   .hero-btns,
   .premium-hero-actions {
