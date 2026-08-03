@@ -125,9 +125,9 @@ nav {
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn-primary {
   background: var(--yellow); color: var(--black); font-weight: 700;
-  font-size: 0.9rem; padding: 14px 32px; border: none; cursor: pointer;
+  font-size: 0.9rem; padding: 7px 24px; border: none; cursor: pointer;
   transition: background 0.2s, transform 0.2s; font-family: var(--body); letter-spacing: 0.04em;
-  display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; text-align: center; text-decoration: none;
 }
 .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px) scale(1.02); }
 .btn-secondary {
