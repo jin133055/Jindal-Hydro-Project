@@ -12,6 +12,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/products" element={<App page="products" />} />
         <Route path="/products/:category" element={<App page="products" />} />
         <Route path="/products/:category/" element={<App page="products" />} />
+        <Route path="/products/:category/:product" element={<App page="product-detail" />} />
+        <Route path="/products/:category/:product/" element={<App page="product-detail" />} />
         <Route path="/products/:category/:subcategory" element={<App page="products" />} />
         <Route path="/products/:category/:subcategory/" element={<App page="products" />} />
         <Route path="/products/:category/:subcategory/:product" element={<App page="product-detail" />} />
