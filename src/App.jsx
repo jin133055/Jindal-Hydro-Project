@@ -1753,8 +1753,8 @@ const organizationSchema = {
   alternateName: 'JHP',
   url: siteUrl,
   logo: `${siteUrl}/images/jhp-logo.png`,
-  foundingDate: '2000',
-  description: 'Manufacturer and exporter of hydraulic balers, scrap metal shredders, alligator shears, waste balers, and recycling machinery. 2,500+ machines installed globally since 2000.',
+  foundingDate: '1976',
+  description: 'Manufacturer and exporter of hydraulic balers, scrap metal shredders, alligator shears, waste balers, and recycling machinery. 2,500+ machines installed globally since 1976.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'B, 38A, MIA Road, Matsya Industrial Area, Naharpur',
@@ -1825,7 +1825,7 @@ const getSeoConfig = (page, location) => {
   if (page === 'home') {
     return {
       title: 'Hydraulic Baler & Recycling Machinery Manufacturer - Jindal Hydro Projects',
-      description: 'Manufacturer & exporter of hydraulic balers, shredders, alligator shears, and scrap recycling machinery since 2000. 2,500+ machines installed globally. Get a free quote.',
+      description: 'Manufacturer & exporter of hydraulic balers, shredders, alligator shears, and scrap recycling machinery since 1976. 2,500+ machines installed globally. Get a free quote.',
       canonical: '/',
       schemas: [organizationSchema],
     };
@@ -2008,7 +2008,7 @@ const aboutOfferings = [
 ];
 
 const businessDetails = [
-  ['Year of Establishment', '2000'],
+  ['Year of Establishment', '1976'],
   ['Nature of Business', 'Manufacturer, exporter and supplier'],
   ['Employee Count', '50+ professionals'],
   ['Production Capacity', 'Application and model dependent'],
@@ -2120,7 +2120,7 @@ const pageCopy = {
   },
   about: {
     label: 'About',
-    title: 'Engineering Hydraulic Solutions Since 2000',
+    title: 'Engineering Hydraulic Solutions Since 1976',
     text: 'Use this page for company history, manufacturing capability, certifications, team, and global installation footprint.',
   },
   'case-studies': {
@@ -2215,7 +2215,7 @@ function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-brand-name">Jindal Hydro Projects Inc<span>.</span></div>
-            <div className="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 2000.</div>
+            <div className="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 1976.</div>
           </div>
           <div className="footer-col">
             <h5>Products</h5>
@@ -2459,7 +2459,7 @@ function AboutPage() {
           <div className="about-hero-content">
             <div className="section-label">Company Profile</div>
             <h1>About Jindal Hydro Projects Inc.</h1>
-            <p>Engineering Advanced Hydraulic & Recycling Solutions Since 2000.</p>
+            <p>Engineering Advanced Hydraulic & Recycling Solutions Since 1976.</p>
             <Link className="btn-primary" to="/products">Explore Products</Link>
           </div>
         </section>
@@ -2469,7 +2469,7 @@ function AboutPage() {
     <div className="section-label">Overview</div>
     <h2>Built for Advanced Hydraulic Engineering</h2>
     <p>Jindal Hydro Projects Inc. is a manufacturer, exporter and supplier of hydraulic, recycling and industrial machinery built for dependable production environments.</p>
-    <p>Since 2000, the company has focused on practical engineering, durable fabrication, responsive support and machinery configured around customer capacity, material and site needs.</p>
+    <p>Since 1976, the company has focused on practical engineering, durable fabrication, responsive support and machinery configured around customer capacity, material and site needs.</p>
   </div>
 </section>
 

@@ -1585,7 +1585,6 @@ footer { background: #080808; padding: 60px 5% 32px; }
     --model-scale: 0.68;
     transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) scale(var(--model-scale));
   }
-  .nav-links { display: none; }
   .products-grid, .why-grid { grid-template-columns: 1fr; }
   .about-section,
   .about-split-dark {
