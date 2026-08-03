@@ -1150,51 +1150,71 @@ nav {
 }
 .about-feature-card,
 .about-service-card {
-  background: #f7f7f7;
-  border: 1px solid rgba(0,0,0,0.08);
-  padding: 28px;
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  background: #ffffff;
+  border: none;
+  padding: 32px;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 .about-feature-card:hover,
 .about-service-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255,193,7,0.8);
-  box-shadow: 0 22px 44px rgba(0,0,0,0.1);
+  box-shadow: 0 22px 44px rgba(0,0,0,0.08);
+}
+.about-feature-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.about-feature-number {
+  color: var(--dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
 }
 .about-feature-card h3,
 .about-service-card h3 {
   font-family: var(--heading);
-  font-size: 1.12rem;
+  font-size: 1.18rem;
   color: var(--black);
-  margin: 16px 0 10px;
+  margin: 18px 0 10px;
+  position: relative;
+}
+.about-feature-card h3::after,
+.about-service-card h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--dark-green);
+  margin-top: 10px;
+  border-radius: 999px;
 }
 .about-feature-card p,
 .about-service-card p {
   color: #4b5563;
-  line-height: 1.65;
-  font-size: 0.92rem;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
 }
 .about-icon {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   display: inline-grid;
   place-items: center;
-  background: rgba(45,86,26,0.12);
-  border: 1px solid rgba(var(--green-rgb),0.42);
-  color: var(--dark-green);
-  font-family: var(--heading);
-  font-weight: 800;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  background: var(--dark-green);
+  border: 1px solid rgba(var(--green-rgb),0.22);
+  color: var(--white);
+  border-radius: 50%;
 }
 .about-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
 }
 .about-feature-card .about-icon,
 .about-split-dark .about-icon {
   background: var(--dark-green);
-  border-color: var(--green);
+  border-color: rgba(var(--green-rgb),0.22);
   color: var(--white);
 }
 .about-icon-grid .industry-chip {
@@ -2991,26 +3011,50 @@ footer { background: #080808; padding: 60px 5% 32px; }
 .machinery-assurance-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
+  gap: 0;
   margin-top: 20px;
-  background: rgba(12,12,12,0.1);
-  border: 1px solid rgba(12,12,12,0.08);
-  border-radius: 15px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 .machinery-assurance-strip div {
   background: #fff;
-  padding: 18px 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.machinery-assurance-strip .assurance-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+  color: var(--yellow);
+  background: rgba(255,204,12,0.14);
+  border: 1px solid rgba(255,204,12,0.4);
+  border-radius: 50%;
+}
+.machinery-assurance-strip .assurance-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.machinery-assurance-strip .assurance-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .machinery-assurance-strip strong {
-  display: block;
   color: #111;
   font-family: var(--heading);
-  font-size: 0.9rem;
-  margin-bottom: 4px;
+  font-size: 0.95rem;
+  margin: 0;
 }
-.machinery-assurance-strip span {
+.machinery-assurance-strip .assurance-copy span {
   color: #5a6575;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   line-height: 1.4;
 }
 .product-info-section h2,

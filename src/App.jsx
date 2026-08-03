@@ -2541,9 +2541,12 @@ function AboutPage() {
             <h2>Strengths That Matter on the Shop Floor</h2>
           </div>
           <div className="about-card-grid about-four-grid">
-            {aboutStrengths.map(([icon, title, text]) => (
+            {aboutStrengths.map(([icon, title, text], index) => (
               <div className="about-feature-card reveal" key={title}>
-                <span className="about-icon"><StrengthIcon type={icon} /></span>
+                <div className="about-feature-card-header">
+                  <span className="about-icon"><StrengthIcon type={icon} /></span>
+                  <span className="about-feature-number">{String(index + 1).padStart(2, '0')}</span>
+                </div>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </div>
@@ -2980,11 +2983,35 @@ function ProductsPage() {
                   </div>
                 </div>
 
-                <div className="machinery-assurance-strip">
-                  <div><strong>Premium Quality</strong><span>Heavy-duty fabrication and tested hydraulics</span></div>
-                  <div><strong>High Performance</strong><span>Built for demanding industrial throughput</span></div>
-                  <div><strong>Custom Solutions</strong><span>Machine configuration matched to application</span></div>
-                  <div><strong>Global Support</strong><span>Installations across India and export markets</span></div>
+<div className="machinery-assurance-strip">
+                  <div>
+                    <span className="assurance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                    <div className="assurance-copy">
+                      <strong>Premium Quality</strong>
+                      <span>Heavy-duty fabrication and tested hydraulics</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="assurance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+                    <div className="assurance-copy">
+                      <strong>High Performance</strong>
+                      <span>Built for demanding industrial throughput</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="assurance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+                    <div className="assurance-copy">
+                      <strong>Custom Solutions</strong>
+                      <span>Machine configuration matched to application</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="assurance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                    <div className="assurance-copy">
+                      <strong>Global Support</strong>
+                      <span>Installations across India and export markets</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
