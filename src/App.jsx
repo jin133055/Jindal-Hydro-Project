@@ -2220,9 +2220,9 @@ function Footer() {
           <div className="footer-col">
             <h5>Products</h5>
             <ul>
-              <li><Link to="/products">Baling Press</Link></li>
-              <li><Link to="/products">Industrial Shredders</Link></li>
-              <li><Link to="/products">Scrap Compactors</Link></li>
+              <li><Link to="/products/balers">Baler</Link></li>
+              <li><Link to="/products/shears-nibblers/">Shears & Nibblers</Link></li>
+              <li><Link to="/products/briquetting-machines/">Briquetting Machines</Link></li>
             </ul>
           </div>
           <div className="footer-col">
@@ -2230,7 +2230,7 @@ function Footer() {
             <ul>
               <li><Link to="/solutions">Metal Recycling</Link></li>
               <li><Link to="/solutions">Waste Management</Link></li>
-              <li><Link to="/solutions">Turnkey Projects</Link></li>
+              <li><Link to="/solutions">Scrap Processing</Link></li>
             </ul>
           </div>
           <div className="footer-col">
@@ -3058,6 +3058,7 @@ export default function App({ page }) {
         <SeoManager page={page} />
         <Header />
         <div ref={homeRef} onClick={handleHomeNavigation} dangerouslySetInnerHTML={{ __html: homeBodyMarkup }} />
+        <Footer />
       </>
     );
   }
