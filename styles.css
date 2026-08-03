@@ -2797,7 +2797,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   color: #fff;
   font-family: var(--heading);
   font-size: clamp(3.2rem, 3.5vw, 4rem);
-  line-height: 3.5rem;
+  line-height: 3.6rem;
   margin: 10px 0 16px;
 }
 .machinery-hero p {
