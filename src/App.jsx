@@ -2878,7 +2878,7 @@ function ProductsPage() {
               <div className="category-product-page">
                 <section className="category-product-hero" style={{ '--category-hero-image': `url("${getCategoryImage(activeCategory)}")` }}>
                   <div className="category-product-hero-copy">
-                    <div className="section-label">Products</div>
+                    <div className="section-label">{activeCategory ? `${activeCategory.name}` : 'Products'}</div>
                     <h1>{activeSubcategoryName || activeCategorySeo?.h1 || activeCategory?.name}</h1>
                     <p>{activeSubcategoryName ? `Browse ${activeSubcategoryName} products in ${activeCategory.name}.` : activeCategorySeo?.intro || `Browse all products in ${activeCategory.name}.`}</p>
                   </div>
