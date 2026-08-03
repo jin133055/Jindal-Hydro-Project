@@ -2215,7 +2215,7 @@ function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-brand-name">Jindal Hydro Projects Inc<span>.</span></div>
-            <div className="footer-tagline">Advanced hydraulic and recycling solutions engineered for industrial applications since 1976.</div>
+            <div className="footer-tagline">Delivering Innovative Hydraulic & Recycling Systems Built for Industrial Performance Since 1976</div>
           </div>
           <div className="footer-col">
             <h5>Products</h5>
@@ -2760,23 +2760,6 @@ function ProductDetailPage() {
           </div>
         </section>
 
-        <section className="premium-section installation-showcase">
-          <div className="installation-copy reveal">
-            <div className="premium-eyebrow">Installations</div>
-            <h2>Proven Across Recycling Sites</h2>
-            <p>JHP supports factory installations, processing plants, and scrap yards with manufacturing, commissioning, operator training, and long-term service support.</p>
-            <div className="installation-metrics">
-              <div><strong>100+</strong><span>Installations</span></div>
-              <div><strong>20+</strong><span>Countries</span></div>
-              <div><strong>30</strong><span>Years Experience</span></div>
-            </div>
-          </div>
-          <div className="installation-grid reveal">
-            <img src="/images/infrastructure%201.png" alt="Factory installation" />
-            <img src="/images/infrastructure%202.png" alt="Processing plant installation" />
-            <img src="/images/infrastructure%203.png" alt="Scrap yard installation" />
-          </div>
-        </section>
 
         <section className="premium-product-cta reveal">
           <div>
@@ -2961,7 +2944,6 @@ function ProductsPage() {
                   <div className="machinery-hero-copy">
                     <div className="section-label">Our Products</div>
                     <h1>Engineered for Heavy-Duty Recycling Performance</h1>
-                    <p>Explore hydraulic balers, shears, shredders, compactors, sorting lines, and recycling plant support engineered for high-throughput industrial operations.</p>
                   </div>
                   <div className="machinery-hero-media">
                     <img src="/images/homepage.png" alt="Hydraulic recycling machinery by Jindal Hydro Projects" />

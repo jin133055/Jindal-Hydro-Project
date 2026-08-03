@@ -45,7 +45,7 @@ nav {
   text-decoration: none;
 }
 .nav-logo img {
-  height: 36px;
+  height: 52px;
   width: auto;
   display: block;
 }
@@ -1101,6 +1101,7 @@ nav {
   grid-auto-columns: minmax(300px, 380px);
   gap: 22px;
   overflow-x: auto;
+  overflow-y: hidden;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   padding: 4px 0 18px;
@@ -2795,8 +2796,8 @@ footer { background: #080808; padding: 60px 5% 32px; }
   max-width: 760px;
   color: #fff;
   font-family: var(--heading);
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  line-height: 1.02;
+  font-size: clamp(3.2rem, 3.5vw, 4rem);
+  line-height: 3.5rem;
   margin: 10px 0 16px;
 }
 .machinery-hero p {
@@ -4066,8 +4067,8 @@ footer { background: #080808; padding: 60px 5% 32px; }
     min-width: 0;
     gap: 0.6rem;
   }
-  .nav-logo img {
-    height: 34px;
+.nav-logo img {
+    height: 46px;
     flex: 0 0 auto;
   }
   .nav-logo .logo-text {
