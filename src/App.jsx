@@ -2755,7 +2755,6 @@ function ProductDetailPage() {
                 <img src={relatedProduct.image} alt={relatedProduct.name} />
                 <div>
                   <h3>{relatedProduct.name}</h3>
-                  <p>{relatedProduct.description}</p>
                   <span>View Product</span>
                 </div>
               </Link>
