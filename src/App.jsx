@@ -2876,11 +2876,10 @@ function ProductsPage() {
           <section className="product-display">
             {activeCategory ? (
               <div className="category-product-page">
-                <section className="category-product-hero" style={{ '--category-hero-image': `url("${getCategoryImage(activeCategory)}")` }}>
+                <section className="category-product-hero">
                   <div className="category-product-hero-copy">
                     <div className="section-label">{activeCategory ? `${activeCategory.name}` : 'Products'}</div>
                     <h1>{activeSubcategoryName || activeCategorySeo?.h1 || activeCategory?.name}</h1>
-                    <p>{activeSubcategoryName ? `Browse ${activeSubcategoryName} products in ${activeCategory.name}.` : activeCategorySeo?.intro || `Browse all products in ${activeCategory.name}.`}</p>
                   </div>
                 </section>
 
@@ -2931,7 +2930,6 @@ function ProductsPage() {
                       </div>
                       <div className="product-listing-body">
                         <h2>{product.name}</h2>
-                        <p>{product.detail.description}</p>
                       </div>
                       <span className="product-listing-action">Learn More</span>
                     </Link>
@@ -2947,9 +2945,6 @@ function ProductsPage() {
                   <div className="machinery-hero-copy">
                     <div className="section-label">Our Products</div>
                     <h1>Engineered for Heavy-Duty Recycling Performance</h1>
-                  </div>
-                  <div className="machinery-hero-media">
-                    <img src="/images/homepage.png" alt="Hydraulic recycling machinery by Jindal Hydro Projects" />
                   </div>
                 </section>
 
