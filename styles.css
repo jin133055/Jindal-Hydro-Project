@@ -3491,11 +3491,21 @@ footer { background: #080808; padding: 60px 5% 32px; }
   align-items: center;
   margin-top: 34px;
 }
-.premium-outline-btn {
+.premium-hero-actions .btn-primary,
+.premium-hero-actions .premium-outline-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 52px;
+  padding: 0 28px;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+.premium-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
   padding: 0 24px;
   color: #111;
   text-decoration: none;
