@@ -2345,11 +2345,6 @@ function ContactPage() {
     <>
       <Header />
       <main className="contact-page">
-        <section className="contact-hero reveal">
-          <div className="section-label">Contact Us</div>
-          <h1>Tell Us What You Need to Build, Press or Recycle</h1>
-          <p>Share your machine requirement, material type, capacity and site details. Our team will help you move from inquiry to the right hydraulic solution.</p>
-        </section>
 
         <section className="contact-section">
           <div className="contact-info-panel reveal">
@@ -2359,11 +2354,11 @@ function ContactPage() {
             <div className="contact-methods">
               <a href="tel:+919868247362">
                 <span>Phone</span>
-                <strong>+91 9868247362</strong>
+                <strong>+91 7412000949</strong>
               </a>
               <a href="mailto:info@jindalhydroprojects.com">
                 <span>Email</span>
-                <strong>info@jindalhydroprojects.com</strong>
+                <strong>contact@jindalhydro.com</strong>
               </a>
               <div>
                 <span>Response Time</span>
@@ -2385,11 +2380,11 @@ function ContactPage() {
                 </div>
                 <div className="form-group">
                   <label htmlFor="contact_email">Email</label>
-                  <input id="contact_email" name="email" type="email" placeholder="you@company.com" required />
+                  <input id="contact_email" name="email" type="email" placeholder="contact@jindalhydro.com" required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contact_phone">Phone</label>
-                  <input id="contact_phone" name="phone" type="tel" placeholder="+91 ..." />
+                  <input id="contact_phone" name="phone" type="tel" placeholder="+91 7412000949" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contact_solution">Requirement</label>

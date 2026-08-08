@@ -124,10 +124,11 @@ nav {
 }
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--yellow); color: var(--black); font-weight: 700;
-  font-size: 0.9rem; padding: 7px 24px; border: none; cursor: pointer;
-  transition: background 0.2s, transform 0.2s; font-family: var(--body); letter-spacing: 0.04em;
-  display: inline-flex; align-items: center; justify-content: center; text-align: center; text-decoration: none;
+  background: var(--yellow); color: var(--black); font-family: var(--body);
+  font-weight: 700; font-size: 0.875rem; padding: 12px 24px;
+  border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.2s; letter-spacing: 0.03em;
+  text-decoration: none;
 }
 .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px) scale(1.02); }
 .btn-secondary {
@@ -646,7 +647,7 @@ nav {
 .contact-section {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 72px 4%;
+  padding: 150px 4% 50px;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 24px;
@@ -1072,6 +1073,19 @@ nav {
   color: rgba(255,255,255,0.66);
   max-width: 680px;
   line-height: 1.7;
+}
+
+/* Keep the CTA text and button on a single row where possible - allow text to shrink */
+.about-cta {
+  flex-wrap: nowrap;
+}
+.about-cta > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.about-cta .btn-primary {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 .about-highlights-band {
   max-width: none;
@@ -1681,14 +1695,14 @@ nav {
 .form-group.full { grid-column: 1/-1; }
 .form-group label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
 .form-group input, .form-group select, .form-group textarea {
-  background: var(--steel); border: 1px solid rgba(255,255,255,0.08);
+  background: var(--white); border: 1px solid rgba(255,255,255,0.08);
   color: var(--white); padding: 12px 16px; font-family: var(--body); font-size: 0.9rem;
   outline: none; transition: border-color 0.2s;
 }
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--yellow); }
 .form-group select { cursor: pointer; appearance: none; }
-.form-group select option { background: var(--steel); }
+.form-group select option { background: var(--white); }
 .form-group textarea { resize: vertical; min-height: 100px; }
 .form-submit {
   width: 100%; background: var(--dark-green); color: rgba(255, 255, 255, 0.884);
@@ -1848,7 +1862,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
     padding: 120px 5% 70px;
   }
   .contact-section {
-    padding: 60px 5%;
+    padding: 100px 5% 20px;
   }
   .contact-info-panel,
   .contact-form-panel {
@@ -4041,7 +4055,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
 
 /* RESPONSIVE (originally near top of stylesheet) */
 @media (max-width: 1024px) {
-  .products-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid, .why-grid { grid-template-columns: repeat(1, 1fr); }
   .solution-detail-card,
   .solution-detail-card.is-reversed {
     grid-template-columns: 1fr;
@@ -4134,6 +4148,19 @@ footer { background: #080808; padding: 60px 5% 32px; }
   .footer-top { grid-template-columns: 1fr; gap: 2rem; }
   .form-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* Override mobile stacking to keep one-line layout when possible */
+@media (max-width: 768px) {
+  .about-cta {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 20px 18px;
+  }
+  .about-cta > div { flex: 1 1 auto; min-width: 0; }
+  .about-cta .btn-primary { flex: 0 0 auto; margin-left: 18px; }
+  .about-cta p { max-width: none; }
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
