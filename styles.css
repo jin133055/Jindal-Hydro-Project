@@ -4150,17 +4150,27 @@ footer { background: #080808; padding: 60px 5% 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
 
-/* Override mobile stacking to keep one-line layout when possible */
+/* Mobile: center About CTA contents and stack vertically */
 @media (max-width: 768px) {
   .about-cta {
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     padding: 20px 18px;
+    text-align: center;
   }
-  .about-cta > div { flex: 1 1 auto; min-width: 0; }
-  .about-cta .btn-primary { flex: 0 0 auto; margin-left: 18px; }
-  .about-cta p { max-width: none; }
+  .about-cta > div {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+  }
+  .about-cta .btn-primary {
+    flex: none;
+    margin: 18px 0 0;
+    width: auto;
+  }
+  .about-cta p { max-width: none; margin: 0 auto; }
+  .about-cta h2 { margin-bottom: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
