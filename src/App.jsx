@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { homeMarkup } from './homeMarkup.js';
 import { useSiteInteractions } from './useSiteInteractions.js';
 
+
 const productCategories = [
   {
     name: 'Balers',
@@ -2057,7 +2058,34 @@ const teamRoles = [
   ['Technical Experts', 'Installation, troubleshooting, training and service support', '/images/technical.jpg'],
 ];
 
-const trustedClients = ['Tata Motors', 'Hindalco', 'Birla Group', 'Jindal Steel', 'Mahindra', 'L&T'];
+const trustedClients = [
+  { name: 'Uflex Limited',logo: "/images/logo/Uflex-Logo.png" },
+  { name: 'Hindalco Industries LTD', logo: "/images/logo/Hindalco Industries Ltd.webp"},
+  { name: 'HSIL Limited', logo: "/images/logo/HSIL Limited.png"},
+  { name: 'Bengal India Global Infrastructure ltd.', logo: "/images/logo/Bengal India Global Infrastructure ltd..png"},
+  { name: 'Annapoorna Metal Industries', logo: "/images/logo/Annapoorna Metal Industries.png"},
+  { name: 'Asian Colour Coates Ispat Ltd', logo: "/images/logo/Asian Colour Coates Ispat Ltd.png"},
+  { name: 'Forech India ltd', logo: "/images/logo/Forech India ltd.png"},
+  { name: 'Montage Enterprises Pvt Ltd', logo: "/images/logo/Montage Enterprises Pvt Ltd.png"},
+  { name: 'Raashi Industries Pvt. Ltd ', logo: "/images/logo/Raashi Industries Pvt. Ltd.png"},
+  { name: 'Vardhman Polymers Pvt. Ltd ', logo: "/images/logo/Vardhman Polymers Pvt. Ltd.png"},
+  { name: 'Sudha Ventilating Systems Pvt Ltd', logo: "/images/logo/Sudha Ventilating Systems Pvt Ltd.png"},
+  { name: 'IAC International Automotive India Pvt Ltd', logo: "/images/logo/IAC Internationa Automotive India Pvt Ltd.png"},
+  { name: 'TAJ Forging Private LTD', logo: "/images/logo/TAJ Forging Private LTD.png"},
+  { name: 'Arihant Publication ', logo: "/images/logo/Arihant Publication.png"},
+{ name: 'RSPL Limited', logo: "/images/logo/RSPL Limited.png"},
+{ name: 'Hindustan Motors', logo: "/images/logo/Hindustan Motors.png"},
+{ name: 'Uni Products India Ltd', logo: "/images/logo/Uni Products India Ltd.png"},
+{ name: 'Laxmi Machine Tools', logo: "/images/logo/Laxmi Machine Tools.png"},
+{ name: 'Sree Rayalaseema HiStrength Hypo Limited', logo: "/images/logo/Sree Rayalaseema HiStrength Hypo Limited.png"},
+{ name: 'Metso India Pvt. Ltd', logo: "/images/logo/Metso India Pvt. Ltd.png"},
+{ name: 'Janki Corp Limited', logo: "/images/logo/Janki Corp Limited.png"},
+{ name: 'Cold Steel Corporation', logo: "/images/logo/Cold Steel Corporation.png"},
+{ name: 'Hindustan Media Limited', logo: "/images/logo/Hindustan Media Limited.png"},
+{ name: 'Attero Recycling Ltd', logo: "/images/logo/Attero Recycling Ltd.png"},
+
+
+];
 
 const services = [
   ['Spare Parts Supply', 'Critical spares and hydraulic components for machine uptime.'],
@@ -2449,6 +2477,82 @@ function StrengthIcon({ type }) {
 }
 
 function AboutPage() {
+  useEffect(() => {
+    const track = document.getElementById('clientsTrack');
+    if (!track) return undefined;
+
+    const getCard = () => track.querySelector('.client-logo-card');
+    const getDistance = () => {
+      const card = getCard();
+      if (!card) return 0;
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || 0);
+      return card.getBoundingClientRect().width + gap;
+    };
+    const totalItems = track.children.length;
+    const canScroll = () => track && track.scrollWidth > track.clientWidth + 4;
+
+    const scrollTrack = (direction) => {
+      if (!track || !totalItems) return;
+      const distance = getDistance() || track.clientWidth * 0.9;
+      const maxLeft = Math.max(0, track.scrollWidth - track.clientWidth);
+      const minLeft = 0;
+      const target = track.scrollLeft + direction * distance;
+      if (target > maxLeft) {
+        track.scrollTo({ left: minLeft, behavior: 'smooth' });
+      } else if (target < minLeft) {
+        track.scrollTo({ left: maxLeft, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+      }
+    };
+
+    const handleArrow = (event) => {
+      const button = event.target.closest('.clients-arrow');
+      if (!button) return;
+      const direction = parseInt(button.getAttribute('data-direction'), 10) || 1;
+      scrollTrack(direction);
+    };
+
+    const controls = document.querySelector('.clients-carousel-controls');
+    controls?.addEventListener('click', handleArrow);
+
+    let interval = null;
+    let isPaused = false;
+    const pauseCarousel = () => {
+      isPaused = true;
+    };
+    const resumeCarousel = () => {
+      isPaused = false;
+    };
+    if (canScroll()) {
+      interval = window.setInterval(() => {
+        if (!isPaused) scrollTrack(1);
+      }, 3200);
+    }
+    const onResize = () => {
+      if (interval) window.clearInterval(interval);
+      interval = window.setInterval(() => {
+        if (!isPaused) scrollTrack(1);
+      }, 3200);
+    };
+    track.addEventListener('mouseenter', pauseCarousel);
+    track.addEventListener('mouseleave', resumeCarousel);
+    track.addEventListener('focusin', pauseCarousel);
+    track.addEventListener('focusout', resumeCarousel);
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      controls?.removeEventListener('click', handleArrow);
+      if (interval) window.clearInterval(interval);
+      track.removeEventListener('mouseenter', pauseCarousel);
+      track.removeEventListener('mouseleave', resumeCarousel);
+      track.removeEventListener('focusin', pauseCarousel);
+      track.removeEventListener('focusout', resumeCarousel);
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
+
   return (
     <>
       <Header />
@@ -2523,15 +2627,33 @@ function AboutPage() {
         </section>
 
 
-        <section className="about-section about-detail-band">
+<section className="about-section about-detail-band">
           <div className="about-section-head reveal">
             <div className="section-label">Trusted By</div>
             <h2>Clients & Industrial Brands</h2>
           </div>
-          <div className="client-logo-grid">
-            {trustedClients.map((client) => (
-              <div className="client-logo-card reveal" key={client}>{client}</div>
-            ))}
+          <div className="client-carousel" aria-label="Trusted clients carousel">
+            <div className="clients-carousel-mask">
+              <div className="clients-track" id="clientsTrack">
+                {trustedClients.map((client) => (
+                  <article className="client-logo-card" key={client.name}>
+                    <div className="client-logo-mark">
+  <img
+    src={client.logo}
+    alt={`${client.name} logo`}
+    className="client-logo"
+  />
+</div>
+                    <div className="client-name">{client.name}</div>
+                    <div className="client-industry">{client.industry}</div>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="clients-carousel-controls" aria-label="Clients carousel controls">
+              <button type="button" className="clients-arrow" data-direction="-1" aria-label="Previous clients">←</button>
+              <button type="button" className="clients-arrow" data-direction="1" aria-label="Next clients">→</button>
+            </div>
           </div>
         </section>
 
@@ -2545,7 +2667,6 @@ function AboutPage() {
               <div className="about-feature-card reveal" key={title}>
                 <div className="about-feature-card-header">
                   <span className="about-icon"><StrengthIcon type={icon} /></span>
-                  <span className="about-feature-number">{String(index + 1).padStart(2, '0')}</span>
                 </div>
                 <h3>{title}</h3>
                 <p>{text}</p>
@@ -2903,22 +3024,7 @@ function ProductsPage() {
                       <option value={getCategoryParam(category)} key={category.name}>{category.name}</option>
                     ))}
                   </select>
-                  {showSubcategorySearch && (
-                    <select
-                      value={activeSubcategoryParam || ''}
-                      onChange={(event) => {
-                        const value = event.target.value;
-                        navigate(value ? getSubcategoryPath(activeCategory, value) : activeCategory.viewAll);
-                      }}
-                      aria-label="Select subcategory"
-                    >
-                      <option value="">All Subcategories</option>
-                      {activeCategorySubcategories.map((subcategory) => (
-                        <option value={slugifySegment(subcategory)} key={subcategory}>{subcategory}</option>
-                      ))}
-                    </select>
-                  )}
-                  <button type="submit">Search</button>
+<button type="submit">Search</button>
                 </form>
 
                 <div className="product-listing-grid">
@@ -2947,14 +3053,29 @@ function ProductsPage() {
                   </div>
                 </section>
 
-                <nav className="machinery-category-tabs" aria-label="Machinery categories">
-                  {productCategories.map((category) => (
-                    <Link to={category.viewAll} key={category.name}>
-                      <span>{String(productCategories.indexOf(category) + 1).padStart(2, '0')}</span>
-                      {category.name}
-                    </Link>
-                  ))}
-                </nav>
+                <form
+                  className={`category-product-search${showSubcategorySearch ? '' : ' category-product-search--compact'}`}
+                  onSubmit={(event) => event.preventDefault()}
+                  aria-label="Search category products"
+                >
+                  <input
+                    type="search"
+                    value={productSearch}
+                    onChange={(event) => setProductSearch(event.target.value)}
+                    placeholder="What are you looking for?"
+                    aria-label="Search products"
+                  />
+                  <select
+                    value={activeCategoryParam}
+                    onChange={(event) => navigate(`/products/${event.target.value}/`)}
+                    aria-label="Select category"
+                  >
+                    {productCategories.map((category) => (
+                      <option value={getCategoryParam(category)} key={category.name}>{category.name}</option>
+                    ))}
+                  </select>
+<button type="submit">Search</button>
+                </form>
 
                 <div className="machinery-category-carousel">
                   <div className="machinery-category-grid" ref={categoryCarouselRef}>

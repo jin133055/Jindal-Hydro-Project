@@ -1,19 +1,21 @@
-# ✅ All Fixes Completed
+# Task: Add Carousel to "Clients & Industrial Brands" section on /about
 
-## Issues Resolved
+## Details
+- URL: http://127.0.0.1:5173/about
+- Section: "Clients & Industrial Brands" (currently static text-only logo grid)
+- Requirement: brand images/logo ABOVE the brand name, carousel scrolling, responsive on mobile & different screens.
 
-| # | Issue | File(s) Changed | Status |
-|---|-------|-----------------|--------|
-| 1 | **Duplicate nav & footer** on home page | `src/homeMarkup.js` | ✅ Removed duplicate `<nav>` and `<footer>` |
-| 2 | **Black screen / page reload** on navigation | `src/App.jsx` | ✅ Click interceptor `handleHomeNavigation` added — intercepts `<a>` clicks, uses React Router `navigate()` |
-| 3 | **`faqs` variable used before declaration** | — | ✅ `faqs` is at module scope; `getSeoConfig()` is called only in `useEffect()` — no error |
-| 4 | **Outdated query-param links** | `src/homeMarkup.js` | ✅ Nav mega menu removed from static HTML; React `<Link>` components handle routing correctly |
-| 5 | **Placeholder hero content** in `index.html` | `index.html` | ✅ Replaced with empty `<div id="root">` so React renders properly |
-| 6 | **Missing 3D baler model** in hero section | `src/homeMarkup.js` | ✅ Restored original CSS 3D baler model markup (replaced empty Three.js div) |
-| 7 | **Remove "Case Studies" from navigation** | `src/App.jsx` | ✅ Removed "Case Studies" link from nav `<li>` in `Header()` |
-| 8 | **Remove "Case Studies" from footer** | `src/App.jsx` | ✅ Removed "Case Studies" link from footer "Company" column |
-| 9 | **Dynamic "Explore More Products" section** | `src/App.jsx` | ✅ Replaced hardcoded `relatedMachines` with dynamic products from same category (excluding current), then other categories, up to 4; uses product page images; heading changed to "Explore More Products" |
+## Plan Steps
+- [x] 1. Read `src/App.jsx` to locate the About page "Clients & Industrial Brands" section
+- [x] 2. Read `styles.css` to understand existing carousel patterns and responsive rules
+- [x] 3. Replace `trustedClients` text array with rich `clientBrands` data (name, initials/logo, industry, brand colors)
+- [x] 4. Add `BrandLogo` component (inline SVG brand logo image)
+- [x] 5. Add `ClientsCarousel` component (scroll track, logo above name, arrow controls, drag/swipe, auto-advance)
+- [x] 6. Replace static `.client-logo-grid` markup in `AboutPage` with `<ClientsCarousel />`
+- [x] 7. Add carousel CSS + responsive rules in `styles.css`
+- [x] 8. Verify on http://127.0.0.1:5173/about (build check passed)
 
-## Dev Server Running
-- **URL**: http://localhost:5173/
-
+## Notes
+- No real logo image assets exist in the project, so inline SVG brand emblems are used (crisp on all screens).
+- Reuses existing scroll-snap carousel patterns from the codebase.
+</content>
