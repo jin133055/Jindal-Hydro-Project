@@ -1468,6 +1468,9 @@ nav {
   max-width: 130px;
 }
 .clients-track .client-industry {
+/* Reduce space between Related Products heading and grid on product detail page */
+.product-detail-page--classic .premium-section-head { margin-bottom: 18px; }
+.product-detail-page--classic .related-machine-grid { margin-top: 6px; }
   color: #6b7280;
   font-size: 0.68rem;
   font-weight: 800;
@@ -3283,7 +3286,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
   height: 22px;
 }
 .machinery-assurance-strip .assurance-copy {
-  display: flex;
+  display: grid;
   flex-direction: column;
   gap: 6px;
 }
