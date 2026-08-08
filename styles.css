@@ -4808,10 +4808,17 @@ footer { background: #080808; padding: 60px 5% 32px; }
   }
 
   .about-detail-band .clients-track {
-    grid-auto-columns: minmax(0, calc(100% - 76px));
+    /* Use a horizontal flex layout on mobile to avoid grid wrapping/stacking
+       which can cause items to appear vertically stacked in some browsers. */
+    display: flex;
+    align-items: stretch;
     gap: 16px;
     padding: 6px 38px 20px 0;
     scroll-padding-left: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .about-detail-band .clients-track .client-logo-card {
@@ -4819,6 +4826,8 @@ footer { background: #080808; padding: 60px 5% 32px; }
     min-height: 224px;
     padding: 28px 18px 24px;
     gap: 18px;
+    flex: 0 0 calc(100% - 76px);
+    scroll-snap-align: start;
   }
 
   .about-detail-band .clients-track .client-logo-mark {
