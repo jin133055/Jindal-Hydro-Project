@@ -2387,15 +2387,8 @@ function ContactPage() {
                   <input id="contact_phone" name="phone" type="tel" placeholder="+91 7412000949" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="contact_solution">Requirement</label>
-                  <select id="contact_solution" name="requirement">
-                    <option value="">Select requirement</option>
-                    <option>Hydraulic Press</option>
-                    <option>Baling Machine</option>
-                    <option>Recycling System</option>
-                    <option>Hydraulic Power Pack</option>
-                    <option>Custom Machinery</option>
-                  </select>
+                  <label htmlFor="contact_solution">Describe your Requirement</label>
+                  <textarea id="contact_solution" name="requirement" rows="1" placeholder="Tell us about your requirement"></textarea>
                 </div>
                 <div className="form-group">
                   <label htmlFor="contact_capacity">Capacity</label>

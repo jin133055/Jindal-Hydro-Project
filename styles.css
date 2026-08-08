@@ -730,7 +730,7 @@ nav {
   padding: 10px 14px;
 }
 .contact-form-panel .form-group textarea {
-  min-height: 165px;
+  min-height: 10px;
   padding: 10px 14px;
 }
 .contact-form-panel .form-submit {
