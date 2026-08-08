@@ -3909,7 +3909,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
 }
 .related-machine-card {
   display: grid;
-  grid-template-rows: 220px 1fr;
+  grid-template-rows: 400px 2fr;
   overflow: hidden;
   color: inherit;
   text-decoration: none;
