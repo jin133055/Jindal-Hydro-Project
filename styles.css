@@ -3895,6 +3895,15 @@ footer { background: #080808; padding: 60px 5% 32px; }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
+
+/* Ensure section headings and product grid do not overlap on any viewport */
+.premium-section-head { margin-bottom: 40px; }
+.related-machine-grid { margin-top: 8px; }
+
+@media (max-width: 720px) {
+  .premium-section-head h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); margin-bottom: 18px; }
+  .related-machine-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 16px; margin-top: 12px; }
+}
 .related-machine-card {
   display: grid;
   grid-template-rows: 220px 1fr;
