@@ -3153,6 +3153,88 @@ export default function App({ page }) {
     }
   };
 
+  useEffect(() => {
+    if (page !== 'home') return undefined;
+
+    const track = document.getElementById('clientsTrack');
+    if (!track) return undefined;
+
+    const getCard = () => track.querySelector('.client-logo-card');
+    const getDistance = () => {
+      const card = getCard();
+      if (!card) return 0;
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || '0');
+      return card.getBoundingClientRect().width + gap;
+    };
+
+    const totalItems = track.children.length;
+    const canScroll = () => track && track.scrollWidth > track.clientWidth + 4;
+
+    const scrollTrack = (direction) => {
+      if (!track || !totalItems) return;
+      const distance = getDistance() || track.clientWidth * 0.9;
+      const maxLeft = Math.max(0, track.scrollWidth - track.clientWidth);
+      const minLeft = 0;
+      const target = track.scrollLeft + direction * distance;
+      if (target > maxLeft) {
+        track.scrollTo({ left: minLeft, behavior: 'smooth' });
+      } else if (target < minLeft) {
+        track.scrollTo({ left: maxLeft, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+      }
+    };
+
+    const handleArrow = (event) => {
+      const button = event.target.closest('.clients-arrow');
+      if (!button) return;
+      const direction = parseInt(button.getAttribute('data-direction'), 10) || 1;
+      scrollTrack(direction);
+    };
+
+    const controls = document.querySelector('.clients-carousel-controls');
+    controls?.addEventListener('click', handleArrow);
+
+    let interval = null;
+    let isPaused = false;
+    const pauseCarousel = () => {
+      isPaused = true;
+    };
+    const resumeCarousel = () => {
+      isPaused = false;
+    };
+
+    if (canScroll()) {
+      interval = window.setInterval(() => {
+        if (!isPaused) scrollTrack(1);
+      }, 3200);
+    }
+
+    const onResize = () => {
+      if (interval) window.clearInterval(interval);
+      interval = window.setInterval(() => {
+        if (!isPaused) scrollTrack(1);
+      }, 3200);
+    };
+
+    track.addEventListener('mouseenter', pauseCarousel);
+    track.addEventListener('mouseleave', resumeCarousel);
+    track.addEventListener('focusin', pauseCarousel);
+    track.addEventListener('focusout', resumeCarousel);
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      controls?.removeEventListener('click', handleArrow);
+      if (interval) window.clearInterval(interval);
+      track.removeEventListener('mouseenter', pauseCarousel);
+      track.removeEventListener('mouseleave', resumeCarousel);
+      track.removeEventListener('focusin', pauseCarousel);
+      track.removeEventListener('focusout', resumeCarousel);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [page]);
+
   if (page === 'home') {
     const homeBodyMarkup = homeMarkup.replace(/^\s*<!-- NAV -->[\s\S]*?<\/nav>\s*/, '');
 
