@@ -858,15 +858,18 @@ nav {
   order: 2;
 }
 .solution-detail-image {
-  min-height: 420px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #e8e8e8;
-  border: 1px solid rgba(0,0,0,0.1);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .solution-detail-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 .solution-detail-content {

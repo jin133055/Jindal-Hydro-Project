@@ -2099,7 +2099,7 @@ const solutionSections = [
   {
     number: '01',
     title: 'Metal Recycling',
-    image: '/images/metal%20recycling.png',
+    image: '/images/soln1.png',
     intro: 'End-to-end systems for ferrous and non-ferrous metal processing, from loose scrap intake to compact, transport-ready output.',
     details: [
       'Hydraulic balers, shears, shredders and conveyors configured around scrap type and throughput goals.',
@@ -2110,7 +2110,7 @@ const solutionSections = [
   {
     number: '02',
     title: 'Waste Management',
-    image: '/images/waste%20management.png',
+    image: '/images/soln2.png',
     intro: 'Municipal and industrial waste processing solutions designed to improve volume reduction, sorting support and operational flow.',
     details: [
       'Machinery options for compaction, shredding, baling and material movement across waste handling facilities.',
@@ -2121,7 +2121,7 @@ const solutionSections = [
   {
     number: '03',
     title: 'Scrap Processing',
-    image: '/images/scrap.png',
+    image: '/images/soln3.png',
     intro: 'Integrated shredding, sorting and densification systems for scrap dealers, steel plants, foundries and heavy industrial sites.',
     details: [
       'Custom machine combinations for cutting, feeding, loading, baling and output preparation.',
