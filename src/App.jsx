@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { homeMarkup } from './homeMarkup.js';
 import { useSiteInteractions } from './useSiteInteractions.js';
-
+import blogIndex from './blogIndex.json';
+import { useParams } from 'react-router-dom';
 
 const productCategories = [
   {
@@ -2424,6 +2425,289 @@ function ContactPage() {
   );
 }
 
+function BlogPage() {
+  const [query, setQuery] = useState('');
+  const [sectionFilter, setSectionFilter] = useState('All');
+  const [sortKey, setSortKey] = useState('date');
+  const navigate = useNavigate();
+
+  const sections = ['All', ...Array.from(new Set(blogIndex.map((p) => p.section).filter(Boolean)))];
+
+  const filtered = blogIndex
+    .filter((p) => (sectionFilter === 'All' ? true : p.section === sectionFilter))
+    .filter((p) => p.title.toLowerCase().includes(query.toLowerCase()) || (p.description || '').toLowerCase().includes(query.toLowerCase()));
+
+  const posts = filtered.sort((a, b) => {
+    if (sortKey === 'date') return (b.date || '').localeCompare(a.date || '');
+    if (sortKey === 'title') return a.title.localeCompare(b.title);
+    return 0;
+  });
+
+  return (
+    <>
+      <Header />
+      <main className="page-shell blog-page">
+        <section className="page-hero">
+          <div className="section-label">Blog</div>
+          <h1>Insights on Recycling Machinery</h1>
+          <p>Articles, buying guides, maintenance tips, and local insight for recyclers and plant operators.</p>
+          <div className="blog-controls" style={{display: 'flex', gap: '12px', marginBottom: '18px', alignItems: 'center'}}>
+            <input placeholder="Search posts" value={query} onChange={(e) => setQuery(e.target.value)} />
+          </div>
+        </section>
+
+        <section className="section-inner">
+
+          <div className="blog-listing-grid">
+  {posts.map((post) => (
+    <article
+      className="blog-card"
+      key={post.slug}
+      onClick={() => navigate(`/blog/${post.slug}`)}
+      role="link"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          navigate(`/blog/${post.slug}`);
+        }
+      }}
+    >
+      <div className="blog-card-image">
+  {post.ogImage ? (
+    <img
+      src={post.ogImage}
+      alt={post.title}
+      loading="lazy"
+    />
+  ) : (
+    <div className="blog-card-image-placeholder" />
+  )}
+</div>
+
+      <h3 className="blog-card-title">
+        {post.title}
+      </h3>
+
+      {post.description && (
+        <p className="blog-card-desc">
+          {post.description}
+        </p>
+      )}
+
+      <div className="blog-card-meta">
+        {post.date}
+      </div>
+    </article>
+  ))}
+</div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function BlogPostPage() {
+  const { slug } = useParams();
+  const post = blogIndex.find((p) => p.slug === slug);
+
+  useEffect(() => {
+    if (!post) return;
+    document.title = `${post.title} | Jindal Hydro Projects`;
+  }, [post]);
+
+  if (!post) {
+    return (
+      <>
+        <Header />
+        <main className="page-shell">
+          <h1>Post not found</h1>
+          <p>The requested blog post could not be found.</p>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  const [html, setHtml] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+    const tryFetch = async () => {
+      setLoading(true);
+      const tryPaths = [
+        // prefer an in-app public copy (public/blog/<slug>.html)
+        `/blog/${post.slug}.html`,
+        // fallback to the original file path (URL-encoded)
+        post.filePath.split(' ').join('%20'),
+      ];
+
+      for (const p of tryPaths) {
+        try {
+          const res = await fetch(p);
+          if (!res.ok) continue;
+          const text = await res.text();
+          try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+
+            // update document head metadata from fetched document
+            try {
+              const fetchedTitle = doc.querySelector('title')?.textContent;
+              if (fetchedTitle) document.title = fetchedTitle;
+
+              // helper to upsert meta by name or property
+              const upsertMeta = (attr, key, value) => {
+                if (!value) return;
+                const selector = `${attr}="${key}"`;
+                const existing = document.head.querySelectorAll(`meta[${attr}='${key}']`);
+                existing.forEach((n) => n.remove());
+                const m = document.createElement('meta');
+                m.setAttribute(attr, key);
+                m.setAttribute('content', value);
+                document.head.appendChild(m);
+              };
+
+              // copy common meta tags
+              const metaDesc = doc.querySelector('meta[name="description"]')?.getAttribute('content');
+              if (metaDesc) upsertMeta('name', 'description', metaDesc);
+
+              const robots = doc.querySelector('meta[name="robots"]')?.getAttribute('content');
+              if (robots) upsertMeta('name', 'robots', robots);
+
+              // copy stylesheet links and inline styles
+              const linkStyles = Array.from(doc.querySelectorAll('link[rel="stylesheet"]'));
+              linkStyles.forEach((l) => {
+                const href = l.getAttribute('href');
+                if (!href) return;
+                const exists = Array.from(document.head.querySelectorAll(`link[rel="stylesheet"]`)).some((ex) => ex.getAttribute('href') === href);
+                if (!exists) {
+                  const nl = document.createElement('link');
+                  nl.setAttribute('rel', 'stylesheet');
+                  nl.setAttribute('href', href);
+                  document.head.appendChild(nl);
+                }
+              });
+
+              const styleBlocks = Array.from(doc.querySelectorAll('style'));
+              styleBlocks.forEach((s) => {
+                const text = s.textContent?.trim();
+                if (!text) return;
+                const exists = Array.from(document.head.querySelectorAll('style')).some((ex) => ex.textContent?.trim() === text);
+                if (!exists) {
+                  const ns = document.createElement('style');
+                  ns.textContent = text;
+                  document.head.appendChild(ns);
+                }
+              });
+
+              // open graph and twitter
+              const ogTags = doc.querySelectorAll('meta[property^="og:"]');
+              ogTags.forEach((t) => {
+                const prop = t.getAttribute('property');
+                const val = t.getAttribute('content');
+                if (prop && val) upsertMeta('property', prop, val);
+              });
+
+              const twTags = doc.querySelectorAll('meta[name^="twitter:"]');
+              twTags.forEach((t) => {
+                const name = t.getAttribute('name');
+                const val = t.getAttribute('content');
+                if (name && val) upsertMeta('name', name, val);
+              });
+
+              // canonical link
+              const canonical = doc.querySelector('link[rel="canonical"]')?.getAttribute('href');
+              if (canonical) {
+                const existing = document.head.querySelectorAll('link[rel="canonical"]');
+                existing.forEach((n) => n.remove());
+                const link = document.createElement('link');
+                link.setAttribute('rel', 'canonical');
+                link.setAttribute('href', canonical);
+                document.head.appendChild(link);
+              }
+
+              // JSON-LD: copy application/ld+json scripts (avoid exact duplicates)
+              const ldScripts = Array.from(doc.querySelectorAll('script[type="application/ld+json"]'));
+              ldScripts.forEach((s) => {
+                const text = s.textContent?.trim();
+                if (!text) return;
+                const exists = Array.from(document.head.querySelectorAll('script[type="application/ld+json"]')).some((ex) => ex.textContent?.trim() === text);
+                if (!exists) {
+                  const newS = document.createElement('script');
+                  newS.setAttribute('type', 'application/ld+json');
+                  newS.textContent = text;
+                  document.head.appendChild(newS);
+                }
+              });
+            } catch (e) {
+              // non-fatal
+            }
+
+            // extract the article content
+            const article = doc.querySelector('article') || doc.querySelector('main') || doc.body;
+            if (article) {
+              // remove UI blocks that should not be duplicated in-app
+              const breadcrumb = article.querySelector('.breadcrumb, nav[aria-label="breadcrumb"]');
+              if (breadcrumb) breadcrumb.remove();
+              const metaBlocks = article.querySelectorAll('.blog-meta, .post-meta, .article-meta');
+              metaBlocks.forEach((n) => n.remove());
+
+              const contentHtml = article.innerHTML;
+              if (mounted) setHtml(contentHtml);
+            } else {
+              if (mounted) setHtml(text);
+            }
+
+            // also attempt to get a description from the fetched document
+            const fetchedDesc = doc.querySelector('meta[name="description"]')?.getAttribute('content');
+            if (fetchedDesc) {
+              if (!post.description) post.description = fetchedDesc;
+            }
+          } catch (e) {
+            if (mounted) setHtml(text);
+          }
+          break;
+        } catch (e) {
+          // continue to next
+        }
+      }
+
+      if (mounted) setLoading(false);
+    };
+
+    tryFetch();
+    return () => { mounted = false; };
+  }, [post]);
+
+  return (
+    <>
+      <Header />
+        <main className="page-shell blog-post-page">
+          <section className="section-inner" style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <div style={{ height: '20px' }} />
+            {loading && <p>Loading article...</p>}
+            {!loading && (
+              <>
+                {html ? (
+                  <div dangerouslySetInnerHTML={{ __html: html }} />
+                ) : (
+                  <div>
+                    <p>Unable to load the article from the current development server.</p>
+                    <p>To view posts in-app, copy the generated HTML files into public/blog/ as {post.slug}.html.</p>
+                    <p><a href={post.path} target="_blank" rel="noopener noreferrer">Open original link</a></p>
+                  </div>
+                )}
+              </>
+            )}
+          </section>
+        </main>
+      <Footer />
+    </>
+  );
+}
+
 function IndustryIcon({ type }) {
   const common = { width: '28', height: '28', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '1.8', strokeLinecap: 'round', strokeLinejoin: 'round' };
   const icons = {
@@ -3266,6 +3550,14 @@ export default function App({ page }) {
 
   if (page === 'about') {
     return <><SeoManager page={page} /><AboutPage /></>;
+  }
+
+  if (page === 'blog') {
+    return <><SeoManager page={page} /><BlogPage /></>;
+  }
+
+  if (page === 'blog-post') {
+    return <><SeoManager page={page} /><BlogPostPage /></>;
   }
 
   return <><SeoManager page={page} /><PlaceholderPage page={page} /></>;

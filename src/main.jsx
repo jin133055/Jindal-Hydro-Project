@@ -23,11 +23,11 @@ createRoot(document.getElementById('root')).render(
         <Route path="/about" element={<App page="about" />} />
         <Route path="/case-studies" element={<App page="case-studies" />} />
         <Route path="/blog" element={<App page="blog" />} />
+        <Route path="/blog/:slug" element={<App page="blog-post" />} />
         <Route path="/contact" element={<App page="contact" />} />
         <Route path="*" element={<App page="not-found" />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
 );
-
 export { Link };
