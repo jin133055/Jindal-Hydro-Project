@@ -2494,9 +2494,6 @@ function BlogPage() {
         </p>
       )}
 
-      <div className="blog-card-meta">
-        {post.date}
-      </div>
     </article>
   ))}
 </div>
