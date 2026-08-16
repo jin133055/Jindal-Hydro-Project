@@ -2513,9 +2513,41 @@ function removeBlogPostHeadNodes() {
   document.head.querySelectorAll(`[${BLOG_POST_HEAD_ATTR}="true"]`).forEach((node) => node.remove());
 }
 
+function normalizeBlogArticleLinks(article) {
+  article.querySelectorAll('a[href]').forEach((link) => {
+    const rawHref = link.getAttribute('href');
+    if (!rawHref) return;
+
+    let url;
+    try {
+      url = new URL(rawHref, window.location.origin);
+    } catch (e) {
+      return;
+    }
+
+    if (url.hostname.replace(/^www\./, '') === 'jindalhydro.com' && url.pathname === '/contact') {
+      link.setAttribute('href', '/contact');
+      link.removeAttribute('target');
+      link.removeAttribute('rel');
+    }
+  });
+}
+
 function BlogPostPage() {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const post = blogIndex.find((p) => p.slug === slug);
+
+  const handleBlogContentClick = (event) => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (href !== '/contact') return;
+
+    event.preventDefault();
+    navigate('/contact');
+  };
 
   useEffect(() => {
     if (!post) return;
@@ -2642,6 +2674,7 @@ function BlogPostPage() {
               const metaBlocks = article.querySelectorAll('.blog-meta, .post-meta, .article-meta');
               metaBlocks.forEach((n) => n.remove());
               article.querySelector('.byline span:nth-child(3)')?.remove();
+              normalizeBlogArticleLinks(article);
 
               const contentHtml = article.innerHTML;
               if (mounted) setHtml(contentHtml);
@@ -2682,7 +2715,7 @@ function BlogPostPage() {
             {!loading && (
               <>
                 {html ? (
-                  <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
+                  <div className="blog-post-content" onClick={handleBlogContentClick} dangerouslySetInnerHTML={{ __html: html }} />
                 ) : (
                   <div>
                     <p>Unable to load the article from the current development server.</p>
