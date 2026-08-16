@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 export function useSiteInteractions(page) {
   useEffect(() => {
@@ -149,6 +151,156 @@ export function useSiteInteractions(page) {
 }
 
 function setupBalerModel() {
+  const balerViewer = document.getElementById('balerViewer');
+  if (balerViewer) return setupBalerGlbModel(balerViewer);
+
+  return setupCssBalerModel();
+}
+
+function setupBalerGlbModel(viewer) {
+  const stage = document.getElementById('balerStage');
+  if (!stage) return undefined;
+
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let rotationX = -10;
+  let rotationY = -30;
+  let startRotationX = rotationX;
+  let startRotationY = rotationY;
+  let lastFrameTime = performance.now();
+  let animationId = 0;
+  let modelGroup;
+  let disposed = false;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
+  camera.position.set(0, 1.1, 6.8);
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+  viewer.appendChild(renderer.domElement);
+
+  const ambientLight = new THREE.HemisphereLight(0xffffff, 0x26351f, 2.4);
+  const keyLight = new THREE.DirectionalLight(0xffffff, 3.2);
+  keyLight.position.set(3, 5, 5);
+  const fillLight = new THREE.DirectionalLight(0xffcc0c, 1.2);
+  fillLight.position.set(-4, 1.6, -2);
+  scene.add(ambientLight, keyLight, fillLight);
+
+  const resizeRenderer = () => {
+    const { width, height } = viewer.getBoundingClientRect();
+    renderer.setSize(width, height, false);
+    camera.aspect = width / Math.max(height, 1);
+    camera.updateProjectionMatrix();
+  };
+
+  const updateModelRotation = () => {
+    if (!modelGroup) return;
+    modelGroup.rotation.x = THREE.MathUtils.degToRad(rotationX);
+    modelGroup.rotation.y = THREE.MathUtils.degToRad(rotationY);
+  };
+
+  const frame = (time) => {
+    const elapsed = time - lastFrameTime;
+    lastFrameTime = time;
+
+    if (!isDragging && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      rotationY += elapsed * 0.012;
+      updateModelRotation();
+    }
+
+    renderer.render(scene, camera);
+    animationId = requestAnimationFrame(frame);
+  };
+
+  const loader = new GLTFLoader();
+  loader.load('/models/industrial machine 3d model.glb', (gltf) => {
+    if (disposed) return;
+
+    modelGroup = gltf.scene;
+    const bounds = new THREE.Box3().setFromObject(modelGroup);
+    const size = bounds.getSize(new THREE.Vector3());
+    const center = bounds.getCenter(new THREE.Vector3());
+    const maxDimension = Math.max(size.x, size.y, size.z) || 1;
+
+    modelGroup.position.sub(center);
+    modelGroup.scale.setScalar(4.4 / maxDimension);
+    modelGroup.traverse((child) => {
+      if (!child.isMesh) return;
+      child.castShadow = true;
+      child.receiveShadow = true;
+    });
+    updateModelRotation();
+    scene.add(modelGroup);
+  });
+
+  const handlePointerDown = (event) => {
+    isDragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    startRotationX = rotationX;
+    startRotationY = rotationY;
+    stage.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event) => {
+    if (!isDragging) return;
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
+    rotationY = startRotationY + deltaX * 0.45;
+    rotationX = Math.max(-48, Math.min(28, startRotationX - deltaY * 0.35));
+    updateModelRotation();
+  };
+
+  const stopDrag = (event) => {
+    if (!isDragging) return;
+    isDragging = false;
+    if (stage.hasPointerCapture(event.pointerId)) {
+      stage.releasePointerCapture(event.pointerId);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    const step = event.shiftKey ? 12 : 6;
+    if (event.key === 'ArrowLeft') rotationY -= step;
+    else if (event.key === 'ArrowRight') rotationY += step;
+    else if (event.key === 'ArrowUp') rotationX = Math.max(-48, rotationX - step);
+    else if (event.key === 'ArrowDown') rotationX = Math.min(28, rotationX + step);
+    else return;
+
+    event.preventDefault();
+    updateModelRotation();
+  };
+
+  const resizeObserver = new ResizeObserver(resizeRenderer);
+  resizeRenderer();
+  resizeObserver.observe(viewer);
+  animationId = requestAnimationFrame(frame);
+  stage.addEventListener('pointerdown', handlePointerDown);
+  stage.addEventListener('pointermove', handlePointerMove);
+  stage.addEventListener('pointerup', stopDrag);
+  stage.addEventListener('pointercancel', stopDrag);
+  stage.addEventListener('keydown', handleKeyDown);
+
+  return () => {
+    disposed = true;
+    cancelAnimationFrame(animationId);
+    resizeObserver.disconnect();
+    stage.removeEventListener('pointerdown', handlePointerDown);
+    stage.removeEventListener('pointermove', handlePointerMove);
+    stage.removeEventListener('pointerup', stopDrag);
+    stage.removeEventListener('pointercancel', stopDrag);
+    stage.removeEventListener('keydown', handleKeyDown);
+    renderer.dispose();
+    viewer.replaceChildren();
+  };
+}
+
+function setupCssBalerModel() {
   const balerStage = document.getElementById('balerStage');
   const balerModel = document.getElementById('balerModel');
   if (!balerStage || !balerModel) return undefined;

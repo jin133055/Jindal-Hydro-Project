@@ -20,6 +20,8 @@
         <div class="hero-img-wrap">
           <div class="baler-stage" id="balerStage" aria-label="Interactive 3D hydraulic baler model" role="img" tabindex="0">
             <div class="baler-shadow"></div>
+            <div class="baler-viewer" id="balerViewer" aria-hidden="true"></div>
+            <!-- Current CSS baler model kept for reference/fallback.
             <div class="baler-model" id="balerModel">
               <div class="baler-cuboid baler-base">
                 <span class="face front"></span><span class="face back"></span><span class="face right"></span><span class="face left"></span><span class="face top"></span><span class="face bottom"></span>
@@ -71,6 +73,7 @@
               <div class="baler-rear-pipe baler-rear-pipe-2"></div>
               <div class="baler-service-plate"></div>
             </div>
+            -->
           </div>
         </div>
       </div>
