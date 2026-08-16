@@ -243,7 +243,7 @@ def build(md_path):
 </head>
 <body>
 <article>
-<p class="byline"><span>{ORG}</span><span>{datetime.datetime.strptime(pub, '%Y-%m-%d').strftime('%d %B %Y')}</span><span>{fm.get('category','')}</span><span>{fm.get('word_count','')} words</span></p>
+<p class="byline"><span>{ORG}</span><span>{datetime.datetime.strptime(pub, '%Y-%m-%d').strftime('%d %B %Y')}</span><span>{fm.get('word_count','')} words</span></p>
 {body_html}
 </article>
 </body>

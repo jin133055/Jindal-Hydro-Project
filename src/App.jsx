@@ -2507,6 +2507,12 @@ function BlogPage() {
   );
 }
 
+const BLOG_POST_HEAD_ATTR = 'data-blog-post-head';
+
+function removeBlogPostHeadNodes() {
+  document.head.querySelectorAll(`[${BLOG_POST_HEAD_ATTR}="true"]`).forEach((node) => node.remove());
+}
+
 function BlogPostPage() {
   const { slug } = useParams();
   const post = blogIndex.find((p) => p.slug === slug);
@@ -2534,6 +2540,13 @@ function BlogPostPage() {
 
   useEffect(() => {
     let mounted = true;
+    removeBlogPostHeadNodes();
+
+    const markBlogPostHeadNode = (node) => {
+      node.setAttribute(BLOG_POST_HEAD_ATTR, 'true');
+      return node;
+    };
+
     const tryFetch = async () => {
       setLoading(true);
       const tryPaths = [
@@ -2548,6 +2561,7 @@ function BlogPostPage() {
           const res = await fetch(p);
           if (!res.ok) continue;
           const text = await res.text();
+          if (!mounted) return;
           try {
             const parser = new DOMParser();
             const doc = parser.parseFromString(text, 'text/html');
@@ -2566,7 +2580,7 @@ function BlogPostPage() {
                 const m = document.createElement('meta');
                 m.setAttribute(attr, key);
                 m.setAttribute('content', value);
-                document.head.appendChild(m);
+                document.head.appendChild(markBlogPostHeadNode(m));
               };
 
               // copy common meta tags
@@ -2575,32 +2589,6 @@ function BlogPostPage() {
 
               const robots = doc.querySelector('meta[name="robots"]')?.getAttribute('content');
               if (robots) upsertMeta('name', 'robots', robots);
-
-              // copy stylesheet links and inline styles
-              const linkStyles = Array.from(doc.querySelectorAll('link[rel="stylesheet"]'));
-              linkStyles.forEach((l) => {
-                const href = l.getAttribute('href');
-                if (!href) return;
-                const exists = Array.from(document.head.querySelectorAll(`link[rel="stylesheet"]`)).some((ex) => ex.getAttribute('href') === href);
-                if (!exists) {
-                  const nl = document.createElement('link');
-                  nl.setAttribute('rel', 'stylesheet');
-                  nl.setAttribute('href', href);
-                  document.head.appendChild(nl);
-                }
-              });
-
-              const styleBlocks = Array.from(doc.querySelectorAll('style'));
-              styleBlocks.forEach((s) => {
-                const text = s.textContent?.trim();
-                if (!text) return;
-                const exists = Array.from(document.head.querySelectorAll('style')).some((ex) => ex.textContent?.trim() === text);
-                if (!exists) {
-                  const ns = document.createElement('style');
-                  ns.textContent = text;
-                  document.head.appendChild(ns);
-                }
-              });
 
               // open graph and twitter
               const ogTags = doc.querySelectorAll('meta[property^="og:"]');
@@ -2625,7 +2613,7 @@ function BlogPostPage() {
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'canonical');
                 link.setAttribute('href', canonical);
-                document.head.appendChild(link);
+                document.head.appendChild(markBlogPostHeadNode(link));
               }
 
               // JSON-LD: copy application/ld+json scripts (avoid exact duplicates)
@@ -2638,7 +2626,7 @@ function BlogPostPage() {
                   const newS = document.createElement('script');
                   newS.setAttribute('type', 'application/ld+json');
                   newS.textContent = text;
-                  document.head.appendChild(newS);
+                  document.head.appendChild(markBlogPostHeadNode(newS));
                 }
               });
             } catch (e) {
@@ -2653,6 +2641,7 @@ function BlogPostPage() {
               if (breadcrumb) breadcrumb.remove();
               const metaBlocks = article.querySelectorAll('.blog-meta, .post-meta, .article-meta');
               metaBlocks.forEach((n) => n.remove());
+              article.querySelector('.byline span:nth-child(3)')?.remove();
 
               const contentHtml = article.innerHTML;
               if (mounted) setHtml(contentHtml);
@@ -2678,7 +2667,10 @@ function BlogPostPage() {
     };
 
     tryFetch();
-    return () => { mounted = false; };
+    return () => {
+      mounted = false;
+      removeBlogPostHeadNodes();
+    };
   }, [post]);
 
   return (
@@ -2686,12 +2678,11 @@ function BlogPostPage() {
       <Header />
         <main className="page-shell blog-post-page">
           <section className="section-inner" style={{ maxWidth: '1100px', margin: '0 auto' }}>
-            <div style={{ height: '20px' }} />
             {loading && <p>Loading article...</p>}
             {!loading && (
               <>
                 {html ? (
-                  <div dangerouslySetInnerHTML={{ __html: html }} />
+                  <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
                 ) : (
                   <div>
                     <p>Unable to load the article from the current development server.</p>
