@@ -2062,6 +2062,19 @@ nav {
   transition: background 0.2s, transform 0.2s;
 }
 .form-submit:hover { background: var(--yellow-dark); transform: scale(1.01); }
+.form-submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+.form-success,
+.form-error {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.form-success { color: var(--green); }
+.form-error { color: #d93025; }
 
 /* FOOTER */
 footer { background: #080808; padding: 60px 5% 32px; }

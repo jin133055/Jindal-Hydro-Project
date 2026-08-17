@@ -462,7 +462,7 @@
       </div>
       <div class="inquiry-right">
         <div class="inquiry-form">
-          <form name="machinery-inquiry" data-success-message="Your inquiry has been received our engineering team will reach out within 24 hours.">
+          <form name="machinery-inquiry" action="https://formspree.io/f/xwleradq" method="POST">
             <div class="form-grid">
               <div class="form-group">
                 <label for="full_name">Full Name</label>

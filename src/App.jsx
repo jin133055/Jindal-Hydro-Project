@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useForm } from '@formspree/react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { homeMarkup } from './homeMarkup.js';
 import { useSiteInteractions } from './useSiteInteractions.js';
@@ -2342,6 +2343,8 @@ function SolutionsPage() {
 }
 
 function ContactPage() {
+  const [state, handleSubmit] = useForm('xwleradq');
+
   return (
     <>
       <Header />
@@ -2369,7 +2372,7 @@ function ContactPage() {
           </div>
 
           <div className="contact-form-panel reveal reveal-delay-1">
-            <form name="contact-inquiry">
+            <form name="contact-inquiry" onSubmit={handleSubmit}>
               <div className="form-grid">
                 <div className="form-group">
                   <label htmlFor="contact_name">Full Name</label>
@@ -2400,7 +2403,21 @@ function ContactPage() {
                   <textarea id="contact_message" name="message" rows="5" placeholder="Tell us about material, capacity, site conditions or machine requirements..."></textarea>
                 </div>
               </div>
-              <button className="form-submit" type="submit">Submit Inquiry</button>
+              <button className="form-submit" type="submit" disabled={state.submitting}>
+                {state.submitting ? 'Sending...' : 'Submit Inquiry'}
+              </button>
+
+              {state.succeeded && (
+                <p className="form-success">
+                  Thank you! Your inquiry has been submitted successfully.
+                </p>
+              )}
+
+              {state.errors && (
+                <p className="form-error">
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </form>
           </div>
         </section>
