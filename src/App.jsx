@@ -3125,8 +3125,9 @@ function ProductDetailPage() {
                 </div>
               </section>
             )}
+            
 
-            <section className="product-video-section" id="product-video">
+            {/*<section className="product-video-section" id="product-video">
               <div className="section-label">Videos</div>
               <h2>Product Video Gallery</h2>
               <div className="premium-video-gallery">
@@ -3142,7 +3143,7 @@ function ProductDetailPage() {
                   </div>
                 ))}
               </div>
-            </section>
+            </section>*/}
 
             <section className="product-info-section">
               <h2>Frequently Asked Questions</h2>
