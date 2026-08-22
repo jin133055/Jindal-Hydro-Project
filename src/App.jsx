@@ -12,20 +12,28 @@ const productCategories = [
     number: '01',
     viewAll: '/products/balers/',
     products: [
-      { slug: 'high-density-baler', name: 'High Density Baler', subcategory: 'Balers', note: 'Balers' },
+      { slug: 'super-jumbo-baler', name: 'Super Jumbo Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'triple-action-baler', name: 'Triple Action Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'mini-triple-action-baler', name: 'Mini Triple Action Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'double-action-baler', name: 'Double Action Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'vertical-baler', name: 'Vertical Baler', subcategory: 'Balers', note: 'Balers' },
-      { slug: 'super-jumbo-baler', name: 'Super Jumbo Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'car-baler', name: 'Car Baler (ELV Compactor)', subcategory: 'Balers', note: 'Balers' },
       { slug: 'automatic-baler', name: 'Automatic Horizontal Baler', subcategory: 'Balers', note: 'Balers' },
       { slug: 'semi-automatic-baler', name: 'Semi-Automatic Horizontal Baler', subcategory: 'Balers', note: 'Balers' },
     ],
   },
   {
-    name: 'Shears & Nibblers',
+    name: 'Hydraulic Presses',
     number: '02',
+    viewAll: '/products/hydraulic-presses/',
+    products: [
+      { slug: 'alligator-shear-crocodile-shear', name: 'Alligator Shear', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
+      { slug: 'hydraulic-nibbler', name: 'Nibblers (Hydraulic & Mechanical)', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
+    ],
+  },
+  {
+    name: 'Shears & Nibblers',
+    number: '03',
     viewAll: '/products/shears-nibblers/',
     products: [
       { slug: 'alligator-shear-crocodile-shear', name: 'Alligator Shear', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
@@ -33,9 +41,9 @@ const productCategories = [
     ],
   },
   {
-    name: 'Shredders & Crackers',
-    number: '03',
-    viewAll: '/products/shredders-crackers/',
+    name: 'Shredders',
+    number: '04',
+    viewAll: '/products/shredders/',
     products: [
       { slug: 'single-shaft-shredder', name: 'Single Shaft Shredder', subcategory: 'Shredders & Crackers', note: 'Shredders & Crackers' },
       { slug: 'twin-shaft-shredder-rotary-shear-pre-shredder', name: 'Twin Shaft Shredder', subcategory: 'Shredders & Crackers', note: 'Shredders & Crackers' },
@@ -44,41 +52,43 @@ const productCategories = [
   },
   {
     name: 'Briquetting Machines',
-    number: '04',
+    number: '05',
     viewAll: '/products/briquetting-machines/',
     products: [
       { slug: 'vertical-briquetting-machine', name: 'Vertical Briquetting Machine', subcategory: 'Briquetting Machines', note: 'Briquetting Machines' },
     ],
   },
   {
-    name: 'Material Handling & Sorting',
-    number: '05',
-    viewAll: '/products/material-handling-sorting/',
+    name: 'Material Handling',
+    number: '06',
+    viewAll: '/products/material-handling/',
     products: [
       { slug: 'conveyors', name: 'Conveyors', subcategory: 'Material Handling & Sorting', note: 'Material Handling & Sorting' },
       { slug: 'msw-sorting-line', name: 'MSW Sorting Line', subcategory: 'Material Handling & Sorting', note: 'Material Handling & Sorting' },
     ],
   },
   {
-    name: 'Agriculture Waste Recycling',
-    number: '06',
-    viewAll: '/products/agriculture-waste-recycling/',
+    name: 'Agricultural Hydraulic Machinery',
+    number: '07',
+    viewAll: '/products/agriculture-hydraulic-machinery/',
     products: [
       { slug: 'fodder-block-making-machine', name: 'Fodder Block Making Machine', subcategory: 'Agriculture Waste Recycling', note: 'Agriculture Waste Recycling' },
     ],
   },
+  {
+    name: 'Material Recovery Facility',
+    number: '08',
+    viewAll: '/products/material-recovery-facility/',
+    products: [
+      { slug: 'msw-sorting-line', name: 'MSW Sorting Line', subcategory: 'Material Handling & Sorting', note: 'Material Handling & Sorting' },
+    ],
+  }
 ];
 
 const siteUrl = 'https://www.jindalhydroprojects.com';
 
 const productImageMap = {
-  'high-density-baler': [
-    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_Hero_Angle_v.1.png',
-    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.2.png',
-    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.3.png',
-    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.4.png',
-    '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.5.png',
-  ],
+  'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/20_Super_Jumbo_Baler_Hero_v1.png'],
   'triple-action-baler': [
     '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_Hero_Angle_v.1.png',
     '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.5.png',
@@ -97,7 +107,6 @@ const productImageMap = {
     '/images/3D%20Models%20from%20AI/05c_Double_Action_Top_Ejection_v1.png',
   ],
   'vertical-baler': ['/images/3D%20Models%20from%20AI/06_Vertical_Baler_Hero_Angle_v.2.png'],
-  'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/20_Super_Jumbo_Baler_Hero_v1.png'],
   'car-baler': ['/images/3D%20Models%20from%20AI/08_Car_Baler_Hero_Angle_v.1.png'],
   'automatic-baler': ['/images/3D%20Models%20from%20AI/17_Automatic_Baler_Hero_Angle_v1.png'],
   'semi-automatic-baler': ['/images/3D%20Models%20from%20AI/18_Semi_Automatic_Baler_Hero_Angle_v1.png'],
@@ -241,11 +250,11 @@ const categorySeo = {
 };
 
 const productSeo = {
-  'high-density-baler': {
-    canonical: '/products/balers/high-density-baler/',
-    title: 'High Density Baler Manufacturer India | JHP',
-    description: 'High-density hydraulic baler for compacting metal scrap, industrial waste, and ELV material into dense, transport-ready bales.',
-    h1: 'High Density Baler - Industrial Scrap Compaction',
+  'super-jumbo-baler': {
+    canonical: '/products/balers/super-jumbo-baler/',
+    title: 'Super Jumbo Baler India | JHP',
+    description: 'Super jumbo baler for large-volume metal scrap processing and demanding industrial recycling operations.',
+    h1: 'Super Jumbo Baler - Heavy-Duty Industrial Output',
   },
   'triple-action-baler': {
     canonical: '/products/balers/triple-action-baler/',
@@ -270,12 +279,6 @@ const productSeo = {
     title: 'Vertical Baler Manufacturer India | JHP',
     description: 'Vertical baler for metal scrap, cardboard, and recycling applications with a compact footprint and dependable hydraulic operation.',
     h1: 'Vertical Baler - Compact Recycling Compaction',
-  },
-  'super-jumbo-baler': {
-    canonical: '/products/balers/super-jumbo-baler/',
-    title: 'Super Jumbo Baler India | JHP',
-    description: 'Super jumbo baler for large-volume metal scrap processing and demanding industrial recycling operations.',
-    h1: 'Super Jumbo Baler - Heavy-Duty Industrial Output',
   },
   'car-baler': {
     canonical: '/products/balers/car-baler/',
@@ -352,7 +355,6 @@ const productSeo = {
 };
 
 const productPathAliases = {
-  'high-density-hydraulic-baler': 'high-density-baler',
   'alligator-shear': 'alligator-shear-crocodile-shear',
   'automatic-horizontal-baler': 'automatic-baler',
   'elv-plant-setup-consultancy': 'consultancy',
@@ -370,125 +372,149 @@ const productPathAliases = {
 };
 
 const productDetails = {
-  'high-density-baler': {
-    name: 'High Density Baler',
-    description: 'High-density baler engineered for maximum compaction and throughput in demanding recycling operations. Features reliable hydraulic systems for consistent bale formation across various material types.',
-    specs: [
-      {
-        'Bale Size (in)': '18×18',
-        'Chamber (in)': '76×40×30',
-        'Bale Wt MS (kg)': '120-140',
-        'Cycle (sec)': '50-55',
-        'Motor (HP)': '60/80',
-      },
-      {
-        'Bale Size (in)': '20×20 / 22×22',
-        'Chamber (in)': '84×44×36',
-        'Bale Wt MS (kg)': '250-350',
-        'Cycle (sec)': '80-85',
-        'Motor (HP)': '80/100',
-      },
-      {
-        'Bale Size (in)': '24×24',
-        'Chamber (in)': '84×60×40',
-        'Bale Wt MS (kg)': '450-600',
-        'Cycle (sec)': '80-120',
-        'Motor (HP)': '80/100/120',
-      },
-      {
-        'Bale Size (in)': '28×28 / 35×35',
-        'Chamber (in)': '105×60×50',
-        'Bale Wt MS (kg)': '700-800',
-        'Cycle (sec)': '90-100',
-        'Motor (HP)': '80/100/120',
-      },
-      {
-        'Bale Size (in)': '40×40',
-        'Chamber (in)': '110×60×55',
-        'Bale Wt MS (kg)': '800-1000',
-        'Cycle (sec)': '90-100',
-        'Motor (HP)': '80/100/120',
-      },
-    ],
-  },
+  'super-jumbo-baler': {
+  name: 'Super Jumbo Baler',
+  description:
+    'Heavy-duty PLC-controlled baler built for high-volume industrial scrap processing. Designed to compact oversized scrap and heavy TMT bars with high production capacity and robust HARDOX construction.',
+  specs: [
+    {
+      'Bale (in)': '20×20',
+      'Chamber (in)': '84×44×38',
+      'Wt MS (kg)': '150-250',
+      'Cycle (sec)': '80-85',
+      'Production (T/8hr)': '24-30',
+      'Motor (HP)': '80 HP',
+    },
+    {
+      'Bale (in)': '22×22',
+      'Chamber (in)': '84×44×38',
+      'Wt MS (kg)': '150-300',
+      'Cycle (sec)': '80-85',
+      'Production (T/8hr)': '30-35',
+      'Motor (HP)': '80 HP',
+    },
+    {
+      'Bale (in)': '24×24',
+      'Chamber (in)': '84×60×40',
+      'Wt MS (kg)': '300-500',
+      'Cycle (sec)': '80-85',
+      'Production (T/8hr)': '45-50',
+      'Motor (HP)': '100 HP',
+    },
+    {
+      'Bale (in)': '28×28',
+      'Chamber (in)': '105×50×50',
+      'Wt MS (kg)': '400-700',
+      'Cycle (sec)': '90-100',
+      'Production (T/8hr)': '60-70',
+      'Motor (HP)': '100 HP',
+    },
+    {
+      'Bale (in)': '30×30',
+      'Chamber (in)': '105×60×50',
+      'Wt MS (kg)': '400-700',
+      'Cycle (sec)': '90-100',
+      'Production (T/8hr)': '62-72',
+      'Motor (HP)': '100 HP',
+    },
+  ],
+},
   'triple-action-baler': {
-    name: 'Triple Action Baler',
-    description: 'Triple-action baler with three-direction compression for dense, uniform scrap bales in recycling yards, metal processing facilities, and industrial compaction applications.',
-    galleryLabels: ['Main View', 'Front Right View', 'Rear Left View', 'Rear Right View', 'Front Left View'],
-    specs: [
-      {
-        Model: 'Mini',
-        'Bale (in)': '6x6',
-        'Chamber (in)': '18x18x45',
-        'Wt MS (kg)': '10-16',
-        'Wt AL (kg)': '4-6',
-        'Motor (HP)': '20',
-      },
-      {
-        Model: 'Mini',
-        'Bale (in)': '8x8',
-        'Chamber (in)': '20x20x45',
-        'Wt MS (kg)': '18-28',
-        'Wt AL (kg)': '6-9',
-        'Motor (HP)': '20',
-      },
-      {
-        Model: 'Mini',
-        'Bale (in)': '9x9',
-        'Chamber (in)': '20x20x45',
-        'Wt MS (kg)': '25-40',
-        'Wt AL (kg)': '8-13',
-        'Motor (HP)': '20',
-      },
-      {
-        Model: 'Mini',
-        'Bale (in)': '10x10',
-        'Chamber (in)': '20x20x50',
-        'Wt MS (kg)': '30-45',
-        'Wt AL (kg)': '10-15',
-        'Motor (HP)': '25',
-      },
-    ],
-  },
+  name: 'Triple Action Baler',
+  specs: [
+    {
+      Model: 'Mini',
+      'Bale (in)': '6×6',
+      'Chamber (in)': '18×18×45',
+      'Wt MS (kg)': '10-16',
+      'Wt AL (kg)': '4-6',
+      'Motor (HP)': '20',
+      'Cycle (sec)': '55-60',
+    },
+    {
+      Model: 'Mini',
+      'Bale (in)': '10×10',
+      'Chamber (in)': '20×20×50',
+      'Wt MS (kg)': '30-45',
+      'Wt AL (kg)': '10-15',
+      'Motor (HP)': '25',
+      'Cycle (sec)': '45-50',
+    },
+    {
+      Model: 'Super',
+      'Bale (in)': '12×12',
+      'Chamber (in)': '20×24×55',
+      'Wt MS (kg)': '50-80',
+      'Wt AL (kg)': '20-30',
+      'Motor (HP)': '25',
+      'Cycle (sec)': '60-65',
+    },
+    {
+      Model: 'Jumbo',
+      'Bale (in)': '15×15',
+      'Chamber (in)': '24×26×60',
+      'Wt MS (kg)': '60-120',
+      'Wt AL (kg)': '40-50',
+      'Motor (HP)': '30',
+      'Cycle (sec)': '70-75',
+    },
+    {
+      Model: 'Jumbo Plus',
+      'Bale (in)': '20×20',
+      'Chamber (in)': '36×42×76',
+      'Wt MS (kg)': '150-250',
+      'Wt AL (kg)': '65-80',
+      'Motor (HP)': '50',
+      'Cycle (sec)': '90-100',
+    },
+    {
+      Model: 'Jumbo Plus',
+      'Bale (in)': '30×30',
+      'Chamber (in)': '45×60×90',
+      'Wt MS (kg)': '300-500',
+      'Wt AL (kg)': '80-150',
+      'Motor (HP)': '60×2',
+      'Cycle (sec)': '90-100',
+    },
+  ],
+},
   'mini-triple-action-baler': {
-    name: 'Mini Triple Action Baler',
-    description:
-      'Compact heavy-duty triple-action baler designed for scrap yards requiring dense, high-quality bales while minimizing floor space. Ideal for copper, aluminium and MS scrap.',
-    specs: [
-      {
-        Model: 'Mini 6×6',
-        'Bale (in)': '6×6',
-        'Chamber (in)': '18×18×45',
-        'Wt MS (kg)': '10-16',
-        'Wt AL (kg)': '4-6',
-        'Motor (HP)': '20',
-      },
-      {
-        Model: 'Mini 8×8',
-        'Bale (in)': '8×8',
-        'Chamber (in)': '20×20×45',
-        'Wt MS (kg)': '18-28',
-        'Wt AL (kg)': '6-9',
-        'Motor (HP)': '20',
-      },
-      {
-        Model: 'Mini 9×9',
-        'Bale (in)': '9×9',
-        'Chamber (in)': '20×20×45',
-        'Wt MS (kg)': '25-40',
-        'Wt AL (kg)': '8-13',
-        'Motor (HP)': '20',
-      },
-      {
-        Model: 'Mini 10×10',
-        'Bale (in)': '10×10',
-        'Chamber (in)': '20×20×50',
-        'Wt MS (kg)': '30-45',
-        'Wt AL (kg)': '10-15',
-        'Motor (HP)': '25',
-      },
-    ],
-  },
+  name: 'Mini Triple Action Baler',
+  specs: [
+    {
+      Model: 'Mini',
+      'Bale (in)': '6×6',
+      'Chamber (in)': '18×18×45',
+      'Wt MS (kg)': '10-16',
+      'Wt AL (kg)': '4-6',
+      'Motor (HP)': '20',
+    },
+    {
+      Model: 'Mini',
+      'Bale (in)': '8×8',
+      'Chamber (in)': '20×20×45',
+      'Wt MS (kg)': '18-28',
+      'Wt AL (kg)': '6-9',
+      'Motor (HP)': '20',
+    },
+    {
+      Model: 'Mini',
+      'Bale (in)': '9×9',
+      'Chamber (in)': '20×20×45',
+      'Wt MS (kg)': '25-35',
+      'Wt AL (kg)': '8-13',
+      'Motor (HP)': '20',
+    },
+    {
+      Model: 'Mini',
+      'Bale (in)': '10×10',
+      'Chamber (in)': '20×20×50',
+      'Wt MS (kg)': '25-30',
+      'Wt AL (kg)': '10-15',
+      'Motor (HP)': '25',
+    },
+  ],
+},
   'double-action-baler': {
     name: 'Double Action Baler',
     description: 'Double-action baler available in auto door, manual door, and top ejection configurations for dependable scrap compaction in industrial recycling operations.',
@@ -552,53 +578,6 @@ const productDetails = {
   ],
 },
 
-'super-jumbo-baler': {
-  name: 'Super Jumbo Baler',
-  description:
-    'Heavy-duty PLC-controlled baler built for high-volume industrial scrap processing. Designed to compact oversized scrap and heavy TMT bars with high production capacity and robust HARDOX construction.',
-  specs: [
-    {
-      'Bale (in)': '20×20',
-      'Chamber (in)': '84×44×38',
-      'Wt MS (kg)': '200-250',
-      'Cycle (sec)': '80-85',
-      'Production (T/8hr)': '24-30',
-      'Motor (HP)': '80/100',
-    },
-    {
-      'Bale (in)': '22×22',
-      'Chamber (in)': '84×44×38',
-      'Wt MS (kg)': '250-300',
-      'Cycle (sec)': '80-85',
-      'Production (T/8hr)': '30-35',
-      'Motor (HP)': '80/100',
-    },
-    {
-      'Bale (in)': '24×24',
-      'Chamber (in)': '84×60×40',
-      'Wt MS (kg)': '400-500',
-      'Cycle (sec)': '80-85',
-      'Production (T/8hr)': '45-50',
-      'Motor (HP)': '80/100/120',
-    },
-    {
-      'Bale (in)': '28×28',
-      'Chamber (in)': '105×50×50',
-      'Wt MS (kg)': '600-650',
-      'Cycle (sec)': '90-100',
-      'Production (T/8hr)': '60-70',
-      'Motor (HP)': '80/100/120',
-    },
-    {
-      'Bale (in)': '30×30',
-      'Chamber (in)': '105×60×50',
-      'Wt MS (kg)': '700-800',
-      'Cycle (sec)': '90-100',
-      'Production (T/8hr)': '62-72',
-      'Motor (HP)': '80/100/120',
-    },
-  ],
-},
 
 'car-baler': {
   name: 'Car Baler (ELV Compactor)',
@@ -938,20 +917,16 @@ const productDetails = {
 };
 
 const materialProcessed = {
-  'high-density-baler': [
+    'super-jumbo-baler': [
+    'Heavy Melting Scrap',
+    'Light Melting Scrap',
     'MS Scrap',
-    'Heavy Melting Scrap (HMS)',
-    'Light Melting Scrap (LMS)',
+    'TMT Bars',
     'Steel Scrap',
-    'Aluminium Scrap',
-    'Copper Scrap',
-    'Brass Scrap',
-    'Stainless Steel Scrap',
-    'Cast Iron Scrap',
-    'Automobile Scrap',
+    'Structural Scrap',
     'Industrial Scrap',
-    'Sheet Metal Scrap',
-    'Turnings & Borings',
+    'Automobile Scrap',
+    'Heavy Plate Scrap',
   ],
   'triple-action-baler': [
     'MS Scrap',
@@ -993,17 +968,6 @@ const materialProcessed = {
     'Plastic Film',
     'Dry Waste',
     'Light Metal Scrap',
-  ],
-  'super-jumbo-baler': [
-    'Heavy Melting Scrap',
-    'Light Melting Scrap',
-    'MS Scrap',
-    'TMT Bars',
-    'Steel Scrap',
-    'Structural Scrap',
-    'Industrial Scrap',
-    'Automobile Scrap',
-    'Heavy Plate Scrap',
   ],
   'car-baler': [
     'End-of-Life Vehicles (ELV)',
@@ -1135,13 +1099,13 @@ const materialProcessed = {
 };
 
 const keyFeatures = {
-  'high-density-baler': [
-    'Cylinder force up to 650 tons',
-    'Bale sizes 18×18" to 40×40"',
-    'Double-displacement vane pump, low cycle times',
-    'HARDOX 500-BHN wear plates throughout',
-    'Shearing blades handle material up to 20mm',
-    'Top, turn-out & side ejection options',
+  'super-jumbo-baler': [
+    'Bale sizes 20×20" up to 35×35"',
+    'Cylinder force up to 300 tons',
+    'Processes heavy TMT bars 5–10mm thick',
+    'Production 2–10 tons/hr; bale under 75 sec',
+    'Separate manifolds per cylinder',
+    'HARDOX 500-BHN compression chamber',
   ],
   'triple-action-baler': [
     'Three-direction compression for super-dense bales',
@@ -1174,14 +1138,6 @@ const keyFeatures = {
     'PLC or hydraulic hand-lever options',
     'Bale range 30–500 kg by model',
     'Low-noise operation, easy to relocate'
-  ],
-  'super-jumbo-baler': [
-    'Bale sizes 20×20" up to 35×35"',
-    'Cylinder force up to 300 tons',
-    'Processes heavy TMT bars 5–10mm thick',
-    'Production 2–10 tons/hr; bale under 75 sec',
-    'Separate manifolds per cylinder',
-    'HARDOX 500-BHN compression chamber',
   ],
   'car-baler': [
     'Purpose-built for ELV / RVSF applications',
@@ -1275,13 +1231,6 @@ const keyFeatures = {
 };
 
 const suitableIndustries = {
-  'high-density-baler': [
-    'Metal Recyclers',
-    'TMT & Ingot Plants',
-    'Scrap Yards',
-    'Casting Plants',
-    'Automotive',
-  ],
   'triple-action-baler': [
     'Scrap Yards',
     'Rolling Mills',
@@ -1375,13 +1324,6 @@ const suitableIndustries = {
 };
 
 const seoEfficiencyFeatures = {
-  'high-density-baler': [
-    'High-density hydraulic baler for fast metal scrap compaction and lower transport cost',
-    'Heavy-duty hydraulic operation designed for scrap yards, steel plants and recycling facilities',
-    'Low cycle-time baling improves daily throughput for ferrous and non-ferrous scrap',
-    'Configurable bale size, chamber size and ejection options for site-specific recycling operations',
-    'Wear-resistant chamber construction supports continuous industrial scrap processing',
-  ],
   'triple-action-baler': [
     'Triple-action hydraulic compression creates dense, uniform bales for metal recycling',
     'PLC-controlled baler operation reduces manual handling and improves production consistency',
@@ -1504,12 +1446,6 @@ const seoEfficiencyFeatures = {
 };
 
 const seoSuitableIndustries = {
-  'high-density-baler': [
-    'Metal recycling plants and ferrous scrap yards',
-    'Steel mills, TMT bar units and ingot plants',
-    'Foundries, casting plants and industrial scrap processors',
-    'Automotive component manufacturers and ELV recycling facilities',
-  ],
   'triple-action-baler': [
     'Scrap recycling yards and metal recovery centers',
     'Rolling mills, steel plants and foundry scrap handling units',

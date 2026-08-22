@@ -3847,7 +3847,7 @@ footer { background: #080808; padding: 60px 5% 32px; }
 }
 .premium-hero-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 14px;
   align-items: center;
   margin-top: 34px;
@@ -3860,6 +3860,9 @@ footer { background: #080808; padding: 60px 5% 32px; }
   min-height: 52px;
   padding: 0 28px;
   font-size: 1rem;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
   letter-spacing: 0.02em;
 }
 .premium-outline-btn {
