@@ -3865,6 +3865,25 @@ footer { background: #080808; padding: 60px 5% 32px; }
   white-space: nowrap;
   letter-spacing: 0.02em;
 }
+.product-spec-note {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-size: 12px;
+
+}
+.product-spec-description {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: #fffdf3;
+  border-left: 5px solid #ffc400;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.product-spec-table-section h3 {
+  margin: 0;
+  padding: 0;
+}
 .premium-outline-btn {
   display: inline-flex;
   align-items: center;
@@ -5316,4 +5335,26 @@ footer { background: #080808; padding: 60px 5% 32px; }
     height: 220px;
     padding: 16px;
   }
+}
+.technical-note {
+  margin-top: 20px;
+  padding: 18px 24px;
+  border-left: 5px solid #ffca05;
+  background: #fffdf2;
+}
+
+.technical-note-label {
+  margin-bottom: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #8a741c;
+  text-transform: uppercase;
+}
+
+.technical-note p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #292929;
 }

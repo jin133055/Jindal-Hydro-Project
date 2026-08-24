@@ -27,17 +27,21 @@ const productCategories = [
     number: '02',
     viewAll: '/products/hydraulic-presses/',
     products: [
-      { slug: 'alligator-shear-crocodile-shear', name: 'Alligator Shear', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
-      { slug: 'hydraulic-nibbler', name: 'Nibblers (Hydraulic & Mechanical)', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
-    ],
+      { slug: 'c-frame-hydraulic-press', name: 'C Frame Hydraulic Press', subcategory: 'Hydraulic Presses', note: 'Hydraulic Presses' },
+      { slug: 'h-frame-hydraulic-press', name: 'H Frame Hydraulic Press', subcategory: 'Hydraulic Presses', note: 'Hydraulic Presses' },
+      { slug: '4-pillar-type-hydraulic-press', name: '4 Pillar Type Hydraulic Press', subcategory: 'Hydraulic Presses', note: 'Hydraulic Presses' },
+      { slug: 'industrial-tablet-press', name: 'Industrial Tablet Press', subcategory: 'Hydraulic Presses', note: 'Hydraulic Presses' },    ],
   },
   {
     name: 'Shears & Nibblers',
     number: '03',
     viewAll: '/products/shears-nibblers/',
     products: [
-      { slug: 'alligator-shear-crocodile-shear', name: 'Alligator Shear', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
-      { slug: 'hydraulic-nibbler', name: 'Nibblers (Hydraulic & Mechanical)', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
+      { slug: 'nibblers-hydraulic', name: 'Nibblers (Hydraulic)', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers'},
+      { slug: 'alligator-shear', name: 'Alligator Shear', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
+      { slug: 'hydraulic-box-shear', name: 'Hydraulic Box Shear', subcategory: 'Shears & Nibblers', note: 'Shears & Nibblers' },
+
+
     ],
   },
   {
@@ -45,13 +49,12 @@ const productCategories = [
     number: '04',
     viewAll: '/products/shredders/',
     products: [
-      { slug: 'single-shaft-shredder', name: 'Single Shaft Shredder', subcategory: 'Shredders & Crackers', note: 'Shredders & Crackers' },
-      { slug: 'twin-shaft-shredder-rotary-shear-pre-shredder', name: 'Twin Shaft Shredder', subcategory: 'Shredders & Crackers', note: 'Shredders & Crackers' },
-      { slug: 'casting-cracker', name: 'Casting Cracker', subcategory: 'Shredders & Crackers', note: 'Shredders & Crackers' },
+      { slug: 'single-shaft-shredder', name: 'Single Shaft Shredder', subcategory: 'Shredders', note: 'Shredders' },
+      { slug: 'twin-shaft-shredder', name: 'Twin Shaft Shredder', subcategory: 'Shredders', note: 'Shredders' },
     ],
   },
   {
-    name: 'Briquetting Machines',
+    name: 'Briquetting Machines',   
     number: '05',
     viewAll: '/products/briquetting-machines/',
     products: [
@@ -63,8 +66,7 @@ const productCategories = [
     number: '06',
     viewAll: '/products/material-handling/',
     products: [
-      { slug: 'conveyors', name: 'Conveyors', subcategory: 'Material Handling & Sorting', note: 'Material Handling & Sorting' },
-      { slug: 'msw-sorting-line', name: 'MSW Sorting Line', subcategory: 'Material Handling & Sorting', note: 'Material Handling & Sorting' },
+      { slug: 'conveyors', name: 'Conveyors', subcategory: 'Material Handling', note: 'Material Handling' },
     ],
   },
   {
@@ -72,7 +74,7 @@ const productCategories = [
     number: '07',
     viewAll: '/products/agriculture-hydraulic-machinery/',
     products: [
-      { slug: 'fodder-block-making-machine', name: 'Fodder Block Making Machine', subcategory: 'Agriculture Waste Recycling', note: 'Agriculture Waste Recycling' },
+      { slug: 'fodder-block-making-machine', name: 'Fodder Block Making Machine', subcategory: 'Agriculture Hydraulic Machinery', note: 'Agriculture Hydraulic Machinery' },
     ],
   },
   {
@@ -80,7 +82,7 @@ const productCategories = [
     number: '08',
     viewAll: '/products/material-recovery-facility/',
     products: [
-      { slug: 'msw-sorting-line', name: 'MSW Sorting Line', subcategory: 'Material Handling & Sorting', note: 'Material Handling & Sorting' },
+      { slug: 'material-recovery-facility', name: 'Material Recovery Facility', subcategory: 'Material Recovery Facility', note: 'Material Recovery Facility' },
     ],
   }
 ];
@@ -88,46 +90,42 @@ const productCategories = [
 const siteUrl = 'https://www.jindalhydroprojects.com';
 
 const productImageMap = {
-  'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/20_Super_Jumbo_Baler_Hero_v1.png'],
-  'triple-action-baler': [
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_Hero_Angle_v.1.png',
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.5.png',
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.4.png',
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.3.png',
-    '/images/3D%20Models%20from%20AI/03_Triple_Action_Baler_4_Angle_v.2.png',
-  ],
-  'mini-triple-action-baler': [
-    '/images/3D%20Models%20from%20AI/04_Mini_Triple_Action_Baler_Hero_Angle_v.1.png',
-    '/images/3D%20Models%20from%20AI/04_Continous_Baler_Hero_Angle_v.1.png',
-  ],
+  'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/Balers/01_Super Jumbo Baler.png'],
+  'triple-action-baler': [ '/images/3D%20Models%20from%20AI/Balers/02_Triple_Action_Baler_Hero_Angle_v.1.png'],
+  'mini-triple-action-baler': [ '/images/3D%20Models%20from%20AI/Balers/03_Mini Triple Action Baler.png'],
   'double-action-baler': [
-    '/images/3D%20Models%20from%20AI/05_Double_Action_Baler_Hero_Angle_v.1.png',
-    '/images/3D%20Models%20from%20AI/05a_Double_Action_Auto_Door_v1.png',
-    '/images/3D%20Models%20from%20AI/05b_Double_Action_Manual_Door_v1.png',
-    '/images/3D%20Models%20from%20AI/05c_Double_Action_Top_Ejection_v1.png',
+    '/images/3D Models from AI/Balers/04_Double_Action_Auto_Door.png',
+    '/images/3D Models from AI/Balers/04_Double_Action_Auto_Door.png',
+    '/images/3D Models from AI/Balers/05_Double_Action_Manual_Door.png',
+    '/images/3D Models from AI/Balers/06_Double Action Baler Top Injection.png',
   ],
-  'vertical-baler': ['/images/3D%20Models%20from%20AI/06_Vertical_Baler_Hero_Angle_v.2.png'],
-  'car-baler': ['/images/3D%20Models%20from%20AI/08_Car_Baler_Hero_Angle_v.1.png'],
-  'automatic-baler': ['/images/3D%20Models%20from%20AI/17_Automatic_Baler_Hero_Angle_v1.png'],
-  'semi-automatic-baler': ['/images/3D%20Models%20from%20AI/18_Semi_Automatic_Baler_Hero_Angle_v1.png'],
-  'alligator-shear-crocodile-shear': [
-    '/images/3D%20Models%20from%20AI/13_Alligator_Shear_Hero_Angle_v.1.png',
-    '/images/3D%20Models%20from%20AI/13_Alligator_Shear_Hero_Angle_v.2.png',
+  'vertical-baler': ['/images/3D Models from AI/Balers/07_Vertical_Baler_Hero_Angle.png'],
+  'car-baler': ['/images/3D Models from AI/Balers/10_Hydraulic Car Baler.png'],
+  'automatic-baler': ['/images/3D Models from AI/Balers/08_Automatic_Baler_Hero_Angle_v1.png'],
+  'semi-automatic-baler': ['/images/3D Models from AI/Balers/09_Semi_Automatic_Baler_Hero_Angle_v1.png'],
+  'alligator-shear': ['/images/3D Models from AI/Shears & Nibblers/01_Alligator_Shear_Hero_Angle_v.1.png',],
+  'nibblers-hydraulic': [
+    '/images/3D Models from AI/Shears & Nibblers/02_Nibbler_Hero_Angle_v.1.png',
   ],
-  'hydraulic-nibbler': [
-    '/images/3D%20Models%20from%20AI/14_Nibbler_Hero_Angle_v.1.png',
-    '/images/3D%20Models%20from%20AI/14_Nibbler_Hero_Angle_v.2.png',
-  ],
-  'single-shaft-shredder': ['/images/3D%20Models%20from%20AI/15_Single_Shaft_Shredder_Hero_Angle_v.2.png'],
-  'twin-shaft-shredder-rotary-shear-pre-shredder': ['/images/3D%20Models%20from%20AI/21_Twin_Shaft_Shredder_Hero_v1.png'],
-  'casting-cracker': ['/images/3D%20Models%20from%20AI/22_Casting_Cracker_Hero_v1.png'],
+  'hydraulic-box-shear': [ '/images/3D Models from AI/Shears & Nibblers/03_Hydraulic Box Shear.png'],
+  'single-shaft-shredder': ['/images/3D Models from AI/Shredders/01_Single_Shaft_Shredder_Hero_Angle_v.2.png'],
+  'twin-shaft-shredder': ['/images/3D Models from AI/Shredders/02_Twin Shaft Shredder.png'],
   'vertical-briquetting-machine': [
-    '/images/3D%20Models%20from%20AI/09_Vertical_Briquetting_Machine_v3.png',
-    '/images/3D%20Models%20from%20AI/09_Vertical_Briquetting_Machine_v2.png',
+    '/images/3D Models from AI/Briquetting Machines/09_Vertical_Briquetting_Machine_v3.png', ],
+  conveyors: ['/images/3D Models from AI/Material Handling/23_Conveyor_Hero_v1.png'],
+  'fodder-block-making-machine': ['/images/3D Models from AI/Agriculture Hydraulic Machinery/24_Fodder_Block_Machine_Hero_v1.png'],
+  'c-frame-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/01_press_c_frame.png'],
+  'h-frame-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/02_press_h_frame.png'],
+  '4-pillar-type-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/03_press_4_pillar.png'],
+  'industrial-tablet-press': ['/images/3D Models from AI/Hydraulic Presses/04_press_tablet.png'],
+  'material-recovery-facility': ['/images/3D Models from AI/MRF/msw_disc_separator.png',
+    '/images/3D Models from AI/MRF/msw_air_classifier.png',
+    '/images/3D Models from AI/MRF/msw_baled_waste.png',
+    '/images/3D Models from AI/MRF/msw_magnetic_separator.png',
+    '/images/3D Models from AI/MRF/msw_sorting_conveyor.png',
+    '/images/3D Models from AI/MRF/msw_tipper_platform.png',
+    '/images/3D Models from AI/MRF/msw_trommel_screen.png'
   ],
-  conveyors: ['/images/3D%20Models%20from%20AI/23_Conveyor_Hero_v1.png'],
-  'msw-sorting-line': ['/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.png'],
-  'fodder-block-making-machine': ['/images/3D%20Models%20from%20AI/24_Fodder_Block_Machine_Hero_v1.png'],
 };
 
 const getProductImageSet = (slug) => productImageMap[slug] || ['/images/homepage.png'];
@@ -136,241 +134,453 @@ const getProductImage = (slug) => getProductImageSet(slug)[0];
 const categorySeo = {
   balers: {
     name: 'Balers',
+
     title: 'Hydraulic Balers for Scrap, Waste & ELV Compaction | JHP',
-    description: 'High-density, triple-action, vertical, and automatic balers for recyclers, scrap yards, and ELV processing operations.',
+
+    description:
+      'Hydraulic balers for ferrous, non-ferrous and mixed material recycling, scrap processing, waste handling and ELV compaction.',
+
     h1: 'Hydraulic Balers for Scrap, Waste & ELV Compaction',
+
     canonical: '/products/balers/',
-    intro: 'JHP offers a full lineup of balers engineered for metal recycling, industrial waste handling, ELV compaction, and high-density material processing.',
+
+    intro:
+      'JHP manufactures hydraulic baling presses that compress ferrous, non-ferrous and mixed materials into dense, uniform bales for recycling, scrap processing and efficient material handling.',
+
     sections: [
-      ['Applications', 'Scrap yards, ELV facilities, packaging recyclers, and industrial waste handlers.'],
-      ['Key Baler Types', 'High-density balers, triple-action balers, vertical balers, jumbo balers, and horizontal balers.'],
-      ['Output Benefits', 'Improve bale density, lower transport cost, and simplify scrap handling.'],
+      [
+        'Applications',
+        'Metal recycling, scrap processing, waste handling, ELV recycling and material compaction.'
+      ],
+      [
+        'Baler Types',
+        'Super jumbo, triple action, mini triple action, double action, vertical, car, automatic horizontal and semi-automatic horizontal balers.'
+      ],
+      [
+        'Materials',
+        'Ferrous metal, non-ferrous metal, mixed scrap, ELV material and other recyclable waste streams.'
+      ],
+      [
+        'Benefits',
+        'Dense and uniform bales for easier handling, storage, transportation and downstream recycling.'
+      ],
     ],
   },
+
+  'hydraulic-presses': {
+    name: 'Hydraulic Presses',
+
+    title: 'Industrial Hydraulic Presses for Forming & Moulding | JHP',
+
+    description:
+      'General-purpose hydraulic presses for forming, moulding, assembly and powder compaction with open-throat, portal and four-column frames.',
+
+    h1: 'Industrial Hydraulic Presses for Forming, Moulding & Compaction',
+
+    canonical: '/products/hydraulic-presses/',
+
+    intro:
+      'JHP manufactures general-purpose hydraulic presses for forming, moulding, assembly and powder compaction, with press frames configured around the job and application.',
+
+    sections: [
+      [
+        'Applications',
+        'Forming, moulding, component assembly, powder compaction and general industrial pressing.'
+      ],
+      [
+        'Press Types',
+        'C-frame, H-frame, four-pillar and industrial tablet press configurations.'
+      ],
+      [
+        'Press Frames',
+        'Open-throat, portal and four-column frame configurations designed around the application.'
+      ],
+      [
+        'Custom Engineering',
+        'Presses can be configured around the job, material, capacity and application requirements.'
+      ],
+    ],
+  },
+
   'shears-nibblers': {
     name: 'Shears & Nibblers',
-    title: 'Shears & Nibblers for Precision Cutting & Scrap Preparation | JHP',
-    description: 'Alligator shears and hydraulic nibblers for cutting bar, plate, sheet, and scrap with accuracy and reliability.',
-    h1: 'Shears & Nibblers for Precision Cutting & Scrap Preparation',
+
+    title: 'Hydraulic Shears & Nibblers for Scrap Cutting | JHP',
+
+    description:
+      'Hydraulic shears and nibblers for fast, precise cutting and sizing of bar, section, sheet and structural scrap.',
+
+    h1: 'Hydraulic Shears & Nibblers for Scrap Cutting',
+
     canonical: '/products/shears-nibblers/',
-    intro: 'JHP supplies shears and nibblers built for metal cutting, dismantling, and scrap preparation across recycling and fabrication applications.',
+
+    intro:
+      'JHP supplies hydraulic shears and nibblers engineered for fast and precise cutting and sizing of metal scrap across recycling and industrial applications.',
+
     sections: [
-      ['Equipment', 'Alligator shears and hydraulic nibblers for heavy metal and sheet metal cutting.'],
-      ['Use Cases', 'Scrap yards, fabrication shops, ELV dismantling, and steel service centers.'],
+      [
+        'Equipment',
+        'Hydraulic nibblers, alligator shears and hydraulic box shears for metal scrap cutting and sizing.'
+      ],
+      [
+        'Applications',
+        'Bar, section, sheet, structural scrap, light scrap, tubing, metal sheets and industrial offcuts.'
+      ],
+      [
+        'Cutting & Sizing',
+        'Cut and size scrap into manageable and consistent pieces for recycling and downstream processing.'
+      ],
+      [
+        'Processing Benefits',
+        'Fast hydraulic cutting, consistent sizing and improved preparation of scrap for further processing.'
+      ],
     ],
   },
-  'shredders-crackers': {
-    name: 'Shredders & Crackers',
-    title: 'Shredders & Crackers for Heavy Scrap Reduction | JHP',
-    description: 'Single-shaft shredders, twin-shaft shredders, and casting crackers for high-volume size reduction and metal recovery.',
-    h1: 'Shredders & Crackers for Heavy Scrap Reduction',
-    canonical: '/products/shredders-crackers/',
-    intro: 'Choose from single-shaft shredders, twin-shaft pre-shredders, and casting crackers for robust metal recycling and waste processing lines.',
+
+  shredders: {
+    name: 'Shredders',
+
+    title: 'Industrial Shredders for Scrap & Waste Size Reduction | JHP',
+
+    description:
+      'Single-shaft and twin-shaft industrial shredders for size reduction and pre-conditioning of bulky and mixed materials.',
+
+    h1: 'Industrial Shredders for Scrap & Waste Size Reduction',
+
+    canonical: '/products/shredders/',
+
+    intro:
+      'JHP manufactures single-shaft and twin-shaft shredders designed for size reduction and pre-conditioning of bulky and mixed material streams.',
+
     sections: [
-      ['Shredding Equipment', 'Single-shaft and twin-shaft shredders for metal, plastic and mixed waste streams.'],
-      ['Cracking Solutions', 'Casting crackers for crushing cast iron and engine scrap.'],
+      [
+        'Shredder Types',
+        'Single-shaft shredders and twin-shaft shredders for different material processing requirements.'
+      ],
+      [
+        'Applications',
+        'Bulky materials, mixed materials, recyclable waste and industrial processing streams.'
+      ],
+      [
+        'Size Reduction',
+        'Reduce bulky and mixed material into smaller, more manageable sizes for downstream processing.'
+      ],
+      [
+        'Pre-Conditioning',
+        'Prepare material for subsequent sorting, separation, recovery or recycling operations.'
+      ],
     ],
   },
+
   'briquetting-machines': {
     name: 'Briquetting Machines',
-    title: 'Vertical Briquetting Machines for Metal Chips & Waste | JHP',
-    description: 'Vertical briquetting machines that compact metal chips and recyclable waste into dense briquettes for easier handling.',
-    h1: 'Vertical Briquetting Machines',
+
+    title: 'Briquetting Machines for Metal Chips & Machining Waste | JHP',
+
+    description:
+      'High-pressure briquetting machines that convert machining waste into dense, uniform briquettes for efficient handling and remelting.',
+
+    h1: 'High-Pressure Briquetting Machines for Machining Waste',
+
     canonical: '/products/briquetting-machines/',
-    intro: 'JHP supplies vertical briquetting machines that convert loose chips and waste into transport-friendly briquettes.',
+
+    intro:
+      'JHP supplies high-pressure briquetting machines designed to turn machining waste into dense and uniform briquettes for efficient handling and remelting.',
+
     sections: [
-      ['Applications', 'Machine shops, metal recycling facilities, and industrial chip management.'],
-      ['Benefits', 'Reduce storage volume, improve handling, and recover material value.'],
+      [
+        'Applications',
+        'Machining waste, metal chips and industrial material recovery applications.'
+      ],
+      [
+        'Briquetting Process',
+        'High-pressure compaction converts loose machining waste into dense, uniform briquettes.'
+      ],
+      [
+        'Material Handling',
+        'Compact briquettes are easier to handle, store, transport and process than loose machining waste.'
+      ],
+      [
+        'Remelting',
+        'Dense briquettes support more efficient handling and remelting of recovered material.'
+      ],
     ],
   },
-  'material-handling-sorting': {
-    name: 'Material Handling & Sorting',
-    title: 'Material Handling & Sorting Equipment - Conveyors & MSW Lines | JHP',
-    description: 'Conveyors and MSW sorting lines for efficient material movement, separation, and recycling line throughput.',
-    h1: 'Material Handling & Sorting Equipment',
-    canonical: '/products/material-handling-sorting/',
-    intro: 'JHP provides conveyors and sorting lines built to move scrap, recyclables and waste streams efficiently through processing systems.',
+
+  'material-handling': {
+    name: 'Material Handling',
+
+    title: 'Industrial Conveyor Systems for Material Handling | JHP',
+
+    description:
+      'Industrial conveyor systems for moving, feeding and transferring scrap, recyclables and waste across processing plants.',
+
+    h1: 'Material Handling & Conveyor Systems',
+
+    canonical: '/products/material-handling/',
+
+    intro:
+      'JHP provides conveyor systems engineered to move, feed and transfer material efficiently across recycling and industrial processing plants.',
+
     sections: [
-      ['Solutions', 'Conveyors for scrap lines plus MSW sorting systems for waste recovery.'],
-      ['Efficiency', 'Improved throughput, reduced manual handling, and better material separation.'],
+      [
+        'Conveyor Systems',
+        'Industrial conveyors for moving, feeding and transferring material through processing operations.'
+      ],
+      [
+        'Applications',
+        'Scrap recycling plants, waste processing systems and industrial material processing lines.'
+      ],
+      [
+        'Material Movement',
+        'Efficiently move material between receiving, processing, sorting, recovery and output stages.'
+      ],
+      [
+        'System Integration',
+        'Conveyor systems can form part of larger recycling and material processing plants.'
+      ],
     ],
   },
-  'agriculture-waste-recycling': {
-    name: 'Agriculture Waste Recycling',
-    title: 'Agriculture Waste Recycling Machinery - Fodder Blocks & Biomass | JHP',
-    description: 'Fodder block making machines and recycling systems for agricultural residues, biomass, and farm waste processing.',
-    h1: 'Agriculture Waste Recycling Machinery',
-    canonical: '/products/agriculture-waste-recycling/',
-    intro: 'JHP offers agriculture waste recycling equipment to convert crop residues and biomass into usable fodder blocks and compact feedstock.',
+
+  'agriculture-hydraulic-machinery': {
+    name: 'Agricultural Hydraulic Machinery',
+
+    title: 'Agricultural Hydraulic Machinery for Fodder Blocks | JHP',
+
+    description:
+      'Hydraulic agricultural machinery for compressing straw, husk and roughage into compact fodder blocks for feed and storage.',
+
+    h1: 'Agricultural Hydraulic Machinery for Fodder Processing',
+
+    canonical: '/products/agriculture-hydraulic-machinery/',
+
+    intro:
+      'JHP manufactures hydraulic machinery for agricultural processing, compressing straw, husk and roughage into compact fodder blocks for feed and storage.',
+
     sections: [
-      ['Applications', 'Farms, co-operatives, biomass plants, and agricultural waste management facilities.'],
-      ['Materials', 'Straw, dry grass, husk, and other agricultural residues.'],
+      [
+        'Applications',
+        'Agricultural processing, fodder preparation, feed production and agricultural residue management.'
+      ],
+      [
+        'Materials',
+        'Straw, husk, roughage and other suitable agricultural processing materials.'
+      ],
+      [
+        'Fodder Block Production',
+        'Hydraulic compression converts loose agricultural material into compact fodder blocks.'
+      ],
+      [
+        'Benefits',
+        'Compact blocks are easier to handle, transport and store for feed applications.'
+      ],
     ],
   },
-  'metal-recycling': {
-    name: 'Metal Recycling',
-    title: 'Metal Recycling Machinery - Balers, Shears & Shredders | JHP',
-    description: 'Hydraulic balers, shears, and shredders for ferrous and non-ferrous scrap processing and metal recovery.',
-    h1: 'Metal Recycling Machinery - Balers, Shears & Shredders',
-    canonical: '/products/balers/',
-    intro: 'Jindal Hydro Projects offers hydraulic equipment for scrap processing, from compact balers to industrial shredding systems.',
-  },
-  'waste-recycling': {
-    name: 'Waste Recycling',
-    title: 'Waste Recycling Equipment - Balers, Sorting & Compaction | JHP',
-    description: 'Waste handling solutions including balers, conveyors, and sorting systems for packaging waste and MSW.',
-    h1: 'Waste Recycling Equipment - Balers, Sorting & Compaction',
-    canonical: '/products/material-handling-sorting/',
-    intro: 'JHP supplies equipment to reduce, sort, and move packaging waste and municipal solid waste through efficient recycling lines.',
-  },
-  'agriculture-recycling': {
-    name: 'Agriculture Waste Recycling',
-    title: 'Agricultural Waste Recycling Machinery - Fodder Blocks | JHP',
-    description: 'Fodder block making machines and biomass processing equipment for agricultural waste recycling.',
-    h1: 'Agricultural Waste Recycling Machinery',
-    canonical: '/products/agriculture-waste-recycling/',
-    intro: 'JHP manufactures equipment to compress agricultural waste into compact, high-value blocks for fodder and biomass use.',
-  },
-  'elv-recycling': {
-    name: 'ELV Recycling',
-    title: 'ELV Recycling Plant Equipment & RVSF Setup | Jindal Hydro Projects',
-    description: 'Complete ELV recycling machinery for Registered Vehicle Scrapping Facilities, including balers, shears, shredders and plant support.',
-    h1: 'ELV Recycling Plant Equipment - Complete RVSF Machinery Solutions',
-    canonical: '/products/balers/',
-    intro: 'JHP supplies ELV processing machinery and support for vehicle dismantling, metal recovery, and turnkey plant setup.',
-  },
-  services: {
-    name: 'Services',
-    title: 'Installation, Spares & Recycling Plant Consultancy | JHP',
-    description: 'Installation, operator training, spares, parts, and consultancy support for recycling machinery and plant setup.',
-    h1: 'Services - Installation, Spares, Parts and Consultancy',
-    canonical: '/products/services/',
-    intro: 'Jindal Hydro Projects supports customers with installation, training, spares, parts, and consultancy for recycling machinery and plant setup requirements.',
+
+  'material-recovery-facility': {
+    name: 'Material Recovery Facility',
+
+    title: 'Material Recovery Facility & MSW Recycling Plant | JHP',
+
+    description:
+      'Complete material recovery facilities for municipal solid waste intake, sorting, mechanical separation and baling.',
+
+    h1: 'Material Recovery Facility for MSW Sorting & Recycling',
+
+    canonical: '/products/material-recovery-facility/',
+
+    intro:
+      'JHP designs complete material recovery facilities that process mixed municipal solid waste from intake and manual sorting through mechanical separation and baling.',
+
+    sections: [
+      [
+        'MSW Processing',
+        'Process mixed municipal solid waste through an integrated material recovery workflow.'
+      ],
+      [
+        'Sorting',
+        'Material moves from waste intake through manual sorting and subsequent mechanical separation.'
+      ],
+      [
+        'Mechanical Separation',
+        'Integrated processing separates recoverable material from mixed municipal solid waste.'
+      ],
+      [
+        'Baling',
+        'Recovered material is processed through baling for efficient handling and onward recycling.'
+      ],
+    ],
   },
 };
-
 const productSeo = {
   'super-jumbo-baler': {
     canonical: '/products/balers/super-jumbo-baler/',
-    title: 'Super Jumbo Baler India | JHP',
-    description: 'Super jumbo baler for large-volume metal scrap processing and demanding industrial recycling operations.',
-    h1: 'Super Jumbo Baler - Heavy-Duty Industrial Output',
+    title: 'Super Jumbo Baler for Heavy Scrap Processing | JHP',
+    description:
+      'Super jumbo hydraulic baler for high-volume ferrous, non-ferrous and mixed scrap processing in demanding recycling operations.',
+    h1: 'Super Jumbo Baler - Heavy-Duty Scrap Compaction',
   },
+
   'triple-action-baler': {
     canonical: '/products/balers/triple-action-baler/',
-    title: 'Triple Action Baler Manufacturer India | JHP',
-    description: 'Triple-action baler with three-direction compression for dense bales in scrap yards, recycling plants, and metal processing facilities.',
-    h1: 'Triple Action Baler - Three-Direction Compression',
+    title: 'Triple Action Baler for Dense Scrap Bales | JHP',
+    description:
+      'Triple-action hydraulic baler designed for dense, uniform scrap bales across metal recycling, scrap yards and industrial processing facilities.',
+    h1: 'Triple Action Baler - Dense Three-Direction Compaction',
   },
+
   'mini-triple-action-baler': {
     canonical: '/products/balers/mini-triple-action-baler/',
-    title: 'Mini Triple Action Baler India | JHP',
-    description: 'Compact mini triple-action baler for small recycling yards, workshops, and lower-throughput scrap handling operations.',
-    h1: 'Mini Triple Action Baler - Compact Industrial Baling',
+    title: 'Mini Triple Action Baler for Scrap Recycling | JHP',
+    description:
+      'Compact triple-action hydraulic baler for smaller scrap processing operations requiring dense and uniform material bales.',
+    h1: 'Mini Triple Action Baler - Compact Scrap Compaction',
   },
   'double-action-baler': {
     canonical: '/products/balers/double-action-baler/',
-    title: 'Double Action Baler | JHP',
-    description: 'Double-action baler available in auto door, manual door, and top ejection configurations for dependable scrap compaction.',
-    h1: 'Double Action Baler',
+    title: 'Double Action Hydraulic Baler for Scrap | JHP',
+    description:
+      'Double-action hydraulic baler for dependable scrap compaction, available in configurations suited to different material ejection and handling requirements.',
+    h1: 'Double Action Baler - Hydraulic Scrap Compaction',
   },
   'vertical-baler': {
     canonical: '/products/balers/vertical-baler/',
-    title: 'Vertical Baler Manufacturer India | JHP',
-    description: 'Vertical baler for metal scrap, cardboard, and recycling applications with a compact footprint and dependable hydraulic operation.',
-    h1: 'Vertical Baler - Compact Recycling Compaction',
+    title: 'Vertical Hydraulic Baler for Scrap Recycling | JHP',
+    description:
+      'Vertical hydraulic baler for compacting recyclable materials where efficient material handling and a compact machine configuration are required.',
+    h1: 'Vertical Baler - Compact Hydraulic Scrap Compaction',
   },
   'car-baler': {
     canonical: '/products/balers/car-baler/',
-    title: 'Car Baler & ELV Compactor India | JHP',
-    description: 'Car baler and ELV compactor for vehicle scrapping facilities, automotive recycling plants, and metal recovery operations.',
-    h1: 'Car Baler - ELV Compactor for Vehicle Scrapping',
+    title: 'Car Baler & ELV Compactor for Vehicle Recycling | JHP',
+    description:
+      'Trailer-mounted hydraulic car baler for flattening end-of-life vehicles, white goods, light scrap and mixed metal into compact, stackable slabs.',
+    h1: 'Car Baler - Hydraulic ELV Compactor',
   },
   'automatic-baler': {
     canonical: '/products/balers/automatic-baler/',
-    title: 'Automatic Horizontal Baler | JHP',
-    description: 'Automatic horizontal baler for paper, plastic, cardboard, and packaging waste with high throughput and continuous operation.',
-    h1: 'Automatic Horizontal Baler - Continuous Waste Compaction',
+    title: 'Automatic Horizontal Baler for Recycling | JHP',
+    description:
+      'Automatic horizontal hydraulic baler for continuous material compaction and efficient handling of recyclable waste and scrap.',
+    h1: 'Automatic Horizontal Baler - Continuous Material Compaction',
   },
   'semi-automatic-baler': {
     canonical: '/products/balers/semi-automatic-baler/',
     title: 'Semi-Automatic Horizontal Baler | JHP',
-    description: 'Semi-automatic horizontal baler for recyclers looking for dependable mid-capacity compaction and operational flexibility.',
+    description:
+      'Semi-automatic horizontal hydraulic baler for reliable material compaction and flexible operation in recycling and scrap processing facilities.',
     h1: 'Semi-Automatic Horizontal Baler',
   },
-  'alligator-shear-crocodile-shear': {
-    canonical: '/products/shears-nibblers/alligator-shear-crocodile-shear/',
-    title: 'Alligator Shear Machine Manufacturer India | JHP',
-    description: 'Hydraulic alligator shear for cutting bar, rod, tube, cable, and heavy scrap with precision and speed.',
-    h1: 'Alligator Shear - Heavy-Duty Metal Cutting',
+  'c-frame-hydraulic-press': {
+    canonical: '/products/hydraulic-presses/c-frame-hydraulic-press/',
+    title: 'C Frame Hydraulic Press for Industrial Applications | JHP',
+    description:
+      'C-frame hydraulic press for general-purpose forming, moulding, assembly and industrial pressing applications.',
+    h1: 'C Frame Hydraulic Press - Industrial Pressing Solution',
   },
-  'hydraulic-nibbler': {
-    canonical: '/products/shears-nibblers/hydraulic-nibbler/',
-    title: 'Hydraulic Nibbler Machine India | JHP',
-    description: 'Hydraulic nibbler for precision sheet cutting, edge trimming, and controlled metal reduction in recycling and fabrication plants.',
-    h1: 'Hydraulic Nibbler - Precision Metal Sheet Cutting',
+  'h-frame-hydraulic-press': {
+    canonical: '/products/hydraulic-presses/h-frame-hydraulic-press/',
+    title: 'H Frame Hydraulic Press for Industrial Forming | JHP',
+    description:
+      'H-frame hydraulic press for forming, moulding, assembly and other general-purpose industrial pressing applications.',
+    h1: 'H Frame Hydraulic Press - Industrial Forming & Assembly',
+  },
+  '4-pillar-type-hydraulic-press': {
+    canonical: '/products/hydraulic-presses/4-pillar-type-hydraulic-press/',
+    title: '4 Pillar Hydraulic Press for Industrial Applications | JHP',
+    description:
+      'Four-pillar hydraulic press designed for forming, moulding, assembly and powder compaction applications.',
+    h1: '4 Pillar Type Hydraulic Press',
+  },
+  'industrial-tablet-press': {
+    canonical: '/products/hydraulic-presses/industrial-tablet-press/',
+    title: 'Industrial Tablet Press for Powder Compaction | JHP',
+    description:
+      'Industrial hydraulic tablet press for powder compaction and applications requiring controlled high-pressure forming.',
+    h1: 'Industrial Tablet Press - Hydraulic Powder Compaction',
+  },
+  'nibblers-hydraulic': {
+    canonical: '/products/shears-nibblers/nibblers-hydraulic/',
+    title: 'Hydraulic Nibbler for Metal Cutting | JHP',
+    description:
+      'Hydraulic nibbler for fast and precise cutting and sizing of sheet, section and other metal materials in recycling and industrial applications.',
+    h1: 'Hydraulic Nibbler - Precision Metal Cutting',
+  },
+
+  'alligator-shear': {
+    canonical: '/products/shears-nibblers/alligator-shear/',
+    title: 'Alligator Shear for Metal Scrap Cutting | JHP',
+    description:
+      'Hydraulic alligator shear for fast and precise cutting and sizing of bar, section and metal scrap.',
+    h1: 'Alligator Shear - Heavy-Duty Metal Scrap Cutting',
+  },
+  'hydraulic-box-shear': {
+    canonical: '/products/shears-nibblers/hydraulic-box-shear/',
+    title: 'Hydraulic Box Shear for Scrap Cutting | JHP',
+    description:
+      'Horizontal automatic hydraulic box shear for cutting light and thin scrap into uniform charge lengths for efficient furnace feeding.',
+    h1: 'Hydraulic Box Shear - Automatic Scrap Cutting',
   },
   'single-shaft-shredder': {
-    canonical: '/products/shredders-crackers/single-shaft-shredder/',
-    title: 'Single Shaft Shredder Manufacturer India | JHP',
-    description: 'Single-shaft shredder for controlled size reduction of plastics, waste, and mixed industrial material streams.',
-    h1: 'Single Shaft Shredder - Controlled Size Reduction',
+    canonical: '/products/shredders/single-shaft-shredder/',
+    title: 'Single Shaft Shredder for Material Size Reduction | JHP',
+    description:
+      'Single-shaft industrial shredder for controlled size reduction and pre-conditioning of bulky and mixed material streams.',
+    h1: 'Single Shaft Shredder - Controlled Material Size Reduction',
   },
-  'twin-shaft-shredder-rotary-shear-pre-shredder': {
-    canonical: '/products/shredders-crackers/twin-shaft-shredder-rotary-shear-pre-shredder/',
-    title: 'Twin Shaft Shredder Manufacturer India | JHP',
-    description: 'Twin-shaft shredder for pre-shredding bulky scrap and mixed recycling feedstock with jam-resistant operation.',
-    h1: 'Twin Shaft Shredder - High-Capacity Pre-Shredding',
-  },
-  'casting-cracker': {
-    canonical: '/products/shredders-crackers/casting-cracker/',
-    title: 'Casting Cracker & Engine Crusher India | JHP',
-    description: 'Casting cracker designed for crushing cast iron, engine scrap, and heavy ferrous recycling material.',
-    h1: 'Casting Cracker - Heavy Ferrous Scrap Reduction',
+  'twin-shaft-shredder': {
+    canonical: '/products/shredders/twin-shaft-shredder/',
+    title: 'Twin Shaft Shredder for Scrap & Waste Processing | JHP',
+    description:
+      'Twin-shaft industrial shredder for size reduction and pre-conditioning of bulky and mixed materials in recycling and processing operations.',
+    h1: 'Twin Shaft Shredder - Heavy-Duty Material Size Reduction',
   },
   'vertical-briquetting-machine': {
-    canonical: '/products/briquetting-machines/vertical-briquetting-machine/',
-    title: 'Vertical Briquetting Machine India | JHP',
-    description: 'Vertical briquetting machine for turning metal chips and turnings into compact, valuable briquettes.',
-    h1: 'Vertical Briquetting Machine',
+    canonical:
+      '/products/briquetting-machines/vertical-briquetting-machine/',
+    title: 'Vertical Briquetting Machine for Metal Chips | JHP',
+    description:
+      'High-pressure vertical briquetting machine for converting machining waste and metal chips into dense, uniform briquettes for efficient handling and remelting.',
+    h1: 'Vertical Briquetting Machine - High-Pressure Compaction',
   },
   conveyors: {
-    canonical: '/products/material-handling-sorting/conveyors/',
-    title: 'Conveyors for Recycling Lines | JHP',
-    description: 'Custom-built conveyor systems for moving scrap, waste, and recyclables efficiently through processing lines.',
-    h1: 'Conveyor Systems for Recycling Lines',
-  },
-  'msw-sorting-line': {
-    canonical: '/products/material-handling-sorting/msw-sorting-line/',
-    title: 'MSW Sorting Line Manufacturer India | JHP',
-    description: 'MSW sorting line for municipal waste processing, recycling recovery, and improved line throughput.',
-    h1: 'MSW Sorting Line - Municipal Waste Processing',
+    canonical: '/products/material-handling/conveyors/',
+    title: 'Industrial Conveyors for Recycling & Material Handling | JHP',
+    description:
+      'Custom-built conveyor systems for moving, feeding and transferring scrap, recyclables and waste through industrial processing and recycling plants.',
+    h1: 'Industrial Conveyor Systems for Material Handling',
   },
   'fodder-block-making-machine': {
-    canonical: '/products/agriculture-waste-recycling/fodder-block-making-machine/',
-    title: 'Fodder Block Making Machine | JHP',
-    description: 'Fodder block making machine for agricultural waste recycling, biomass processing, and compact fodder production.',
-    h1: 'Fodder Block Making Machine',
+    canonical:
+      '/products/agriculture-hydraulic-machinery/fodder-block-making-machine/',
+    title: 'Fodder Block Making Machine for Agricultural Waste | JHP',
+    description:
+      'Hydraulic fodder block making machine for compressing straw, husk and roughage into compact blocks for feed and storage.',
+    h1: 'Fodder Block Making Machine - Agricultural Hydraulic Processing',
+  },
+  'material-recovery-facility': {
+    canonical:
+      '/products/material-recovery-facility/material-recovery-facility/',
+    title: 'Material Recovery Facility for MSW Sorting & Recycling | JHP',
+    description:
+      'Complete material recovery facility for processing mixed municipal solid waste through intake, manual sorting, mechanical separation and baling.',
+    h1: 'Material Recovery Facility - MSW Sorting & Recycling',
   },
 };
-
 const productPathAliases = {
-  'alligator-shear': 'alligator-shear-crocodile-shear',
   'automatic-horizontal-baler': 'automatic-baler',
-  'elv-plant-setup-consultancy': 'consultancy',
-  'box-shear-inclined-shear': 'box-shear-inclined-shear',
-  'twin-shaft-shredder': 'twin-shaft-shredder-rotary-shear-pre-shredder',
-  'scrap-handling-conveyors': 'conveyors',
-  'hydraulic-grab-crane': 'grabs-cranes',
-  'car-baler-elv-compactor': 'car-baler',
   'semi-automatic-horizontal-baler': 'semi-automatic-baler',
+  'car-baler-elv-compactor': 'car-baler',
   'double-action-baler-auto-door': 'double-action-baler',
   'double-action-baler-manual-door': 'double-action-baler',
   'double-action-baler-top-ejection': 'double-action-baler',
-  'triple-action-baler-waste': 'triple-action-baler-for-waste',
-  'vertical-baler-waste': 'waste-recycling-vertical-baler',
+  'nibblers-hydraulic': 'nibblers-hydraulic',
+  'alligator-shear': 'alligator-shear',
+  'box-shear-inclined-shear': 'hydraulic-box-shear',
+  'twin-shaft-shredder':
+    'twin-shaft-shredder',
+  'scrap-handling-conveyors': 'conveyors',
 };
-
 const productDetails = {
   'super-jumbo-baler': {
   name: 'Super Jumbo Baler',
@@ -521,75 +731,127 @@ const productDetails = {
     galleryLabels: ['Main View', 'Auto Door', 'Manual Door', 'Top Ejection'],
     specs: [
       {
-        'Chamber (in)': '20x16x45',
-        'Bale (in)': '12-16xV',
-        'Wt MS (kg)': '20-50',
-        'Cycle (sec)': '75-85',
-        'Motor (HP)': '15',
-        Operation: 'Manual / Front / Top',
-      },
-      {
-        'Chamber (in)': '20x24x45',
-        'Bale (in)': '12x24xV',
-        'Wt MS (kg)': '40-60',
-        'Cycle (sec)': '50-60',
-        'Motor (HP)': '20',
-        Operation: 'Manual / Front / Top',
-      },
-      {
-        'Chamber (in)': '24x18x50',
-        'Bale (in)': '16x18xV',
-        'Wt MS (kg)': '50-60',
-        'Cycle (sec)': '50-60',
-        'Motor (HP)': '20',
-        Operation: 'Manual / Front / Top',
-      },
+      'Chamber (in)': '20×16×45',
+      'Bale (in)': '12-16×V',
+      'Wt MS (kg)': '20-50',
+      'Cycle (sec)': '75-85',
+      'Motor (HP)': '15',
+    },
+    {
+      'Chamber (in)': '20×24×45',
+      'Bale (in)': '12×24×V',
+      'Wt MS (kg)': '40-60',
+      'Cycle (sec)': '50-60',
+      'Motor (HP)': '20',
+    },
+    {
+      'Chamber (in)': '24×18×50',
+      'Bale (in)': '16×18×V',
+      'Wt MS (kg)': '50-60',
+      'Cycle (sec)': '50-60',
+      'Motor (HP)': '20',
+    },
     ],
   },
   'vertical-baler': {
   name: 'Vertical Baler',
-  description:
-    'Space-saving vertical hydraulic baler designed for compacting light metal scrap and dry recyclable waste into high-density blocks. Ideal for facilities with limited floor space while delivering reliable, low-noise operation.',
-  specs: [
-    {
-      'Chamber (in)': '72×45×42',
-      'Bale (in)': '42×42×42',
-      'Bale Wt (kg)': '20-30',
-      'Motor (HP)': '25',
-      'Cycle (sec)': '70-80',
-      Operation: 'Electrical PLC',
-    },
-    {
-      'Chamber (in)': '60×33×27',
-      'Bale (in)': '33×27×27',
-      'Bale Wt (kg)': '30-40',
-      'Motor (HP)': '10',
-      'Cycle (sec)': '70-80',
-      Operation: 'Hydraulic Hand Lever',
-    },
-    {
-      'Chamber (in)': '52×27×33',
-      'Bale (in)': '27×23×23',
-      'Bale Wt (kg)': '50-70',
-      'Motor (HP)': '10',
-      'Cycle (sec)': '70-80',
-      Operation: 'Hydraulic Hand Lever',
-    },
-  ],
+
+  specNote: {
+    title: '',
+    text:'These machines are available from 20 tons to 200 tons, with different charging-chamber sizes for different kinds of scrap, and bale size and weight configured as per customer requirement.',
+  }
+    
 },
 
 
 'car-baler': {
-  name: 'Car Baler (ELV Compactor)',
+  name: 'Car Baler',
+
   description:
-    'Specialized hydraulic car baler developed for End-of-Life Vehicle (ELV) and Registered Vehicle Scrapping Facilities (RVSF). Designed to compact complete vehicle bodies, doors, buses and truck components into dense bundles for efficient recycling.',
-  specs: [
+    'A trailer-mounted hydraulic car crusher that flattens end-of-life vehicles and white goods into compact, stackable slabs.',
+
+  galleryLabels: [
+    'Main View',
+    'Front Right View',
+    'Rear Left View',
+    'Rear Right View',
+    'Front Left View',
+  ],
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      Application: 'ELV / RVSF',
-      Capacity: 'Available on Request',
-      'Machine Configuration': 'Custom',
-      'Hydraulic System': 'Heavy Duty',
-      Consultation: 'Contact Sales Team',
+      title: 'Crusher Opening',
+
+      specs: [
+        {
+          Parameter: 'Height — Raised',
+          Value: '10 ft*',
+        },
+        {
+          Parameter: 'Height — Lowered',
+          Value: '24 in',
+        },
+        {
+          Parameter: 'Width',
+          Value: '7 ft 6 in',
+        },
+        {
+          Parameter: 'Length',
+          Value: '20 ft 3 in / 22 ft 2 in / 24 ft 1 in',
+        },
+        {
+          Parameter: 'Lid Movement (Travel)',
+          Value: '8 ft',
+        },
+      ],
+
+      note:
+        '*Special-build units with a 9 ft raised opening and 12 in lowered height available on request.',
+    },
+
+    {
+      title: 'Hydraulic Cylinders & Overall Dimensions',
+
+      specs: [
+        {
+          Parameter: 'Cylinder Bore',
+          Value: '10 in',
+        },
+        {
+          Parameter: 'Rod Diameter',
+          Value: '4 in',
+        },
+        {
+          Parameter: 'Cylinder Travel',
+          Value: '96 in',
+        },
+        {
+          Parameter: 'Working Pressure',
+          Value: '2,400 psi',
+        },
+        {
+          Parameter: 'Crushing Force',
+          Value: '159 tons',
+        },
+        {
+          Parameter: 'Machine Weight',
+          Value: '60,000 lb',
+        },
+        {
+          Parameter: 'Overall Length',
+          Value: '43 ft / 45 ft / 47 ft',
+        },
+        {
+          Parameter: 'Overall Height',
+          Value: '20 ft 7 in',
+        },
+        {
+          Parameter: 'Ground Clearance',
+          Value: '16 in',
+        },
+      ],
     },
   ],
 },
@@ -602,27 +864,27 @@ const productDetails = {
     {
       'Bale Size (W×H)': '29×29',
       'Bale Wt OCC (kg)': '300-400',
-      'Production (T/hr)': '1-3',
+      'Production (T/hr)': '1-2',
     },
     {
       'Bale Size (W×H)': '35×29',
       'Bale Wt OCC (kg)': '400-600',
-      'Production (T/hr)': '4-6',
+      'Production (T/hr)': '2-5',
     },
     {
       'Bale Size (W×H)': '35×35',
       'Bale Wt OCC (kg)': '650-750',
-      'Production (T/hr)': '7-12',
+      'Production (T/hr)': '5-8',
     },
     {
       'Bale Size (W×H)': '44×42',
-      'Bale Wt OCC (kg)': '800-1200',
-      'Production (T/hr)': '12-22',
+      'Bale Wt OCC (kg)': '800-1,200',
+      'Production (T/hr)': '8-10',
     },
     {
       'Bale Size (W×H)': '44×57',
-      'Bale Wt OCC (kg)': '1000-1400',
-      'Production (T/hr)': '24-29',
+      'Bale Wt OCC (kg)': '1,000-1,400',
+      'Production (T/hr)': '10-12',
     },
   ],
 },
@@ -648,10 +910,52 @@ const productDetails = {
     },
   ],
 },
-'alligator-shear-crocodile-shear': {
-  name: 'Alligator Shear',
+'c-frame-hydraulic-press': {
+  name: 'C Frame Hydraulic Press',
   description:
-    'Heavy-duty hydraulic and mechanical alligator shear designed for fast, efficient cutting of ferrous and non-ferrous scrap. Suitable for processing TMT bars, channels, angles, cables, tubes and structural steel with high cutting force and minimal maintenance.',
+    'A single-column hydraulic press with an open throat for unobstructed loading, tool changes and flexible access to the job area.',
+
+  specNote: {
+    title: 'BUILT TO YOUR APPLICATION',
+    text:
+      'Capacity, throat depth, daylight, stroke and table size are configured to your part and process. Share the component and the operation, and we will propose the frame.',
+  },
+},
+'h-frame-hydraulic-press': {
+  name: 'H Frame Hydraulic Press',
+  description:
+    'A closed portal-frame hydraulic press designed for high rigidity and demanding forming applications.',
+
+  specNote: {
+    title: 'BUILT TO YOUR APPLICATION',
+    text:
+      'Capacity, daylight, stroke, table size, cycle and automation are configured around your application. Share the part, material and production requirement, and we will propose the press.',
+  },
+},
+'4-pillar-type-hydraulic-press': {
+  name: '4 Pillar Type Hydraulic Press',
+  description:
+    'A four-column hydraulic press designed for moulding, forming and large die applications.',
+
+  specNote: {
+    title: 'BUILT TO YOUR APPLICATION',
+    text:
+      'Capacity, platen size, daylight, stroke, heating and number of openings are configured around your moulding or forming application.',
+  },
+},
+'industrial-tablet-press': {
+  name: 'Industrial Tablet Press',
+  description:
+    'Hydraulic powder compaction press for producing tablets and compacted products.',
+
+  specNote: {
+    title: 'BUILT TO YOUR APPLICATION',
+    text:
+      'Pressing force, stroke, dwell time, ejection force, tooling and feed configuration are selected according to the material and finished product requirements.',
+  },
+},
+'alligator-shear': {
+  name: 'Alligator Shear',
   specs: [
     {
       'Shear Force (T)': '35-50',
@@ -659,7 +963,6 @@ const productDetails = {
       'Cutting Capacity (mm)': '40-50 Round',
       'Strokes/Min': '10-14',
       'Motor (HP)': '15-40',
-      'Machine Wt (kg)': '2800-6500',
     },
     {
       'Shear Force (T)': '65-100',
@@ -667,7 +970,6 @@ const productDetails = {
       'Cutting Capacity (mm)': '65-80 Round',
       'Strokes/Min': '7-14',
       'Motor (HP)': '40',
-      'Machine Wt (kg)': '6500',
     },
     {
       'Shear Force (T)': '85-200',
@@ -675,66 +977,90 @@ const productDetails = {
       'Cutting Capacity (mm)': '85-120 Round / 75 Sq',
       'Strokes/Min': '7-12',
       'Motor (HP)': '40-60',
-      'Machine Wt (kg)': '8000',
     },
   ],
 },
-
-'hydraulic-nibbler': {
-  name: 'Nibblers (Hydraulic & Mechanical)',
-  description:
-    'Precision hydraulic and mechanical nibblers designed for clean, low-deformation cutting of metal sheets and sections. Equipped with V-shaped blades and PLC pedal control for efficient and accurate operation.',
-  specs: [
+'hydraulic-box-shear': {
+  name: 'Hydraulic Box Shear',
+  spec: [
     {
-      Parameter: 'Blade Shape',
-      Value: 'V-shaped',
+      Model: 'JHP-BS-630',
+      'Press box width (mm)': '1400/1600',
+      'Cut length (mm)': '400',
+      'Capacity (T/hr)*': '9-14',
+      'Cutting force (kN)': '6,300',
+      'Motor': '55 kW × 2'
+
     },
     {
-      Parameter: 'Strokes/Min',
-      Value: '14-16',
+      Model: 'JHP-BS-800',
+      'Press box width (mm)': '1600',
+      'Cut length (mm)': '400',
+      'Capacity (T/hr)*': '15-22',
+      'Cutting force (kN)': '8,000',
+      'Motor': '55 kW × 3'
+
+    },
+    {
+      Model: 'JHP-BS-1000',
+      'Press box width (mm)': '1600',
+      'Cut length (mm)': '400',
+      'Capacity (T/hr)*': '23-25',
+      'Cutting force (kN)': '10,000',
+      'Motor': '55 kW × 4'
+
+    },
+
+
+  ]
+},
+'nibblers-hydraulic': {
+  name: 'Nibblers (Hydraulic)',
+  specs: [
+    {
+      Parameter: 'Blade shape',
+      'Hydraulic Nibbler': 'V-shaped',
+    },
+    {
+      Parameter: 'Strokes/min',
+      'Hydraulic Nibbler': '14-16',
     },
     {
       Parameter: 'Motor (HP)',
-      Value: '15',
+      'Hydraulic Nibbler': '15',
     },
     {
-      Parameter: 'Blade Opening (in)',
-      Value: '4',
+      Parameter: 'Blade opening (in)',
+      'Hydraulic Nibbler': '4',
     },
     {
-      Parameter: 'Cutting Capacity',
-      Value: '50-80 mm Round',
+      Parameter: 'Working pressure',
+      'Hydraulic Nibbler': '2400 PSI',
     },
     {
-      Parameter: 'Working Pressure',
-      Value: '2400 PSI',
-    },
-    {
-      Parameter: 'Machine Weight',
-      Value: '2500 kg',
+      Parameter: 'Machine weight',
+      'Hydraulic Nibbler': '2,500 kg',
     },
   ],
 },
 
 'single-shaft-shredder': {
   name: 'Single Shaft Shredder',
-  description:
-    'Versatile single shaft shredder engineered for size reduction of plastics, paper, fabric, tyres, packaging waste and selected metal scrap. Features high torque, low-speed operation with PLC-controlled feeding for consistent output.',
   specs: [
     {
-      Parameter: 'Cutting Chamber Width',
+      Parameter: 'Cutting chamber width',
       Value: '36"',
     },
     {
-      Parameter: 'Cutting Chamber Length',
+      Parameter: 'Cutting chamber length',
       Value: '42"',
     },
     {
-      Parameter: 'Rotor Width',
+      Parameter: 'Rotor width',
       Value: '34"',
     },
     {
-      Parameter: 'Rotor Diameter',
+      Parameter: 'Rotor diameter',
       Value: '350 mm',
     },
     {
@@ -742,359 +1068,568 @@ const productDetails = {
       Value: '50 HP',
     },
     {
-      Parameter: 'Hydraulic Power Pack',
+      Parameter: 'Hydraulic power pack',
       Value: 'Provided',
     },
   ],
 },
-
-'twin-shaft-shredder-rotary-shear-pre-shredder': {
+'twin-shaft-shredder': {
   name: 'Twin Shaft Shredder',
-  description:
-    'Heavy-duty twin shaft rotary shear designed for shredding bulky materials at low speed and high torque. The interlocking shaft design minimizes jamming while delivering reliable pre-shredding performance for metal, tyres, plastics and industrial waste.',
   specs: [
     {
-      'Housing (mm)': '1200×810',
-      'Power (HP)': '40×2',
-      'Cutter Hardness (HRC)': '58-60',
-      Drive: 'Hydraulic',
-      'Typical Scrap': 'Aluminium Casting',
+      Model: 'TS-0.75',
+      'Nominal capacity': '0.75 TPH',
+      'Chamber (mm)': '600×600',
+      'Motor': '2×20 HP',
+      'Total power': '40 HP',
+      'Shaft diameter': '120 mm',
+      'Cutter diameter': '260 mm',
+      'Cutter thickness': '30 mm',
+      'Shaft speed': '15-25 RPM',
+      'Output size': '50-150 mm',
+      'Cutter material': 'D2 / Alloy',
+      'Cutter hardness': '50-58 HRC',
+      'Control': 'PLC+HMI',
+      'Auto reverse': 'Yes',
     },
     {
-      'Housing (mm)': '1020×1500',
-      'Power (HP)': '60×2',
-      'Cutter Hardness (HRC)': '58-60',
-      Drive: 'Hydraulic',
-      'Typical Scrap': 'Aluminium Casting',
+      Model: 'TS-100',
+      'Nominal capacity': '1.0 TPH',
+      'Chamber (mm)': '700×650',
+      'Motor': '2×25 HP',
+      'Total power': '50 HP',
+      'Shaft diameter': '130 mm',
+      'Cutter diameter': '300 mm',
+      'Cutter thickness': '30-35 mm',
+      'Shaft speed': '15-25 RPM',
+      'Output size': '50-150 mm',
+      'Cutter material': 'D2 / Alloy',
+      'Cutter hardness': '50-58 HRC',
+      'Control': 'PLC+HMI',
+      'Auto reverse': 'Yes',
     },
     {
-      'Housing (mm)': '1020×1500',
-      'Power (HP)': '50×2',
-      'Cutter Hardness (HRC)': '58-60',
-      Drive: 'Electric',
-      'Typical Scrap': 'Tyre Wire',
+      Model: 'TS-150',
+      'Nominal capacity': '1.5 TPH',
+      'Chamber (mm)': '800×700',
+      'Motor': '2×30 HP',
+      'Total power': '60 HP',
+      'Shaft diameter': '140 mm',
+      'Cutter diameter': '320 mm',
+      'Cutter thickness': '35 mm',
+      'Shaft speed': '12-22 RPM',
+      'Output size': '50-150 mm',
+      'Cutter material': 'D2 / Alloy',
+      'Cutter hardness': '50-58 HRC',
+      'Control': 'PLC+HMI',
+      'Auto reverse': 'Yes',
     },
     {
-      'Housing (mm)': '1200×1800',
-      'Power (HP)': '75×2',
-      'Cutter Hardness (HRC)': '58-60',
-      Drive: 'Electric',
-      'Typical Scrap': 'Tyre Wire',
+      Model: 'TS-200',
+      'Nominal capacity': '2.0 TPH',
+      'Chamber (mm)': '900×750',
+      'Motor': '2×40 HP',
+      'Total power': '80 HP',
+      'Shaft diameter': '150 mm',
+      'Cutter diameter': '350 mm',
+      'Cutter thickness': '40 mm',
+      'Shaft speed': '12-20 RPM',
+      'Output size': '50-150 mm',
+      'Cutter material': 'D2 / Alloy',
+      'Cutter hardness': '50-58 HRC',
+      'Control': 'PLC+HMI',
+      'Auto reverse': 'Yes',
     },
-  ],
-},
-
-'casting-cracker': {
-  name: 'Casting Cracker',
-  description:
-    'Robust casting cracker designed for breaking engines, transmission gears, cast iron and other heavy metal castings. Delivers efficient size reduction with strong gripping jaws and optional conveyor integration for continuous processing.',
-  specs: [
     {
-      Capacity: '3-5 Tons/Hour',
-      'Machine Type': 'Hydraulic Casting Cracker',
-      'Jaw Design': 'Heavy Duty Grip Jaw',
-      Conveyors: 'Optional Loading & Unloading',
-      Footprint: 'Compact',
-      Specifications: 'Available on Request',
+      Model: 'TS-250',
+      'Nominal capacity': '2.5 TPH',
+      'Chamber (mm)': '1000×800',
+      'Motor': '2×50 HP',
+      'Total power': '100 HP',
+      'Shaft diameter': '170 mm',
+      'Cutter diameter': '380 mm',
+      'Cutter thickness': '45 mm',
+      'Shaft speed': '12-20 RPM',
+      'Output size': '50-150 mm',
+      'Cutter material': 'D2 / Alloy',
+      'Cutter hardness': '50-58 HRC',
+      'Control': 'PLC+HMI',
+      'Auto reverse': 'Yes',
+    },
+    {
+      Model: 'TS-300',
+      'Nominal capacity': '3.0 TPH',
+      'Chamber (mm)': '1100×850',
+      'Motor': '2×60 HP',
+      'Total power': '120 HP',
+      'Shaft diameter': '180 mm',
+      'Cutter diameter': '400 mm',
+      'Cutter thickness': '50 mm',
+      'Shaft speed': '10-18 RPM',
+      'Output size': '75-200 mm',
+      'Cutter material': 'D2 / Alloy',
+      'Cutter hardness': '50-58 HRC',
+      'Control': 'PLC+HMI',
+      'Auto reverse': 'Yes',
     },
   ],
 },
 'vertical-briquetting-machine': {
+
   name: 'Vertical Briquetting Machine',
+
   description:
-    'High-pressure vertical briquetting machine designed to convert metal machining waste into dense, uniform briquettes for efficient remelting. Reduces material volume, improves handling and minimizes metal loss during smelting.',
+    'High-pressure vertical briquetting machine for converting machining waste and metal chips into dense, uniform briquettes for efficient handling and remelting.',
+
+  galleryLabels: [
+    'Main View',
+    'Front View',
+    'Side View',
+    'Rear View',
+    'Control Panel',
+  ],
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
+
+    {
+      title: 'Typical Material Suitability',
+
+      specs: [
+        {
+          Material: 'Aluminium chips / turning',
+          'Typical Target Density': '2.0–2.5 T/m³',
+          'Recommended Range': '150–315 T',
+        },
+        {
+          Material: 'MS / steel chips',
+          'Typical Target Density': '4.5–5.5 T/m³',
+          'Recommended Range': '250–500 T',
+        },
+        {
+          Material: 'Cast iron chips',
+          'Typical Target Density': '4.5–5.5 T/m³',
+          'Recommended Range': '250–500 T',
+        },
+        {
+          Material: 'Copper chips',
+          'Typical Target Density': '6.0–7.0 T/m³',
+          'Recommended Range': '315–630 T',
+        },
+        {
+          Material: 'Brass chips',
+          'Typical Target Density': '5.5–7.0 T/m³',
+          'Recommended Range': '315–630 T',
+        },
+        {
+          Material: 'Stainless chips',
+          'Typical Target Density': '4.5–5.5 T/m³',
+          'Recommended Range': '315–630 T',
+        },
+      ],
+    },
+
+    {
+      title: 'Machine Specifications',
+
+      specs: [
+        {
+          Model: 'JHP-VB-150',
+          Force: '150 T',
+          'Briquette Dia.': '75–112 mm',
+          Motor: '20 HP',
+          Tank: '250 L',
+          'Indicative Capacity': '150–250 kg/h',
+        },
+        {
+          Model: 'JHP-VB-250',
+          Force: '250 T',
+          'Briquette Dia.': '80–120 mm',
+          Motor: '30 HP',
+          Tank: '350 L',
+          'Indicative Capacity': '250–400 kg/h',
+        },
+        {
+          Model: 'JHP-VB-315',
+          Force: '315 T',
+          'Briquette Dia.': '90–135 mm',
+          Motor: '40 HP',
+          Tank: '450 L',
+          'Indicative Capacity': '350–550 kg/h',
+        },
+        {
+          Model: 'JHP-VB-400',
+          Force: '400 T',
+          'Briquette Dia.': '100–150 mm',
+          Motor: '50 HP',
+          Tank: '500 L',
+          'Indicative Capacity': '450–700 kg/h',
+        },
+        {
+          Model: 'JHP-VB-500',
+          Force: '500 T',
+          'Briquette Dia.': '120–180 mm',
+          Motor: '60 HP',
+          Tank: '650 L',
+          'Indicative Capacity': '600–900 kg/h',
+        },
+        {
+          Model: 'JHP-VB-630',
+          Force: '630 T',
+          'Briquette Dia.': '150–225 mm',
+          Motor: '75 HP',
+          Tank: '800 L',
+          'Indicative Capacity': '800–1,200 kg/h',
+        },
+      ],
+    },
+
+  ],
+},
+'fodder-block-making-machine': {
+  name: 'Fodder Block Making Machine',
   specs: [
     {
-      'Briquette Dia': '3" (90 mm)',
-      'Motor (HP)': '40-50',
-      'Wt Al (kg)': '0.3-0.6',
-      'Wt Fe (kg)': '0.5-1.2',
-      'Production (T/hr)': '0.54-1.2',
+      Model: 'FBM Standard',
+      'Feeding chamber': '24×18×43"',
+      'Block size': '12×18×5"',
+      'Motor (HP)': '30',
+      'Production (blocks/hr)': '70-90',
+      'Block wt — dry fodder': '10-12 kg',
+      'Block wt — TMR 50:50': '14-18 kg',
     },
     {
-      'Briquette Dia': '4" (125 mm)',
-      'Motor (HP)': '40-60',
-      'Wt Al (kg)': '1-1.5',
-      'Wt Fe (kg)': '3-4.5',
-      'Production (T/hr)': '0.9-1.68',
-    },
-    {
-      'Briquette Dia': '5" (150 mm)',
-      'Motor (HP)': '40-75',
-      'Wt Al (kg)': '2-4',
-      'Wt Fe (kg)': '5-8',
-      'Production (T/hr)': '1.26-2.4',
+      Model: 'FBM-HD Heavy Duty',
+      'Feeding chamber': '23×24×50"',
+      'Block size': '12×24×6"',
+      'Motor (HP)': '50',
+      'Production (blocks/hr)': '90-100',
+      'Block wt — dry fodder': '14-17 kg',
+      'Block wt — TMR 50:50': '27-30 kg',
     },
   ],
 },
 
 'conveyors': {
   name: 'Conveyors',
-  description:
-    'Custom-built conveyor systems for transporting and sorting scrap, recyclables and waste materials across processing lines. Available in multiple configurations and designed for seamless integration with shredders, balers and sorting equipment.',
   specs: [
     {
       Type: 'Inclined Magnetic',
-      Material: 'Any / Metal',
+      Material: 'Any / metal',
       'Belt Width': '900 mm',
-      Drive: '2.0 HP Geared',
-      Length: '3700 mm',
+      'Drive Motor': '2.0 HP geared',
+      Length: '3,700 mm',
     },
     {
       Type: 'Flat Bed Sorting',
-      Material: 'Any / Mixed',
+      Material: 'Any / mixed',
       'Belt Width': '900 mm',
-      Drive: '2.0 HP',
-      Length: '4000 mm',
+      'Drive Motor': '2.0 HP',
+      Length: '4,000 mm',
     },
     {
       Type: 'Transfer',
-      Material: 'Any / Sorted',
+      Material: 'Any / sorted',
       'Belt Width': '900 mm',
-      Drive: '2.0 HP Geared',
-      Length: '3700 mm',
+      'Drive Motor': '2.0 HP geared',
+      Length: '3,700 mm',
     },
   ],
 },
-
-'msw-sorting-line': {
-  name: 'MSW Sorting Line',
+'material-recovery-facility': {
+  name: 'Complete Material Recovery Facility',
   description:
-    'Complete municipal solid waste (MSW) sorting solution designed for efficient separation of organic, recyclable and non-recyclable waste. Suitable for biomining projects and turnkey waste processing facilities with customized plant layouts.',
-  specs: [
+    'Jindal Hydro Projects designs and supplies complete Material Recovery Facilities — MRF plants that carry mixed municipal solid waste from intake and manual sorting, through mechanical separation, to baling. Every facility is engineered around the site and waste composition, turning mixed waste into clean, recoverable streams and dense bales ready for recycling or waste-to-energy.',
+
+  // ===== Section: The Complete Process (8 steps) =====
+  processSteps: [
+    { number: '01', title: 'Waste generation', text: 'From homes, markets, offices and institutions.' },
+    { number: '02', title: 'Door-to-door collection', text: 'Collection vehicles bring waste to the plant.' },
+    { number: '03', title: 'Tipper / unloading', text: 'Hydraulic tipper discharges into the unloading pit.' },
+    { number: '04', title: 'Sorting conveyor', text: 'Manual picking of recyclable and non-recyclable material.' },
+    { number: '05', title: 'Material separation', text: 'Trommel, magnet, air classifier and disc separator.' },
+    { number: '06', title: 'Feeding conveyor', text: 'Sorted material is conveyed to the baler.' },
+    { number: '07', title: 'Baler / compactor', text: 'Waste is compressed into dense, uniform bales.' },
+    { number: '08', title: 'Baled waste', text: 'Stored and dispatched for recycling or waste-to-energy.' },
+  ],
+
+  // ===== Section: The Facility in Operation (3-image gallery with captions) =====
+  facilityGallery: [
     {
-      'Plant Capacity': 'Custom',
-      Configuration: 'Customized',
-      Layout: 'As Per Customer Requirement',
-      Sorting: 'Mechanical + Optical',
-      Application: 'MSW & Biomining',
+      title: 'Tipping / unloading platform',
+      text: 'Hydraulic tipper with unloading pit, 55–60° tipping angle, 30–70 TPD.',
+      image: '/images/3D Models from AI/MRF/msw_tipper_platform.png',
+    },
+    {
+      title: 'Sorting conveyor & picking station',
+      text: '1000mm belt with side platform, safety railing and emergency pull-cord.',
+      image: '/images/3D Models from AI/MRF/msw_sorting_conveyor.png',
+    },
+    {
+      title: 'Baled waste, ready for dispatch',
+      text: 'Dense bales of 250–400 kg for the recycling industry or waste-to-energy.',
+      image: '/images/3D Models from AI/MRF/msw_baled_waste.png',
+    },
+  ],
+
+  // ===== Section: MRF machinery overview (4 machine cards) =====
+  machineryOverview: [
+    { title: 'Trommel screen', text: 'Size separation (> mesh / < mesh)', image: '/images/3D Models from AI/MRF/msw_trommel_screen.png' },
+    { title: 'Magnetic separator', text: 'Removal of ferrous metals', image: '/images/3D Models from AI/MRF/msw_magnetic_separator.png' },
+    { title: 'Air classifier', text: 'Separation of light materials', image: '/images/3D Models from AI/MRF/msw_air_classifier.png' },
+    { title: 'Disc separator', text: 'Additional 2D / 3D separation', image: '/images/3D Models from AI/MRF/msw_disc_separator.png' },
+  ],
+
+  // ===== Section: Major Machinery — Technical Specifications =====
+  // (this reuses your EXISTING specTables rendering — no new JSX needed for this part)
+  specTitle: 'MRF Machinery & Technical Specifications',
+  specTables: [
+    {
+      title: 'Major Machinery — Technical Specifications',
+      specs: [
+        { 'Machinery / Equipment': 'Tipper / unloading platform', Capacity: '30-70 TPD', Power: 'Hydraulic', Specification: 'Hydraulic tipper with unloading pit; 55–60° tipping angle', Purpose: 'Unloading of waste from collection vehicle' },
+        { 'Machinery / Equipment': 'Sorting conveyor belt', Capacity: '30-70 TPD', Power: '2.2-7.5 kW', Specification: 'Belt 800–1200 mm; length 10–25 m', Purpose: 'Manual sorting of waste' },
+        { 'Machinery / Equipment': 'Trommel screen', Capacity: '30-70 TPD', Power: '7.5-15 kW', Specification: 'Drum dia 1.5–2.5 m; length 4–8 m; mesh 20–100 mm', Purpose: 'Size separation (> mesh / < mesh)' },
+        { 'Machinery / Equipment': 'Magnetic separator', Capacity: '30-70 TPD', Power: '2.2-5.5 kW', Specification: 'Overband magnet; field strength 3000–5000 Gauss', Purpose: 'Removal of ferrous metals' },
+        { 'Machinery / Equipment': 'Air classifier', Capacity: '30-70 TPD', Power: '7.5-11 kW', Specification: 'Air velocity 15–25 m/s; adjustable baffles', Purpose: 'Separation of light materials (paper, plastic)' },
+        { 'Machinery / Equipment': 'Disc separator', Capacity: '30-70 TPD', Power: '5.5-11 kW', Specification: '10–20 discs; disc dia 600–900 mm', Purpose: 'Additional 2D / 3D separation' },
+        { 'Machinery / Equipment': 'Feeding conveyor', Capacity: '30-70 TPD', Power: '2.2-5.5 kW', Specification: 'Belt 600–1000 mm; length 5–15 m', Purpose: 'Feeding material to baler / compactor' },
+        { 'Machinery / Equipment': 'Baler / compactor', Capacity: '30-70 TPD', Power: '15-55 kW', Specification: 'Bale ~1100×750 mm; bale weight 250–400 kg', Purpose: 'Compression and baling of waste' },
+        { 'Machinery / Equipment': 'Hydraulic power pack', Capacity: '—', Power: '5.5-11 kW', Specification: 'Pressure 150–250 bar; oil tank 200–500 L', Purpose: 'Power supply for hydraulic system' },
+        { 'Machinery / Equipment': 'Control panel & automation', Capacity: '—', Power: '—', Specification: 'PLC-based control with HMI and push-button', Purpose: 'Automatic / semi-automatic operation' },
+      ],
+    },
+  ],
+
+  // ===== Section: MRF Layout & Performance =====
+  processFlow: [
+    'Entry',
+    'Unloading platform',
+    'Sorting conveyor',
+    'Trommel screen',
+    'Magnetic separator',
+    'Air classifier',
+    'Disc separator',
+    'Feeding conveyor',
+    'Baler / compactor',
+    'Baled storage',
+  ],
+
+  performanceStats: [
+    { value: '10-20%', label: 'Recyclables recovery' },
+    { value: '20-30%', label: 'RDF / reject fraction' },
+    { value: '10-15%', label: 'Compostable (if any)' },
+    { value: '15-25%', label: 'Inert / fine fraction' },
+    { value: '80-90%', label: 'Overall efficiency' },
+    { value: '30-70 TPD', label: 'Standard capacity' },
+  ],
+
+  outputTypes: [
+    { title: 'Recyclables', text: 'Paper, plastic, metal, glass — sent to recycling industry' },
+    { title: 'Refuse-derived fuel (RDF)', text: 'High-calorific fraction for waste-to-energy' },
+    { title: 'Inert material', text: 'For road sub-base / safe landfill' },
+    { title: 'Baled material', text: 'Dense bales for the recycling industry' },
+  ],
+
+  benefits: [
+    'Reduces landfill waste',
+    'Increases recycling rate',
+    'Conserves natural resources',
+    'Generates revenue',
+    'Supports waste-to-energy',
+    'Clean & green environment',
+  ],
+
+  utilitiesSafetyEnvironment: [
+    {
+      title: 'Essential utilities',
+      items: ['Electrical supply', 'Water supply (dust suppression)', 'Compressed air (if required)', 'Fire-fighting supply', 'Weighbridge (optional)'],
+    },
+    {
+      title: 'Safety features',
+      items: ['Emergency stop on all machines', 'Safety guards & railings', 'Fire extinguishers', 'PPE for workers', 'Dust collection system'],
+    },
+    {
+      title: 'Environmental control',
+      items: ['Dust suppression system', 'Leachate collection', 'Odour control', 'Noise control (enclosures)', 'Green belt / plantation'],
     },
   ],
 },
-
-'fodder-block-making-machine': {
-  name: 'Fodder Block Making Machine',
-  description:
-    'PLC-controlled fodder block making machine that compresses agricultural residue into dense, uniform feed blocks for efficient storage, transportation and livestock feeding. Supports both dry fodder and TMR blend production.',
-  specs: [
-    {
-      Parameter: 'Feeding Chamber',
-      'FBM Standard': '24×18×43"',
-      'FBM-HD Heavy Duty': '23×24×50"',
-    },
-    {
-      Parameter: 'Block Size',
-      'FBM Standard': '12×18×5"',
-      'FBM-HD Heavy Duty': '12×24×6"',
-    },
-    {
-      Parameter: 'Motor (HP)',
-      'FBM Standard': '25',
-      'FBM-HD Heavy Duty': '30',
-    },
-    {
-      Parameter: 'Production (Blocks/hr)',
-      'FBM Standard': '70-90',
-      'FBM-HD Heavy Duty': '90-100',
-    },
-    {
-      Parameter: 'Block Wt — Dry Fodder',
-      'FBM Standard': '10-12 kg',
-      'FBM-HD Heavy Duty': '14-17 kg',
-    },
-    {
-      Parameter: 'Block Wt — TMR 50:50',
-      'FBM Standard': '14-18 kg',
-      'FBM-HD Heavy Duty': '27-30 kg',
-    },
-    {
-      Parameter: 'Machine Weight',
-      'FBM Standard': '6.5 T',
-      'FBM-HD Heavy Duty': '8 T',
-    },
-  ],
-  },
-};
-
+}
 const materialProcessed = {
-    'super-jumbo-baler': [
-    'Heavy Melting Scrap',
-    'Light Melting Scrap',
-    'MS Scrap',
-    'TMT Bars',
-    'Steel Scrap',
-    'Structural Scrap',
-    'Industrial Scrap',
-    'Automobile Scrap',
-    'Heavy Plate Scrap',
+     'super-jumbo-baler': [
+    'Heavy TMT bars 5–10mm thick',
+    'Oversized and irregular ferrous scrap',
+    'Mixed metal scrap',
+    'Car body scraps',
+    'Ferrous and mixed metal scrap for 20×20" to 35×35" bales',
   ],
+
   'triple-action-baler': [
-    'MS Scrap',
-    'Aluminium Scrap',
-    'Copper Scrap',
-    'Brass Scrap',
-    'Stainless Steel Scrap',
-    'Automobile Scrap',
-    'Industrial Scrap',
-    'Tin Scrap',
-    'Dry Waste',
-    'Mixed Metal Scrap',
+    'Ferrous scrap — offcuts, machine chips, TMT, auto skeletons',
+    'Non-ferrous scrap — UBCs, copper, aluminium and wire',
+    'Dry waste — cardboard and paper',
+    'Mixed recyclable materials',
+    'Materials for 10 kg to 1 ton bales',
   ],
+
   'mini-triple-action-baler': [
-    'Copper Scrap',
-    'Aluminium Scrap',
-    'Brass Scrap',
-    'MS Scrap',
-    'Stainless Steel Scrap',
-    'Mixed Non-Ferrous Scrap',
-    'Light Metal Scrap',
+    'Copper scrap',
+    'Aluminium scrap',
+    'MS light commercial scrap',
+    'Stainless steel',
+    'Light scrap and paper',
+    'Corrugated cardboard',
   ],
+
   'double-action-baler': [
-    'MS Scrap',
-    'Sheet Metal Scrap',
-    'Light Steel Scrap',
-    'Aluminium Scrap',
-    'Copper Scrap',
-    'Brass Scrap',
-    'Industrial Scrap',
+    'UBCs and stainless steel',
+    'Copper, aluminium and wire',
+    'Tubing and metal sheets',
+    'White goods',
+    'Corrugated scrap and paper',
   ],
+
   'vertical-baler': [
-    'Aluminium Cans',
-    'Plastic Bottles',
-    'PET Bottles',
-    'Cardboard',
-    'Paper Waste',
-    'Cartons',
-    'Plastic Film',
-    'Dry Waste',
-    'Light Metal Scrap',
+    'UBCs and corrugated paper',
+    'PET bottles and plastic',
+    'OCC, fabrics and foam',
+    'Used tyres and rubber',
+    'Loose light metal scrap and dry waste',
   ],
+
   'car-baler': [
-    'End-of-Life Vehicles (ELV)',
-    'Car Bodies',
-    'Truck Bodies',
-    'Bus Bodies',
-    'Vehicle Shells',
-    'Automobile Scrap',
+    'Car bodies and auto skeletons',
+    'White goods',
+    'Light and mixed metal scrap',
+    'Metal sheets',
+    'End-of-life vehicles (ELVs)',
   ],
+
   'automatic-baler': [
-    'OCC',
-    'Cardboard',
-    'Paper Waste',
-    'Newspaper',
-    'PET Bottles',
-    'Plastic Bottles',
-    'Plastic Film',
-    'Textile Waste',
-    'Cotton Waste',
+    'Paper and OCC',
+    'Corrugated cardboard',
+    'PET bottles and HDPE/PP/LDPE plastics',
+    'Foam and textile',
+    'MCD scrap and poly bag scrap',
   ],
+
   'semi-automatic-baler': [
-    'OCC',
-    'Cardboard',
-    'Paper Waste',
-    'PET Bottles',
-    'Plastic Bottles',
-    'Plastic Film',
-    'Textile Waste',
+    'Paper and cardboard',
+    'Plastic and PET bottles',
+    'OCC and poly bag waste',
+    'MCD scrap',
+    'High-density recyclable plastic waste',
   ],
-  'alligator-shear-crocodile-shear': [
-    'Round Bars',
-    'TMT Bars',
-    'Channels',
-    'Angles',
-    'Beams',
-    'Flat Bars',
-    'Steel Pipes',
-    'Steel Tubes',
-    'Cable Scrap',
-    'Structural Steel',
-    'MS Scrap',
+
+  'c-frame-hydraulic-press': [
+    'Sheet metal for blanking and punching',
+    'Components for riveting and press-fit assembly',
+    'Metal components for straightening',
+    'Small to medium metal components',
+    'Custom-sized components for varied press applications',
   ],
-  'hydraulic-nibbler': [
-    'Steel Plates',
-    'MS Plates',
-    'Aluminium Plates',
-    'Copper Plates',
-    'Brass Plates',
-    'Sheet Metal',
+
+  'h-frame-hydraulic-press': [
+    'Sheet metal for deep drawing',
+    'Metal components for forging',
+    'Components requiring straightening',
+    'Rubber products for compression moulding',
+    'Heavy and wide components for forming applications',
   ],
+
+  '4-pillar-type-hydraulic-press': [
+    'Rubber and composite materials',
+    'FRP and SMC materials',
+    'Plywood and laminates',
+    'Electrical fitting materials',
+    'Brake lining and friction materials',
+    'Sanitary and building products',
+  ],
+
+  'industrial-tablet-press': [
+    'Refractory powders',
+    'Ceramic powders',
+    'Chemical and detergent powders',
+    'Powder metallurgy materials',
+    'Magnetic and electronic powders',
+    'Fertiliser and agrochemical powders',
+  ],
+
+  'nibblers-hydraulic': [
+    'Aluminium sections',
+    'Metal sheets',
+    'Sheet metal requiring minimal deformation',
+    'Precision sheet-metal components',
+    'Varied sheet-metal gauges',
+  ],
+
+  'alligator-shear': [
+    'Round bars',
+    'Channels and TMT',
+    'Angles and structural sections',
+    'Cables and wire',
+    'Plates and tubes',
+    'Mixed metal scrap',
+  ],
+
+  'hydraulic-box-shear': [
+    'MS light commercial scrap',
+    'HR/CR sheet cuttings and metal sheets',
+    'Light scrap, tubing and offcuts',
+    'Mixed metal and white goods',
+    'Scrap for uniform 400mm furnace-ready charge lengths',
+  ],
+
   'single-shaft-shredder': [
-    'Plastic',
-    'PET',
-    'Rubber',
+    'Plastics and packaging waste',
+    'Paper and fabric',
     'Tyres',
-    'Wood',
-    'Paper',
-    'Cardboard',
-    'Fabric',
-    'Textiles',
-    'Electronic Waste',
-    'Light Metal Scrap',
+    'Selected metal scrap',
+    'Bulky and mixed waste streams',
   ],
-  'twin-shaft-shredder-rotary-shear-pre-shredder': [
-    'Aluminium Castings',
-    'Tyres',
-    'Tyre Wire',
-    'Plastic',
-    'Rubber',
-    'Steel Drums',
-    'MS Scrap',
-    'Municipal Waste',
-    'Industrial Waste',
-    'Electronic Waste',
+
+  'twin-shaft-shredder': [
+    'Aluminium castings',
+    'Iron and steel scrap',
+    'Tyre wire',
+    'Wooden pallets',
+    'Cable drums',
+    'Plastic and paper',
   ],
-  'casting-cracker': [
-    'Engine Blocks',
-    'Gear Boxes',
-    'Cast Iron',
-    'Aluminium Castings',
-    'Transmission Housings',
-    'Motor Casings',
-    'Heavy Cast Components',
-  ],
+
   'vertical-briquetting-machine': [
-    'Aluminium Chips',
-    'Steel Chips',
-    'Cast Iron Chips',
-    'Brass Chips',
-    'Copper Chips',
-    'Metal Turnings',
-    'Metal Borings',
-    'Metal Swarf',
+    'Aluminium chips and turnings',
+    'MS and steel chips',
+    'Cast-iron chips',
+    'Copper and brass chips',
+    'Stainless steel chips and swarf',
+    'Machining waste, filings, shavings and metal swarf',
   ],
-  conveyors: [
-    'Metal Scrap',
-    'Paper',
-    'Plastic',
-    'Municipal Waste',
-    'Industrial Waste',
-    'Aluminium',
-    'Steel',
-    'Mixed Recyclables',
-  ],
-  'msw-sorting-line': [
-    'Municipal Solid Waste',
-    'Organic Waste',
-    'Plastic',
-    'Paper',
-    'Cardboard',
-    'Glass',
-    'Metal',
-    'Textiles',
-    'Construction Debris',
-    'Mixed Recyclables',
-  ],
+
   'fodder-block-making-machine': [
-    'Rice Straw',
-    'Wheat Straw',
-    'Sugarcane Trash',
-    'Corn Stover',
-    'Cotton Stalk',
-    'Dry Grass',
-    'Hay',
-    'Silage',
-    'TMR Feed',
-    'Agricultural Residue',
+    'Straw and husk',
+    'Dry grass and roughage',
+    'TMR (total mixed ration) blends',
+    'Dry agricultural waste',
+    'Fodder and roughage for 10–30 kg blocks',
+  ],
+
+  'conveyors': [
+    'Ferrous and non-ferrous metal',
+    'Plastics and paper',
+    'Mixed waste streams',
+    'Sorted and unsorted scrap',
+    'Recyclable materials for magnetic separation',
+  ],
+
+  'material-recovery-facility': [
+    'Mixed municipal solid waste',
+    'Paper, plastic, metal and glass recyclables',
+    'Refuse-derived fuel (RDF) materials',
+    'Inert materials for road sub-base or landfill',
+    'Recyclable waste for 250–400 kg dense bales',
   ],
 };
 
@@ -1162,7 +1697,58 @@ const keyFeatures = {
     'HARDOX 400 lining & online oil chiller',
     'Reduces manpower requirement',
   ],
-  'alligator-shear-crocodile-shear': [
+    'c-frame-hydraulic-press': [
+    'Open three-sided C-frame design',
+    'Compact floor footprint',
+    'Fast loading and tool changes',
+    'Two-hand controls and emergency stop',
+    'High-frequency hand-fed operation',
+    'Custom throat depth and daylight',
+    'Stress-relieved steel frame',
+    'Industrial guarding and interlocks',
+    'Application-specific capacity and stroke',
+    'High-cycle operational accuracy'
+  ],
+
+  'h-frame-hydraulic-press': [
+    'Rigid closed portal-frame design',
+    'Parallel ram movement under load',
+    'Separate hydraulic power pack',
+    'Fast approach and controlled press stroke',
+    'PLC with HMI or relay control',
+    'Off-centre and multi-point loading capability',
+    'High rigidity with minimal deflection',
+    'Heavy forming and forging capability',
+    'Dual palm-button safety controls',
+    'Application-specific capacity and stroke'
+  ],
+
+  '4-pillar-type-hydraulic-press': [
+    'Four-column guided platen',
+    'Maintains platen parallelism',
+    'Down-stroke and up-stroke configurations',
+    'PLC depth control',
+    'Automatic ejection',
+    'Single or multi-daylight beds',
+    'Multi-station configuration',
+    'Electrically heated platens',
+    'Open die access on all sides',
+    'Application-specific platen and heating configuration'
+  ],
+
+  'industrial-tablet-press': [
+    'Controlled die filling and compaction',
+    'Independent ejection cylinder',
+    'Programmable force, dwell and stroke',
+    'PLC with HMI control',
+    'Automatic shut-off',
+    'Single and multi-cavity tooling',
+    'High-pressure powder compaction',
+    'Continuous powder feeding system',
+    'Application-specific pressing and ejection force',
+    'Consistent density production'
+  ],
+  'alligator-shear': [
     'Cuts TMT, angle, round bar, cable, plates, tubes',
     'Cutting capacity up to 85–120mm round',
     'Broad shearing jaw for wide scrap',
@@ -1170,7 +1756,7 @@ const keyFeatures = {
     'Manual, full-auto & foot-pedal operation',
     'No civil foundation required',
   ],
-  'hydraulic-nibbler': [
+  'nibbler-hydrauluc': [
      'V-shaped blade for clean, precise cuts',
     'Hydraulic & mechanical variants',
     'Cuts material up to 62–80mm thick',
@@ -1184,7 +1770,7 @@ const keyFeatures = {
     'Advanced PLC controls',
     'Integrates with infeed/outfeed conveyors'
   ],
-  'twin-shaft-shredder-rotary-shear-pre-shredder': [
+  'twin-shaft-shredder': [
     'Dual interlocking shafts — jam-free',
     'Low speed, high torque, energy efficient',
     '50–60 HRC cutters for long life',
@@ -1274,13 +1860,13 @@ const suitableIndustries = {
     'Printing Firms',
     'Packaging Factories',
   ],
-  'alligator-shear-crocodile-shear': [
+  'alligator-shear': [
     'Scrap Yards',
     'Recyclers',
     'ELV Plants',
     'Fabrication',
   ],
-  'hydraulic-nibbler': [
+  'nibblers-hydraulic': [
     'Sheet Metal Processors',
     'Recyclers',
     'Fabrication',
@@ -1290,7 +1876,7 @@ const suitableIndustries = {
     'MRFs',
     'Scrap Processing',
   ],
-  'twin-shaft-shredder-rotary-shear-pre-shredder': [
+  'twin-shaft-shredder': [
     'Pre-Shredding Lines',
     'Recyclers',
     'ELV Plants',
@@ -1324,229 +1910,523 @@ const suitableIndustries = {
 };
 
 const seoEfficiencyFeatures = {
-  'triple-action-baler': [
-    'Triple-action hydraulic compression creates dense, uniform bales for metal recycling',
-    'PLC-controlled baler operation reduces manual handling and improves production consistency',
-    'Three-direction compaction improves bale density for MS scrap, aluminium scrap and mixed dry waste',
-    'Efficient scrap baling workflow helps reduce storage space, loading time and logistics cost',
-    'Built for high-throughput recycling yards, rolling mills and industrial waste processors',
-  ],
-  'mini-triple-action-baler': [
-    'Compact triple-action baler for efficient scrap compaction in small and medium recycling yards',
-    'Dense bale output improves storage, stacking and transport of copper, aluminium and MS scrap',
-    'PLC-controlled operation supports consistent baling with reduced operator effort',
-    'Small footprint hydraulic baler designed for workshops, dealers and in-house scrap generation',
-    'Online cooling and lubrication options support longer daily recycling operations',
-  ],
-  'double-action-baler': [
-    'Double-action hydraulic baler for reliable metal scrap compaction with a compact footprint',
-    'Two-direction pressing improves bale density for light and medium industrial scrap',
-    'Front, top and manual ejection options help match the machine to available floor layout',
-    'Efficient hydraulic cycle reduces handling time in scrap yards and fabrication workshops',
-    'Relocatable installation supports flexible recycling operations without major civil foundation work',
-  ],
-  'vertical-baler': [
-    'Vertical hydraulic baler for space-saving compaction of dry waste, cardboard and light metal scrap',
-    'Top-down compression creates dense bales in facilities with limited floor space',
-    'Low-noise baler operation suits warehouses, retail backrooms and compact recycling sites',
-    'PLC or hand-lever controls allow simple operation for daily waste handling teams',
-    'Reduced storage volume helps improve housekeeping, material handling and transport efficiency',
-  ],
   'super-jumbo-baler': [
-    'Super jumbo hydraulic baler for high-volume metal scrap processing and heavy-duty compaction',
-    'Large chamber and high cylinder force support dense bales from bulky industrial scrap',
-    'Fast production cycles improve throughput for large scrap yards and steel recycling plants',
-    'HARDOX-lined compression chamber extends service life in abrasive scrap applications',
-    'Designed for continuous industrial operation with oversized scrap, TMT bars and heavy feedstock',
+    'PLC-controlled automatic cycle for consistent, hands-free baling',
+    'Fast cycle time of 80–100 seconds per bale across all models',
+    'High production output of 24–72 tons per 8-hour shift depending on model',
+    'Separate hydraulic manifolds per cylinder for smoother, more efficient compression',
+    'Motor options from 80 HP to 100 HP matched to bale size for optimal power use',
   ],
+
+  'triple-action-baler': [
+    'Three-direction simultaneous compression for maximum density in a single cycle',
+    'Fully automatic PLC touch-screen control with hand-lever backup',
+    'Cycle times from 45–100 seconds depending on model size',
+    'Six model sizes (Mini to Jumbo Plus) matched to throughput needs',
+    'Multiple ejection modes — top, turn-out, side-door — speed up bale removal',
+  ],
+
+  'mini-triple-action-baler': [
+    'Fully automatic PLC control for consistent, repeatable bales',
+    'Compact footprint suited to space-constrained yards',
+    'Online oil chiller and auto-lubrication reduce downtime and maintenance stops',
+    'Four model sizes (6×6" to 10×10") for flexible throughput',
+    'Simple, easy-to-install configuration with fast commissioning',
+  ],
+
+  'double-action-baler': [
+    'Automatic PLC-controlled pressing door, hinged manual door, or top-ejection configuration to match your handling needs',
+    'Two-direction compaction achieves a small footprint without sacrificing throughput',
+    'Cycle times of 50–85 seconds depending on chamber size',
+    'Standard-make hydraulic valves and pumps keep cycle times low',
+    'No civil foundation required — fast to install and relocate',
+  ],
+
+  'vertical-baler': [
+    'Vertical top-down compression makes efficient use of a small floor footprint',
+    'PLC or hydraulic hand-lever control options for different operating preferences',
+    'Automatic ejection reduces manual handling between cycles',
+    'Low-noise operation suited to indoor or mixed-use facilities',
+    'Easy to relocate with no civil foundation needed',
+  ],
+
   'car-baler': [
-    'Hydraulic car baler engineered for ELV recycling, RVSF plants and vehicle scrapping facilities',
-    'Compacts car bodies, doors, buses and truck components into dense transport-ready bundles',
-    'Heavy-duty operation improves scrap handling, loading efficiency and metal recovery workflow',
-    'Purpose-built ELV compactor supports organized vehicle dismantling and automotive recycling',
-    'Custom machine configuration available for turnkey RVSF and end-of-life vehicle processing lines',
+    'Full-length lid crushes an entire vehicle in a single pass',
+    'Complete cycle takes seconds rather than minutes',
+    'Trailer-mounted design tows between sites on its own axles',
+    'Onboard diesel power pack runs independent of site electricity',
+    'Hydraulic outriggers enable fast, level set-up at each location',
   ],
+
   'automatic-baler': [
-    'Automatic horizontal baler for high-volume paper, cardboard, PET and plastic waste compaction',
-    'Continuous feed, compaction and bale ejection reduce operator involvement and labor cost',
-    'Programmable bale length and PLC control improve consistency across recycling line operations',
-    'High-throughput waste baling helps lower cost per tonne for MRFs and packaging recyclers',
-    'Oil cooling and heavy-duty liners support long-shift industrial recycling performance',
+    'Fully automated feed → compaction → ejection cycle needs minimal labour',
+    'Up to 200 tons of baled output per shift',
+    'Programmable, auto-controlled bale length for consistent output',
+    'Online oil chiller supports up to 20 hours of continuous running',
+    'Five bale-size configurations scale production from 1 to 12 tons/hour',
   ],
+
   'semi-automatic-baler': [
-    'Semi-automatic horizontal baler for medium-volume paper, OCC, plastic and PET recycling',
-    'Automatic compaction with manual strapping balances productivity, cost and operator control',
-    'High-density bales improve storage, truck loading and resale value of recyclable material',
-    'PLC-assisted baling operation simplifies daily use for recycling facilities and factories',
-    'Efficient waste compaction reduces manpower requirement and improves plant housekeeping',
+    'Automatic baling with manual strapping balances speed and cost',
+    'Handles 16–24 tons of throughput per shift',
+    'User-friendly PLC module simplifies operator training and control',
+    'Two model sizes (SAT 12, SAT 23) matched to production needs',
+    'Reduces manpower requirement compared with manual baling',
   ],
-  'alligator-shear-crocodile-shear': [
-    'Hydraulic alligator shear for fast cutting of TMT bars, channels, cables, tubes and metal scrap',
-    'High cutting force improves scrap preparation speed for recycling and fabrication operations',
-    'Foot-pedal, manual and automatic operation options support safer, more efficient cutting workflows',
-    'No-foundation installation allows flexible placement in scrap yards and dismantling facilities',
-    'Heavy-duty shear design reduces downtime while processing ferrous and non-ferrous scrap',
+
+  'c-frame-hydraulic-press': [
+    'Open on three sides for fast, unobstructed loading and tool changes',
+    'Smallest footprint of any frame for a given capacity, saving floor space',
+    'Two-hand controls and emergency stop for safe, efficient operation',
+    'Well suited to high-frequency, hand-fed production work',
+    "Throat depth and daylight configured to match the customer's component",
   ],
-  'hydraulic-nibbler': [
-    'Hydraulic nibbler for clean, controlled cutting of metal sheets, plates and industrial scrap',
-    'Precision V-blade design reduces deformation during sheet metal recycling and fabrication work',
-    'Pedal-controlled operation improves cutting accuracy and operator productivity',
-    'Compact nibbler machine supports trimming, dismantling and scrap preparation applications',
-    'Hydraulic and mechanical variants available for different metal processing workloads',
+
+  'h-frame-hydraulic-press': [
+    'Ram stays parallel to the bed under full load for consistent part quality',
+    'Separate hydraulic power pack enables fast approach and controlled press stroke',
+    'PLC with HMI or relay control for flexible automation levels',
+    'Tolerates off-centre and multi-point loading without losing accuracy',
+    "Capacity, daylight, stroke and automation configured to the customer's cycle",
   ],
+
+  '4-pillar-type-hydraulic-press': [
+    'Platen guided at all four corners keeps parallelism through the entire stroke',
+    'Down-stroke and up-stroke configurations suit different production layouts',
+    'PLC with depth control and automatic ejection speeds up cycle times',
+    'Single or multi-daylight, multi-station beds increase throughput per cycle',
+    'Photo-sensor guarding supports safe, high-speed operation',
+  ],
+
+  'industrial-tablet-press': [
+    'Die fill, compaction and ejection managed in one controlled cycle',
+    'Independently rated ejection cylinder for consistent part release',
+    'Programmable force, dwell and stroke deliver repeatable density',
+    'PLC with HMI control and automatic shut-off for hands-off operation',
+    'Single and multi-cavity tooling options increase output per cycle',
+  ],
+
+  'alligator-shear': [
+    'Cuts up to 13–14 strokes per minute for high-volume sizing',
+    'Manual, full-auto and foot-pedal operation modes for operator flexibility',
+    'Broad shearing jaw handles wide, bulky scrap in fewer cuts',
+    'No civil foundation required for fast installation',
+    'Three shear-force models (35–200 T) matched to throughput needs',
+  ],
+
+  'nibblers-hydraulic': [
+    'PLC pedal control gives the operator precise, hands-free cutting control',
+    '14–16 strokes per minute for efficient sheet-metal sizing',
+    'Mobile design with wheels for easy repositioning on site',
+    'No civil foundation required, allowing fast deployment',
+    'V-shaped blade minimises material deformation for cleaner downstream processing',
+  ],
+
+  'hydraulic-box-shear': [
+    'Fully hydraulic drive with PLC automatic control for consistent cycling',
+    'Uniform 400mm cut length for consistent furnace charging',
+    'Capacity up to 9–25 tons per hour depending on model',
+    'Remote control and panel operation for flexible operator positioning',
+    'Flat foundation only — straightforward, low-cost installation',
+  ],
+
   'single-shaft-shredder': [
-    'Single shaft shredder for controlled size reduction of plastic, paper, fabric, tyres and mixed waste',
-    'Low-speed, high-torque shredding improves energy efficiency and reduces jamming risk',
-    'Sieve-controlled output supports consistent material sizing for recycling and recovery lines',
-    'PLC-controlled feeder improves throughput and protects the shredder from overload',
-    'Integrates with conveyors and downstream equipment for complete waste processing systems',
+    'Low rotor speed with high torque prevents jamming on tough material',
+    'Sieve-controlled output ensures homogeneous, consistent particle size',
+    'Powerful hydraulic feeder maintains steady material throughput',
+    'Advanced PLC controls for automated, hands-off operation',
+    'Integrates with infeed/outfeed conveyors for continuous processing lines',
   ],
-  'twin-shaft-shredder-rotary-shear-pre-shredder': [
-    'Twin shaft shredder for pre-shredding bulky scrap, tyres, plastics and industrial waste',
-    'Low-speed, high-torque rotary shear operation reduces jamming and improves cutting efficiency',
-    'Interlocking cutter design supports reliable size reduction before baling, sorting or recovery',
-    'Hydraulic and electric drive options match plant capacity and material requirements',
-    'Designed for ELV plants, recycling lines and high-volume waste processing facilities',
+
+  'twin-shaft-shredder': [
+    'Dual interlocking shafts virtually eliminate material jams',
+    'Low speed, high torque design for energy-efficient shredding',
+    'PLC + HMI control with auto-reverse for hands-off, jam-recovery operation',
+    'Hydraulic or electric drive options to suit site infrastructure',
+    'Six model sizes (TS-0.75 to TS-300) scale from 0.75 to 3.0 TPH',
   ],
-  'casting-cracker': [
-    'Casting cracker for efficient breaking of engines, gearboxes, cast iron and heavy ferrous scrap',
-    'Strong hydraulic jaw grip improves crushing performance on dense metal castings',
-    'Continuous processing options with conveyors improve throughput in metal recovery operations',
-    'Compact heavy-duty design supports foundries, ELV plants and scrap processing yards',
-    'Size reduction helps prepare heavy cast scrap for melting, sorting and transport',
-  ],
+
   'vertical-briquetting-machine': [
-    'Vertical briquetting machine converts metal chips, turnings and machining waste into dense briquettes',
-    'High-pressure compaction improves storage, handling and remelting efficiency for metal recyclers',
-    'Uniform briquette output helps reduce oxidation loss and improves furnace charging',
-    'PLC and HMI controls support consistent operation in machining shops and foundries',
-    'Oil cooling supports long-hour briquetting of aluminium, steel, brass and cast iron chips',
+    'Compression force up to 5,000 kg/cm² for maximum density in one stroke',
+    'Volume reduction of up to 90% cuts transport and storage costs',
+    'HMI PLC control panel for consistent, repeatable briquette quality',
+    'Online oil chiller supports long-hour continuous operation',
+    'Six model sizes (JHP-VB-150 to 630) scale output from 150 to 1,200 kg/h',
   ],
-  conveyors: [
-    'Recycling conveyors improve material flow across balers, shredders, sorting lines and recovery systems',
-    'Custom belt width, length and inclination support site-specific scrap and waste handling operations',
-    'Infeed, outfeed, magnetic and sorting conveyors reduce manual handling and improve plant throughput',
-    'Designed for metal scrap, MSW, plastics, paper, packaging waste and mixed recyclable streams',
-    'Conveyor integration helps create smoother end-to-end recycling plant operation',
-  ],
-  'msw-sorting-line': [
-    'MSW sorting line for efficient separation of organic waste, recyclables and inert material',
-    'Integrated conveyors and sorting equipment improve municipal solid waste processing throughput',
-    'Mechanical and optical sorting options support better material recovery and cleaner output streams',
-    'Suitable for biomining, legacy waste recovery and turnkey municipal waste processing plants',
-    'Custom plant layouts help urban local bodies and waste contractors improve operational efficiency',
-  ],
+
   'fodder-block-making-machine': [
-    'Fodder block making machine compacts agricultural residue into dense feed and biomass blocks',
-    'PLC-controlled operation delivers consistent block size for storage, handling and transport',
-    'Efficient compression supports rice straw, wheat straw, dry grass, husk and TMR feed blends',
-    'Semi-automatic packing workflow improves daily production for farms and cattle feed operations',
-    'Compact blocks reduce logistics cost and help convert crop residue into usable livestock feed',
+    'PLC-controlled operation for consistent block dimensions',
+    'Semi-automatic poly-bag packaging speeds up finished-goods handling',
+    'Production of 70–100 blocks per hour depending on model',
+    'Standard and Heavy Duty variants match capacity to farm or plant scale',
+    'Supports both dry fodder and TMR 50:50 blends in one machine',
+  ],
+
+  conveyors: [
+    'Integrates seamlessly as infeed/outfeed with balers, shredders and shears',
+    'Reduces forklift traffic and manual handling across the plant',
+    'Inclined magnetic, flat-bed sorting and transfer types cover multiple functions',
+    'Custom lengths, widths and inclinations optimise material flow per site layout',
+    'Mechanised transport increases overall processing-line efficiency',
+  ],
+
+  'material-recovery-facility': [
+    'Eight-stage process from waste generation through to baled, dispatch-ready output',
+    '80–90% overall plant efficiency on standard configurations',
+    'PLC-based control with HMI and push-button automation across major machinery',
+    'Hydraulic tipper with 55–60° tipping angle speeds up unloading',
+    'Standard capacity of 30–70 tonnes per day',
+  ],
+};
+
+const durabilityFeatures = {
+  'super-jumbo-baler': [
+    'HARDOX 500-BHN compression chamber resists wear from heavy, abrasive scrap',
+    'Heavy-duty cylinder construction rated for up to 300 tons of crushing force',
+    'Robust chamber sizes up to 105×60×50" engineered for continuous heavy-duty use',
+    'Reinforced frame handles dense TMT bars 5–10mm thick without deformation',
+    'Five chamber/bale configurations available to match load demands precisely',
+  ],
+
+  'triple-action-baler': [
+    'Replaceable HARDOX liner plates protect the chamber from abrasive wear',
+    'Rugged three-ram design engineered for continuous heavy-duty cycling',
+    'Motor options up to 60 HP × 2 for high-load Jumbo Plus models',
+    'Reinforced chamber built for bale weights from 10 kg up to 1 ton',
+    'Heavy-gauge steel construction suited to demanding scrap-yard environments',
+  ],
+
+  'mini-triple-action-baler': [
+    'Three-direction compression design built for dense, long-lasting bale integrity',
+    'Heavy-duty construction suited to continuous small-batch scrap processing',
+    '20–25 HP motors sized for reliable, low-strain operation',
+    'Compact chamber engineered to handle mixed metal and dry waste without excess wear',
+    'Built for scrap yards processing copper, aluminium and MS on a daily basis',
+  ],
+
+  'double-action-baler': [
+    'Shearing blades handle material from 2mm sheet metal up to 5mm thick without excess wear',
+    'Twin-ram construction engineered for sustained, high-throughput operation',
+    'Three chamber sizes built to handle 20–60 kg bale weights reliably',
+    'Standard hydraulic components chosen for long service life and easy parts sourcing',
+    'Compact welded-steel frame designed for repeated relocation without structural fatigue',
+  ],
+
+  'vertical-baler': [
+    'Available from 20 to 200 tons of pressing force for varied duty cycles',
+    'Configurable as a dedicated tyre baler for abrasive rubber material',
+    'Robust vertical ram design built for continuous, repeated compression',
+    'Charging-chamber sizes configured to customer scrap type for optimal wear life',
+    'Bale size and weight engineered to specification for consistent output',
+  ],
+
+  'car-baler': [
+    'Crushing force up to 159 tons for heavy vehicle bodies',
+    '10 ft crusher opening handles stacked or bulky loads',
+    'Heavy-duty 60,000 lb machine weight for structural stability under load',
+    '10 in cylinder bore and 4 in rod diameter engineered for repeated crushing cycles',
+    'Special-build units available with larger openings for oversized loads',
+  ],
+
+  'automatic-baler': [
+    'HARDOX 400 lining plates resist wear from continuous high-volume baling',
+    'Engineered for sustained multi-shift, high-tonnage operation',
+    'Press forces up to 150 tons for heavy-duty compaction cycles',
+    'Oil-chilled hydraulics maintain performance over long duty cycles',
+    'Robust frame designed to drastically reduce cost per tonne over its service life',
+  ],
+
+  'semi-automatic-baler': [
+    'HARDOX 400 lining protects the chamber from continuous plastic and paper wear',
+    'Online oil chiller supports extended, reliable operation',
+    'Compact frame built for consistent medium-volume daily use',
+    'High-density bale output reduces internal wear from repeated handling',
+    'Proven construction suited to plastic-processing environments',
+  ],
+
+  'c-frame-hydraulic-press': [
+    'Frame fabricated from stress-relieved steel plate for long-term stability',
+    'Guarding and interlocks built for continuous industrial use',
+    'Capacity, stroke and table size engineered to the specific application',
+    'Robust single-column design suited to repeated blanking and punching cycles',
+    'Built to hold accuracy through frequent, high-cycle operation',
+  ],
+
+  'h-frame-hydraulic-press': [
+    'Closed portal frame delivers high rigidity and minimal deflection under load',
+    'Engineered for heavy forming, forging and compression moulding duty cycles',
+    'Dual palm-button safety controls for reliable long-term operation',
+    'Frame built to tolerate wide dies and heavy, off-centre loads without fatigue',
+    'Sized specifically to the application for maximum structural longevity',
+  ],
+
+  '4-pillar-type-hydraulic-press': [
+    'Four precision-ground columns engineered for accurate, long-term platen alignment',
+    'Electrically heated platens (steam or thermic oil on request) built for sustained thermal cycling',
+    'Die area open on all sides supports large, heavy moulds without frame interference',
+    'Capacity, platen size and heating configured precisely to the moulding application',
+    'Robust column-guided design suited to continuous compression-moulding production',
+  ],
+
+  'industrial-tablet-press': [
+    'Consistent density maintained from the first piece to the last across long runs',
+    'Robust die and tooling engineered for high-pressure powder compaction',
+    'Powder feed hopper and shoe designed for continuous, low-maintenance feeding',
+    'Pressing and ejection force configured to the product for optimal component life',
+    'Built for sustained production of refractory, ceramic and metallurgical parts',
+  ],
+
+  'alligator-shear': [
+    'Cutting capacities up to 120mm round / 75mm square for heavy structural scrap',
+    'Motor options up to 60 HP for sustained high-force cutting',
+    'Robust jaw and blade assembly engineered for continuous shearing duty',
+    'Hydraulic and mechanical variants built for demanding scrap-yard conditions',
+    'Jaw opening up to 16 in accommodates oversized material without strain',
+  ],
+
+  'nibblers-hydraulic': [
+    '2,400 PSI working pressure delivers consistent, high-force cutting',
+    '2,500 kg machine weight provides stability during heavy-duty cutting',
+    'V-shaped blade engineered for precise, long-lasting cutting performance',
+    '15 HP motor sized for continuous hydraulic nibbling duty',
+    'Robust hydraulic variant built for demanding sheet-metal environments',
+  ],
+
+  'hydraulic-box-shear': [
+    'AC chiller / water cooling supports continuous, high-duty operation',
+    'Cutting force up to 10,000 kN on the largest model',
+    'Motor configurations up to 55 kW × 4 for sustained heavy-duty cutting',
+    'Robust press-box design engineered for repeated compression-and-shear cycles',
+    'Three model sizes built to match throughput and wear demands',
+  ],
+
+  'single-shaft-shredder': [
+    '50 HP motor with hydraulic power pack built for sustained shredding duty',
+    'Robust 36" × 42" cutting chamber engineered for high-volume material',
+    '350mm rotor diameter designed for long service life under continuous load',
+    'Low-speed, high-torque design reduces wear and mechanical strain',
+    'Built to handle mixed and abrasive material streams without downtime',
+  ],
+
+  'twin-shaft-shredder': [
+    'D2 / alloy tool steel cutters hardened to 50–58 HRC for long wear life',
+    'Shaft diameters from 120mm to 180mm engineered for continuous heavy-duty torque',
+    'Auto-reverse function protects the drivetrain from jam-related damage',
+    'Cutter thickness scales from 30mm to 50mm across the range for durability at higher capacities',
+    'Robust dual-shaft frame built for sustained pre-shredding of bulky material',
+  ],
+
+  'vertical-briquetting-machine': [
+    'High-pressure vertical ram engineered for continuous chip and swarf compaction',
+    'Uniform briquette density minimises losses and wear during smelting',
+    'Motor options from 20 to 75 HP matched to compression demands',
+    'Tank capacities from 250L to 800L for sustained hydraulic performance',
+    'Robust construction built for daily machining-waste processing',
+  ],
+
+  'fodder-block-making-machine': [
+    'Dense, uniform blocks engineered for long-term storage without spoilage',
+    'Feeding chambers up to 23×24×50" built for continuous agri-waste throughput',
+    'Motor options of 30 HP or 50 HP matched to duty cycle',
+    'Robust hydraulic press designed for daily compaction of fibrous, abrasive roughage',
+    'Blocks built to transport efficiently without breaking apart',
+  ],
+
+  conveyors: [
+    'Geared drive motors (2.0 HP) engineered for continuous belt operation',
+    '900mm belt width built for reliable daily material transport',
+    'Robust frame construction suited to scrap-yard and MRF environments',
+    'Multiple conveyor types — inclined magnetic, flat-bed, transfer — for varied duty needs',
+    'Built for long-term integration within continuous processing lines',
+  ],
+
+  'material-recovery-facility': [
+    'All machinery built on MS structure with anti-corrosion painting',
+    'Overband magnetic separator rated at 3,000–5,000 Gauss field strength',
+    'Trommel screen and air classifier engineered for continuous mechanical separation',
+    'Baler/compactor rated 15–55 kW for sustained high-tonnage baling',
+    'Designed for continuous operation and low maintenance',
   ],
 };
 
 const seoSuitableIndustries = {
-  'triple-action-baler': [
-    'Scrap recycling yards and metal recovery centers',
-    'Rolling mills, steel plants and foundry scrap handling units',
-    'Packaging waste recyclers and dry waste compaction facilities',
-    'Manufacturing plants with in-house metal scrap generation',
-  ],
-  'mini-triple-action-baler': [
-    'Small scrap yards and local metal recycling dealers',
-    'Fabrication shops and workshops with in-house scrap',
-    'Copper, aluminium and MS scrap processors',
-    'Compact recycling facilities with limited floor space',
-  ],
-  'double-action-baler': [
-    'Scrap yards and industrial metal recycling units',
-    'Fabrication workshops and manufacturing plants',
-    'Light metal scrap processors and recycling dealers',
-    'Warehouses and factories needing compact waste baling',
-  ],
-  'vertical-baler': [
-    'Retail stores, warehouses and logistics facilities',
-    'Cardboard, paper and dry waste recycling centers',
-    'Small factories with limited waste handling space',
-    'Light metal scrap and packaging waste processors',
-  ],
   'super-jumbo-baler': [
-    'High-volume scrap yards and heavy metal recyclers',
-    'Steel plants, rolling mills and TMT processing units',
-    'Industrial demolition and bulky scrap processing facilities',
-    'Large recycling plants handling oversized ferrous scrap',
+    'Steel mills and re-rolling mills',
+    'Large scrap metal recycling yards',
+    'Automobile dismantling and ELV recycling',
+    'Foundries and smelters requiring furnace-ready scrap',
+    'Heavy engineering and construction scrap processors',
   ],
+
+  'triple-action-baler': [
+    'Scrap metal recycling yards',
+    'Paper and cardboard recycling / waste management',
+    'Automobile dismantling',
+    'Metal fabrication and machining workshops',
+    'Beverage can (UBC) recycling operations',
+  ],
+
+  'mini-triple-action-baler': [
+    'Small to medium scrap metal yards',
+    'Non-ferrous metal recycling (copper, aluminium)',
+    'Local recycling and waste collection centres',
+    'Metal trading and scrap dealers',
+    'Cardboard and paper recyclers',
+  ],
+
+  'double-action-baler': [
+    'Scrap metal recycling yards',
+    'Appliance and white-goods recycling',
+    'Metal fabrication workshops',
+    'Cable and wire recyclers',
+    'Paper and cardboard collection centres',
+  ],
+
+  'vertical-baler': [
+    'PET and plastics recycling',
+    'Paper and cardboard baling operations',
+    'Tyre and rubber recycling',
+    'Textile recycling',
+    'Retail, warehouse and logistics waste management',
+  ],
+
   'car-baler': [
-    'Registered Vehicle Scrapping Facilities (RVSF)',
-    'End-of-Life Vehicle (ELV) recycling plants',
-    'Automotive dismantling and metal recovery centers',
-    'Large scrap yards processing vehicle bodies and components',
+    'End-of-life vehicle (ELV) recycling',
+    'Automobile scrapyards and dismantlers',
+    'Mobile / itinerant scrap collection services',
+    'White-goods and appliance recycling',
+    'Metal recycling yards needing mobile crushing capacity',
   ],
+
   'automatic-baler': [
-    'MRFs and high-volume waste recycling plants',
-    'Paper mills, OCC recyclers and cardboard recovery facilities',
-    'PET bottle, plastic and textile recycling units',
-    'Packaging factories and distribution centers with bulk waste',
+    'Large-scale paper and cardboard recycling',
+    'Plastics (PET/HDPE) recycling plants',
+    'Municipal and commercial waste management',
+    'Textile and foam recycling',
+    'MRF and waste-to-energy facilities',
   ],
+
   'semi-automatic-baler': [
-    'Medium-volume recycling facilities and waste aggregators',
-    'Printing firms, packaging plants and corrugated box manufacturers',
-    'PET, plastic and cardboard recycling businesses',
-    'Factories needing cost-effective horizontal waste baling',
+    'Plastics recycling and PET reprocessing',
+    'Cardboard and paper recycling',
+    'Municipal solid waste sorting facilities',
+    'Packaging waste management',
+    'Small to medium MRF operators',
   ],
-  'alligator-shear-crocodile-shear': [
-    'Scrap yards and metal cutting centers',
-    'ELV dismantling plants and automotive recycling units',
-    'Steel fabrication shops and structural steel processors',
-    'Cable, tube, bar and plate scrap recycling operations',
+
+  'c-frame-hydraulic-press': [
+    'Automotive component manufacturing',
+    'Electrical and switchgear production',
+    'Sheet-metal fabrication',
+    'Bearings and bushes manufacturing',
+    'Hardware, fasteners and home appliance production',
+    'Tool rooms and job shops',
+    'Transformer lamination manufacturing',
   ],
-  'hydraulic-nibbler': [
-    'Sheet metal fabrication and trimming workshops',
-    'Metal recycling plants handling plates and sections',
-    'Automotive dismantling and industrial maintenance yards',
-    'Small and medium fabrication units needing precision cutting',
+
+  'h-frame-hydraulic-press': [
+    'Automotive and auto components manufacturing',
+    'Utensils and cookware production',
+    'Forging shops',
+    'Rubber products manufacturing',
+    'Structural fabrication',
+    'Railways',
+    'Defence and heavy engineering',
+    'General engineering',
   ],
+
+  '4-pillar-type-hydraulic-press': [
+    'Rubber and tyre products manufacturing',
+    'FRP / SMC moulding',
+    'Electrical fittings production',
+    'Melamine crockery manufacturing',
+    'Plywood and laminates',
+    'Brake lining and friction materials',
+    'Automotive components',
+    'Sanitary and building products',
+  ],
+
+  'industrial-tablet-press': [
+    'Refractories manufacturing',
+    'Ceramics and sanitaryware',
+    'Chemical processing',
+    'Detergents and FMCG',
+    'Powder metallurgy',
+    'Magnetics and electronics',
+    'Fertilisers and agrochemicals',
+    'Foundry and furnace linings',
+  ],
+
+  'alligator-shear': [
+    'Scrap metal recycling yards',
+    'Steel fabrication and structural workshops',
+    'Construction and demolition scrap processing',
+    'Cable and wire recycling',
+    'Foundries and re-rolling mills',
+  ],
+
+  'nibblers-hydraulic': [
+    'Sheet-metal fabrication',
+    'Aluminium extrusion and processing',
+    'Metal scrap recycling',
+    'Construction and structural fabrication',
+    'Job shops requiring precision sheet cutting',
+  ],
+
+  'hydraulic-box-shear': [
+    'Steel mills and furnace charging operations',
+    'Scrap metal recycling yards',
+    'Sheet-metal fabrication waste processing',
+    'Foundries and smelters',
+    'Appliance and white-goods recycling',
+  ],
+
   'single-shaft-shredder': [
-    'Material recovery facilities and MSW processing plants',
-    'Plastic, tyre, textile and packaging waste recyclers',
-    'Industrial waste management companies',
-    'Recycling lines requiring controlled pre-processing',
+    'Plastics recycling and waste processing',
+    'Tyre and rubber recycling',
+    'Textile waste recycling',
+    'Packaging waste management',
+    'Municipal and industrial waste processing',
   ],
-  'twin-shaft-shredder-rotary-shear-pre-shredder': [
-    'ELV recycling plants and vehicle dismantling yards',
-    'Tyre, plastic and bulky waste recycling facilities',
-    'Metal recycling lines needing pre-shredding',
-    'Municipal and industrial waste processing plants',
+
+  'twin-shaft-shredder': [
+    'Metal recycling and pre-shredding operations',
+    'Tyre and rubber recycling',
+    'Wood and pallet recycling',
+    'Plastic and packaging waste processing',
+    'Municipal solid waste pre-processing',
   ],
-  'casting-cracker': [
-    'Foundries and cast iron recycling facilities',
-    'ELV plants processing engines and gearboxes',
-    'Heavy ferrous scrap yards and metal recovery centers',
-    'Industrial scrap processors preparing material for melting',
-  ],
+
   'vertical-briquetting-machine': [
-    'CNC machining shops and metalworking units',
-    'Foundries and remelting plants',
-    'Aluminium, steel, brass and cast iron chip recyclers',
-    'Automotive and engineering manufacturers with metal turnings',
+    'Metal machining and CNC workshops',
+    'Foundries and metal casting operations',
+    'Non-ferrous metal recycling (copper, brass, aluminium)',
+    'Steel and stainless-steel processing plants',
+    'Scrap metal recovery and re-melting operations',
   ],
-  conveyors: [
-    'Scrap yards and metal recycling plants',
-    'MRFs, MSW sorting plants and waste contractors',
-    'Baler, shredder and briquetting machine feed lines',
-    'Packaging, plastic, paper and mixed recyclable processors',
-  ],
-  'msw-sorting-line': [
-    'Municipal corporations and urban local bodies',
-    'Waste management contractors and MRF operators',
-    'Biomining and legacy waste processing projects',
-    'Turnkey municipal solid waste recycling facilities',
-  ],
+
   'fodder-block-making-machine': [
-    'Dairy farms and cattle feed producers',
-    'Farmer co-operatives and agricultural residue processors',
-    'Biomass plants and rural feedstock aggregation centers',
-    'Agro-export businesses handling compressed fodder blocks',
+    'Cattle and livestock feed production',
+    'Dairy farms and animal husbandry operations',
+    'Agricultural waste processing',
+    'Fodder trading and storage businesses',
+    'Rural agri-processing cooperatives',
+  ],
+
+  conveyors: [
+    'Scrap metal recycling plants',
+    'Material recovery facilities (MRF)',
+    'Waste management and sorting operations',
+    'Automotive and appliance recycling',
+    'Any recycling line combining balers, shredders or shears',
+  ],
+
+  'material-recovery-facility': [
+    'Municipal solid waste management',
+    'Urban local bodies and municipal corporations',
+    'Waste-to-energy plants',
+    'Recycling industry and scrap trading',
+    'Environmental and sanitation service providers',
   ],
 };
 
@@ -1940,7 +2820,7 @@ const faqs = [
 const aboutOfferings = [
   ['Balers', 'Hydraulic baling presses that compress ferrous and non-ferrous scrap into dense, transport-ready bales.', '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.2.png'],
   ['Shears & Nibblers', 'Alligator shears and nibblers for fast, precise cutting and scrap size reduction.', '/images/3D%20Models%20from%20AI/14_Nibbler_Hero_Angle_v.1.png'],
-  ['Shredders & Crackers', 'Single- and twin-shaft shredders plus casting crackers for heavy-duty metal reduction.', '/images/3D%20Models%20from%20AI/15_Single_Shaft_Shredder_Hero_Angle_v.2.png'],
+  ['Shredders', 'Single- and twin-shaft shredders plus casting crackers for heavy-duty metal reduction.', '/images/3D%20Models%20from%20AI/15_Single_Shaft_Shredder_Hero_Angle_v.2.png'],
   ['Briquetting Machines', 'High-pressure briquetting presses that convert machining waste into compact briquettes.', '/images/3D%20Models%20from%20AI/09_Vertical_Briquetting_Machine_v.1.png'],
   ['Material Handling & Sorting', 'Conveyor systems and MSW sorting lines that move, feed, and sort material efficiently.', '/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.png'],
   ['Agriculture Waste Recycling', 'Equipment to compress and process agricultural waste into high-density biomass products.', '/images/3D%20Models%20from%20AI/24_Fodder_Block_Machine_Hero_v1.png'],
@@ -2941,24 +3821,35 @@ function ProductDetailPage() {
   const product = getProductDetail(currentSlug);
   const productMeta = productSeo[currentSlug];
   const productKeyFeatures = seoEfficiencyFeatures[product.slug] || keyFeatures[product.slug] || [];
+  const productDurability = durabilityFeatures[product.slug] || [];
   const processedMaterials = materialProcessed[product.slug] || [];
   const productIndustries = seoSuitableIndustries[product.slug] || suitableIndustries[product.slug] || [];
   const productFeatureGroups = featureGroups.map((group) => (
-    group.title === 'Efficiency / Operation' && productKeyFeatures.length > 0
-      ? { ...group, items: productKeyFeatures }
-      : group.title === 'Material Processing Capabilities' && processedMaterials.length > 0
-      ? { ...group, items: processedMaterials }
-      : group.title === 'Suitable Industries' && productIndustries.length > 0
-      ? { ...group, items: productIndustries }
-      : group
-  ));
+  group.title === 'Efficiency / Operation' && productKeyFeatures.length > 0
+    ? { ...group, items: productKeyFeatures }
+    : group.title === 'Durability' && productDurability.length > 0
+    ? { ...group, items: productDurability }
+    : group.title === 'Material Processing Capabilities' && processedMaterials.length > 0
+    ? { ...group, items: processedMaterials }
+    : group.title === 'Suitable Industries' && productIndustries.length > 0
+    ? { ...group, items: productIndustries }
+    : group
+));
   const galleryImages = (product.galleryImages || [product.image]).map((image, index) => {
     const views = product.galleryLabels || ['Main View', 'Front Left View', 'Front Right View', 'Front View', 'Top View'];
-    return {
+return {
       label: views[index] || `View ${index + 1}`,
       image,
     };
   });
+      const hasProcessSteps = product.processSteps && product.processSteps.length > 0;
+const hasFacilityGallery = product.facilityGallery && product.facilityGallery.length > 0;
+const hasMachineryOverview = product.machineryOverview && product.machineryOverview.length > 0;
+const hasPerformanceStats = product.performanceStats && product.performanceStats.length > 0;
+const hasProcessFlow = product.processFlow && product.processFlow.length > 0;
+const hasOutputTypes = product.outputTypes && product.outputTypes.length > 0;
+const hasBenefits = product.benefits && product.benefits.length > 0;
+const hasUtilities = product.utilitiesSafetyEnvironment && product.utilitiesSafetyEnvironment.length > 0;
   const productVideos = [
     ['Machine Walkthrough', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
     ['Hydraulic System Overview', 'https://www.youtube.com/embed/tgbNymZ7vqY'],
@@ -3008,6 +3899,52 @@ function ProductDetailPage() {
                 </div>
               </div>
             </div>
+            {hasProcessSteps && (
+  <section className="product-info-section">
+    <h2>The Complete Process</h2>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px', marginTop: '16px' }}>
+      {product.processSteps.map((step) => (
+        <div key={step.number} style={{ borderTop: '3px solid #f5b400', paddingTop: '10px' }}>
+          <div style={{ color: '#f5b400', fontWeight: 700, fontSize: '14px', marginBottom: '6px' }}>{step.number}</div>
+          <div style={{ fontWeight: 700, marginBottom: '4px' }}>{step.title}</div>
+          <div style={{ fontSize: '14px', color: '#555' }}>{step.text}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
+
+{hasFacilityGallery && (
+  <section className="product-info-section">
+    <h2>The Facility in Operation</h2>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', marginTop: '16px' }}>
+      {product.facilityGallery.map((item) => (
+        <figure key={item.title} style={{ margin: 0 }}>
+          <img src={item.image} alt={item.title} style={{ width: '100%', borderRadius: '8px', display: 'block' }} />
+          <figcaption style={{ marginTop: '10px' }}>
+            <div style={{ fontWeight: 700 }}>{item.title}</div>
+            <div style={{ fontSize: '14px', color: '#555', marginTop: '4px' }}>{item.text}</div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+)}
+
+{hasMachineryOverview && (
+  <section className="product-info-section">
+    <h2>MRF Machinery & Specifications</h2>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '20px', marginTop: '16px', marginBottom: '24px' }}>
+      {product.machineryOverview.map((item) => (
+        <div key={item.title} style={{ textAlign: 'center' }}>
+          <img src={item.image} alt={item.title} style={{ width: '100%', maxWidth: '140px', margin: '0 auto', display: 'block' }} />
+          <div style={{ fontWeight: 700, marginTop: '10px' }}>{item.title}</div>
+          <div style={{ fontSize: '13px', color: '#555' }}>{item.text}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
 
             <section className="product-info-section">
               <h2>Features</h2>
@@ -3026,44 +3963,148 @@ function ProductDetailPage() {
             </section>
 
             <section className="product-info-section">
-              <h2>{product.slug === 'triple-action-baler' ? 'Technical Specifications' : 'Technical Range'}</h2>
-              <div className="product-table-wrap">
-                <table className="product-table">
-                  <thead>
-                    <tr>
-                      {Array.isArray(product.specs) && product.specs[0] ? (
-                        Object.keys(product.specs[0]).map((key) => <th key={key}>{key}</th>)
-                      ) : (
-                        <>
-                          <th>Model</th>
-                          <th>Capacity</th>
-                          <th>Motor HP</th>
-                          <th>Cycle Time</th>
-                          <th>Machine Weight</th>
-                        </>
-                      )}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Array.isArray(product.specs) ? (
-                      product.specs.map((row, index) => (
-                        <tr key={index}>
-                          {Object.values(row).map((value, valueIndex) => (
-                            <td key={valueIndex}>{value}</td>
-                          ))}
-                        </tr>
-                      ))
-                    ) : (
-                      <>
-                        <tr><td>Standard</td><td>20-30 T/8hr</td><td>30-60</td><td>40-55 sec</td><td>8-14 T</td></tr>
-                        <tr><td>Heavy Duty</td><td>30-60 T/8hr</td><td>60-100</td><td>35-50 sec</td><td>14-20 T</td></tr>
-                        <tr><td>Custom</td><td>As required</td><td>Application matched</td><td>Custom</td><td>Project based</td></tr>
-                      </>
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </section>
+  <h2>
+    {product.specTitle || 'Technical Specifications'}
+  </h2>
+
+  {/* =========================================
+      TEXT-ONLY SPECIFICATION
+      ========================================= */}
+  {product.specNote && (
+    <div className="technical-note">
+      <div className="technical-note-label">
+        {product.specNote.title}
+      </div>
+
+      <p>{product.specNote.text}</p>
+    </div>
+  )}
+
+  {/* =========================================
+      MULTIPLE SPECIFICATION TABLES
+      ========================================= */}
+  {product.specTables &&
+    product.specTables.length > 0 &&
+    product.specTables.map((table, tableIndex) => (
+      <div className="spec-table-section" key={tableIndex}>
+
+        {/* Table Heading */}
+        {table.title && (
+          <h3 className="spec-table-title">
+            {table.title}
+          </h3>
+        )}
+
+        {/* Table */}
+        {table.specs && table.specs.length > 0 && (
+          <div className="product-table-wrap">
+            <table className="product-table">
+              <thead>
+                <tr>
+                  {Object.keys(table.specs[0]).map((key) => (
+                    <th key={key}>{key}</th>
+                  ))}
+                </tr>
+              </thead>
+
+              <tbody>
+                {table.specs.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    {Object.values(row).map((value, valueIndex) => (
+                      <td key={valueIndex}>{value}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {/* Table Note */}
+        {table.note && (
+          <p className="technical-table-note">
+            {table.note}
+          </p>
+        )}
+
+      </div>
+    ))}
+</section>
+{(hasProcessFlow || hasPerformanceStats || hasOutputTypes || hasBenefits || hasUtilities) && (
+  <section className="product-info-section">
+    <h2>MRF Layout & Performance</h2>
+
+    {hasProcessFlow && (
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '16px', marginBottom: '28px' }}>
+        {product.processFlow.map((step, index) => (
+          <div key={step} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{
+              padding: '8px 14px',
+              borderRadius: '6px',
+              fontSize: '13px',
+              fontWeight: 600,
+              background: index === 0 || index === product.processFlow.length - 1 ? '#f5b400' : '#f2f2f2',
+              color: index === 0 || index === product.processFlow.length - 1 ? '#1a1a1a' : '#333',
+            }}>
+              {step}
+            </span>
+            {index < product.processFlow.length - 1 && <span style={{ color: '#aaa' }}>→</span>}
+          </div>
+        ))}
+      </div>
+    )}
+
+    {hasPerformanceStats && (
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px', marginBottom: '28px' }}>
+        {product.performanceStats.map((stat) => (
+          <div key={stat.label} style={{ background: '#f7f7f7', borderRadius: '8px', padding: '18px', textAlign: 'center' }}>
+            <div style={{ fontSize: '24px', fontWeight: 700, color: '#1a1a1a' }}>{stat.value}</div>
+            <div style={{ fontSize: '13px', color: '#666', marginTop: '4px' }}>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    )}
+
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
+      {hasOutputTypes && (
+        <div>
+          <h3 style={{ fontSize: '15px', color: '#f5b400', marginBottom: '12px' }}>Types of Output</h3>
+          {product.outputTypes.map((item) => (
+            <div key={item.title} style={{ marginBottom: '12px' }}>
+              <strong>{item.title}</strong> — <span style={{ color: '#555' }}>{item.text}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {hasBenefits && (
+        <div>
+          <h3 style={{ fontSize: '15px', color: '#f5b400', marginBottom: '12px' }}>Benefits</h3>
+          <ul className="feature-list">
+            {product.benefits.map((item) => (
+              <li key={item}>✓ {item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+
+    {hasUtilities && (
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginTop: '28px' }}>
+        {product.utilitiesSafetyEnvironment.map((block) => (
+          <div key={block.title} style={{ background: '#1a1a1a', color: '#fff', borderRadius: '8px', padding: '16px' }}>
+            <div style={{ fontWeight: 700, color: '#f5b400', marginBottom: '10px', fontSize: '13px' }}>{block.title}</div>
+            <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13px', lineHeight: 1.7 }}>
+              {block.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+)}
 
             {product.slug === 'double-action-baler' && (
               <section className="product-info-section">
