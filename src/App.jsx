@@ -582,177 +582,237 @@ const productPathAliases = {
   'scrap-handling-conveyors': 'conveyors',
 };
 const productDetails = {
-  'super-jumbo-baler': {
+'super-jumbo-baler': {
   name: 'Super Jumbo Baler',
+
   description:
     'Heavy-duty PLC-controlled baler built for high-volume industrial scrap processing. Designed to compact oversized scrap and heavy TMT bars with high production capacity and robust HARDOX construction.',
-  specs: [
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      'Bale (in)': '20×20',
-      'Chamber (in)': '84×44×38',
-      'Wt MS (kg)': '150-250',
-      'Cycle (sec)': '80-85',
-      'Production (T/8hr)': '24-30',
-      'Motor (HP)': '80 HP',
-    },
-    {
-      'Bale (in)': '22×22',
-      'Chamber (in)': '84×44×38',
-      'Wt MS (kg)': '150-300',
-      'Cycle (sec)': '80-85',
-      'Production (T/8hr)': '30-35',
-      'Motor (HP)': '80 HP',
-    },
-    {
-      'Bale (in)': '24×24',
-      'Chamber (in)': '84×60×40',
-      'Wt MS (kg)': '300-500',
-      'Cycle (sec)': '80-85',
-      'Production (T/8hr)': '45-50',
-      'Motor (HP)': '100 HP',
-    },
-    {
-      'Bale (in)': '28×28',
-      'Chamber (in)': '105×50×50',
-      'Wt MS (kg)': '400-700',
-      'Cycle (sec)': '90-100',
-      'Production (T/8hr)': '60-70',
-      'Motor (HP)': '100 HP',
-    },
-    {
-      'Bale (in)': '30×30',
-      'Chamber (in)': '105×60×50',
-      'Wt MS (kg)': '400-700',
-      'Cycle (sec)': '90-100',
-      'Production (T/8hr)': '62-72',
-      'Motor (HP)': '100 HP',
+      title: 'Baler Specifications',
+
+      specs: [
+        {
+          'Bale (in)': '20×20',
+          'Chamber (in)': '84×44×38',
+          'Wt MS (kg)': '150-250',
+          'Cycle (sec)': '80-85',
+          'Production (T/8hr)': '24-30',
+          'Motor (HP)': '80 HP',
+        },
+        {
+          'Bale (in)': '22×22',
+          'Chamber (in)': '84×44×38',
+          'Wt MS (kg)': '150-300',
+          'Cycle (sec)': '80-85',
+          'Production (T/8hr)': '30-35',
+          'Motor (HP)': '80 HP',
+        },
+        {
+          'Bale (in)': '24×24',
+          'Chamber (in)': '84×60×40',
+          'Wt MS (kg)': '300-500',
+          'Cycle (sec)': '80-85',
+          'Production (T/8hr)': '45-50',
+          'Motor (HP)': '100 HP',
+        },
+        {
+          'Bale (in)': '28×28',
+          'Chamber (in)': '105×50×50',
+          'Wt MS (kg)': '400-700',
+          'Cycle (sec)': '90-100',
+          'Production (T/8hr)': '60-70',
+          'Motor (HP)': '100 HP',
+        },
+        {
+          'Bale (in)': '30×30',
+          'Chamber (in)': '105×60×50',
+          'Wt MS (kg)': '400-700',
+          'Cycle (sec)': '90-100',
+          'Production (T/8hr)': '62-72',
+          'Motor (HP)': '100 HP',
+        },
+      ],
+
+      note:
+        '*Bale weight varies depending on the density of the scrap.',
     },
   ],
 },
-  'triple-action-baler': {
+ 'triple-action-baler': {
+
   name: 'Triple Action Baler',
-  specs: [
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      Model: 'Mini',
-      'Bale (in)': '6×6',
-      'Chamber (in)': '18×18×45',
-      'Wt MS (kg)': '10-16',
-      'Wt AL (kg)': '4-6',
-      'Motor (HP)': '20',
-      'Cycle (sec)': '55-60',
-    },
-    {
-      Model: 'Mini',
-      'Bale (in)': '10×10',
-      'Chamber (in)': '20×20×50',
-      'Wt MS (kg)': '30-45',
-      'Wt AL (kg)': '10-15',
-      'Motor (HP)': '25',
-      'Cycle (sec)': '45-50',
-    },
-    {
-      Model: 'Super',
-      'Bale (in)': '12×12',
-      'Chamber (in)': '20×24×55',
-      'Wt MS (kg)': '50-80',
-      'Wt AL (kg)': '20-30',
-      'Motor (HP)': '25',
-      'Cycle (sec)': '60-65',
-    },
-    {
-      Model: 'Jumbo',
-      'Bale (in)': '15×15',
-      'Chamber (in)': '24×26×60',
-      'Wt MS (kg)': '60-120',
-      'Wt AL (kg)': '40-50',
-      'Motor (HP)': '30',
-      'Cycle (sec)': '70-75',
-    },
-    {
-      Model: 'Jumbo Plus',
-      'Bale (in)': '20×20',
-      'Chamber (in)': '36×42×76',
-      'Wt MS (kg)': '150-250',
-      'Wt AL (kg)': '65-80',
-      'Motor (HP)': '50',
-      'Cycle (sec)': '90-100',
-    },
-    {
-      Model: 'Jumbo Plus',
-      'Bale (in)': '30×30',
-      'Chamber (in)': '45×60×90',
-      'Wt MS (kg)': '300-500',
-      'Wt AL (kg)': '80-150',
-      'Motor (HP)': '60×2',
-      'Cycle (sec)': '90-100',
+      title: 'Baler Specifications',
+
+      specs: [
+        {
+          Model: 'Mini',
+          'Bale (in)': '6×6',
+          'Chamber (in)': '18×18×45',
+          'Wt MS (kg)': '10-16',
+          'Wt AL (kg)': '4-6',
+          'Motor (HP)': '20',
+          'Cycle (sec)': '55-60',
+        },
+        {
+          Model: 'Mini',
+          'Bale (in)': '10×10',
+          'Chamber (in)': '20×20×50',
+          'Wt MS (kg)': '30-45',
+          'Wt AL (kg)': '10-15',
+          'Motor (HP)': '25',
+          'Cycle (sec)': '45-50',
+        },
+        {
+          Model: 'Super',
+          'Bale (in)': '12×12',
+          'Chamber (in)': '20×24×55',
+          'Wt MS (kg)': '50-80',
+          'Wt AL (kg)': '20-30',
+          'Motor (HP)': '25',
+          'Cycle (sec)': '60-65',
+        },
+        {
+          Model: 'Jumbo',
+          'Bale (in)': '15×15',
+          'Chamber (in)': '24×26×60',
+          'Wt MS (kg)': '60-120',
+          'Wt AL (kg)': '40-50',
+          'Motor (HP)': '30',
+          'Cycle (sec)': '70-75',
+        },
+        {
+          Model: 'Jumbo Plus',
+          'Bale (in)': '20×20',
+          'Chamber (in)': '36×42×76',
+          'Wt MS (kg)': '150-250',
+          'Wt AL (kg)': '65-80',
+          'Motor (HP)': '50',
+          'Cycle (sec)': '90-100',
+        },
+        {
+          Model: 'Jumbo Plus',
+          'Bale (in)': '30×30',
+          'Chamber (in)': '45×60×90',
+          'Wt MS (kg)': '300-500',
+          'Wt AL (kg)': '80-150',
+          'Motor (HP)': '60×2',
+          'Cycle (sec)': '90-100',
+        },
+      ],
+
+      note:
+        '*Bale weight varies depending on the density of the scrap.',
     },
   ],
 },
   'mini-triple-action-baler': {
+
   name: 'Mini Triple Action Baler',
-  specs: [
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      Model: 'Mini',
-      'Bale (in)': '6×6',
-      'Chamber (in)': '18×18×45',
-      'Wt MS (kg)': '10-16',
-      'Wt AL (kg)': '4-6',
-      'Motor (HP)': '20',
-    },
-    {
-      Model: 'Mini',
-      'Bale (in)': '8×8',
-      'Chamber (in)': '20×20×45',
-      'Wt MS (kg)': '18-28',
-      'Wt AL (kg)': '6-9',
-      'Motor (HP)': '20',
-    },
-    {
-      Model: 'Mini',
-      'Bale (in)': '9×9',
-      'Chamber (in)': '20×20×45',
-      'Wt MS (kg)': '25-35',
-      'Wt AL (kg)': '8-13',
-      'Motor (HP)': '20',
-    },
-    {
-      Model: 'Mini',
-      'Bale (in)': '10×10',
-      'Chamber (in)': '20×20×50',
-      'Wt MS (kg)': '25-30',
-      'Wt AL (kg)': '10-15',
-      'Motor (HP)': '25',
+      title: 'Baler Specifications',
+
+      specs: [
+        {
+          Model: 'Mini',
+          'Bale (in)': '6×6',
+          'Chamber (in)': '18×18×45',
+          'Wt MS (kg)': '10-16',
+          'Wt AL (kg)': '4-6',
+          'Motor (HP)': '20',
+        },
+        {
+          Model: 'Mini',
+          'Bale (in)': '8×8',
+          'Chamber (in)': '20×20×45',
+          'Wt MS (kg)': '18-28',
+          'Wt AL (kg)': '6-9',
+          'Motor (HP)': '20',
+        },
+        {
+          Model: 'Mini',
+          'Bale (in)': '9×9',
+          'Chamber (in)': '20×20×45',
+          'Wt MS (kg)': '25-35',
+          'Wt AL (kg)': '8-13',
+          'Motor (HP)': '20',
+        },
+        {
+          Model: 'Mini',
+          'Bale (in)': '10×10',
+          'Chamber (in)': '20×20×50',
+          'Wt MS (kg)': '25-30',
+          'Wt AL (kg)': '10-15',
+          'Motor (HP)': '25',
+        },
+      ],
+
+      note:
+        '*Bale weight varies depending on the density of the scrap.',
     },
   ],
 },
   'double-action-baler': {
-    name: 'Double Action Baler',
-    description: 'Double-action baler available in auto door, manual door, and top ejection configurations for dependable scrap compaction in industrial recycling operations.',
-    galleryLabels: ['Main View', 'Auto Door', 'Manual Door', 'Top Ejection'],
-    specs: [
-      {
-      'Chamber (in)': '20×16×45',
-      'Bale (in)': '12-16×V',
-      'Wt MS (kg)': '20-50',
-      'Cycle (sec)': '75-85',
-      'Motor (HP)': '15',
-    },
+
+  name: 'Double Action Baler',
+
+  description:
+    'Double-action baler available in auto door, manual door, and top ejection configurations for dependable scrap compaction in industrial recycling operations.',
+
+  galleryLabels: [
+    'Main View',
+    'Auto Door',
+    'Manual Door',
+    'Top Ejection',
+  ],
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      'Chamber (in)': '20×24×45',
-      'Bale (in)': '12×24×V',
-      'Wt MS (kg)': '40-60',
-      'Cycle (sec)': '50-60',
-      'Motor (HP)': '20',
+      title: 'Baler Specifications',
+
+      specs: [
+        {
+          'Chamber (in)': '20×16×45',
+          'Bale (in)': '12-16×V',
+          'Wt MS (kg)': '20-50',
+          'Cycle (sec)': '75-85',
+          'Motor (HP)': '15',
+        },
+        {
+          'Chamber (in)': '20×24×45',
+          'Bale (in)': '12×24×V',
+          'Wt MS (kg)': '40-60',
+          'Cycle (sec)': '50-60',
+          'Motor (HP)': '20',
+        },
+        {
+          'Chamber (in)': '24×18×50',
+          'Bale (in)': '16×18×V',
+          'Wt MS (kg)': '50-60',
+          'Cycle (sec)': '50-60',
+          'Motor (HP)': '20',
+        },
+      ],
+
+      note:
+        '*Bale weight varies depending on the density of the scrap.',
     },
-    {
-      'Chamber (in)': '24×18×50',
-      'Bale (in)': '16×18×V',
-      'Wt MS (kg)': '50-60',
-      'Cycle (sec)': '50-60',
-      'Motor (HP)': '20',
-    },
-    ],
-  },
+  ],
+},
   'vertical-baler': {
   name: 'Vertical Baler',
 
@@ -955,222 +1015,267 @@ const productDetails = {
   },
 },
 'alligator-shear': {
+
   name: 'Alligator Shear',
-  specs: [
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      'Shear Force (T)': '35-50',
-      'Jaw Opening (in)': '9',
-      'Cutting Capacity (mm)': '40-50 Round',
-      'Strokes/Min': '10-14',
-      'Motor (HP)': '15-40',
-    },
-    {
-      'Shear Force (T)': '65-100',
-      'Jaw Opening (in)': '9-12',
-      'Cutting Capacity (mm)': '65-80 Round',
-      'Strokes/Min': '7-14',
-      'Motor (HP)': '40',
-    },
-    {
-      'Shear Force (T)': '85-200',
-      'Jaw Opening (in)': '12-16',
-      'Cutting Capacity (mm)': '85-120 Round / 75 Sq',
-      'Strokes/Min': '7-12',
-      'Motor (HP)': '40-60',
+      title: 'Shear Specifications',
+
+      specs: [
+        {
+          'Shear Force (T)': '35-50',
+          'Jaw Opening (in)': '9',
+          'Cutting Capacity (mm)': '40-50 Round',
+          'Strokes/Min': '10-14',
+          'Motor (HP)': '15-40',
+        },
+        {
+          'Shear Force (T)': '65-100',
+          'Jaw Opening (in)': '9-12',
+          'Cutting Capacity (mm)': '65-80 Round',
+          'Strokes/Min': '7-14',
+          'Motor (HP)': '40',
+        },
+        {
+          'Shear Force (T)': '85-200',
+          'Jaw Opening (in)': '12-16',
+          'Cutting Capacity (mm)': '85-120 Round / 75 Sq',
+          'Strokes/Min': '7-12',
+          'Motor (HP)': '40-60',
+        },
+      ],
     },
   ],
 },
 'hydraulic-box-shear': {
+
   name: 'Hydraulic Box Shear',
-  spec: [
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      Model: 'JHP-BS-630',
-      'Press box width (mm)': '1400/1600',
-      'Cut length (mm)': '400',
-      'Capacity (T/hr)*': '9-14',
-      'Cutting force (kN)': '6,300',
-      'Motor': '55 kW × 2'
+      title: 'Shear Specifications',
 
+      specs: [
+        {
+          Model: 'JHP-BS-630',
+          'Press box width (mm)': '1400/1600',
+          'Cut length (mm)': '400',
+          'Capacity (T/hr)*': '9-14',
+          'Cutting force (kN)': '6,300',
+          Motor: '55 kW × 2',
+        },
+        {
+          Model: 'JHP-BS-800',
+          'Press box width (mm)': '1600',
+          'Cut length (mm)': '400',
+          'Capacity (T/hr)*': '15-22',
+          'Cutting force (kN)': '8,000',
+          Motor: '55 kW × 3',
+        },
+        {
+          Model: 'JHP-BS-1000',
+          'Press box width (mm)': '1600',
+          'Cut length (mm)': '400',
+          'Capacity (T/hr)*': '23-25',
+          'Cutting force (kN)': '10,000',
+          Motor: '55 kW × 4',
+        },
+      ],
+
+      note:
+        '*Capacity varies with the density of the material and the efficiency of scrap feeding by the operator.',
     },
-    {
-      Model: 'JHP-BS-800',
-      'Press box width (mm)': '1600',
-      'Cut length (mm)': '400',
-      'Capacity (T/hr)*': '15-22',
-      'Cutting force (kN)': '8,000',
-      'Motor': '55 kW × 3'
-
-    },
-    {
-      Model: 'JHP-BS-1000',
-      'Press box width (mm)': '1600',
-      'Cut length (mm)': '400',
-      'Capacity (T/hr)*': '23-25',
-      'Cutting force (kN)': '10,000',
-      'Motor': '55 kW × 4'
-
-    },
-
-
-  ]
+  ],
 },
 'nibblers-hydraulic': {
+
   name: 'Nibblers (Hydraulic)',
-  specs: [
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      Parameter: 'Blade shape',
-      'Hydraulic Nibbler': 'V-shaped',
-    },
-    {
-      Parameter: 'Strokes/min',
-      'Hydraulic Nibbler': '14-16',
-    },
-    {
-      Parameter: 'Motor (HP)',
-      'Hydraulic Nibbler': '15',
-    },
-    {
-      Parameter: 'Blade opening (in)',
-      'Hydraulic Nibbler': '4',
-    },
-    {
-      Parameter: 'Working pressure',
-      'Hydraulic Nibbler': '2400 PSI',
-    },
-    {
-      Parameter: 'Machine weight',
-      'Hydraulic Nibbler': '2,500 kg',
+      title: 'Nibbler Specifications',
+
+      specs: [
+        {
+          Parameter: 'Blade shape',
+          'Hydraulic Nibbler': 'V-shaped',
+        },
+        {
+          Parameter: 'Strokes/min',
+          'Hydraulic Nibbler': '14-16',
+        },
+        {
+          Parameter: 'Motor (HP)',
+          'Hydraulic Nibbler': '15',
+        },
+        {
+          Parameter: 'Blade opening (in)',
+          'Hydraulic Nibbler': '4',
+        },
+        {
+          Parameter: 'Working pressure',
+          'Hydraulic Nibbler': '2400 PSI',
+        },
+        {
+          Parameter: 'Machine weight',
+          'Hydraulic Nibbler': '2,500 kg',
+        },
+      ],
     },
   ],
 },
 
 'single-shaft-shredder': {
+
   name: 'Single Shaft Shredder',
-  specs: [
+
+  specTitle: 'Technical Specifications',
+
+  specTables: [
     {
-      Parameter: 'Cutting chamber width',
-      Value: '36"',
-    },
-    {
-      Parameter: 'Cutting chamber length',
-      Value: '42"',
-    },
-    {
-      Parameter: 'Rotor width',
-      Value: '34"',
-    },
-    {
-      Parameter: 'Rotor diameter',
-      Value: '350 mm',
-    },
-    {
-      Parameter: 'Motor',
-      Value: '50 HP',
-    },
-    {
-      Parameter: 'Hydraulic power pack',
-      Value: 'Provided',
+      title: 'Shredder Specifications',
+
+      specs: [
+        {
+          Parameter: 'Cutting chamber width',
+          Value: '36"',
+        },
+        {
+          Parameter: 'Cutting chamber length',
+          Value: '42"',
+        },
+        {
+          Parameter: 'Rotor width',
+          Value: '34"',
+        },
+        {
+          Parameter: 'Rotor diameter',
+          Value: '350 mm',
+        },
+        {
+          Parameter: 'Motor',
+          Value: '50 HP',
+        },
+        {
+          Parameter: 'Hydraulic power pack',
+          Value: 'Provided',
+        },
+      ],
     },
   ],
 },
 'twin-shaft-shredder': {
   name: 'Twin Shaft Shredder',
-  specs: [
+
+  specTables: [
     {
-      Model: 'TS-0.75',
-      'Nominal capacity': '0.75 TPH',
-      'Chamber (mm)': '600×600',
-      'Motor': '2×20 HP',
-      'Total power': '40 HP',
-      'Shaft diameter': '120 mm',
-      'Cutter diameter': '260 mm',
-      'Cutter thickness': '30 mm',
-      'Shaft speed': '15-25 RPM',
-      'Output size': '50-150 mm',
-      'Cutter material': 'D2 / Alloy',
-      'Cutter hardness': '50-58 HRC',
-      'Control': 'PLC+HMI',
-      'Auto reverse': 'Yes',
-    },
-    {
-      Model: 'TS-100',
-      'Nominal capacity': '1.0 TPH',
-      'Chamber (mm)': '700×650',
-      'Motor': '2×25 HP',
-      'Total power': '50 HP',
-      'Shaft diameter': '130 mm',
-      'Cutter diameter': '300 mm',
-      'Cutter thickness': '30-35 mm',
-      'Shaft speed': '15-25 RPM',
-      'Output size': '50-150 mm',
-      'Cutter material': 'D2 / Alloy',
-      'Cutter hardness': '50-58 HRC',
-      'Control': 'PLC+HMI',
-      'Auto reverse': 'Yes',
-    },
-    {
-      Model: 'TS-150',
-      'Nominal capacity': '1.5 TPH',
-      'Chamber (mm)': '800×700',
-      'Motor': '2×30 HP',
-      'Total power': '60 HP',
-      'Shaft diameter': '140 mm',
-      'Cutter diameter': '320 mm',
-      'Cutter thickness': '35 mm',
-      'Shaft speed': '12-22 RPM',
-      'Output size': '50-150 mm',
-      'Cutter material': 'D2 / Alloy',
-      'Cutter hardness': '50-58 HRC',
-      'Control': 'PLC+HMI',
-      'Auto reverse': 'Yes',
-    },
-    {
-      Model: 'TS-200',
-      'Nominal capacity': '2.0 TPH',
-      'Chamber (mm)': '900×750',
-      'Motor': '2×40 HP',
-      'Total power': '80 HP',
-      'Shaft diameter': '150 mm',
-      'Cutter diameter': '350 mm',
-      'Cutter thickness': '40 mm',
-      'Shaft speed': '12-20 RPM',
-      'Output size': '50-150 mm',
-      'Cutter material': 'D2 / Alloy',
-      'Cutter hardness': '50-58 HRC',
-      'Control': 'PLC+HMI',
-      'Auto reverse': 'Yes',
-    },
-    {
-      Model: 'TS-250',
-      'Nominal capacity': '2.5 TPH',
-      'Chamber (mm)': '1000×800',
-      'Motor': '2×50 HP',
-      'Total power': '100 HP',
-      'Shaft diameter': '170 mm',
-      'Cutter diameter': '380 mm',
-      'Cutter thickness': '45 mm',
-      'Shaft speed': '12-20 RPM',
-      'Output size': '50-150 mm',
-      'Cutter material': 'D2 / Alloy',
-      'Cutter hardness': '50-58 HRC',
-      'Control': 'PLC+HMI',
-      'Auto reverse': 'Yes',
-    },
-    {
-      Model: 'TS-300',
-      'Nominal capacity': '3.0 TPH',
-      'Chamber (mm)': '1100×850',
-      'Motor': '2×60 HP',
-      'Total power': '120 HP',
-      'Shaft diameter': '180 mm',
-      'Cutter diameter': '400 mm',
-      'Cutter thickness': '50 mm',
-      'Shaft speed': '10-18 RPM',
-      'Output size': '75-200 mm',
-      'Cutter material': 'D2 / Alloy',
-      'Cutter hardness': '50-58 HRC',
-      'Control': 'PLC+HMI',
-      'Auto reverse': 'Yes',
+      title: 'Technical Specifications',
+
+      specs: [
+        {
+          Model: 'TS-0.75',
+          'Nominal capacity': '0.75 TPH',
+          'Chamber (mm)': '600×600',
+          Motor: '2×20 HP',
+          'Total power': '40 HP',
+          'Shaft diameter': '120 mm',
+          'Cutter diameter': '260 mm',
+          'Cutter thickness': '30 mm',
+          'Shaft speed': '15-25 RPM',
+          'Output size': '50-150 mm',
+          'Cutter material': 'D2 / Alloy',
+          'Cutter hardness': '50-58 HRC',
+          Control: 'PLC+HMI',
+          'Auto reverse': 'Yes',
+        },
+        {
+          Model: 'TS-100',
+          'Nominal capacity': '1.0 TPH',
+          'Chamber (mm)': '700×650',
+          Motor: '2×25 HP',
+          'Total power': '50 HP',
+          'Shaft diameter': '130 mm',
+          'Cutter diameter': '300 mm',
+          'Cutter thickness': '30-35 mm',
+          'Shaft speed': '15-25 RPM',
+          'Output size': '50-150 mm',
+          'Cutter material': 'D2 / Alloy',
+          'Cutter hardness': '50-58 HRC',
+          Control: 'PLC+HMI',
+          'Auto reverse': 'Yes',
+        },
+        {
+          Model: 'TS-150',
+          'Nominal capacity': '1.5 TPH',
+          'Chamber (mm)': '800×700',
+          Motor: '2×30 HP',
+          'Total power': '60 HP',
+          'Shaft diameter': '140 mm',
+          'Cutter diameter': '320 mm',
+          'Cutter thickness': '35 mm',
+          'Shaft speed': '12-22 RPM',
+          'Output size': '50-150 mm',
+          'Cutter material': 'D2 / Alloy',
+          'Cutter hardness': '50-58 HRC',
+          Control: 'PLC+HMI',
+          'Auto reverse': 'Yes',
+        },
+        {
+          Model: 'TS-200',
+          'Nominal capacity': '2.0 TPH',
+          'Chamber (mm)': '900×750',
+          Motor: '2×40 HP',
+          'Total power': '80 HP',
+          'Shaft diameter': '150 mm',
+          'Cutter diameter': '350 mm',
+          'Cutter thickness': '40 mm',
+          'Shaft speed': '12-20 RPM',
+          'Output size': '50-150 mm',
+          'Cutter material': 'D2 / Alloy',
+          'Cutter hardness': '50-58 HRC',
+          Control: 'PLC+HMI',
+          'Auto reverse': 'Yes',
+        },
+        {
+          Model: 'TS-250',
+          'Nominal capacity': '2.5 TPH',
+          'Chamber (mm)': '1000×800',
+          Motor: '2×50 HP',
+          'Total power': '100 HP',
+          'Shaft diameter': '170 mm',
+          'Cutter diameter': '380 mm',
+          'Cutter thickness': '45 mm',
+          'Shaft speed': '12-20 RPM',
+          'Output size': '50-150 mm',
+          'Cutter material': 'D2 / Alloy',
+          'Cutter hardness': '50-58 HRC',
+          Control: 'PLC+HMI',
+          'Auto reverse': 'Yes',
+        },
+        {
+          Model: 'TS-300',
+          'Nominal capacity': '3.0 TPH',
+          'Chamber (mm)': '1100×850',
+          Motor: '2×60 HP',
+          'Total power': '120 HP',
+          'Shaft diameter': '180 mm',
+          'Cutter diameter': '400 mm',
+          'Cutter thickness': '50 mm',
+          'Shaft speed': '10-18 RPM',
+          'Output size': '75-200 mm',
+          'Cutter material': 'D2 / Alloy',
+          'Cutter hardness': '50-58 HRC',
+          Control: 'PLC+HMI',
+          'Auto reverse': 'Yes',
+        },
+      ],
     },
   ],
 },
@@ -1289,51 +1394,65 @@ const productDetails = {
 },
 'fodder-block-making-machine': {
   name: 'Fodder Block Making Machine',
-  specs: [
+
+  specTables: [
     {
-      Model: 'FBM Standard',
-      'Feeding chamber': '24×18×43"',
-      'Block size': '12×18×5"',
-      'Motor (HP)': '30',
-      'Production (blocks/hr)': '70-90',
-      'Block wt — dry fodder': '10-12 kg',
-      'Block wt — TMR 50:50': '14-18 kg',
-    },
-    {
-      Model: 'FBM-HD Heavy Duty',
-      'Feeding chamber': '23×24×50"',
-      'Block size': '12×24×6"',
-      'Motor (HP)': '50',
-      'Production (blocks/hr)': '90-100',
-      'Block wt — dry fodder': '14-17 kg',
-      'Block wt — TMR 50:50': '27-30 kg',
+      title: 'Technical Specifications',
+
+      specs: [
+        {
+          Model: 'FBM Standard',
+          'Feeding chamber': '24×18×43"',
+          'Block size': '12×18×5"',
+          'Motor (HP)': '30',
+          'Production (blocks/hr)': '70-90',
+          'Block wt — dry fodder': '10-12 kg',
+          'Block wt — TMR 50:50': '14-18 kg',
+        },
+        {
+          Model: 'FBM-HD Heavy Duty',
+          'Feeding chamber': '23×24×50"',
+          'Block size': '12×24×6"',
+          'Motor (HP)': '50',
+          'Production (blocks/hr)': '90-100',
+          'Block wt — dry fodder': '14-17 kg',
+          'Block wt — TMR 50:50': '27-30 kg',
+        },
+      ],
     },
   ],
 },
 
 'conveyors': {
   name: 'Conveyors',
-  specs: [
+
+  specTables: [
     {
-      Type: 'Inclined Magnetic',
-      Material: 'Any / metal',
-      'Belt Width': '900 mm',
-      'Drive Motor': '2.0 HP geared',
-      Length: '3,700 mm',
-    },
-    {
-      Type: 'Flat Bed Sorting',
-      Material: 'Any / mixed',
-      'Belt Width': '900 mm',
-      'Drive Motor': '2.0 HP',
-      Length: '4,000 mm',
-    },
-    {
-      Type: 'Transfer',
-      Material: 'Any / sorted',
-      'Belt Width': '900 mm',
-      'Drive Motor': '2.0 HP geared',
-      Length: '3,700 mm',
+      title: 'Technical Specifications',
+
+      specs: [
+        {
+          Type: 'Inclined Magnetic',
+          Material: 'Any / metal',
+          'Belt Width': '900 mm',
+          'Drive Motor': '2.0 HP geared',
+          Length: '3,700 mm',
+        },
+        {
+          Type: 'Flat Bed Sorting',
+          Material: 'Any / mixed',
+          'Belt Width': '900 mm',
+          'Drive Motor': '2.0 HP',
+          Length: '4,000 mm',
+        },
+        {
+          Type: 'Transfer',
+          Material: 'Any / sorted',
+          'Belt Width': '900 mm',
+          'Drive Motor': '2.0 HP geared',
+          Length: '3,700 mm',
+        },
+      ],
     },
   ],
 },
