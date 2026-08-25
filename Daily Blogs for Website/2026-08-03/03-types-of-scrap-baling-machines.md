@@ -182,7 +182,7 @@ Jindal Hydro Projects has manufactured hydraulic recycling machinery for over fi
 📍 B, 38A, MIA Road, Matsya Industrial Area, Naharpur, Alwar, Rajasthan 301030
 🌐 [www.jindalhydro.com](https://www.jindalhydro.com)
 
-[**Download the Product Catalogue →**](https://www.jindalhydro.com/catalogue) · [**Request a Quotation →**](https://www.jindalhydro.com/contact)
+[**Request a Quotation →**](https://www.jindalhydro.com/contact)
 
 ---
 

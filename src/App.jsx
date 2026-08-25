@@ -4025,8 +4025,8 @@ const hasUtilities = product.utilitiesSafetyEnvironment && product.utilitiesSafe
         <Link className="btn-primary" to="/contact">
           Get Quote
         </Link>
-        <a className="btn-secondary" href="/brochure.pdf">
-          Download Brochure
+        <a className="btn-secondary" href="/JHP-Catalogue.pdf">
+          Download Catalogue
         </a>
       </div>
     </div>
@@ -4048,8 +4048,8 @@ const hasUtilities = product.utilitiesSafetyEnvironment && product.utilitiesSafe
           <Link className="btn-primary" to="/contact">
             Get Quote
           </Link>
-          <a className="btn-secondary" href="/brochure.pdf">
-            Download Brochure
+          <a className="btn-secondary" href="/JHP-Catalogue.pdf">
+            Download Catalogue
           </a>
         </div>
       </div>
