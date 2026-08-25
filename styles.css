@@ -5374,3 +5374,36 @@ footer { background: #080808; padding: 60px 5% 32px; }
   line-height: 1.6;
   color: #292929;
 }
+/* Material Recovery Facility — text-only centered hero */
+.product-detail-hero--mrf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.product-detail-content--mrf {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.product-detail-content--mrf .section-label {
+  text-align: center;
+}
+
+.product-detail-content--mrf h1 {
+  text-align: center;
+}
+
+.product-detail-content--mrf p {
+  text-align: center;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-detail-content--mrf .hero-btns {
+  justify-content: center;
+}

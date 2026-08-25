@@ -4004,24 +4004,62 @@ const hasUtilities = product.utilitiesSafetyEnvironment && product.utilitiesSafe
       <main className="product-detail-page product-detail-page--classic">
         <div className="product-browser-layout">
           <section className="product-display">
-            <div className={`product-detail-hero${product.slug === 'vertical-baler' ? ' product-detail-hero--vertical-baler' : ''}`}>
-              <div className="product-detail-media reveal">
-                <img src={product.image || '/images/homepage.png'} alt={`${product.name} - Jindal Hydro Projects`} />
-              </div>
-              <div className="product-detail-content reveal">
-                <div className="section-label">{product.category}</div>
-                <h1>{product.name}</h1>
-                <p>{product.description}</p>
-                <div className="hero-btns">
-                  <Link className="btn-primary" to="/contact">Get Quote</Link>
-                  <a className="btn-secondary" href="/brochure.pdf">Download Brochure</a>
-                </div>
-              </div>
-            </div>
+            <div
+  className={`product-detail-hero${
+    product.slug === 'vertical-baler'
+      ? ' product-detail-hero--vertical-baler'
+      : ''
+  }${
+    product.slug === 'material-recovery-facility'
+      ? ' product-detail-hero--mrf'
+      : ''
+  }`}
+>
+  {product.slug === 'material-recovery-facility' ? (
+    <div className="product-detail-content reveal product-detail-content--mrf">
+      <div className="section-label">{product.category}</div>
+      <h1>{product.name}</h1>
+      <p>{product.description}</p>
+
+      <div className="hero-btns">
+        <Link className="btn-primary" to="/contact">
+          Get Quote
+        </Link>
+        <a className="btn-secondary" href="/brochure.pdf">
+          Download Brochure
+        </a>
+      </div>
+    </div>
+  ) : (
+    <>
+      <div className="product-detail-media reveal">
+        <img
+          src={product.image || '/images/homepage.png'}
+          alt={`${product.name} - Jindal Hydro Projects`}
+        />
+      </div>
+
+      <div className="product-detail-content reveal">
+        <div className="section-label">{product.category}</div>
+        <h1>{product.name}</h1>
+        <p>{product.description}</p>
+
+        <div className="hero-btns">
+          <Link className="btn-primary" to="/contact">
+            Get Quote
+          </Link>
+          <a className="btn-secondary" href="/brochure.pdf">
+            Download Brochure
+          </a>
+        </div>
+      </div>
+    </>
+  )}
+</div>
             {hasProcessSteps && (
   <section className="product-info-section">
     <h2>The Complete Process</h2>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px', marginTop: '16px' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginTop: '16px' }}>
       {product.processSteps.map((step) => (
         <div key={step.number} style={{ borderTop: '3px solid #f5b400', paddingTop: '10px' }}>
           <div style={{ color: '#f5b400', fontWeight: 700, fontSize: '14px', marginBottom: '6px' }}>{step.number}</div>
