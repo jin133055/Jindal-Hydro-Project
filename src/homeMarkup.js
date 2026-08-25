@@ -107,19 +107,19 @@
         <a class="btn-secondary" href="/products">View All Products</a>
       </div>
       <div class="products-grid">
-        <a class="product-card reveal" href="/products/metal-recycling/balers/high-density-hydraulic-baler/">
-          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.2.png" alt="High Density Baler"></div>
+        <a class="product-card reveal" href="/products/balers/super-jumbo-baler/">
+          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/Balers/01_Super Jumbo Baler.png" alt="High Density Baler"></div>
           <div class="product-body">
             <div class="product-tag">Metal Recycling</div>
-            <div class="product-name">High Density Baler</div>
+            <div class="product-name">Super Jumbo Baler</div>
           </div>
           <div class="product-arrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
           </div>
           <div class="product-overlay"></div>
         </a>
-        <a class="product-card reveal reveal-delay-1" href="/products/waste-recycling/automatic-horizontal-baler/">
-          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/17_Automatic_Baler_Hero_Angle_v1.png" alt="Automatic Baler"></div>
+        <a class="product-card reveal reveal-delay-1" href="/products/balers/automatic-baler/">
+          <div class="product-img"><img src="/images/3D Models from AI/Balers/08_Automatic_Baler_Hero_Angle_v1.png" alt="Automatic Baler"></div>
           <div class="product-body">
             <div class="product-tag">Waste Recycling</div>
             <div class="product-name">Automatic Baler</div>
@@ -133,7 +133,7 @@
           <div class="product-img"><img src="/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.png" alt="Installation and Training"></div>
           <div class="product-body">
             <div class="product-tag">Services</div>
-            <div class="product-name">Installation &amp; Training</div>
+            <div class="product-name">Material Recovery Facility</div>
           </div>
           <div class="product-arrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
