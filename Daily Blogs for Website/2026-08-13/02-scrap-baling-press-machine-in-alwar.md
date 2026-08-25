@@ -18,7 +18,7 @@ word_count: 2539
 sources:
   - title: "Jindal Hydro Projects Product Catalogue — baler, shear, shredder and conveyor specifications; ELV/RVSF machine line"
     publisher: "Jindal Hydro Projects Inc."
-    url: "https://www.jindalhydro.com/catalogue"
+    url: "/JHP-Catalogue.pdf"
     accessed: "13 Aug 2026"
   - title: "Registered Vehicle Scrapping Facility (RVSF) — compiled MoRTH notifications and departmental orders"
     publisher: "Transport and Road Safety Department, Government of Rajasthan"

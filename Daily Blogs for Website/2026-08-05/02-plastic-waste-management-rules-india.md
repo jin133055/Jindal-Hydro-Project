@@ -30,7 +30,7 @@ sources:
     accessed: "7 Aug 2026"
   - title: "Jindal Hydro Projects Product Catalogue — baler, shredder and sorting line specifications"
     publisher: "Jindal Hydro Projects Inc."
-    url: "https://www.jindalhydro.com/catalogue"
+    url: "/JHP-Catalogue.pdf"
     accessed: "7 Aug 2026"
 ---
 

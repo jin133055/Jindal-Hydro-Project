@@ -18,7 +18,7 @@ word_count: 2459
 sources:
   - title: "Jindal Hydro Projects Product Catalogue — baler, shear, shredder and briquetting specifications; after-sales services and spares"
     publisher: "Jindal Hydro Projects Inc."
-    url: "https://www.jindalhydro.com/catalogue"
+    url: "/JHP-Catalogue.pdf"
     accessed: "13 Aug 2026"
   - title: "Hardox 500 — general product description and mechanical properties"
     publisher: "SSAB"

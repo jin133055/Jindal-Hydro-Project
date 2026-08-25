@@ -109,8 +109,8 @@ def wrap_ctas(html_body):
             '<a href="https://www.jindalhydro.com/contact">',
             '<a class="btn" href="https://www.jindalhydro.com/contact">')
         cta = cta.replace(
-            '<a href="https://www.jindalhydro.com/catalogue">',
-            '<a class="btn" href="https://www.jindalhydro.com/catalogue">')
+            '<a href="/JHP-Catalogue.pdf">',
+            '<a class="btn" href="/JHP-Catalogue.pdf">')
         return f'{head}<div class="cta">{cta}</div><div class="faq"><hr />{faq}</div>'
     return html_body
 

@@ -19,7 +19,7 @@ word_count: 1886
 sources:
   - title: "Jindal Hydro Projects Product Catalogue — full baler range, cylinder forces, bale sizes, cycle times and motor ratings"
     publisher: "Jindal Hydro Projects Inc."
-    url: "https://www.jindalhydro.com/catalogue"
+    url: "/JHP-Catalogue.pdf"
     accessed: "3 Aug 2026"
   - title: "Metal Recycling Equipment Market Size, Share Report to 2030"
     publisher: "Grand View Research"

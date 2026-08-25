@@ -18,7 +18,7 @@ word_count: 1990
 sources:
   - title: "Jindal Hydro Projects Product Catalogue — Alligator Shear and Nibbler specifications, ELV / RVSF machinery line"
     publisher: "Jindal Hydro Projects Inc."
-    url: "https://www.jindalhydro.com/catalogue"
+    url: "/JHP-Catalogue.pdf"
     accessed: "11 Aug 2026"
   - title: "Delhi Scrap Prices Today — 10 August 2026"
     publisher: "Shree Metal Prices"
