@@ -18,7 +18,7 @@ word_count: 2223
 sources:
   - title: "Jindal Hydro Projects Product Catalogue — baler specifications, materials processed, after-sales and spares"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "12 Aug 2026"
   - title: "Importing Second-Hand Machinery in India: Rules, Risks and Compliance"
     publisher: "TaxGuru"

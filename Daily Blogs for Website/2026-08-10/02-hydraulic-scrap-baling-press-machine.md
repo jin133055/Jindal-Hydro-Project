@@ -30,7 +30,7 @@ sources:
     accessed: "10 Aug 2026"
   - title: "Jindal Hydro Projects Product Catalogue — baler specifications and after-sales support"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "10 Aug 2026"
 ---
 

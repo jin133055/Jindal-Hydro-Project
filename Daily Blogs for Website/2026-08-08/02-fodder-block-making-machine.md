@@ -30,7 +30,7 @@ sources:
     accessed: "8 Aug 2026"
   - title: "Jindal Hydro Projects Product Catalogue — Fodder Block Making Machine specifications"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "8 Aug 2026"
 ---
 

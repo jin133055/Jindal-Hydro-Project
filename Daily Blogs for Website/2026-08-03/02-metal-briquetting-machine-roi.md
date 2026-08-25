@@ -34,7 +34,7 @@ sources:
     accessed: "3 Aug 2026"
   - title: "Jindal Hydro Projects Product Catalogue — briquetting press specifications"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "3 Aug 2026"
 ---
 

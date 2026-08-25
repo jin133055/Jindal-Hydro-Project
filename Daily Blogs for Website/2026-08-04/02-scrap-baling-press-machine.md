@@ -18,7 +18,7 @@ word_count: 1878
 sources:
   - title: "Jindal Hydro Projects Product Catalogue — baler technical specifications"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "7 Aug 2026"
   - title: "Steel scrap in India: types, prices, policy (2026) and how it's made"
     publisher: "Tata nexarc"

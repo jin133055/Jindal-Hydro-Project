@@ -18,7 +18,7 @@ word_count: 1991
 sources:
   - title: "Jindal Hydro Projects Product Catalogue — baler, shear, shredder, briquetting and conveyor specifications; after-sales services"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "12 Aug 2026"
   - title: "Brief Industrial Profile of Alwar District"
     publisher: "MSME-Development Institute, Ministry of MSME, Government of India"

@@ -34,7 +34,7 @@ sources:
     accessed: "11 Aug 2026"
   - title: "Jindal Hydro Projects Product Catalogue — ELV / RVSF machinery line and specifications"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "11 Aug 2026"
 ---
 

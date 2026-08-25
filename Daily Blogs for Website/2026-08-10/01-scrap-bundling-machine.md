@@ -30,7 +30,7 @@ sources:
     accessed: "10 Aug 2026"
   - title: "Jindal Hydro Projects Product Catalogue — baler, car baler and shear specifications"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "10 Aug 2026"
 ---
 

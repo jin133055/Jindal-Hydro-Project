@@ -30,7 +30,7 @@ sources:
     accessed: "7 Aug 2026"
   - title: "Jindal Hydro Projects Product Catalogue — baler, nibbler and shredder specifications"
     publisher: "Jindal Hydro Projects Inc."
-    url: "/JHP-Catalogue.pdf"
+    url: """"
     accessed: "7 Aug 2026"
 ---
 
