@@ -2936,14 +2936,22 @@ const faqs = [
   },
 ];
 
-const aboutOfferings = [
-  ['Balers', 'Hydraulic baling presses that compress ferrous and non-ferrous scrap into dense, transport-ready bales.', '/images/3D%20Models%20from%20AI/01_High_Density_Baler_4_Angle_v.2.png'],
-  ['Shears & Nibblers', 'Alligator shears and nibblers for fast, precise cutting and scrap size reduction.', '/images/3D%20Models%20from%20AI/14_Nibbler_Hero_Angle_v.1.png'],
-  ['Shredders', 'Single- and twin-shaft shredders plus casting crackers for heavy-duty metal reduction.', '/images/3D%20Models%20from%20AI/15_Single_Shaft_Shredder_Hero_Angle_v.2.png'],
-  ['Briquetting Machines', 'High-pressure briquetting presses that convert machining waste into compact briquettes.', '/images/3D%20Models%20from%20AI/09_Vertical_Briquetting_Machine_v.1.png'],
-  ['Material Handling & Sorting', 'Conveyor systems and MSW sorting lines that move, feed, and sort material efficiently.', '/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.png'],
-  ['Agriculture Waste Recycling', 'Equipment to compress and process agricultural waste into high-density biomass products.', '/images/3D%20Models%20from%20AI/24_Fodder_Block_Machine_Hero_v1.png'],
-];
+const categoryOfferingDescriptions = {
+  Balers: 'Hydraulic baling presses that compress ferrous and non-ferrous scrap into dense, transport-ready bales.',
+  'Hydraulic Presses': 'General-purpose hydraulic presses for forming, moulding, assembly and powder compaction.',
+  'Shears & Nibblers': 'Alligator shears and nibblers for fast, precise cutting and scrap size reduction.',
+  Shredders: 'Single- and twin-shaft shredders for heavy-duty size reduction of bulky and mixed materials.',
+  'Briquetting Machines': 'High-pressure briquetting presses that convert machining waste into compact briquettes.',
+  'Material Handling': 'Conveyor systems that move, feed, and transfer material through processing lines.',
+  'Agricultural Hydraulic Machinery': 'Equipment to compress agricultural waste into high-density fodder blocks.',
+  'Material Recovery Facility': 'Complete MRF systems for MSW intake, sorting, mechanical separation and baling.',
+};
+
+const aboutOfferings = productCategories.map((category) => [
+  category.name,
+  categoryOfferingDescriptions[category.name] || getCategoryCardDescription(category),
+  getCategoryFirstProductImage(category),
+]);
 
 const businessDetails = [
   ['Year of Establishment', '1976'],
