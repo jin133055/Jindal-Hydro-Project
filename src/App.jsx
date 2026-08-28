@@ -87,7 +87,7 @@ const productCategories = [
   }
 ];
 
-const siteUrl = 'https://www.jindalhydroprojects.com';
+const siteUrl = 'jindalhydro.com';
 
 const productImageMap = {
   'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/Balers/01_Super Jumbo Baler.png'],
