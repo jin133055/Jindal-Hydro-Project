@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// NOTE: static imports of 'three' and GLTFLoader removed from the top level.
+// They now load dynamically (see setupBalerGlbModel), so they're code-split
+// into their own chunk and only fetched when the baler viewer is actually
+// about to be visible — not on every page load.
 
 export function useSiteInteractions(page) {
   useEffect(() => {
@@ -157,10 +159,49 @@ function setupBalerModel() {
   return setupCssBalerModel();
 }
 
+// --- GLB (three.js) viewer: now lazy ---------------------------------------
+// Instead of loading three.js + the .glb the instant this runs, we watch the
+// viewer with an IntersectionObserver and only kick off the dynamic import +
+// model fetch once the viewer is about to scroll into view (200px early, so
+// it's ready by the time the user reaches it). This keeps three.js and the
+// .glb entirely out of the initial critical path / main bundle.
 function setupBalerGlbModel(viewer) {
   const stage = document.getElementById('balerStage');
   if (!stage) return undefined;
 
+  let started = false;
+  let disposeScene;
+
+  const start = async () => {
+    if (started) return;
+    started = true;
+
+    const [THREE, { GLTFLoader }] = await Promise.all([
+      import('three'),
+      import('three/examples/jsm/loaders/GLTFLoader.js'),
+    ]);
+
+    disposeScene = initBalerScene(THREE, GLTFLoader, viewer, stage);
+  };
+
+  const intersectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        start();
+        intersectionObserver.disconnect();
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  intersectionObserver.observe(viewer);
+
+  return () => {
+    intersectionObserver.disconnect();
+    disposeScene?.();
+  };
+}
+
+function initBalerScene(THREE, GLTFLoader, viewer, stage) {
   let isDragging = false;
   let startX = 0;
   let startY = 0;
