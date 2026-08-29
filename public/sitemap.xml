@@ -1,43 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>jindalhydro.com/</loc></url>
-  <url><loc>jindalhydro.com/products/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/triple-action-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/quad-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/continuous-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/mini-triple-action-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/double-action-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/single-action-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/vertical-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/super-jumbo-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/mobile-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/balers/car-baler-elv-compactor/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/shears/alligator-shear/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/shears/box-shear-inclined-shear/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/shears/continuous-shear/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/shears/hydraulic-nibbler/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/shredders/hammer-mill-shredder/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/shredders/single-shaft-shredder/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/shredders/twin-shaft-shredder/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/shredders/casting-cracker/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/briquetting/chip-briquetting-machine/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/material-handling/magnetic-separator-ubc-sorter/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/material-handling/scrap-handling-conveyors/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/material-handling/hydraulic-grab-crane/</loc></url>
-  <url><loc>jindalhydro.com/products/metal-recycling/material-handling/scrap-charging-trolley/</loc></url>
-  <url><loc>jindalhydro.com/products/waste-recycling/</loc></url>
-  <url><loc>jindalhydro.com/products/waste-recycling/automatic-horizontal-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/waste-recycling/semi-automatic-horizontal-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/waste-recycling/triple-action-baler-waste/</loc></url>
-  <url><loc>jindalhydro.com/products/waste-recycling/vertical-baler-waste/</loc></url>
-  <url><loc>jindalhydro.com/products/waste-recycling/msw-sorting-line/</loc></url>
-  <url><loc>jindalhydro.com/products/agriculture-recycling/</loc></url>
-  <url><loc>jindalhydro.com/products/agriculture-recycling/fodder-block-making-machine/</loc></url>
-  <url><loc>jindalhydro.com/products/agriculture-recycling/straw-baler/</loc></url>
-  <url><loc>jindalhydro.com/products/elv-recycling/</loc></url>
-  <url><loc>jindalhydro.com/products/elv-recycling/elv-plant-setup-consultancy/</loc></url>
-  <url><loc>jindalhydro.com/products/services/</loc></url>
-  <url><loc>jindalhydro.com/about/</loc></url>
-  <url><loc>jindalhydro.com/contact/</loc></url>
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://jindalhydro.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/about/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/contact/</loc>
+  </url>
+
+
+  <!-- Balers -->
+  <url>
+    <loc>https://jindalhydro.com/products/balers/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/balers/super-jumbo-baler/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/balers/triple-action-baler/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/balers/mini-triple-action-baler/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/balers/double-action-baler/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/balers/vertical-baler/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/balers/car-baler/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/balers/automatic-baler/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/balers/semi-automatic-baler/</loc>
+  </url>
+
+
+  <!-- Hydraulic Presses -->
+  <url>
+    <loc>https://jindalhydro.com/products/hydraulic-presses/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/hydraulic-presses/c-frame-hydraulic-press/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/hydraulic-presses/h-frame-hydraulic-press/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/hydraulic-presses/4-pillar-type-hydraulic-press/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/hydraulic-presses/industrial-tablet-press/</loc>
+  </url>
+
+
+  <!-- Shears & Nibblers -->
+  <url>
+    <loc>https://jindalhydro.com/products/shears-nibblers/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/shears-nibblers/nibblers-hydraulic/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/shears-nibblers/alligator-shear/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/shears-nibblers/hydraulic-box-shear/</loc>
+  </url>
+
+
+  <!-- Shredders -->
+  <url>
+    <loc>https://jindalhydro.com/products/shredders/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/shredders/single-shaft-shredder/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/shredders/twin-shaft-shredder/</loc>
+  </url>
+
+
+  <!-- Briquetting Machines -->
+  <url>
+    <loc>https://jindalhydro.com/products/briquetting-machines/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/briquetting-machines/vertical-briquetting-machine/</loc>
+  </url>
+
+
+  <!-- Material Handling -->
+  <url>
+    <loc>https://jindalhydro.com/products/material-handling/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/material-handling/conveyors/</loc>
+  </url>
+
+
+  <!-- Agricultural Hydraulic Machinery -->
+  <url>
+    <loc>https://jindalhydro.com/products/agriculture-hydraulic-machinery/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/agriculture-hydraulic-machinery/fodder-block-making-machine/</loc>
+  </url>
+
+
+  <!-- Material Recovery Facility -->
+  <url>
+    <loc>https://jindalhydro.com/products/material-recovery-facility/</loc>
+  </url>
+
+  <url>
+    <loc>https://jindalhydro.com/products/material-recovery-facility/material-recovery-facility/</loc>
+  </url>
+
 </urlset>
