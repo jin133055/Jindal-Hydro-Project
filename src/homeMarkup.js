@@ -108,7 +108,7 @@
       </div>
       <div class="products-grid">
         <a class="product-card reveal" href="/products/balers/super-jumbo-baler/">
-          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/Balers/01_Super Jumbo Baler.png" alt="High Density Baler"></div>
+          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/Balers/01_Super Jumbo Baler.webp" alt="High Density Baler"></div>
           <div class="product-body">
             <div class="product-tag">Metal Recycling</div>
             <div class="product-name">Super Jumbo Baler</div>
@@ -119,7 +119,7 @@
           <div class="product-overlay"></div>
         </a>
         <a class="product-card reveal reveal-delay-1" href="/products/balers/automatic-baler/">
-          <div class="product-img"><img src="/images/3D Models from AI/Balers/08_Automatic_Baler_Hero_Angle_v1.png" alt="Automatic Baler"></div>
+          <div class="product-img"><img src="/images/3D Models from AI/Balers/08_Automatic_Baler_Hero_Angle_v1.webp" alt="Automatic Baler"></div>
           <div class="product-body">
             <div class="product-tag">Waste Recycling</div>
             <div class="product-name">Automatic Baler</div>
@@ -130,7 +130,7 @@
           <div class="product-overlay"></div>
         </a>
         <a class="product-card reveal reveal-delay-2" href="/products/material-recovery-facility/material-recovery-facility//">
-          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.png" alt="Installation and Training"></div>
+          <div class="product-img"><img src="/images/3D%20Models%20from%20AI/19_MSW_Sorting_Line_v1.webp" alt="Installation and Training"></div>
           <div class="product-body">
             <div class="product-tag">Services</div>
             <div class="product-name">Material Recovery Facility</div>
@@ -209,7 +209,7 @@
               <div class="clients-track" id="clientsTrack">
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Uflex-Logo.png" alt="Uflex Limited logo" class="client-logo" />
+                    <img src="/images/logo/Uflex-Logo.webp" alt="Uflex Limited logo" class="client-logo" />
                   </div>
                   <div class="client-name">Uflex Limited</div>
                   <div class="client-industry">Industrial Brand</div>
@@ -223,154 +223,154 @@
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/HSIL Limited.png" alt="HSIL Limited logo" class="client-logo" />
+                    <img src="/images/logo/HSIL Limited.webp" alt="HSIL Limited logo" class="client-logo" />
                   </div>
                   <div class="client-name">HSIL Limited</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Bengal India Global Infrastructure ltd..png" alt="Bengal India Global Infrastructure ltd. logo" class="client-logo" />
+                    <img src="/images/logo/Bengal India Global Infrastructure ltd..webp" alt="Bengal India Global Infrastructure ltd. logo" class="client-logo" />
                   </div>
                   <div class="client-name">Bengal India Global Infrastructure ltd.</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Annapoorna Metal Industries.png" alt="Annapoorna Metal Industries logo" class="client-logo" />
+                    <img src="/images/logo/Annapoorna Metal Industries.webp" alt="Annapoorna Metal Industries logo" class="client-logo" />
                   </div>
                   <div class="client-name">Annapoorna Metal Industries</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Asian Colour Coates Ispat Ltd.png" alt="Asian Colour Coates Ispat Ltd logo" class="client-logo" />
+                    <img src="/images/logo/Asian Colour Coates Ispat Ltd.webp" alt="Asian Colour Coates Ispat Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Asian Colour Coates Ispat Ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Forech India ltd.png" alt="Forech India ltd logo" class="client-logo" />
+                    <img src="/images/logo/Forech India ltd.webp" alt="Forech India ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Forech India ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Montage Enterprises Pvt Ltd.png" alt="Montage Enterprises Pvt Ltd logo" class="client-logo" />
+                    <img src="/images/logo/Montage Enterprises Pvt Ltd.webp" alt="Montage Enterprises Pvt Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Montage Enterprises Pvt Ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Raashi Industries Pvt. Ltd.png" alt="Raashi Industries Pvt. Ltd logo" class="client-logo" />
+                    <img src="/images/logo/Raashi Industries Pvt. Ltd.webp" alt="Raashi Industries Pvt. Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Raashi Industries Pvt. Ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Vardhman Polymers Pvt. Ltd.png" alt="Vardhman Polymers Pvt. Ltd logo" class="client-logo" />
+                    <img src="/images/logo/Vardhman Polymers Pvt. Ltd.webp" alt="Vardhman Polymers Pvt. Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Vardhman Polymers Pvt. Ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Sudha Ventilating Systems Pvt Ltd.png" alt="Sudha Ventilating Systems Pvt Ltd logo" class="client-logo" />
+                    <img src="/images/logo/Sudha Ventilating Systems Pvt Ltd.webp" alt="Sudha Ventilating Systems Pvt Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Sudha Ventilating Systems Pvt Ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/IAC Internationa Automotive India Pvt Ltd.png" alt="IAC International Automotive India Pvt Ltd logo" class="client-logo" />
+                    <img src="/images/logo/IAC Internationa Automotive India Pvt Ltd.webp" alt="IAC International Automotive India Pvt Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">IAC International Automotive India Pvt Ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/TAJ Forging Private LTD.png" alt="TAJ Forging Private LTD logo" class="client-logo" />
+                    <img src="/images/logo/TAJ Forging Private LTD.webp" alt="TAJ Forging Private LTD logo" class="client-logo" />
                   </div>
                   <div class="client-name">TAJ Forging Private LTD</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Arihant Publication.png" alt="Arihant Publication logo" class="client-logo" />
+                    <img src="/images/logo/Arihant Publication.webp" alt="Arihant Publication logo" class="client-logo" />
                   </div>
                   <div class="client-name">Arihant Publication</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/RSPL Limited.png" alt="RSPL Limited logo" class="client-logo" />
+                    <img src="/images/logo/RSPL Limited.webp" alt="RSPL Limited logo" class="client-logo" />
                   </div>
                   <div class="client-name">RSPL Limited</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Hindustan Motors.png" alt="Hindustan Motors logo" class="client-logo" />
+                    <img src="/images/logo/Hindustan Motors.webp" alt="Hindustan Motors logo" class="client-logo" />
                   </div>
                   <div class="client-name">Hindustan Motors</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Uni Products India Ltd.png" alt="Uni Products India Ltd logo" class="client-logo" />
+                    <img src="/images/logo/Uni Products India Ltd.webp" alt="Uni Products India Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Uni Products India Ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Laxmi Machine Tools.png" alt="Laxmi Machine Tools logo" class="client-logo" />
+                    <img src="/images/logo/Laxmi Machine Tools.webp" alt="Laxmi Machine Tools logo" class="client-logo" />
                   </div>
                   <div class="client-name">Laxmi Machine Tools</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Sree Rayalaseema HiStrength Hypo Limited.png" alt="Sree Rayalaseema HiStrength Hypo Limited logo" class="client-logo" />
+                    <img src="/images/logo/Sree Rayalaseema HiStrength Hypo Limited.webp" alt="Sree Rayalaseema HiStrength Hypo Limited logo" class="client-logo" />
                   </div>
                   <div class="client-name">Sree Rayalaseema HiStrength Hypo Limited</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Metso India Pvt. Ltd.png" alt="Metso India Pvt. Ltd logo" class="client-logo" />
+                    <img src="/images/logo/Metso India Pvt. Ltd.webp" alt="Metso India Pvt. Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Metso India Pvt. Ltd</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Janki Corp Limited.png" alt="Janki Corp Limited logo" class="client-logo" />
+                    <img src="/images/logo/Janki Corp Limited.webp" alt="Janki Corp Limited logo" class="client-logo" />
                   </div>
                   <div class="client-name">Janki Corp Limited</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Cold Steel Corporation.png" alt="Cold Steel Corporation logo" class="client-logo" />
+                    <img src="/images/logo/Cold Steel Corporation.webp" alt="Cold Steel Corporation logo" class="client-logo" />
                   </div>
                   <div class="client-name">Cold Steel Corporation</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Hindustan Media Limited.png" alt="Hindustan Media Limited logo" class="client-logo" />
+                    <img src="/images/logo/Hindustan Media Limited.webp" alt="Hindustan Media Limited logo" class="client-logo" />
                   </div>
                   <div class="client-name">Hindustan Media Limited</div>
                   <div class="client-industry">Industrial Brand</div>
                 </article>
                 <article class="client-logo-card">
                   <div class="client-logo-mark">
-                    <img src="/images/logo/Attero Recycling Ltd.png" alt="Attero Recycling Ltd logo" class="client-logo" />
+                    <img src="/images/logo/Attero Recycling Ltd.webp" alt="Attero Recycling Ltd logo" class="client-logo" />
                   </div>
                   <div class="client-name">Attero Recycling Ltd</div>
                   <div class="client-industry">Industrial Brand</div>

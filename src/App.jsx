@@ -90,45 +90,45 @@ const productCategories = [
 const siteUrl = 'jindalhydro.com';
 
 const productImageMap = {
-  'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/Balers/01_Super Jumbo Baler.png'],
-  'triple-action-baler': [ '/images/3D%20Models%20from%20AI/Balers/02_Triple_Action_Baler_Hero_Angle_v.1.png'],
-  'mini-triple-action-baler': [ '/images/3D%20Models%20from%20AI/Balers/03_Mini Triple Action Baler.png'],
+  'super-jumbo-baler': ['/images/3D%20Models%20from%20AI/Balers/01_Super Jumbo Baler.webp'],
+  'triple-action-baler': [ '/images/3D%20Models%20from%20AI/Balers/02_Triple_Action_Baler_Hero_Angle_v.1.webp'],
+  'mini-triple-action-baler': [ '/images/3D%20Models%20from%20AI/Balers/03_Mini Triple Action Baler.webp'],
   'double-action-baler': [
-    '/images/3D Models from AI/Balers/04_Double_Action_Auto_Door.png',
-    '/images/3D Models from AI/Balers/04_Double_Action_Auto_Door.png',
-    '/images/3D Models from AI/Balers/05_Double_Action_Manual_Door.png',
-    '/images/3D Models from AI/Balers/06_Double Action Baler Top Injection.png',
+    '/images/3D Models from AI/Balers/04_Double_Action_Auto_Door.webp',
+    '/images/3D Models from AI/Balers/04_Double_Action_Auto_Door.webp',
+    '/images/3D Models from AI/Balers/05_Double_Action_Manual_Door.webp',
+    '/images/3D Models from AI/Balers/06_Double Action Baler Top Injection.webp',
   ],
-  'vertical-baler': ['/images/3D Models from AI/Balers/07_Vertical_Baler_Hero_Angle.png'],
-  'car-baler': ['/images/3D Models from AI/Balers/10_Hydraulic Car Baler.png'],
-  'automatic-baler': ['/images/3D Models from AI/Balers/08_Automatic_Baler_Hero_Angle_v1.png'],
-  'semi-automatic-baler': ['/images/3D Models from AI/Balers/09_Semi_Automatic_Baler_Hero_Angle_v1.png'],
-  'alligator-shear': ['/images/3D Models from AI/Shears & Nibblers/01_Alligator_Shear_Hero_Angle_v.1.png',],
+  'vertical-baler': ['/images/3D Models from AI/Balers/07_Vertical_Baler_Hero_Angle.webp'],
+  'car-baler': ['/images/3D Models from AI/Balers/10_Hydraulic Car Baler.webp'],
+  'automatic-baler': ['/images/3D Models from AI/Balers/08_Automatic_Baler_Hero_Angle_v1.webp'],
+  'semi-automatic-baler': ['/images/3D Models from AI/Balers/09_Semi_Automatic_Baler_Hero_Angle_v1.webp'],
+  'alligator-shear': ['/images/3D Models from AI/Shears & Nibblers/01_Alligator_Shear_Hero_Angle_v.1.webp',],
   'nibblers-hydraulic': [
-    '/images/3D Models from AI/Shears & Nibblers/02_Nibbler_Hero_Angle_v.1.png',
+    '/images/3D Models from AI/Shears & Nibblers/02_Nibbler_Hero_Angle_v.1.webp',
   ],
-  'hydraulic-box-shear': [ '/images/3D Models from AI/Shears & Nibblers/03_Hydraulic Box Shear.png'],
-  'single-shaft-shredder': ['/images/3D Models from AI/Shredders/01_Single_Shaft_Shredder_Hero_Angle_v.2.png'],
-  'twin-shaft-shredder': ['/images/3D Models from AI/Shredders/02_Twin Shaft Shredder.png'],
+  'hydraulic-box-shear': [ '/images/3D Models from AI/Shears & Nibblers/03_Hydraulic Box Shear.webp'],
+  'single-shaft-shredder': ['/images/3D Models from AI/Shredders/01_Single_Shaft_Shredder_Hero_Angle_v.2.webp'],
+  'twin-shaft-shredder': ['/images/3D Models from AI/Shredders/02_Twin Shaft Shredder.webp'],
   'vertical-briquetting-machine': [
-    '/images/3D Models from AI/Briquetting Machines/09_Vertical_Briquetting_Machine_v3.png', ],
-  conveyors: ['/images/3D Models from AI/Material Handling/23_Conveyor_Hero_v1.png'],
-  'fodder-block-making-machine': ['/images/3D Models from AI/Agriculture Hydraulic Machinery/24_Fodder_Block_Machine_Hero_v1.png'],
-  'c-frame-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/01_press_c_frame.png'],
-  'h-frame-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/02_press_h_frame.png'],
-  '4-pillar-type-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/03_press_4_pillar.png'],
-  'industrial-tablet-press': ['/images/3D Models from AI/Hydraulic Presses/04_press_tablet.png'],
-  'material-recovery-facility': ['/images/3D Models from AI/MRF/msw_disc_separator.png',
-    '/images/3D Models from AI/MRF/msw_air_classifier.png',
-    '/images/3D Models from AI/MRF/msw_baled_waste.png',
-    '/images/3D Models from AI/MRF/msw_magnetic_separator.png',
-    '/images/3D Models from AI/MRF/msw_sorting_conveyor.png',
-    '/images/3D Models from AI/MRF/msw_tipper_platform.png',
-    '/images/3D Models from AI/MRF/msw_trommel_screen.png'
+    '/images/3D Models from AI/Briquetting Machines/09_Vertical_Briquetting_Machine_v3.webp', ],
+  conveyors: ['/images/3D Models from AI/Material Handling/23_Conveyor_Hero_v1.webp'],
+  'fodder-block-making-machine': ['/images/3D Models from AI/Agriculture Hydraulic Machinery/24_Fodder_Block_Machine_Hero_v1.webp'],
+  'c-frame-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/01_press_c_frame.webp'],
+  'h-frame-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/02_press_h_frame.webp'],
+  '4-pillar-type-hydraulic-press': ['/images/3D Models from AI/Hydraulic Presses/03_press_4_pillar.webp'],
+  'industrial-tablet-press': ['/images/3D Models from AI/Hydraulic Presses/04_press_tablet.webp'],
+  'material-recovery-facility': ['/images/3D Models from AI/MRF/msw_disc_separator.webp',
+    '/images/3D Models from AI/MRF/msw_air_classifier.webp',
+    '/images/3D Models from AI/MRF/msw_baled_waste.webp',
+    '/images/3D Models from AI/MRF/msw_magnetic_separator.webp',
+    '/images/3D Models from AI/MRF/msw_sorting_conveyor.webp',
+    '/images/3D Models from AI/MRF/msw_tipper_platform.webp',
+    '/images/3D Models from AI/MRF/msw_trommel_screen.webp'
   ],
 };
 
-const getProductImageSet = (slug) => productImageMap[slug] || ['/images/homepage.png'];
+const getProductImageSet = (slug) => productImageMap[slug] || ['/images/homepage.webp'];
 const getProductImage = (slug) => getProductImageSet(slug)[0];
 
 const categorySeo = {
@@ -1478,26 +1478,26 @@ const productDetails = {
     {
       title: 'Tipping / unloading platform',
       text: 'Hydraulic tipper with unloading pit, 55–60° tipping angle, 30–70 TPD.',
-      image: '/images/3D Models from AI/MRF/msw_tipper_platform.png',
+      image: '/images/3D Models from AI/MRF/msw_tipper_platform.webp',
     },
     {
       title: 'Sorting conveyor & picking station',
       text: '1000mm belt with side platform, safety railing and emergency pull-cord.',
-      image: '/images/3D Models from AI/MRF/msw_sorting_conveyor.png',
+      image: '/images/3D Models from AI/MRF/msw_sorting_conveyor.webp',
     },
     {
       title: 'Baled waste, ready for dispatch',
       text: 'Dense bales of 250–400 kg for the recycling industry or waste-to-energy.',
-      image: '/images/3D Models from AI/MRF/msw_baled_waste.png',
+      image: '/images/3D Models from AI/MRF/msw_baled_waste.webp',
     },
   ],
 
   // ===== Section: MRF machinery overview (4 machine cards) =====
   machineryOverview: [
-    { title: 'Trommel screen', text: 'Size separation (> mesh / < mesh)', image: '/images/3D Models from AI/MRF/msw_trommel_screen.png' },
-    { title: 'Magnetic separator', text: 'Removal of ferrous metals', image: '/images/3D Models from AI/MRF/msw_magnetic_separator.png' },
-    { title: 'Air classifier', text: 'Separation of light materials', image: '/images/3D Models from AI/MRF/msw_air_classifier.png' },
-    { title: 'Disc separator', text: 'Additional 2D / 3D separation', image: '/images/3D Models from AI/MRF/msw_disc_separator.png' },
+    { title: 'Trommel screen', text: 'Size separation (> mesh / < mesh)', image: '/images/3D Models from AI/MRF/msw_trommel_screen.webp' },
+    { title: 'Magnetic separator', text: 'Removal of ferrous metals', image: '/images/3D Models from AI/MRF/msw_magnetic_separator.webp' },
+    { title: 'Air classifier', text: 'Separation of light materials', image: '/images/3D Models from AI/MRF/msw_air_classifier.webp' },
+    { title: 'Disc separator', text: 'Additional 2D / 3D separation', image: '/images/3D Models from AI/MRF/msw_disc_separator.webp' },
   ],
 
   // ===== Section: Major Machinery — Technical Specifications =====
@@ -2618,20 +2618,20 @@ const getSubcategoryPath = (category, subcategory) => `${category.viewAll}${slug
 const getProductPath = (product) => productSeo[product.slug]?.canonical || `/product-detail?product=${product.slug}`;
 
 const categoryImages = {
-  'metal-recycling': '/images/metal-recycling.png',
-  'waste-recycling': '/images/Waste%20Recycling.png',
-  'agriculture-recycling': '/images/Agriculture%20Waste%20Recycling.png',
-  'elv-recycling': '/images/ELV%20Recycling.png',
-  services: '/images/services.png',
-  balers: '/images/metal-recycling.png',
-  'shears-nibblers': '/images/metal-recycling.png',
-  'shredders-crackers': '/images/waste%20management.png',
-  'briquetting-machines': '/images/homepage.png',
-  'material-handling-sorting': '/images/metal-recycling.png',
-  'agriculture-waste-recycling': '/images/Agriculture%20Waste%20Recycling.png',
+  'metal-recycling': '/images/metal-recycling.webp',
+  'waste-recycling': '/images/Waste%20Recycling.webp',
+  'agriculture-recycling': '/images/Agriculture%20Waste%20Recycling.webp',
+  'elv-recycling': '/images/ELV%20Recycling.webp',
+  services: '/images/services.webp',
+  balers: '/images/metal-recycling.webp',
+  'shears-nibblers': '/images/metal-recycling.webp',
+  'shredders-crackers': '/images/waste%20management.webp',
+  'briquetting-machines': '/images/homepage.webp',
+  'material-handling-sorting': '/images/metal-recycling.webp',
+  'agriculture-waste-recycling': '/images/Agriculture%20Waste%20Recycling.webp',
 };
 
-const getCategoryImage = (category) => categoryImages[getCategoryParam(category)] || '/images/homepage.png';
+const getCategoryImage = (category) => categoryImages[getCategoryParam(category)] || '/images/homepage.webp';
 
 const getCategoryFirstProductImage = (category) => {
   if (!category?.products || category.products.length === 0) return getCategoryImage(category);
@@ -2690,7 +2690,7 @@ const organizationSchema = {
   name: 'Jindal Hydro Projects Inc.',
   alternateName: 'JHP',
   url: siteUrl,
-  logo: `${siteUrl}/images/jhp-logo.png`,
+  logo: `${siteUrl}/images/jhp-logo.webp`,
   foundingDate: '1976',
   description: 'Manufacturer and exporter of hydraulic balers, scrap metal shredders, alligator shears, waste balers, and recycling machinery. 2,500+ machines installed globally since 1976.',
   address: {
@@ -2794,7 +2794,7 @@ const getSeoConfig = (page, location) => {
           brand: { '@type': 'Brand', name: 'Jindal Hydro Projects' },
           manufacturer: { '@type': 'Organization', name: 'Jindal Hydro Projects Inc.' },
           url: `${siteUrl}${normalizePath(canonical)}`,
-          image: `${siteUrl}/images/homepage.png`,
+          image: `${siteUrl}/images/homepage.webp`,
           offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', areaServed: ['IN', 'AE', 'SA', 'ZA', 'KE', 'NG', 'MY', 'SG'] },
         },
         buildFaqSchema(faqs),
@@ -3004,30 +3004,30 @@ const teamRoles = [
 ];
 
 const trustedClients = [
-  { name: 'Uflex Limited',logo: "/images/logo/Uflex-Logo.png" },
+  { name: 'Uflex Limited',logo: "/images/logo/Uflex-Logo.webp" },
   { name: 'Hindalco Industries LTD', logo: "/images/logo/Hindalco Industries Ltd.webp"},
-  { name: 'HSIL Limited', logo: "/images/logo/HSIL Limited.png"},
-  { name: 'Bengal India Global Infrastructure ltd.', logo: "/images/logo/Bengal India Global Infrastructure ltd..png"},
-  { name: 'Annapoorna Metal Industries', logo: "/images/logo/Annapoorna Metal Industries.png"},
-  { name: 'Asian Colour Coates Ispat Ltd', logo: "/images/logo/Asian Colour Coates Ispat Ltd.png"},
-  { name: 'Forech India ltd', logo: "/images/logo/Forech India ltd.png"},
-  { name: 'Montage Enterprises Pvt Ltd', logo: "/images/logo/Montage Enterprises Pvt Ltd.png"},
-  { name: 'Raashi Industries Pvt. Ltd ', logo: "/images/logo/Raashi Industries Pvt. Ltd.png"},
-  { name: 'Vardhman Polymers Pvt. Ltd ', logo: "/images/logo/Vardhman Polymers Pvt. Ltd.png"},
-  { name: 'Sudha Ventilating Systems Pvt Ltd', logo: "/images/logo/Sudha Ventilating Systems Pvt Ltd.png"},
-  { name: 'IAC International Automotive India Pvt Ltd', logo: "/images/logo/IAC Internationa Automotive India Pvt Ltd.png"},
-  { name: 'TAJ Forging Private LTD', logo: "/images/logo/TAJ Forging Private LTD.png"},
-  { name: 'Arihant Publication ', logo: "/images/logo/Arihant Publication.png"},
-{ name: 'RSPL Limited', logo: "/images/logo/RSPL Limited.png"},
-{ name: 'Hindustan Motors', logo: "/images/logo/Hindustan Motors.png"},
-{ name: 'Uni Products India Ltd', logo: "/images/logo/Uni Products India Ltd.png"},
-{ name: 'Laxmi Machine Tools', logo: "/images/logo/Laxmi Machine Tools.png"},
-{ name: 'Sree Rayalaseema HiStrength Hypo Limited', logo: "/images/logo/Sree Rayalaseema HiStrength Hypo Limited.png"},
-{ name: 'Metso India Pvt. Ltd', logo: "/images/logo/Metso India Pvt. Ltd.png"},
-{ name: 'Janki Corp Limited', logo: "/images/logo/Janki Corp Limited.png"},
-{ name: 'Cold Steel Corporation', logo: "/images/logo/Cold Steel Corporation.png"},
-{ name: 'Hindustan Media Limited', logo: "/images/logo/Hindustan Media Limited.png"},
-{ name: 'Attero Recycling Ltd', logo: "/images/logo/Attero Recycling Ltd.png"},
+  { name: 'HSIL Limited', logo: "/images/logo/HSIL Limited.webp"},
+  { name: 'Bengal India Global Infrastructure ltd.', logo: "/images/logo/Bengal India Global Infrastructure ltd..webp"},
+  { name: 'Annapoorna Metal Industries', logo: "/images/logo/Annapoorna Metal Industries.webp"},
+  { name: 'Asian Colour Coates Ispat Ltd', logo: "/images/logo/Asian Colour Coates Ispat Ltd.webp"},
+  { name: 'Forech India ltd', logo: "/images/logo/Forech India ltd.webp"},
+  { name: 'Montage Enterprises Pvt Ltd', logo: "/images/logo/Montage Enterprises Pvt Ltd.webp"},
+  { name: 'Raashi Industries Pvt. Ltd ', logo: "/images/logo/Raashi Industries Pvt. Ltd.webp"},
+  { name: 'Vardhman Polymers Pvt. Ltd ', logo: "/images/logo/Vardhman Polymers Pvt. Ltd.webp"},
+  { name: 'Sudha Ventilating Systems Pvt Ltd', logo: "/images/logo/Sudha Ventilating Systems Pvt Ltd.webp"},
+  { name: 'IAC International Automotive India Pvt Ltd', logo: "/images/logo/IAC Internationa Automotive India Pvt Ltd.webp"},
+  { name: 'TAJ Forging Private LTD', logo: "/images/logo/TAJ Forging Private LTD.webp"},
+  { name: 'Arihant Publication ', logo: "/images/logo/Arihant Publication.webp"},
+{ name: 'RSPL Limited', logo: "/images/logo/RSPL Limited.webp"},
+{ name: 'Hindustan Motors', logo: "/images/logo/Hindustan Motors.webp"},
+{ name: 'Uni Products India Ltd', logo: "/images/logo/Uni Products India Ltd.webp"},
+{ name: 'Laxmi Machine Tools', logo: "/images/logo/Laxmi Machine Tools.webp"},
+{ name: 'Sree Rayalaseema HiStrength Hypo Limited', logo: "/images/logo/Sree Rayalaseema HiStrength Hypo Limited.webp"},
+{ name: 'Metso India Pvt. Ltd', logo: "/images/logo/Metso India Pvt. Ltd.webp"},
+{ name: 'Janki Corp Limited', logo: "/images/logo/Janki Corp Limited.webp"},
+{ name: 'Cold Steel Corporation', logo: "/images/logo/Cold Steel Corporation.webp"},
+{ name: 'Hindustan Media Limited', logo: "/images/logo/Hindustan Media Limited.webp"},
+{ name: 'Attero Recycling Ltd', logo: "/images/logo/Attero Recycling Ltd.webp"},
 
 
 ];
@@ -3043,7 +3043,7 @@ const solutionSections = [
   {
     number: '01',
     title: 'Metal Recycling',
-    image: '/images/soln1.png',
+    image: '/images/soln1.webp',
     intro: 'End-to-end systems for ferrous and non-ferrous metal processing, from loose scrap intake to compact, transport-ready output.',
     details: [
       'Hydraulic balers, shears, shredders and conveyors configured around scrap type and throughput goals.',
@@ -3054,7 +3054,7 @@ const solutionSections = [
   {
     number: '02',
     title: 'Waste Management',
-    image: '/images/soln2.png',
+    image: '/images/soln2.webp',
     intro: 'Municipal and industrial waste processing solutions designed to improve volume reduction, sorting support and operational flow.',
     details: [
       'Machinery options for compaction, shredding, baling and material movement across waste handling facilities.',
@@ -3065,7 +3065,7 @@ const solutionSections = [
   {
     number: '03',
     title: 'Scrap Processing',
-    image: '/images/soln3.png',
+    image: '/images/soln3.webp',
     intro: 'Integrated shredding, sorting and densification systems for scrap dealers, steel plants, foundries and heavy industrial sites.',
     details: [
       'Custom machine combinations for cutting, feeding, loading, baling and output preparation.',
@@ -3163,7 +3163,7 @@ function Header() {
   return (
     <nav id="main-nav">
       <Link className="nav-logo" to="/">
-        <img src="/images/logo_transparent.png" alt="Jindal Hydro Projects Inc. logo" />
+        <img src="/images/logo_transparent.webp" alt="Jindal Hydro Projects Inc. logo" />
         <span className="logo-text">Jindal Hydro Projects Inc<span>.</span></span>
       </Link>
       <ul className="nav-links" id="primaryNavigation">
@@ -3811,7 +3811,7 @@ function AboutPage() {
       <Header />
       <main className="about-page">
         <section className="about-hero reveal">
-          <img src="/images/homepage.png" alt="Industrial hydraulic machinery facility" />
+          <img src="/images/homepage.webp" alt="Industrial hydraulic machinery facility" />
           <div className="about-hero-overlay"></div>
           <div className="about-hero-content">
             <div className="section-label">Company Profile</div>
@@ -4042,7 +4042,7 @@ const hasUtilities = product.utilitiesSafetyEnvironment && product.utilitiesSafe
     <>
       <div className="product-detail-media reveal">
         <img
-          src={product.image || '/images/homepage.png'}
+          src={product.image || '/images/homepage.webp'}
           alt={`${product.name} - Jindal Hydro Projects`}
         />
       </div>
@@ -4484,7 +4484,7 @@ function ProductsPage() {
                   {filteredProducts.map((product) => (
                     <Link className="product-listing-card product-listing-card-link reveal" to={getProductPath(product)} key={product.slug}>
                       <div className="product-listing-image">
-                        <img src={product.detail.image || '/images/homepage.png'} alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
+                        <img src={product.detail.image || '/images/homepage.webp'} alt={`${product.name} - Jindal Hydro Projects`} loading="lazy" />
                       </div>
                       <div className="product-listing-body">
                         <h2>{product.name}</h2>
